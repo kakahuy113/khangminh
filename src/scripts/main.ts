@@ -19,9 +19,72 @@ const slideAwardIntroduce = () => {
 
 const ajaxGetMoreVideo = () => {
 	const btn = document.querySelector(".btn__seeMore");
-	btn.addEventListener("click", function () {
-		alert("=> Từ từ code");
+	if (btn) {
+		btn.addEventListener("click", function () {
+			alert("=> Từ từ code");
+		});
+	}
+};
+
+export const debounce = <F extends (...args: any[]) => any>(
+	func: F,
+	waitFor: number,
+) => {
+	let timeout: ReturnType<typeof setTimeout> | null = null;
+
+	const debounced = (...args: Parameters<F>) => {
+		if (timeout !== null) {
+			clearTimeout(timeout);
+			timeout = null;
+		}
+		timeout = setTimeout(() => func(...args), waitFor);
+	};
+
+	return debounced as (...args: Parameters<F>) => ReturnType<F>;
+};
+
+const keyupSearchLocation = () => {
+	const listLocation = document.querySelectorAll(".info__text.location p");
+	const itemLocation = document.querySelectorAll(".introMap__item");
+	const btnSearch: any = document.querySelector("#location-search");
+	let content: any = [];
+	listLocation.forEach((p) => {
+		content.push(p.textContent);
 	});
+	if (btnSearch) {
+		btnSearch.addEventListener(
+			"keyup",
+			debounce(function () {
+				var inputValue = (<HTMLInputElement>(
+					document.getElementById("location-search")
+				)).value;
+				for (let i = 0; i < content.length; i++) {
+					if (content[i].search(inputValue) == -1) {
+					} else {
+						let indexContent = content.indexOf(content[i]);
+						for (let j = 0; j < listLocation.length; j++) {
+							var elementP = listLocation[indexContent];
+							var parent =
+								elementP.parentElement.parentElement
+									.parentElement;
+							parent.classList.add("active");
+							break;
+						}
+					}
+				}
+				itemLocation.forEach((item) => {
+					let classItem = item.className;
+					if (classItem.includes("active") == false) {
+						item.classList.add("d-none");
+						item.classList.remove("active");
+					} else {
+						item.classList.remove("d-none");
+						item.classList.remove("active");
+					}
+				});
+			}, 2000),
+		);
+	}
 };
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -31,6 +94,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	slideAwardIntroduce();
 	// ajaxGetMoreVideo
 	ajaxGetMoreVideo();
+	keyupSearchLocation();
 	// create instance fullpage
 	// const fpOptions: FullpageOptions = {
 	// 	prevEl: ".fp-prev",

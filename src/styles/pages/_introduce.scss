@@ -45,21 +45,145 @@ section.Introduce {
         }
         &.t-2 {
             display: block;
+            .swiper-slide.swiper-slide-active {
+                img {
+                    position: unset;
+                    width: 100%;
+                    height: 90%;
+                    left: unset;
+                    top: unset;
+                    transform: unset;
+                }
+                h5 {
+                    opacity: 1;
+                    transition: .5s all ease-in-out;
+                    margin-top: 20px;
+                }
+            }
+            .swiper-container {
+                padding-top: 50px;
+            }
+            .swiper-button-next,
+            .swiper-button-prev {
+                top: 62%;
+            }
             .swiper-slide {
                 height: 660px;
+                position: relative;
                 img {
-                    width: 90%;
+                    height: 70%;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    transform: translate(-50%, -50%);
                 }
                 h5 {
                     font-size: 16px;
                     font-family: Roboto-Light;
                     text-align: center;
+                    opacity: 0;
+                    transition: .5s all ease-in-out;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    text-overflow: ellipsis;
+                    -webkit-box-orient: vertical;
+                    -webkit-line-clamp: 2;
                 }
             }
         }
         &.t-3 {
             h3 {
                 padding-top: 0;
+            }
+        }
+        // -----------------------------
+        // -----------------------------
+        // -----------------------------
+        &.t-4 {
+            .introduce__inner {
+                display: flex;
+            }
+            .intro__map {
+                -ms-flex: 0 0 70%;
+                flex: 0 0 70%;
+                max-width: 70%;
+                padding-right: 40px;
+                .map {
+                    width: 100%;
+                    height: 100%;
+                    background: map-get($mau, main-3);
+                }
+            }
+            .introMap__search {
+                -ms-flex: 0 0 30%;
+                flex: 0 0 30%;
+                max-width: 30%;
+            }
+            .introMap__input {
+                margin-bottom: 15px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                input,
+                select {
+                    width: 100%;
+                    padding: 10px 20px;
+                    outline: none;
+                    background: #EAEAEA;
+                    border: none;
+                }
+                select {
+                    position: relative;
+                    &::before {
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        content: '';
+                        width: 40px;
+                        height: 40px;
+                        background: map-get($mau, main-2);
+                        z-index: 10;
+                    }
+                }
+            }
+            .introMap__list {
+                margin-top: 20px;
+                height: 370px;
+                overflow-y: auto;
+                ul {
+                    list-style: none;
+                    padding-inline-start: 0px;
+                    padding-right: 40px;
+                }
+            }
+            .introMap__item {
+                margin-bottom: 30px;
+                h6 {
+                    font-size: 18px;
+                    color: map-get($mau, main-2);
+                    font-family: RobotoC-bold;
+                    margin-bottom: 10px;
+                }
+                p {
+                    font-size: 16px;
+                    color: map-get($mau, main-5);
+                    font-family: RobotoC-Regular;
+                }
+            }
+            .item__info {
+                display: flex;
+                margin-bottom: 10px;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+                .info__icon {
+                    -ms-flex: 0 0 8%;
+                    flex: 0 0 8%;
+                    max-width: 8%;
+                }
+                img {
+                    background-size: 100%;
+                }
             }
         }
         // -----------------------------
