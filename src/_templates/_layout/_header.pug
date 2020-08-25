@@ -1,1 +1,61 @@
 header
+	.header__nav--top
+		.container
+			.container-1170px
+				.wrapper__utilities
+					.left
+						ul
+							li
+								a(href="#") VN
+							li
+								a(href="#") CN
+							li.active
+								a(href="#") EN
+							li
+								.form-input
+									input(type="text")
+								.sumit
+									button.btn
+										img.svg(src="./assets/images/header/SVG/lookup.svg", alt="find")
+					.right
+						ul
+							li 
+								a(href="")
+									img.svg(src="./assets/images/header/SVG/login.svg", alt="login")
+									span LOGIN
+							li 
+								a(href="")
+									img.svg(src="./assets/images/header/SVG/checklist.svg", alt="check")
+									span KIỂM TRA ĐƠN HÀNG
+							li 
+								a(href="")
+									img.svg(src="./assets/images/header/SVG/cart.svg", alt="cart")
+									span.cart-num 1
+									span CART
+	.header__logo
+		.img
+			img(src="./assets/images/header/SVG/Logo.png", alt="Khang Minh")
+	.header__nav--bottom
+			.container
+				.container-1170px
+					ul.nav__wrapper
+						li.active
+							a(href="#").text-uppercase Trang Chủ
+						li.ishavesubmenu
+							a(href="javascript:;").text-uppercase Giới thiệu
+							.subnav
+								.subnav__wrapper--link
+									a(href="#").active Project
+									a(href="#") Project
+									a(href="#") Project
+						li.ishavesubmenu
+							a(href="#").text-uppercase Sản Phẩm
+						li
+							a(href="#").text-uppercase Khuyến mãi
+						li
+							a(href="#").text-uppercase Tin tức
+						li.ishavesubmenu
+							a(href="#").text-uppercase Hướng dẫn
+						li
+							a(href="#").text-uppercase Liên hệ
+						.subnav__wrapper

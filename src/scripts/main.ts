@@ -1,40 +1,46 @@
 import { getSVGs, Loading } from "./utilities/util";
-import { Fullpage, FullpageOptions } from "./libraries/Fullpage";
 import Axios from "axios";
+
+declare var Swiper : any;
+
+const mainBanner = () => {
+	const swiper =  new Swiper(".MainSlider__Banners .swiper-container" , {
+		effect: "fade",
+		fadeEffect: {
+			crossFade: true,
+		},
+		speed: 1000,
+		autoplay: {
+			delay: 5000,
+			disableOnInteraction: false,
+		},
+		pagination: {
+			el: ".MainSlider__Banners .swiper-pagination",
+			type: "bullets",
+			clickable: true,
+		},
+	})
+}
+//swiper partner
+const partnerSwiper =() => {
+	const swiper = new Swiper(".partner .swiper-container", {
+		slidesPerView: 4,
+		slidesPerGroup: 1,
+		speed: 1000,
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false,
+		},
+	})
+}
 
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
-	// create instance fullpage
-	const fpOptions: FullpageOptions = {
-		prevEl: ".fp-prev",
-		nextEl: ".fp-next",
-		speed: 800,
-		slideClass: ".fp-slide",
-		dots: true,
-		on: {
-			// event is fired before slide start transition
-			beforeSlideChange: function (
-				currentSlide,
-				nextSlide,
-				currentIndex,
-				nextIndex,
-			) {
-				console.log(currentSlide, nextSlide, currentIndex, nextIndex);
-			},
-			// event is fired after slide end transition
-			afterSlideChange: function (currentSlide, currentIndex) {
-				console.log(currentSlide, currentIndex);
-			},
-		},
-	};
-	const fp = new Fullpage(".fp-container", fpOptions);
-	// method slide to a slide with index
-	fp.slideTo(0);
-	// method get current index of fullpage
-	fp.getIndex();
-	// method allow or not allow scroll to slide fullpage: true = allow, false = not allow
-	fp.canScroll(true);
+	//init main banner
+	mainBanner();
+	//init partner swiper above footer
+	partnerSwiper();
 });
 
 const fetchData = () => {
