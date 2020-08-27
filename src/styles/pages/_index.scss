@@ -218,19 +218,20 @@
 			font-size: 3.5rem;
 			line-height: 4.2rem;
 			color: #a62c32;
+			margin-bottom: 240px;
 		}
-		h2.sub-title {
-			font-family: SegoeScript-Bold;
-			font-size: 5.7rem;
-			line-height: 6.1rem;
-			color: #fff;
-			max-width: 515px;
-			margin: 0 auto;
-			margin-bottom: 20px;
-			span {
-				color: #a62c32;
-			}
-		}
+		// h2.sub-title {
+		// 	font-family: SegoeScript-Bold;
+		// 	font-size: 5.7rem;
+		// 	line-height: 6.1rem;
+		// 	color: #fff;
+		// 	max-width: 515px;
+		// 	margin: 0 auto;
+		// 	margin-bottom: 20px;
+		// 	span {
+		// 		color: #a62c32;
+		// 	}
+		// }
 	}
 }
 .product__wrapper {
@@ -390,7 +391,7 @@
 }
 
 .news--list {
-	margin-bottom: 90px;
+	margin-bottom: 70px;
 	margin-left: -15px;
 	margin-right: -15px;
 	.news--item {

@@ -162,13 +162,43 @@ const swiperProductDetail = () =>{
 		direction:'vertical',
 	})
 }
-
 const addIdPopup = () =>{
 	$('.fnb__images').fancybox({
 	
 	})
 }
+//init submenu
+const initClassSubMenu = () => {
+	const items__MainMenu = document.querySelectorAll(
+		'.header__nav--bottom ul li'
+	);
+	return new Promise((resolve, reject) => {
+		items__MainMenu.forEach((item) => {
+			const isHaveSub = item.querySelectorAll('.subnav');
+			// CHECK MAIN MENU IS HAVE SUB ???
+			if (isHaveSub.length > 0) {
+				// ADD CLASS IS HAVE SUB
+				item.classList.add('ishavesubmenu');
+				// ADD CLASS LIST MENU LV1
+				isHaveSub.forEach((item) => {
+					item.classList.add('navBar--lv1');
+				});
+				// ADD CLASS ITEM MENU LV1
+				const items__MenuLv1 = item.querySelectorAll(
+					'.navBar__item'
+				);
+				items__MenuLv1.forEach((item) => {
+					item.classList.add('navBar__item--lv1');
+				});
+			}
+		});
+		resolve();
+	});
+}
 
+const activeMenu = () => {
+	
+}
 
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
@@ -192,6 +222,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	swiperProductDetail();
 	//add id popup
 	addIdPopup();
+		//sub class menu
+		initClassSubMenu();
 
 });
 
