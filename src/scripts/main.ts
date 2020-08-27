@@ -86,9 +86,7 @@ const keyupSearchLocation = () => {
 		);
 	}
 };
-
-declare var Swiper : any;
-
+//swiper main baner
 const mainBanner = () => {
 	const swiper =  new Swiper(".MainSlider__Banners .swiper-container" , {
 		effect: "fade",
@@ -108,11 +106,13 @@ const mainBanner = () => {
 	})
 }
 //swiper partner
-const partnerSwiper =() => {
+const partnerSwiper = () => {
 	const swiper = new Swiper(".partner .swiper-container", {
 		slidesPerView: 4,
 		slidesPerGroup: 1,
 		speed: 1000,
+		simulateTouch: false,
+		loop: true,
 		autoplay: {
 			delay: 3000,
 			disableOnInteraction: false,
@@ -120,6 +120,42 @@ const partnerSwiper =() => {
 	})
 }
 
+const swiperProductHome = () => {
+	const swiper = new Swiper(".product__wrapper .swiper-container", {
+		slidesPerView: 3,
+		slidesPerGroup: 3,
+		spaceBetween: 40,
+		navigation: {
+			nextEl: '.product__wrapper .swiper-button-next',
+			prevEl: '.product__wrapper .swiper-button-prev',
+		  },
+	})
+}
+
+const swiperourproduct = () => {
+	const swiper = new Swiper(".home__ourproducts .swiper-container", {
+		slidesPerView: 3,
+		slidesPerColumn: 2,
+		spaceBetween: 40,
+		navigation: {
+			nextEl: '.home__ourproducts .swiper-button-next',
+			prevEl: '.home__ourproducts .swiper-button-prev',
+		  },
+	})
+}
+
+
+const sưiperRelateNews = () => {
+	const swiper = new Swiper(".relate-news .swiper-container", {
+		slidesPerView: 3,
+		slidesPerGroup: 1,
+		spaceBetween: 10,
+		navigation: {
+			nextEl: '.relate-news .swiper-button-next',
+			prevEl: '.relate-news .swiper-button-prev',
+		  },
+	})
+}
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
@@ -132,36 +168,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 	// ajaxGetMoreVideo
 	ajaxGetMoreVideo();
 	keyupSearchLocation();
-	// create instance fullpage
-	// const fpOptions: FullpageOptions = {
-	// 	prevEl: ".fp-prev",
-	// 	nextEl: ".fp-next",
-	// 	speed: 800,
-	// 	slideClass: ".fp-slide",
-	// 	dots: true,
-	// 	on: {
-	// 		// event is fired before slide start transition
-	// 		beforeSlideChange: function (
-	// 			currentSlide,
-	// 			nextSlide,
-	// 			currentIndex,
-	// 			nextIndex,
-	// 		) {
-	// 			console.log(currentSlide, nextSlide, currentIndex, nextIndex);
-	// 		},
-	// 		// event is fired after slide end transition
-	// 		afterSlideChange: function (currentSlide, currentIndex) {
-	// 			console.log(currentSlide, currentIndex);
-	// 		},
-	// 	},
-	// };
-	// const fp = new Fullpage(".fp-container", fpOptions);
-	// // method slide to a slide with index
-	// fp.slideTo(0);
-	// // method get current index of fullpage
-	// fp.getIndex();
-	// // method allow or not allow scroll to slide fullpage: true = allow, false = not allow
-	// fp.canScroll(true);
+	//swiper home proudct
+	swiperProductHome();
+	//swiper ourproduct home
+	swiperourproduct();
+	//swiper relate news
+	sưiperRelateNews();
+
 });
 
 const fetchData = () => {

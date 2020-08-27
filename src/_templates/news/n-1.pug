@@ -1,0 +1,21 @@
+section.news.home__news
+	.container
+		.container-1190px
+			.news__wrapper.home__news__wrapper
+				.title__wrapper(data-title="NEWS")
+					div
+						h2.title CÔNG DỤNG
+				.news--list.row
+					-for(var i =0; i< 6; i++)
+						a(href="detail-news.html").news--item.col-6
+							.img-news.overflow-hidden
+								img.ofcv.fullsize.lazyload.blup-up(src=`./assets/images/home/news-item-1.png`, alt="news")
+							.desc-news.row
+								.calendar.col-4(number-calendar="12")
+									div
+										p December
+								.desc.col-8
+									h4.lcl.lcl-2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, autem iste repudiandae ad amet pariatur ut inventore corporis nobis sint molestias veniam tenetur, accusantium sequi necessitatibus praesentium porro ex beatae!
+									.date-time
+										strong 24th, December
+									p.lcl.lcl-2 Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium odit assumenda consequatur nesciunt quis placeat quo, provident quaerat ut, cumque eaque. Quas, vel praesentium ea similique sapiente veritatis vero porro.
