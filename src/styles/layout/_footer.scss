@@ -63,6 +63,12 @@ footer {
 				a {
 					color: #EAEAEA;
 				}
+				&.active {
+					a {
+					color: #a62c32;
+
+					}
+				}
 			}
 		}
 	}
