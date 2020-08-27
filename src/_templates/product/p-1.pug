@@ -2,14 +2,32 @@ section.Product
 	.container
 		.product__wrapper.container-1175px
 			h2 Sản phẩm
-			.product__filter
-				.proFilter__item
-				.proFilter__item
-				.proFilter__item
+			form.product__filter
+				.proFilter__item.style
+					label(for="price") Loại mặt hàng:
+					select(name="catalog")
+						option(value="1") Tổ Yên Thô
+				.proFilter__item.price
+					label(for="price") Sắp xếp theo:
+					select(name="price")
+						option(value="1") Giá thấp đến cao
+				.proFilter__item.range
+					label(for="price") Giá:
+					input(type="range", name="range" min="0" max="100")
+				.proFilter__item.submit 
+					button(type="submit") Tìm
 			.product__list
-				//- -for(var i =0; i<12;i++)
-				.product__item
-					.proItem__img
-					.proItem__desc
-					.proItem__price
-					.proItem__cart
+				-for(var i =0; i<12;i++)
+					.product__item
+						a(href="").proItem__inner
+							.proItem__img.overflow-hidden
+								img(src="./assets/images/product/pro.png", alt="product")
+							.proItem__desc
+								p Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!
+							.proItem__price
+								h4.sale 20.000.000 
+									span VNĐ/hộp
+								h4 20.000.000 
+									span VNĐ/hộp
+							.proItem__cart
+								h3 add to cart
