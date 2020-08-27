@@ -209,4 +209,15 @@ section.Product {
             color: #5d5d5d;
         }
     }
+    .productGetAll {
+        .get {
+            margin: auto;
+            padding: 20px 30px;
+            background: map-get($mau, main-2);
+            width: fit-content;
+            color: white;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+    }
 }
