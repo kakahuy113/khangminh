@@ -1,7 +1,6 @@
 .MainSlider__Banners {
 	position: relative;
 	user-select: none;
-
 	.swiper-pagination {
 		.swiper-pagination-bullet {
 			width: 10px;
@@ -38,17 +37,17 @@
 	}
 }
 
-.main_banner__img {
-	height: 665px;
+// .main_banner__img {
+// 	height: 665px;
 
-	@media (max-width: 1024.98px) {
-		height: 500px;
-	}
+// 	@media (max-width: 1024.98px) {
+// 		height: 500px;
+// 	}
 
-	@media (max-width: 767.98px) {
-		height: 350px;
-	}
-}
+// 	@media (max-width: 767.98px) {
+// 		height: 350px;
+// 	}
+// }
 
 .main_banner__link {
 	display: block;

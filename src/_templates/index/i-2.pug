@@ -1,0 +1,37 @@
+section.home__product
+	.container
+		.container.1170px
+			.title__wrapper(data-title="TOPS")
+				div
+					h2.title PRODUCTS
+					p.sub-title The Best 2017
+	.home__banner--product.overflow-hidden
+		.banner--img
+			img.ofcv.fullsize.blur-up.lazyload(src="./assets/images/home/banner-product.png", alt="banner")
+		.container
+			.container-1190px
+				.banner--content.text-center
+					h2.title PROMOTION
+					h2.sub-title More than a gift it's 
+						|
+						span love
+				.product__wrapper.text-center
+					.swiper-container
+						.swiper-wrapper
+							-for(var i = 0; i < 3; i++)
+								.swiper-slide
+									.card
+										.card-body
+											.img
+												img(src="./assets/images/home/product-item.png", alt="")
+											.desc
+												p.lcl.lcl-2 Lorem ipsum dolor sit amet, consectetuer elit... 
+											.price
+												p.price 20.000.000 VNĐ/hộp
+												p.sale-price 20.000.000 VNĐ/hộp
+										.card-footer.btn
+											p ADD TO CART
+					.swiper-button-prev
+					.swiper-button-next
+				.btn__wrapper
+					a(href="#").btn.btn-readmore Read more

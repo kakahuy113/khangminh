@@ -27,7 +27,16 @@
 	filter: blur(10px);
 	transition: filter 1s;
 
-	&.lazy-loaded {
+	&.lazyloaded {
 		filter: blur(0);
+	}
+}
+
+.swiper-button-prev,
+.swiper-button-next
+ {
+	color: #a62c32;
+	&::after {
+		font-size: 8.1rem !important;
 	}
 }
