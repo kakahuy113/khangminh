@@ -11,11 +11,12 @@ section.Product
 					label(for="price") Sắp xếp theo:
 					select(name="price")
 						option(value="1") Giá thấp đến cao
+						option(value="2") Giá cao đến thấp
 				.proFilter__item.range
 					label(for="price") Giá:
-					input(type="range", name="range" min="0" max="100")
+					#rangeProduct
 				.proFilter__item.submit 
-					button(type="submit") Tìm
+					button#filter(type="submit") Tìm
 			.product__list
 				-for(var i =0; i<12;i++)
 					.product__item

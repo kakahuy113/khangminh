@@ -145,7 +145,7 @@ const swiperourproduct = () => {
 }
 
 
-const sưiperRelateNews = () => {
+const swiperRelateNews = () => {
 	const swiper = new Swiper(".relate-news .swiper-container", {
 		slidesPerView: 3,
 		slidesPerGroup: 1,
@@ -153,9 +153,23 @@ const sưiperRelateNews = () => {
 		navigation: {
 			nextEl: '.relate-news .swiper-button-next',
 			prevEl: '.relate-news .swiper-button-prev',
-		  },
+		},
 	})
 }
+
+const swiperProductDetail = () =>{
+	const swiper = new Swiper(".detail__listImg .swiper-container", {
+		direction:'vertical',
+	})
+}
+
+const addIdPopup = () =>{
+	$('.fnb__images').fancybox({
+	
+	})
+}
+
+
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
@@ -173,7 +187,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 	//swiper ourproduct home
 	swiperourproduct();
 	//swiper relate news
-	sưiperRelateNews();
+	swiperRelateNews();
+	// swiperProductDetail
+	swiperProductDetail();
+	//add id popup
+	addIdPopup();
 
 });
 
