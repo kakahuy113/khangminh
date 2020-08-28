@@ -33,10 +33,13 @@
 }
 
 .swiper-button-prev,
-.swiper-button-next
- {
+.swiper-button-next {
 	color: #a62c32;
 	&::after {
 		font-size: 8.1rem !important;
 	}
+}
+
+#map {
+	height: 500px;
 }
