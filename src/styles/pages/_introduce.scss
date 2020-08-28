@@ -93,6 +93,14 @@ section.Introduce {
         }
         &.t-3 {
             h3 {
+                &:first-child {
+                    margin-bottom: 40px;
+                    font-family: RobotoC-bold;
+                    font-size: 35px;
+                    color: map-get($mau, main-2);
+                    text-align: center;
+                    text-transform: uppercase;
+                }
                 padding-top: 0;
             }
         }
@@ -225,10 +233,11 @@ section.Introduce {
                     margin: 0 70px;
                 }
             }
-            a.gallery__item {
+            .gallery__item {
                 position: relative;
                 display: block;
                 overflow: hidden;
+                cursor: pointer;
                 &:hover {
                     .item__txt {
                         bottom: 0;
@@ -251,6 +260,7 @@ section.Introduce {
                 width: 100%;
                 height: 100%;
                 bottom: -100%;
+                pointer-events: none;
                 transition: .5s all ease-in-out;
                 background: rgba($color: #212121, $alpha: 0.6);
             }
@@ -286,6 +296,7 @@ section.Introduce {
                 flex-wrap: wrap;
                 margin: 0 -12.5px;
                 .video__item {
+                    cursor: pointer;
                     &:first-child {
                         margin-bottom: 42px;
                         -ms-flex: 0 0 100%;
