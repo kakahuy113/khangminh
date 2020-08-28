@@ -160,6 +160,16 @@ const swiperRelateNews = () => {
 	})
 }
 
+const swiperProductDetail = () =>{
+	const swiper = new Swiper(".detail__listImg .swiper-container", {
+		direction:'vertical',
+	})
+}
+const addIdPopup = () =>{
+	$('.fnb__images').fancybox({
+	
+	})
+}
 //init submenu
 const initClassSubMenu = () => {
 	const items__MainMenu = document.querySelectorAll(
@@ -245,7 +255,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 	initClassSubMenu();
 	//active menu
 	activeMenu()
+	//switch language
 	activeLanguage();
+	// swiperProductDetail
+	swiperProductDetail();
+	//add id popup
+	addIdPopup();
 });
 
 const fetchData = () => {

@@ -221,3 +221,21 @@ section.Product {
         }
     }
 }
+
+section.ProDetail {
+    padding: 50px 0;
+    .detail__inner {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .detail__img {
+        -ms-flex: 0 0 60%;
+        flex: 0 0 60%;
+        max-width: 60%;
+    }
+    .detail__info {
+        -ms-flex: 0 0 40%;
+        flex: 0 0 40%;
+        max-width: 40%;
+    }
+}

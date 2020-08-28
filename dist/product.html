@@ -96,14 +96,15 @@
 								<label for="price">Sắp xếp theo:</label>
 								<select name="price">
 									<option value="1">Giá thấp đến cao</option>
+									<option value="2">Giá cao đến thấp</option>
 								</select>
 							</div>
 							<div class="proFilter__item range">
 								<label for="price">Giá:</label>
-								<input type="range" name="range" min="0" max="100">
+								<div id="rangeProduct"></div>
 							</div>
 							<div class="proFilter__item submit"> 
-								<button type="submit">Tìm</button>
+								<button id="filter" type="submit">Tìm</button>
 							</div>
 						</form>
 						<div class="product__list">
@@ -324,5 +325,6 @@
 		</footer>
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
+		<script type="text/javascript" src="./js/filter.min.js"></script>
 	</body>
 </html>
