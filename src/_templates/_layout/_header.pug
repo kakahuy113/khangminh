@@ -5,11 +5,11 @@ header
 				.wrapper__utilities
 					.left
 						ul
-							li
+							li.languages__item(data-language="vi")
 								a(href="#") VN
-							li
+							li.languages__item(data-language="cn")
 								a(href="#") CN
-							li.active
+							li.languages__item(data-language="en")
 								a(href="#") EN
 							li
 								.form-input
@@ -19,10 +19,13 @@ header
 										img.svg(src="./assets/images/header/SVG/lookup.svg", alt="find")
 					.right
 						ul
-							li 
+							li.account-item
 								a(href="")
-									img.svg(src="./assets/images/header/SVG/login.svg", alt="login")
-									span LOGIN
+									img.svg(src="./assets/images/header/SVG/register.svg", alt="login")
+									span TÀI KHOẢN
+								.account-box
+									a(href="#" data-fancybox="login" data-src="#login").btn.btn-main Đăng nhập 
+									a(href="#" data-fancybox="register" data-src="#register").btn.btn-register Đăng ký 
 							li 
 								a(href="")
 									img.svg(src="./assets/images/header/SVG/checklist.svg", alt="check")
@@ -46,7 +49,7 @@ header
 							.subnav
 								.subnav__wrapper--link
 									.subnav-link
-										a(href="introduce.html").active Welcome to Khang Minh
+										a(href="introduce.html") Welcome to Khang Minh
 									.subnav-link
 										a(href="intro-2.html") Danh hiệu Giải thưởng
 									.subnav-link
@@ -56,10 +59,10 @@ header
 									.subnav-link
 										a(href="intro-5.html") Hình ảnh & Video
 						li
-							a(href="#").text-uppercase Sản Phẩm
+							a(href="javascript:;").text-uppercase Sản Phẩm
 							
 						li
-							a(href="#").text-uppercase Khuyến mãi
+							a(href="javascript:;").text-uppercase Khuyến mãi
 						li
 							a(href="javascript:;").text-uppercase Tin tức
 							.subnav
@@ -73,7 +76,7 @@ header
 									.subnav-link
 										a(href="news.html") Tin tức Khang Minh
 						li
-							a(href="#").text-uppercase Hướng dẫn
+							a(href="javascript:;").text-uppercase Hướng dẫn
 						li
-							a(href="#").text-uppercase Liên hệ
+							a(href="javascript:;").text-uppercase Liên hệ
 						.subnav__wrapper

@@ -1,6 +1,8 @@
 import { getSVGs, Loading } from "./utilities/util";
 // import { Fullpage, FullpageOptions } from "./libraries/Fullpage";
 import Axios from "axios";
+var CommonController = require("./libraries/CommonController")
+
 declare var Swiper: any;
 declare var $: any;
 
@@ -95,6 +97,7 @@ const mainBanner = () => {
 			crossFade: true,
 		},
 		speed: 1000,
+		loop: true,
 		autoplay: {
 			delay: 5000,
 			disableOnInteraction: false,
@@ -153,8 +156,8 @@ const swiperRelateNews = () => {
 		spaceBetween: 10,
 		navigation: {
 			nextEl: '.relate-news .swiper-button-next',
-			prevEl: '.relate-news .swiper-button-prev',
-		},
+			prevEl: '.relate-news  .swiper-button-prev',
+		  },
 	})
 }
 
@@ -222,8 +225,25 @@ const initClassSubMenu = () => {
 	});
 }
 
+//active menu
 const activeMenu = () => {
-	
+	const link = window.location.href;
+	const listSubLink = document.querySelectorAll(".header__nav--bottom .subnav .subnav-link")
+	listSubLink.forEach(item => {
+		const href = item.querySelector("a").getAttribute("href");
+		if(link.includes(href)) {
+			item.classList.add("active")
+			item.parentElement.parentElement.parentElement.classList.add("active")
+		}
+		
+	});
+	const listNavLink = document.querySelectorAll(".header__nav--bottom ul li")
+	listNavLink.forEach(item => {
+		const href = item.querySelector("a").getAttribute("href")
+		if(link.includes(href)) {
+			item.classList.add("active")
+		}
+	})
 }
 const ajaxFormContact = () => {
     $('.contact__form .btn__submit--contact').on('click', function(e:any) {
@@ -262,9 +282,22 @@ const ajaxFormContact = () => {
         }
     });
 };
+// ACTIVE LANGGUAGE
+const activeLanguage = () => {
+	const htmlLang = document.querySelector('html').getAttribute('lang');
+	const items__language = document.querySelectorAll(
+		'.header__nav--top .languages__item'
+	);
+	items__language.forEach((item) => {
+		if (item.getAttribute('data-language') == htmlLang) {
+			item.classList.add('active');
+		}
+	});
+};
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
+	var language = new CommonController();
 	//init main banner
 	mainBanner();
 	//init partner swiper above footer
@@ -280,13 +313,19 @@ document.addEventListener("DOMContentLoaded", async () => {
 	swiperourproduct();
 	//swiper relate news
 	swiperRelateNews();
+	//sub class menu
+	initClassSubMenu();
+	//active menu
+	activeMenu()
+	//switch language
+	activeLanguage();
 	// swiperProductDetail
 	swiperProductDetail();
 	//add id popup
 	addIdPopup();
 		//sub class menu
-		initClassSubMenu();
-		showVideo();
+	initClassSubMenu();
+	showVideo();
 	// gui contact
 	ajaxFormContact();
 

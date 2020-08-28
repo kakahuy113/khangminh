@@ -6,3 +6,29 @@
 	appearance: none;
 	cursor: pointer;
 }
+
+.btn-main {
+	background: #a62c32;
+	color: white;
+	font-weight: 700;
+	font-size: 13px;
+	border-radius: 15px;
+	height: 40px;
+	width: 100%;
+	&:hover {
+		background: #5d5d55
+	}
+}
+
+.btn-register {
+	background: #a62c32;
+	color: white;
+	font-weight: 700;
+	font-size: 13px;
+	border-radius: 15px;
+	height: 40px;
+	width: 100%;
+	&:hover {
+		background: #5d5d55
+	}
+}
