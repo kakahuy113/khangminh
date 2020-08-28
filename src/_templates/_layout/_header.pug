@@ -35,48 +35,96 @@ header
 									img.svg(src="./assets/images/header/SVG/cart.svg", alt="cart")
 									span.cart-num 1
 									span CART
+		.d-none
+			#login.account-popup
+				.popup-wrapper
+					.pop-up-header
+						h3 ĐĂNG NHẬP
+					.pop-up-body
+						form
+							.form-group
+								input(type="text" placeholder="Điện thoại/Email")
+							.form-group
+								input(type="password" placeholder="Mật khẩu")
+							.form-button
+								button Đăng nhập
+						.bottom-ask
+							p Chưa có tài khoản? 
+								a(href="#" data-fancybox="register2" data-src="#register") Đăng ký
+						.social
+							a.btn.btn-google(href="#")
+								img(src="./assets/icons/icon-google-plus.svg", alt="icon google plus")
+								span Đăng ký với Google
+							a.btn.btn-facebook(href="#")
+								img(src="./assets/icons/icon-facebook-2.svg", alt="icon facebook")
+								span Đăng ký với Facebook
+			#register.account-popup
+				.popup-wrapper
+					.left
+						.imgbox
+							img(src="./img/popup.png", alt="icon popup")
+						p.section-title Đăng ký
+						p Đăng ký trở thành thành viên của AnhDuyen Audio, để có thể lưu trữ giỏ hàng và theo dõi đơn hàng của bạn. 
+					.right
+						.right-wrapper
+							form
+								.form-group
+									input(type="text" placeholder="Điện thoại/Email")
+								.form-group
+									input(type="password" placeholder="Mật khẩu")
+								.form-group
+									input(type="password" placeholder="Nhập lại mật khẩu")
+								.form-option
+									.form-check
+										input#agree-policy(type="checkbox")
+										label(for="agree-policy") Tôi đã đọc và đồng ý với 
+											a(href="#") điều khoản sử dụng
+								.form-button
+									button Đăng ký
+							p.seperate hoặc
+							
+							.bottom-ask
+								p Đã có tài khoản? 
+									a(href="#" data-fancybox="login2" data-src="#login") Đăng nhập
 	.header__logo
 		a(href="index.html").img
 			img(src="./assets/images/header/SVG/Logo.png", alt="Khang Minh")
 	.header__nav--bottom
-			.container
-				.container-1190px
-					ul.nav__wrapper
-						li
-							a(href="index.html").text-uppercase Trang Chủ
-						li
-							a(href="javascript:;").text-uppercase Giới thiệu
-							.subnav
-								.subnav__wrapper--link
-									.subnav-link
-										a(href="introduce.html") Welcome to Khang Minh
-									.subnav-link
-										a(href="intro-2.html") Danh hiệu Giải thưởng
-									.subnav-link
-										a(href="intro-3.html") Đối tác
-									.subnav-link
-										a(href="intro-4.html") Hệ thống phân phối
-									.subnav-link
-										a(href="intro-5.html") Hình ảnh & Video
-						li
-							a(href="javascript:;").text-uppercase Sản Phẩm
-							
-						li
-							a(href="javascript:;").text-uppercase Khuyến mãi
-						li
-							a(href="javascript:;").text-uppercase Tin tức
-							.subnav
-								.subnav__wrapper--link
-									.subnav-link
-										a(href="#").active Công dụng
-									.subnav-link
-										a(href="#") Cách chế biến
-									.subnav-link
-										a(href="#") Món ăn với tổ yến
-									.subnav-link
-										a(href="news.html") Tin tức Khang Minh
-						li
-							a(href="javascript:;").text-uppercase Hướng dẫn
-						li
-							a(href="javascript:;").text-uppercase Liên hệ
-						.subnav__wrapper
+		.container
+			.container-1190px
+				ul.nav__wrapper
+					li
+						a(href="index.html").text-uppercase Trang Chủ
+					li
+						a(href="#").text-uppercase Giới thiệu
+						ul.nav__wrapper
+							li
+								a(href="introduce.html") Welcome to Khang Minh
+							li
+								a(href="intro-2.html") Danh hiệu Giải thưởng
+							li
+								a(href="intro-3.html") Đối tác
+							li
+								a(href="intro-4.html") Hệ thống phân phối
+							li
+								a(href="intro-5.html") Hình ảnh & Video
+					li
+						a(href="#").text-uppercase Sản Phẩm
+					li
+						a(href="#").text-uppercase Khuyến mãi
+					li
+						a(href="#").text-uppercase Tin tức
+						ul.nav__wrapper
+							li
+								a(href="#").active Công dụng
+							li
+								a(href="#") Cách chế biến
+							li
+								a(href="#") Món ăn với tổ yến
+							li
+								a(href="news.html") Tin tức Khang Minh
+					li
+						a(href="#").text-uppercase Hướng dẫn
+					li
+						a(href="#").text-uppercase Liên hệ
+					div.background-submenu

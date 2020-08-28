@@ -177,7 +177,7 @@ const initClassSubMenu = () => {
 	);
 	return new Promise((resolve, reject) => {
 		items__MainMenu.forEach((item) => {
-			const isHaveSub = item.querySelectorAll('.subnav');
+			const isHaveSub = item.querySelectorAll('ul');
 			// CHECK MAIN MENU IS HAVE SUB ???
 			if (isHaveSub.length > 0) {
 				// ADD CLASS IS HAVE SUB
@@ -188,7 +188,7 @@ const initClassSubMenu = () => {
 				});
 				// ADD CLASS ITEM MENU LV1
 				const items__MenuLv1 = item.querySelectorAll(
-					'.navBar__item'
+					'li'
 				);
 				items__MenuLv1.forEach((item) => {
 					item.classList.add('navBar__item--lv1');
@@ -202,14 +202,13 @@ const initClassSubMenu = () => {
 //active menu
 const activeMenu = () => {
 	const link = window.location.href;
-	const listSubLink = document.querySelectorAll(".header__nav--bottom .subnav .subnav-link")
+	const listSubLink = document.querySelectorAll(".header__nav--bottom ul.navBar--lv1 li")
 	listSubLink.forEach(item => {
 		const href = item.querySelector("a").getAttribute("href");
 		if(link.includes(href)) {
 			item.classList.add("active")
-			item.parentElement.parentElement.parentElement.classList.add("active")
+			item.parentElement.parentElement.classList.add("active")
 		}
-		
 	});
 	const listNavLink = document.querySelectorAll(".header__nav--bottom ul li")
 	listNavLink.forEach(item => {
@@ -231,6 +230,20 @@ const activeLanguage = () => {
 		}
 	});
 };
+// change height backgournd sub nav
+const changeHeightBackgroundSubNav = () => {
+	const submenu  = document.querySelectorAll<HTMLElement>(".header__nav--bottom ul li.ishavesubmenu");
+	
+	submenu.forEach((item) => {
+		item.addEventListener("mouseenter" , () => {
+			const height = item.querySelector<HTMLElement>("ul").offsetHeight
+			document.querySelector(".background-submenu").setAttribute("style", `height: ${height}px`) 
+		})
+		item.addEventListener("mouseleave" , () => {
+			document.querySelector(".background-submenu").setAttribute("style", `height: 0px`) 
+		})
+	})
+}
 
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
@@ -261,6 +274,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	swiperProductDetail();
 	//add id popup
 	addIdPopup();
+	//change height background submenu
+	changeHeightBackgroundSubNav();
 });
 
 const fetchData = () => {
