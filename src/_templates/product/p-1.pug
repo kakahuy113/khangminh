@@ -14,11 +14,17 @@ section.Product
 						option(value="2") Giá cao đến thấp
 				.proFilter__item.range
 					label(for="price") Giá:
-					#rangeProduct
-				.proFilter__item.submit 
-					button#filter(type="submit") Tìm
+					.range__inner
+						.priceLow
+							span#low 20000
+						.sliderPrice
+							#rangeProduct
+						.priceHigh
+							span#high 20000
+				.proFilter__item.submit
+					#filter Tìm
 			.product__list
-				-for(var i =0; i<12;i++)
+				-for(var i =0; i<11;i++)
 					.product__item
 						a(href="").proItem__inner
 							.proItem__img.overflow-hidden
@@ -26,12 +32,21 @@ section.Product
 							.proItem__desc
 								p Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!
 							.proItem__price
-								h4.sale 20.000.000 
-									span VNĐ/hộp
-								h4 20.000.000 
-									span VNĐ/hộp
+								h4.sale 20000000
+								h4(data-sale="",data-txt="VNĐ/hộp") #{i}0000 
 							.proItem__cart
 								h3 add to cart
+				.product__item
+					a(href="").proItem__inner
+						.proItem__img.overflow-hidden
+							img(src="./assets/images/product/pro.png", alt="product")
+						.proItem__desc
+							p Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!
+						.proItem__price
+							h4.sale 0 
+							h4(data-sale="20000",data-txt="VNĐ/hộp") 20000
+						.proItem__cart
+							h3 add to cart
 			.productGetAll
 				.get xem thêm (
 					|

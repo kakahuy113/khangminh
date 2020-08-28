@@ -10,76 +10,6 @@
 		<link rel="stylesheet" href="./css/main.min.css">
 	</head>
 	<body>
-		<header>
-			<div class="header__nav--top">
-				<div class="container">
-					<div class="container-1190px">
-						<div class="wrapper__utilities">
-							<div class="left">
-								<ul>
-									<li class="languages__item" data-language="vi"><a href="#">VN</a></li>
-									<li class="languages__item" data-language="cn"><a href="#">CN</a></li>
-									<li class="languages__item" data-language="en"><a href="#">EN</a></li>
-									<li>
-										<div class="form-input">
-											<input type="text">
-										</div>
-										<div class="sumit">
-											<button class="btn"><img class="svg" src="./assets/images/header/SVG/lookup.svg" alt="find"></button>
-										</div>
-									</li>
-								</ul>
-							</div>
-							<div class="right">
-								<ul>
-									<li class="account-item"><a href=""><img class="svg" src="./assets/images/header/SVG/register.svg" alt="login"><span>TÀI KHOẢN</span></a>
-										<div class="account-box"><a class="btn btn-main" href="#" data-fancybox="login" data-src="#login">Đăng nhập </a><a class="btn btn-register" href="#" data-fancybox="register" data-src="#register">Đăng ký </a></div>
-									</li>
-									<li> <a href=""><img class="svg" src="./assets/images/header/SVG/checklist.svg" alt="check"><span>KIỂM TRA ĐƠN HÀNG</span></a></li>
-									<li> <a href=""><img class="svg" src="./assets/images/header/SVG/cart.svg" alt="cart"><span class="cart-num">1</span><span>CART</span></a></li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="header__logo"><a class="img" href="index.html"><img src="./assets/images/header/SVG/Logo.png" alt="Khang Minh"></a></div>
-			<div class="header__nav--bottom">
-				<div class="container">
-					<div class="container-1190px">
-						<ul class="nav__wrapper">
-							<li><a class="text-uppercase" href="index.html">Trang Chủ</a></li>
-							<li><a class="text-uppercase" href="javascript:;">Giới thiệu</a>
-								<div class="subnav">
-									<div class="subnav__wrapper--link">
-										<div class="subnav-link"><a href="introduce.html">Welcome to Khang Minh</a></div>
-										<div class="subnav-link"><a href="intro-2.html">Danh hiệu Giải thưởng</a></div>
-										<div class="subnav-link"><a href="intro-3.html">Đối tác</a></div>
-										<div class="subnav-link"><a href="intro-4.html">Hệ thống phân phối</a></div>
-										<div class="subnav-link"><a href="intro-5.html">Hình ảnh & Video</a></div>
-									</div>
-								</div>
-							</li>
-							<li><a class="text-uppercase" href="javascript:;">Sản Phẩm</a></li>
-							<li><a class="text-uppercase" href="javascript:;">Khuyến mãi</a></li>
-							<li><a class="text-uppercase" href="javascript:;">Tin tức</a>
-								<div class="subnav">
-									<div class="subnav__wrapper--link">
-										<div class="subnav-link"><a class="active" href="#">Công dụng</a></div>
-										<div class="subnav-link"><a href="#">Cách chế biến</a></div>
-										<div class="subnav-link"><a href="#">Món ăn với tổ yến</a></div>
-										<div class="subnav-link"><a href="news.html">Tin tức Khang Minh</a></div>
-									</div>
-								</div>
-							</li>
-							<li><a class="text-uppercase" href="javascript:;">Hướng dẫn</a></li>
-							<li><a class="text-uppercase" href="javascript:;">Liên hệ</a></li>
-							<div class="subnav__wrapper"></div>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</header>
 		<!-- SLIDER INIT WHEN #js-page-verify have class "index-page"-->
 		<section class="MainSlider__Banners">
 			<div class="swiper-container">
@@ -122,10 +52,16 @@
 							</div>
 							<div class="proFilter__item range">
 								<label for="price">Giá:</label>
-								<div id="rangeProduct"></div>
+								<div class="range__inner">
+									<div class="priceLow"><span id="low">20000</span></div>
+									<div class="sliderPrice">
+										<div id="rangeProduct"></div>
+									</div>
+									<div class="priceHigh"><span id="high">20000</span></div>
+								</div>
 							</div>
-							<div class="proFilter__item submit"> 
-								<button id="filter" type="submit">Tìm</button>
+							<div class="proFilter__item submit">
+								<div id="filter">Tìm</div>
 							</div>
 						</form>
 						<div class="product__list">
@@ -135,8 +71,8 @@
 										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
 									</div>
 									<div class="proItem__price">
-										<h4 class="sale">20.000.000 <span>VNĐ/hộp</span></h4>
-										<h4>20.000.000 <span>VNĐ/hộp</span></h4>
+										<h4 class="sale">20000000</h4>
+										<h4 data-sale="" data-txt="VNĐ/hộp">00000 </h4>
 									</div>
 									<div class="proItem__cart">
 										<h3>add to cart</h3>
@@ -147,8 +83,8 @@
 										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
 									</div>
 									<div class="proItem__price">
-										<h4 class="sale">20.000.000 <span>VNĐ/hộp</span></h4>
-										<h4>20.000.000 <span>VNĐ/hộp</span></h4>
+										<h4 class="sale">20000000</h4>
+										<h4 data-sale="" data-txt="VNĐ/hộp">10000 </h4>
 									</div>
 									<div class="proItem__cart">
 										<h3>add to cart</h3>
@@ -159,8 +95,8 @@
 										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
 									</div>
 									<div class="proItem__price">
-										<h4 class="sale">20.000.000 <span>VNĐ/hộp</span></h4>
-										<h4>20.000.000 <span>VNĐ/hộp</span></h4>
+										<h4 class="sale">20000000</h4>
+										<h4 data-sale="" data-txt="VNĐ/hộp">20000 </h4>
 									</div>
 									<div class="proItem__cart">
 										<h3>add to cart</h3>
@@ -171,8 +107,8 @@
 										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
 									</div>
 									<div class="proItem__price">
-										<h4 class="sale">20.000.000 <span>VNĐ/hộp</span></h4>
-										<h4>20.000.000 <span>VNĐ/hộp</span></h4>
+										<h4 class="sale">20000000</h4>
+										<h4 data-sale="" data-txt="VNĐ/hộp">30000 </h4>
 									</div>
 									<div class="proItem__cart">
 										<h3>add to cart</h3>
@@ -183,8 +119,8 @@
 										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
 									</div>
 									<div class="proItem__price">
-										<h4 class="sale">20.000.000 <span>VNĐ/hộp</span></h4>
-										<h4>20.000.000 <span>VNĐ/hộp</span></h4>
+										<h4 class="sale">20000000</h4>
+										<h4 data-sale="" data-txt="VNĐ/hộp">40000 </h4>
 									</div>
 									<div class="proItem__cart">
 										<h3>add to cart</h3>
@@ -195,8 +131,8 @@
 										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
 									</div>
 									<div class="proItem__price">
-										<h4 class="sale">20.000.000 <span>VNĐ/hộp</span></h4>
-										<h4>20.000.000 <span>VNĐ/hộp</span></h4>
+										<h4 class="sale">20000000</h4>
+										<h4 data-sale="" data-txt="VNĐ/hộp">50000 </h4>
 									</div>
 									<div class="proItem__cart">
 										<h3>add to cart</h3>
@@ -207,8 +143,8 @@
 										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
 									</div>
 									<div class="proItem__price">
-										<h4 class="sale">20.000.000 <span>VNĐ/hộp</span></h4>
-										<h4>20.000.000 <span>VNĐ/hộp</span></h4>
+										<h4 class="sale">20000000</h4>
+										<h4 data-sale="" data-txt="VNĐ/hộp">60000 </h4>
 									</div>
 									<div class="proItem__cart">
 										<h3>add to cart</h3>
@@ -219,8 +155,8 @@
 										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
 									</div>
 									<div class="proItem__price">
-										<h4 class="sale">20.000.000 <span>VNĐ/hộp</span></h4>
-										<h4>20.000.000 <span>VNĐ/hộp</span></h4>
+										<h4 class="sale">20000000</h4>
+										<h4 data-sale="" data-txt="VNĐ/hộp">70000 </h4>
 									</div>
 									<div class="proItem__cart">
 										<h3>add to cart</h3>
@@ -231,8 +167,8 @@
 										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
 									</div>
 									<div class="proItem__price">
-										<h4 class="sale">20.000.000 <span>VNĐ/hộp</span></h4>
-										<h4>20.000.000 <span>VNĐ/hộp</span></h4>
+										<h4 class="sale">20000000</h4>
+										<h4 data-sale="" data-txt="VNĐ/hộp">80000 </h4>
 									</div>
 									<div class="proItem__cart">
 										<h3>add to cart</h3>
@@ -243,8 +179,8 @@
 										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
 									</div>
 									<div class="proItem__price">
-										<h4 class="sale">20.000.000 <span>VNĐ/hộp</span></h4>
-										<h4>20.000.000 <span>VNĐ/hộp</span></h4>
+										<h4 class="sale">20000000</h4>
+										<h4 data-sale="" data-txt="VNĐ/hộp">90000 </h4>
 									</div>
 									<div class="proItem__cart">
 										<h3>add to cart</h3>
@@ -255,8 +191,8 @@
 										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
 									</div>
 									<div class="proItem__price">
-										<h4 class="sale">20.000.000 <span>VNĐ/hộp</span></h4>
-										<h4>20.000.000 <span>VNĐ/hộp</span></h4>
+										<h4 class="sale">20000000</h4>
+										<h4 data-sale="" data-txt="VNĐ/hộp">100000 </h4>
 									</div>
 									<div class="proItem__cart">
 										<h3>add to cart</h3>
@@ -267,8 +203,8 @@
 										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
 									</div>
 									<div class="proItem__price">
-										<h4 class="sale">20.000.000 <span>VNĐ/hộp</span></h4>
-										<h4>20.000.000 <span>VNĐ/hộp</span></h4>
+										<h4 class="sale">0 </h4>
+										<h4 data-sale="20000" data-txt="VNĐ/hộp">20000</h4>
 									</div>
 									<div class="proItem__cart">
 										<h3>add to cart</h3>

@@ -72,6 +72,26 @@ section.Product {
             -ms-flex: 0 0 40%;
             flex: 0 0 40%;
             max-width: 40%;
+            #rangeProduct {
+                height: unset;
+                margin-top: 8px;
+            }
+            .range__inner {
+                display: flex;
+                justify-content: center;
+                padding: 10px;
+                background: white;
+                span {
+                    color: map-get($mau, main-2);
+                    b {
+                        font-weight: normal;
+                    }
+                }
+            }
+            .sliderPrice {
+                width: 60%;
+                padding: 0 20px;
+            }
             .noUi-handle:after,
             .noUi-handle:before {
                 content: none;
@@ -80,8 +100,9 @@ section.Product {
                 border: unset;
                 border-radius: unset;
                 background: unset;
-                cursor: default;
+                cursor: pointer;
                 box-shadow: unset;
+                top: -3px;
             }
             .noUi-target {
                 background: unset;
@@ -105,7 +126,7 @@ section.Product {
             -ms-flex: 0 0 10%;
             flex: 0 0 10%;
             max-width: 10%;
-            button {
+            #filter {
                 width: 100%;
                 outline: none;
                 border: none;
@@ -113,6 +134,10 @@ section.Product {
                 background: map-get($mau, main-2);
                 color: white;
                 text-transform: uppercase;
+                text-align: center;
+                margin-top: 35px;
+                cursor: pointer;
+                user-select: none;
             }
         }
     }
@@ -186,6 +211,9 @@ section.Product {
         }
     }
     .proItem__price {
+        &.noSale {
+            margin-top: 21px;
+        }
         text-align: center;
         margin-bottom: 20px;
         h4 {
