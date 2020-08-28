@@ -4,12 +4,12 @@ header
 			.container-1190px
 				.wrapper__utilities
 					.left
-						ul
-							li.languages__item(data-language="vi")
+						ul.language
+							li.languages__item.item(data-language="vi")
 								a(href="#") VN
-							li.languages__item(data-language="cn")
+							li.languages__item.item(data-language="cn")
 								a(href="#") CN
-							li.languages__item(data-language="en")
+							li.languages__item.item(data-language="en")
 								a(href="#") EN
 							li
 								.form-input
@@ -46,46 +46,38 @@ header
 								input(type="text" placeholder="Điện thoại/Email")
 							.form-group
 								input(type="password" placeholder="Mật khẩu")
-							.form-button
-								button Đăng nhập
+							.form-button.btn__wrapper
+								button.btn.btn-readmore(data-url="../api/test.json") ĐĂNG NHẬP
 						.bottom-ask
 							p Chưa có tài khoản? 
-								a(href="#" data-fancybox="register2" data-src="#register") Đăng ký
+								a(href="#" data-fancybox="register2" data-src="#register") Đăng ký ngay
 						.social
 							a.btn.btn-google(href="#")
 								img(src="./assets/icons/icon-google-plus.svg", alt="icon google plus")
-								span Đăng ký với Google
+								span Đăng ký qua Google
 							a.btn.btn-facebook(href="#")
 								img(src="./assets/icons/icon-facebook-2.svg", alt="icon facebook")
-								span Đăng ký với Facebook
+								span Đăng ký qua Facebook
 			#register.account-popup
 				.popup-wrapper
-					.left
-						.imgbox
-							img(src="./img/popup.png", alt="icon popup")
-						p.section-title Đăng ký
-						p Đăng ký trở thành thành viên của AnhDuyen Audio, để có thể lưu trữ giỏ hàng và theo dõi đơn hàng của bạn. 
-					.right
-						.right-wrapper
-							form
-								.form-group
-									input(type="text" placeholder="Điện thoại/Email")
-								.form-group
-									input(type="password" placeholder="Mật khẩu")
-								.form-group
-									input(type="password" placeholder="Nhập lại mật khẩu")
-								.form-option
-									.form-check
-										input#agree-policy(type="checkbox")
-										label(for="agree-policy") Tôi đã đọc và đồng ý với 
-											a(href="#") điều khoản sử dụng
-								.form-button
-									button Đăng ký
-							p.seperate hoặc
-							
-							.bottom-ask
-								p Đã có tài khoản? 
-									a(href="#" data-fancybox="login2" data-src="#login") Đăng nhập
+					.pop-up-header
+						h3 ĐĂNG KÍ
+					.pop-up-body
+						form
+							.form-group
+								input(type="text" placeholder="Họ & Tên")
+							.form-group
+								input(type="numbber" placeholder="Phone")
+							.form-group
+								input(type="text" placeholder="Tên Người Dùng")
+							.form-group
+								input(type="email" placeholder="Email")
+							.form-group
+								input(type="password" placeholder="Mật Khẩu")
+							.form-group
+								input(type="password" placeholder="Xác Nhận Mật Khẩu")
+							.form-button.btn__wrapper
+								button.btn.btn-readmore ĐĂNG KÍ
 	.header__logo
 		a(href="index.html").img
 			img(src="./assets/images/header/SVG/Logo.png", alt="Khang Minh")

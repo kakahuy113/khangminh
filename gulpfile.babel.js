@@ -68,7 +68,7 @@ const copyFonts = () => {
 };
 // Copy favicon
 const copyFavicon = () => {
-	return FileManage(_).Copy("favicon.ico", "dist");
+	return FileManage(_).Copy("favicon.ico", "dist/favicon");
 };
 // Copy assets
 const copyAssets = () => {

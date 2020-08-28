@@ -306,17 +306,7 @@
 
 	
 }
-.btn__wrapper {
-	text-align: center;
-	.btn-readmore {
-		width: 167px;
-		height: 53px;
-		background: #a62c32;
-		border-radius: 25px;
-		font-size: 2rem;
-		color: #fff;
-	}
-}
+
 
 .home__ourproducts {
 	padding: 85px 0;
@@ -400,6 +390,9 @@
 		.img-news {
 			max-height: 293px;
 			margin-bottom: 40px;
+			img {
+				transition: 1s all ease-in-out;
+			}
 		}
 		.desc-news {
 			.calendar {
