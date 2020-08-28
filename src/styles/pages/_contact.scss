@@ -1,0 +1,77 @@
+section.Contact {
+    padding: 50px 0;
+    h2 {
+        font-size: 35px;
+        color: map-get($mau, main-2);
+        text-transform: uppercase;
+        font-family: RobotoC-Bold;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    .contact__form {
+        width: 40%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+    .form__group {
+        margin-bottom: 20px;
+        width: 100%;
+        input,
+        textarea {
+            width: 100%;
+            outline: none;
+            border: 1px solid map-get($mau, main-2);
+            padding: 10px 20px;
+            border-radius: 10px;
+        }
+        textarea {
+            resize: none;
+        }
+    }
+    .btn__submit--contact {
+        width: 50%;
+        margin: auto;
+        h3 {
+            width: 100%;
+            outline: none;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background: map-get($mau, main-2);
+            color: white;
+            font-family: RobotoC-Regular;
+            font-size: 35px;
+            text-align: center;
+            cursor: pointer;
+        }
+    }
+    .contact__content {
+        margin-bottom: 40px;
+        margin: auto;
+        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
+        p {
+            font-size: 18px;
+            &:first-child {
+                -ms-flex: 0 0 100%;
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            &:nth-child(2),
+            &:nth-child(3) {
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+            span {
+                font-weight: bold;
+            }
+        }
+    }
+    .contact__map {
+        width: 100%;
+        background: #000;
+        height: 1200px;
+    }
+}

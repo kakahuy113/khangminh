@@ -72,23 +72,33 @@ section.Product {
             -ms-flex: 0 0 40%;
             flex: 0 0 40%;
             max-width: 40%;
-            input {
+            .noUi-handle:after,
+            .noUi-handle:before {
+                content: none;
+            }
+            .noUi-handle {
+                border: unset;
+                border-radius: unset;
+                background: unset;
+                cursor: default;
+                box-shadow: unset;
+            }
+            .noUi-target {
+                background: unset;
+                border-radius: unset;
+                border: unset;
+                box-shadow: unset;
+            }
+            .noUi-connects {
                 width: 100%;
-                &::-webkit-slider-thumb {
-                    -webkit-appearance: none;
-                    appearance: none;
-                    width: 8px;
-                    height: 8px;
-                    background: map-get($mau, main-2);
-                    border-radius: 4px;
-                    cursor: pointer;
-                }
-                &::-moz-range-thumb {
-                    width: 100px;
-                    height: 1px;
-                    background: map-get($mau, main-2);
-                    cursor: pointer;
-                }
+                height: 2px;
+                background: map-get($mau, main-2);
+            }
+            .noUi-touch-area {
+                border-radius: 50%;
+                background: map-get($mau, main-2);
+                width: 8px;
+                height: 8px;
             }
         }
         &.submit {

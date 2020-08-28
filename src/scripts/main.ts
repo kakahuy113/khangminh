@@ -23,7 +23,8 @@ const ajaxGetMoreVideo = () => {
 	const btn = document.querySelector(".btn__seeMore");
 	if (btn) {
 		btn.addEventListener("click", function () {
-			alert("=> Từ từ code");
+			$(".video__item").removeClass("d-none");
+			btn.classList.add("d-none");
 		});
 	}
 };
@@ -166,10 +167,35 @@ const swiperProductDetail = () =>{
 	})
 }
 const addIdPopup = () =>{
-	$('.fnb__images').fancybox({
-	
-	})
+	const listItem = document.querySelectorAll(".gallery__item");
+	for (let i = 0; i < listItem.length; i++) {
+		$(".item__img").eq(i).attr("data-fancybox","Images-"+i);
+		$(".item__img").eq(i).children(".listImg__gallery").children("a").attr("data-fancybox","Images-"+i);
+	}
+	$(".gallery__item").click(function(e:any){
+		var p = $(this).children(".item__txt").children(".txt").children("p").text();
+		$(this).children(".item__img").attr("data-caption",p);
+	});
 }
+
+const showVideo = () =>{
+	const listVideo = document.querySelectorAll(".video__item");
+	const video = document.getElementsByClassName("video__item");
+	if(listVideo.length > 4){
+		for (let i = 0; i < listVideo.length; i++) {
+			if(i>3){
+				$(".video__item").eq(i).addClass("d-none");
+			}
+		}
+	}
+	if(video){
+		// video.addEventListener("click",function(){
+		// 	console.log(1);
+		// })
+	}
+
+}
+
 //init submenu
 const initClassSubMenu = () => {
 	const items__MainMenu = document.querySelectorAll(
@@ -218,6 +244,43 @@ const activeMenu = () => {
 		}
 	})
 }
+const ajaxFormContact = () => {
+    $('.contact__form .btn__submit--contact').on('click', function(e:any) {
+        e.preventDefault();
+        const _thisBtn = $(this);
+        const url = _thisBtn.attr('data-url');
+		const formData = new FormData();
+		const nameText = $(
+            '.contact__form form .form-group textarea'
+        ).attr('name');
+        const valText = $(
+            '.contact__form form .form-group textarea'
+        ).val();
+        $('.contact__form .form-group input').each(function() {
+            const name = $(this).attr('name');
+            const value = $(this).val();
+            formData.append(name, value);
+        });
+		formData.append(nameText, valText);
+        if ($('.contact__form .form form').valid() === true) {
+            $.ajax({
+                url: url,
+                type: 'post',
+                data: formData,
+                processData: false,
+                contentType: false,
+                beforeSend: function() {
+                    _thisBtn.attr('disabled', 'disabled');
+                },
+                success: function(res:any) {
+                    alert(`${res.Message}`);
+                    window.location.reload();
+                    _thisBtn.removeAttr('disabled');
+                },
+            });
+        }
+    });
+};
 // ACTIVE LANGGUAGE
 const activeLanguage = () => {
 	const htmlLang = document.querySelector('html').getAttribute('lang');
@@ -276,6 +339,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 	addIdPopup();
 	//change height background submenu
 	changeHeightBackgroundSubNav();
+	showVideo();
+	// gui contact
+	ajaxFormContact();
 });
 
 const fetchData = () => {
