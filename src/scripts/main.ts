@@ -164,6 +164,7 @@ const swiperRelateNews = () => {
 const swiperProductDetail = () => {
 	const swiper = new Swiper(".detail__listImg .swiper-container", {
 		direction: "vertical",
+		slidesPerView: 3,
 	});
 };
 const addIdPopup = () => {
@@ -328,6 +329,31 @@ const Login = () => {
 	});
 };
 
+const viewImagesDetail = () =>{
+	$(".previews").click(function(e:any){
+		e.preventDefault();
+		$(".previews").parent().removeClass("active");
+		const id = $(this).attr("data-id");
+		if(id !== ""){
+			$(".detail__mainImg img").addClass("d-none");
+			$(".detail__mainImg .youtube-api").removeClass("d-none");
+			const idYt = $(".youtube-api").attr("id");
+			console.log(idYt);
+			let url = $('#' + idYt).attr('src');
+            $('#' + idYt).attr('src', url + "&autoplay=1");
+		}else{
+			$(".detail__mainImg .youtube-api").addClass("d-none");
+			$(".detail__mainImg img").removeClass("d-none");
+			const src = $(this).attr('src');
+			const alt = $(this).attr("alt");
+			$(".detail__mainImg img").attr('src',src);
+			$(".detail__mainImg img").attr('alt',alt);
+		} 
+		$(this).parent().addClass("active");
+	});
+	$(".previews").first().trigger("click");
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
@@ -364,6 +390,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	// gui contact
 	ajaxFormContact();
 	Login();
+	viewImagesDetail();
 });
 
 const fetchData = () => {
