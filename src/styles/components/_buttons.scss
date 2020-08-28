@@ -32,3 +32,56 @@
 		background: #5d5d55
 	}
 }
+.btn__wrapper {
+	text-align: center;
+	.btn-readmore {
+		width: 167px;
+		height: 53px;
+		background: #a62c32;
+		border-radius: 25px;
+		font-size: 2rem;
+		color: #fff;
+	}
+}
+.btn-google {
+	background: #DB4437;
+	color: white;
+	height: 40px;
+
+	span {
+		font-size: 1.4rem;
+		border-left: 1px solid white
+	}
+}
+
+.btn-facebook {
+	background: #3C5A99;
+	color: white;
+	height: 40px;
+	margin-bottom: 10px;
+
+	span {
+		font-size: 1.4rem;
+		border-left: 1px solid white
+	}
+}
+
+.btn-google,
+.btn-facebook {
+	justify-content: flex-start;
+	border-radius: 5px;
+
+	img {
+		flex: 0 0 42px;
+		max-width: 42px;
+		height: 18px;
+	}
+
+	span {
+		padding-left: 15px;
+	}
+
+	&:hover {
+		color: white;
+	}
+}
