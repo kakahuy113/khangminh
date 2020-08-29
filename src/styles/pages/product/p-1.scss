@@ -379,13 +379,25 @@ section.ProDetail {
             font-family: Roboto-Regular;
             font-size: 16px;
             color: #5d5d5d;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
+        }
+        .price__detail {
+            border-top: 1px solid #5D5D5D;
+            border-bottom: 1px solid #5D5D5D;
+            h3 {
+                padding: 10px;
+                &:first-child {
+                    padding-bottom: 5px;
+                    span {
+                        text-decoration: line-through;
+                    }
+                }
+                &:last-child {
+                    padding-top: 0;
+                }
+            }
         }
         h3 {
-            &.price {
-                border-top: 1px solid #5D5D5D;
-                border-bottom: 1px solid #5D5D5D;
-            }
             padding: 20px 0;
             font-size: 18px;
             font-family: Roboto-Regular;
@@ -517,6 +529,7 @@ section.ProDetail {
     }
     .deInfo__desc {
         width: 100%;
+        margin: 40px 0;
     }
     .item__content {
         &.no-active {
