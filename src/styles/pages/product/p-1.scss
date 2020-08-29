@@ -569,4 +569,86 @@ section.ProDetail {
             }
         }
     }
+    .deInfo__comment {
+        padding: 20px;
+        background: white;
+        .cmt__dash {
+            padding: 20px 0;
+            border-bottom: 1px solid #5d5d5d;
+            width: 100%;
+            display: flex;
+            .cmt__qty {
+                display: flex;
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+                justify-content: flex-start;
+                p {
+                    color: #5d5d5d;
+                    font-size: 20px;
+                    font-family: RobotoC-Bold;
+                }
+            }
+            .cmt__time {
+                justify-content: flex-end;
+                display: flex;
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+                a {
+                    &.active {
+                        font-family: Roboto-Light;
+                    }
+                    font-family: RobotoC-Bold;
+                    font-size: 20px;
+                    color: #5d5d5d;
+                    &:last-child {
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+        width: 100%;
+        .cmt__img {
+            height: 50px;
+            width: 50px;
+            background: map-get($mau, main-2);
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        .cmt__form {
+            margin-top: 20px;
+            display: flex;
+        }
+        .cmt__input {
+            width: 100%;
+            padding-left: 30px;
+            input {
+                height: 50px;
+                outline: none;
+                border: 1px solid map-get($mau, main-2);
+                width: 100%;
+                border-radius: 5px;
+                padding-left: 20px;
+            }
+        }
+        .cmt__item {
+            display: flex;
+            padding: 20px 0;
+            .cmt__content {
+                padding-left: 30px;
+                width: 100%;
+                p {
+                    font-size: 18px;
+                    font-family: Roboto-Light;
+                    &:first-child {
+                        margin-bottom: 8px;
+                    }
+                }
+            }
+        }
+    }
 }

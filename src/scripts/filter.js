@@ -28,7 +28,6 @@ const orderPrice = () => {
             const sort = $(".proFilter__item.price select").val();
             const min = Number($("#low").text());
             const max = Number($("#high").text());
-
             listPrice.forEach(element => {
                 const price = Number($(element).children("h4").eq(1).text());
                 if (sort == 1) {
@@ -42,6 +41,7 @@ const orderPrice = () => {
                 } else {
                     const dataDown = getSortDown();
                     const priceDown = dataDown.sort;
+                    console.log(dataDown);
                     for (let i = 0; i < priceDown.length; i++) {
                         if (priceDown[i] == price) {
                             $(element).parent().parent().css("order", i + 1);
@@ -63,7 +63,9 @@ const getPriceMinMax = () => {
     var obj = [];
     const listPrice = document.querySelectorAll(".proItem__price");
     listPrice.forEach(element => {
-        const price = Number($(element).children("h4").eq(1).text());
+        const current = $(element).children("h4").eq(1).attr("data-txt");
+        const strPrice = $(element).children("h4").eq(1).text();
+        const price = Number(strPrice.replace(" " + current, ""));
         obj.push(price);
     })
     const max = Math.max(...obj);
@@ -80,7 +82,9 @@ const getSortDown = () => {
     var obj = [];
     const listPrice = document.querySelectorAll(".proItem__price");
     listPrice.forEach(element => {
-        const price = Number($(element).children("h4").eq(1).text());
+        const current = $(element).children("h4").eq(1).attr("data-txt");
+        const strPrice = $(element).children("h4").eq(1).text();
+        const price = Number(strPrice.replace(" " + current, ""));
         obj.push(price);
     })
 
@@ -96,11 +100,12 @@ const showSale = () => {
     listPrice.forEach(element => {
         const price = Number($(element).children("h4").eq(1).text());
         const sale = Number($(element).children("h4").eq(1).attr("data-sale"));
+        const current = $(element).children("h4").eq(1).attr("data-txt");
         if (sale > 0) {
-            $(element).children("h4").eq(1).text(sale);
-            $(element).children("h4").eq(0).text(price);
+            $(element).children("h4").eq(1).text(price + " " + current);
+            $(element).children("h4").eq(0).text(price + " " + current);
         } else {
-            $(element).children("h4").eq(1).text(price);
+            $(element).children("h4").eq(1).text(price + " " + current);
             $(element).children("h4").eq(0).addClass("d-none");
             $(element).children("span").eq(0).addClass("d-none");
             $(element).addClass("noSale");

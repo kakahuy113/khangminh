@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Page | Google Map</title>
+		<title>Page | Index</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,6 +10,15 @@
 		<link rel="stylesheet" href="./css/main.min.css">
 	</head>
 	<body>
+		<div id="loading-container">
+			<div class="loading-wrapper">
+				<div id="loading-logo"><img src="./assets/loading.gif"></div>
+				<div class="progress">
+					<div id="progress-bar"></div>
+				</div>
+				<div class="progress-status">Loading: <span id="progress-percentage">0</span>%</div>
+			</div>
+		</div>
 		<header>
 			<div class="header__nav--top">
 				<div class="container">
@@ -156,19 +165,7 @@
 			</div>
 		</section>
 		<main>
-			<div class="map-wrapper">
-				<div class="row no-gutters">
-					<div class="col-lg-3">
-						<div class="dealer-locator-list">
-							<div class="list"></div>
-						</div>
-					</div>
-					<div class="col-lg-9">
-						<div id="map"></div>
-					</div>
-				</div>
-			</div>
-			<div class="map-page" id="js-page-verify" hidden></div>
+			<div class="index-page" id="js-page-verify" hidden></div>
 		</main>
 		<section class="partner">
 			<div class="container h-100">
@@ -234,38 +231,5 @@
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;libraries=places&amp;key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s"></script>
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
-		<script>
-			var locationsInput = [
-				{
-					lat: 10.8511063,
-					lng: 106.6867113,
-					title: 'Home',
-					address: '134/8A, Trần Bá Giao, Q.Gò Vấp, Tp. HCM',
-					phone: '0914.633.990'
-				},
-				{
-					lat: 12.1275322,
-					lng: 104.1095803,
-					title: 'Company',
-					address: '192/68, Nguyễn Oanh, Q.Gò Vấp, TP.HCM',
-					phone: '0905.010.115'
-				},
-				{
-					lat: 57.4483839,
-					lng: -99.8296627,
-					title: 'Company',
-					address: '192/68, Nguyễn Oanh, Q.Gò Vấp, TP.HCM',
-					phone: '0905.010.115'
-				},
-				{
-					lat: 10.8511010,
-					lng: 106.6867194,
-					title: 'Company',
-					address: '192/68, Nguyễn Oanh, Q.Gò Vấp, TP.HCM',
-					phone: '0905.010.115'
-				},
-			]
-		</script>
-		<script src="./js/GoogleMapController.min.js"></script>
 	</body>
 </html>
