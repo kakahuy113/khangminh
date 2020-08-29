@@ -4,7 +4,6 @@ import Axios from "axios";
 // import ApiService from './libraries/service'
 import { commonController } from "./libraries/CommonController";
 
-
 declare var Swiper: any;
 declare var $: any;
 
@@ -339,9 +338,8 @@ const viewImagesDetail = () =>{
 			$(".detail__mainImg img").addClass("d-none");
 			$(".detail__mainImg .youtube-api").removeClass("d-none");
 			const idYt = $(".youtube-api").attr("id");
-			console.log(idYt);
 			let url = $('#' + idYt).attr('src');
-            $('#' + idYt).attr('src', url + "&autoplay=1");
+			$('#' + idYt).attr('src', url + "&autoplay=1");
 		}else{
 			$(".detail__mainImg .youtube-api").addClass("d-none");
 			$(".detail__mainImg img").removeClass("d-none");
@@ -353,6 +351,35 @@ const viewImagesDetail = () =>{
 		$(this).parent().addClass("active");
 	});
 	$(".previews").first().trigger("click");
+}
+
+const changeQty = () =>{
+	$(".lower").click(function(e:any){
+	const qty = Number($("#qty_product").val());
+		if(qty == 1){
+			$(".lower").addClass("no-action");
+		}else{
+			$("#qty_product").val(qty-1);
+		}
+	});
+	$(".upper").click(function(e:any){
+	const qty = Number($("#qty_product").val());
+	if(qty==1){
+		$(".lower").removeClass("no-action");
+	}
+		$("#qty_product").val(qty+1);
+	});
+	//
+}
+
+const showContentDesc = () =>{
+	$(".desc__item .item__content").addClass("no-active");
+	$(".desc__item h3").addClass("no-active");
+	$(".desc__item h3").click(function(e:any){
+		const parent = $(this).parent();
+		$(parent).children(".item__content").toggleClass("no-active");
+		$(this).toggleClass("no-active");
+	})
 }
 
 document.addEventListener("DOMContentLoaded", async () => {
@@ -392,6 +419,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	ajaxFormContact();
 	Login();
 	viewImagesDetail();
+	changeQty();
+	showContentDesc();
 });
 
 const fetchData = () => {
