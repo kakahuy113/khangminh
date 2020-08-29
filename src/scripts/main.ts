@@ -377,7 +377,7 @@ const turnOffPopupWhenClicked = () => {
 };
 // show text when love empty
 const showTextWhenLoveEmpty = () => {
-	if(document.querySelector("love-list")) {
+	if(document.querySelector(".love-list")) {
 		const listItem = document.querySelectorAll(".list-of-love .item-wrapper")
 		const num = listItem.length;
 		if(num > 0) {
