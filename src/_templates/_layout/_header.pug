@@ -18,19 +18,19 @@ header
 									button.btn
 										img.svg(src="./assets/images/header/SVG/lookup.svg", alt="find")
 					.right
-						ul
-							li.account-item
+						.right__wrapper
+							.account-item(data-login="true" , id="")
 								a(href="")
 									img.svg(src="./assets/images/header/SVG/register.svg", alt="login")
 									span TÀI KHOẢN
 								.account-box
-									a(href="#" data-fancybox="login" data-src="#login").btn.btn-main Đăng nhập 
-									a(href="#" data-fancybox="register" data-src="#register").btn.btn-register Đăng ký 
-							li 
-								a(href="")
+									a(href="javascript:;" data-fancybox="login" data-src="#login").btn.btn-main Đăng nhập 
+									a(href="javascript:;" data-fancybox="register" data-src="#register").btn.btn-register Đăng ký 
+							.check 
+								a(href="javascript:;")
 									img.svg(src="./assets/images/header/SVG/checklist.svg", alt="check")
 									span KIỂM TRA ĐƠN HÀNG
-							li 
+							.cart 
 								a(href="")
 									img.svg(src="./assets/images/header/SVG/cart.svg", alt="cart")
 									span.cart-num 1
@@ -41,16 +41,16 @@ header
 					.pop-up-header
 						h3 ĐĂNG NHẬP
 					.pop-up-body
-						form
+						form#login-form
 							.form-group
-								input(type="text" placeholder="Điện thoại/Email")
+								input(name="username",type="text" placeholder="Điện thoại/Email")
 							.form-group
-								input(type="password" placeholder="Mật khẩu")
+								input(name="password",type="password" placeholder="Mật khẩu")
 							.form-button.btn__wrapper
 								button.btn.btn-readmore(data-url="../api/test.json") ĐĂNG NHẬP
 						.bottom-ask
 							p Chưa có tài khoản? 
-								a(href="#" data-fancybox="register2" data-src="#register") Đăng ký ngay
+								a(href="#" data-fancybox="register2" data-src="") Đăng ký ngay
 						.social
 							a.btn.btn-google(href="#")
 								img(src="./assets/icons/icon-google-plus.svg", alt="icon google plus")
@@ -65,19 +65,27 @@ header
 					.pop-up-body
 						form
 							.form-group
-								input(type="text" placeholder="Họ & Tên")
+								input(name="name",type="text" placeholder="Họ & Tên")
 							.form-group
-								input(type="numbber" placeholder="Phone")
+								input(name="phone",type="numbber" placeholder="Phone")
 							.form-group
-								input(type="text" placeholder="Tên Người Dùng")
+								input(name="username",type="text" placeholder="Tên Người Dùng")
 							.form-group
-								input(type="email" placeholder="Email")
+								input(name="email",type="email" placeholder="Email")
 							.form-group
-								input(type="password" placeholder="Mật Khẩu")
+								input(name="password",type="password" placeholder="Mật Khẩu")
 							.form-group
-								input(type="password" placeholder="Xác Nhận Mật Khẩu")
+								input(name="confirm-password",type="password" placeholder="Xác Nhận Mật Khẩu")
 							.form-button.btn__wrapper
-								button.btn.btn-readmore ĐĂNG KÍ
+								button.btn.btn-readmore(data-url="../api/test.json") ĐĂNG KÍ
+			#account.login-pop-up
+				.popup-wrapper
+					.btn.btn-login
+						a(href="love-lis.html") DANH SÁCH YÊU THÍCH  
+					.btn.btn-login
+						a(href="") QUẢN LÍ TÀI KHOẢN
+					.btn.btn-login
+						a(href="") ĐĂNG XUẤT
 	.header__logo
 		a(href="index.html").img
 			img(src="./assets/images/header/SVG/Logo.png", alt="Khang Minh")

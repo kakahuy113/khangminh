@@ -40,13 +40,13 @@
 								</ul>
 							</div>
 							<div class="right">
-								<ul>
-									<li class="account-item"><a href=""><img class="svg" src="./assets/images/header/SVG/register.svg" alt="login"><span>TÀI KHOẢN</span></a>
-										<div class="account-box"><a class="btn btn-main" href="#" data-fancybox="login" data-src="#login">Đăng nhập </a><a class="btn btn-register" href="#" data-fancybox="register" data-src="#register">Đăng ký </a></div>
-									</li>
-									<li> <a href=""><img class="svg" src="./assets/images/header/SVG/checklist.svg" alt="check"><span>KIỂM TRA ĐƠN HÀNG</span></a></li>
-									<li> <a href=""><img class="svg" src="./assets/images/header/SVG/cart.svg" alt="cart"><span class="cart-num">1</span><span>CART</span></a></li>
-								</ul>
+								<div class="right__wrapper">
+									<div class="account-item" data-login="true" id=""><a href=""><img class="svg" src="./assets/images/header/SVG/register.svg" alt="login"><span>TÀI KHOẢN</span></a>
+										<div class="account-box"><a class="btn btn-main" href="javascript:;" data-fancybox="login" data-src="#login">Đăng nhập </a><a class="btn btn-register" href="javascript:;" data-fancybox="register" data-src="#register">Đăng ký </a></div>
+									</div>
+									<div class="check"> <a href="javascript:;"><img class="svg" src="./assets/images/header/SVG/checklist.svg" alt="check"><span>KIỂM TRA ĐƠN HÀNG</span></a></div>
+									<div class="cart"> <a href=""><img class="svg" src="./assets/images/header/SVG/cart.svg" alt="cart"><span class="cart-num">1</span><span>CART</span></a></div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -58,19 +58,19 @@
 								<h3>ĐĂNG NHẬP</h3>
 							</div>
 							<div class="pop-up-body">
-								<form>
+								<form id="login-form">
 									<div class="form-group">
-										<input type="text" placeholder="Điện thoại/Email">
+										<input name="username" type="text" placeholder="Điện thoại/Email">
 									</div>
 									<div class="form-group">
-										<input type="password" placeholder="Mật khẩu">
+										<input name="password" type="password" placeholder="Mật khẩu">
 									</div>
 									<div class="form-button btn__wrapper">
 										<button class="btn btn-readmore" data-url="../api/test.json">ĐĂNG NHẬP</button>
 									</div>
 								</form>
 								<div class="bottom-ask">
-									<p>Chưa có tài khoản? <a href="#" data-fancybox="register2" data-src="#register">Đăng ký ngay</a></p>
+									<p>Chưa có tài khoản? <a href="#" data-fancybox="register2" data-src="">Đăng ký ngay</a></p>
 								</div>
 								<div class="social"><a class="btn btn-google" href="#"><img src="./assets/icons/icon-google-plus.svg" alt="icon google plus"><span>Đăng ký qua Google</span></a><a class="btn btn-facebook" href="#"><img src="./assets/icons/icon-facebook-2.svg" alt="icon facebook"><span>Đăng ký qua Facebook</span></a></div>
 							</div>
@@ -84,28 +84,35 @@
 							<div class="pop-up-body">
 								<form>
 									<div class="form-group">
-										<input type="text" placeholder="Họ &amp; Tên">
+										<input name="name" type="text" placeholder="Họ &amp; Tên">
 									</div>
 									<div class="form-group">
-										<input type="numbber" placeholder="Phone">
+										<input name="phone" type="numbber" placeholder="Phone">
 									</div>
 									<div class="form-group">
-										<input type="text" placeholder="Tên Người Dùng">
+										<input name="username" type="text" placeholder="Tên Người Dùng">
 									</div>
 									<div class="form-group">
-										<input type="email" placeholder="Email">
+										<input name="email" type="email" placeholder="Email">
 									</div>
 									<div class="form-group">
-										<input type="password" placeholder="Mật Khẩu">
+										<input name="password" type="password" placeholder="Mật Khẩu">
 									</div>
 									<div class="form-group">
-										<input type="password" placeholder="Xác Nhận Mật Khẩu">
+										<input name="confirm-password" type="password" placeholder="Xác Nhận Mật Khẩu">
 									</div>
 									<div class="form-button btn__wrapper">
-										<button class="btn btn-readmore">ĐĂNG KÍ</button>
+										<button class="btn btn-readmore" data-url="../api/test.json">ĐĂNG KÍ</button>
 									</div>
 								</form>
 							</div>
+						</div>
+					</div>
+					<div class="login-pop-up" id="account">
+						<div class="popup-wrapper">
+							<div class="btn btn-login"><a href="love-lis.html">DANH SÁCH YÊU THÍCH  </a></div>
+							<div class="btn btn-login"><a href="">QUẢN LÍ TÀI KHOẢN</a></div>
+							<div class="btn btn-login"><a href="">ĐĂNG XUẤT</a></div>
 						</div>
 					</div>
 				</div>
