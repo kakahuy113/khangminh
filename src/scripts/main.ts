@@ -1,7 +1,6 @@
 import { getSVGs, Loading } from "./utilities/util";
 // import { Fullpage, FullpageOptions } from "./libraries/Fullpage";
 import Axios from "axios";
-// import ApiService from './libraries/service'
 import { commonController } from "./libraries/CommonController";
 
 declare var Swiper: any;
@@ -128,7 +127,7 @@ const partnerSwiper = () => {
 const swiperProductHome = () => {
 	const swiper = new Swiper(".product__wrapper .swiper-container", {
 		slidesPerView: 3,
-		slidesPerGroup: 3,
+		slidesPerGroup: 1,
 		spaceBetween: 40,
 		navigation: {
 			nextEl: ".product__wrapper .swiper-button-next",
@@ -205,7 +204,6 @@ const showVideo = () => {
 		// })
 	}
 };
-
 //init submenu
 const initClassSubMenu = () => {
 	const items__MainMenu = document.querySelectorAll(
@@ -232,7 +230,6 @@ const initClassSubMenu = () => {
 		resolve();
 	});
 };
-
 //active menu
 const activeMenu = () => {
 	const link = window.location.href;
@@ -321,13 +318,107 @@ const changeHeightBackgroundSubNav = () => {
 		});
 	});
 };
-
+//login
 const Login = () => {
 	$("#login form .form-button button").on("click", (e: any) => {
 		e.preventDefault();
-		console.log("1");
+		const url = $(e.target).attr("data-url")
+		window.location.reload();
+		const formData = new FormData();
+		$('#login form .form-group input').each(function () {
+			const name = $(this).attr('name');
+			const value = $(this).val();
+			formData.append(name, value);
+		});
+		if($("#login form").valid() === true ) {
+			Axios.post(`${url}` , formData).then((res:any) => {
+				if(res.Code == 200) {
+					window.location.reload();
+				}
+		})
+		}
 	});
 };
+//register
+const Register = () => {
+	$("#register form .form-button button").on("click", (e: any) => {
+		e.preventDefault();
+		const url = $(e.target).attr("data-url")
+		
+		const formData = new FormData();
+		$('#register form .form-group input').each(function () {
+			const name = $(this).attr('name');
+			const value = $(this).val();
+			formData.append(name, value);
+		});
+		if($("#register form").valid() === true) {
+			Axios.post(`${url}` , formData).then((res:any) => {
+				if(res.Code == 200) {
+					alert(`${res.Message}`)
+				} else {
+					return;
+				}
+		}).then(() => {
+			window.location.reload();
+		})
+		}
+	});
+};
+//turn of when click
+const turnOffPopupWhenClicked = () => {
+	//set default hash = false
+	$.fancybox.defaults.hash = false;
+	$('[data-fancybox="register2"]').click(() => {
+		$.fancybox.close();
+	})
+	$('[data-fancybox="register2"]').fancybox({
+		src: '#register',
+	});
+};
+// show text when love empty
+const showTextWhenLoveEmpty = () => {
+	if(document.querySelector(".love-list")) {
+		const listItem = document.querySelectorAll(".list-of-love .item-wrapper")
+		const num = listItem.length;
+		if(num > 0) {
+			document.querySelector<HTMLElement>(".empty-list").style.display = "none"
+		} else {
+			document.querySelector<HTMLElement>(".add-all").style.display = "none"
+		}
+	}
+}
+
+const actionLoginPage = () => {
+	const check  = () => {
+		let isLogin: any = document.querySelector<HTMLElement>(".account-item")
+			.getAttribute("data-login");
+		if(isLogin == "true" ) {
+			isLogin = true
+		} else {
+			isLogin = false
+		}
+		return isLogin;
+	}
+	const isLogin = check();
+	if(isLogin) {
+		$(".account-box").css("display" , "none")
+		$(".account-item").on("click" , (e:any) => {
+			e.preventDefault();
+			$.fancybox.open({
+				src: "#account",
+				type: "inline"
+			})
+		})
+	} else {
+		$(".check").on("click", (e:any) => {
+			e.preventDefault();
+			$.fancybox.open({
+				src: "#login",
+				type: "inline"
+			})
+		})
+	}
+}
 
 const viewImagesDetail = () =>{
 	$(".previews").click(function(e:any){
@@ -418,6 +509,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 	// gui contact
 	ajaxFormContact();
 	Login();
+	Register();
+	//turn of popuu when click
+	turnOffPopupWhenClicked();
+	//show empty list
+	showTextWhenLoveEmpty();
+	//action for login page
+	actionLoginPage();
 	viewImagesDetail();
 	changeQty();
 	showContentDesc();

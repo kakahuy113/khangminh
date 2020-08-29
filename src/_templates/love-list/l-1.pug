@@ -1,0 +1,58 @@
+section.love-list
+	.container
+		.container-1190px
+			.love-list__wrapper
+				.list-of-love
+					.card-header
+						img.svg(src="./assets/images/love/love.svg", alt="love")
+						h5 DANH SÁCH YÊU THÍCH
+					.card-body
+						.empty-list
+							p Danh sách trống
+						.list-wrapper
+							.item-wrapper
+								.column-1.item
+									h5 4 SẢN PHẨM
+								.column-2.item
+									h5 GIÁ
+								.column-3.item
+							-for(var i=0; i< 4; i++)
+								.item-wrapper
+									.column-1.item
+										.wrapper
+											.img
+												img(src="./assets/images/love/love-item.png", alt="product")
+											.desc
+												p Yến sào chất lương cao không độc hại
+												p Mã SP(SKU): 3133
+												.state
+													.img
+														img.svg(src="./assets/images/love/check.svg", alt="product")
+													p Còn hàng
+												p REMOVE
+									.column-2.item
+										p 900.000 VNĐ
+									.column-3.item
+										button.btn.btn-buynow MUA NGAY
+						.add-all
+							a(href="") Thêm tất cả vào giỏ hàng
+				.seemore
+					h3 CÓ THỂ BẠN MUỐN XEM
+					.product__wrapper.text-center
+						.swiper-container
+							.swiper-wrapper
+								-for(var i = 0; i < 7; i++)
+									.swiper-slide
+										a(href="#").card
+											.card-body
+												.img
+													img(src="./assets/images/home/product-item.png", alt="")
+												.desc
+													p.lcl.lcl-2 Lorem ipsum dolor sit amet, consectetuer elit... 
+												.price
+													p.price 20.000.000 VNĐ/hộp
+													p.sale-price 20.000.000 VNĐ/hộp
+											.card-footer.btn
+												p ADD TO CART
+						.swiper-button-prev
+						.swiper-button-next

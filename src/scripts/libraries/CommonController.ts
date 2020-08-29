@@ -10,9 +10,6 @@ export const commonController = () => {
 			originalUrl;
 		window.location = redirectUrl;
 	}
-	console.log(1);
-	
-
 	// SET COOKKIE
 	function setCookie(c_name: any, value: any, exdays: any) {
 		var exdate: any = new Date();
