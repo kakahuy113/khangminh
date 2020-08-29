@@ -163,6 +163,7 @@ const swiperRelateNews = () => {
 const swiperProductDetail = () => {
 	const swiper = new Swiper(".detail__listImg .swiper-container", {
 		direction: "vertical",
+		slidesPerView: 3,
 	});
 };
 const addIdPopup = () => {
@@ -419,6 +420,59 @@ const actionLoginPage = () => {
 	}
 }
 
+const viewImagesDetail = () =>{
+	$(".previews").click(function(e:any){
+		e.preventDefault();
+		$(".previews").parent().removeClass("active");
+		const id = $(this).attr("data-id");
+		if(id !== ""){
+			$(".detail__mainImg img").addClass("d-none");
+			$(".detail__mainImg .youtube-api").removeClass("d-none");
+			const idYt = $(".youtube-api").attr("id");
+			let url = $('#' + idYt).attr('src');
+			$('#' + idYt).attr('src', url + "&autoplay=1");
+		}else{
+			$(".detail__mainImg .youtube-api").addClass("d-none");
+			$(".detail__mainImg img").removeClass("d-none");
+			const src = $(this).attr('src');
+			const alt = $(this).attr("alt");
+			$(".detail__mainImg img").attr('src',src);
+			$(".detail__mainImg img").attr('alt',alt);
+		} 
+		$(this).parent().addClass("active");
+	});
+	$(".previews").first().trigger("click");
+}
+
+const changeQty = () =>{
+	$(".lower").click(function(e:any){
+	const qty = Number($("#qty_product").val());
+		if(qty == 1){
+			$(".lower").addClass("no-action");
+		}else{
+			$("#qty_product").val(qty-1);
+		}
+	});
+	$(".upper").click(function(e:any){
+	const qty = Number($("#qty_product").val());
+	if(qty==1){
+		$(".lower").removeClass("no-action");
+	}
+		$("#qty_product").val(qty+1);
+	});
+	//
+}
+
+const showContentDesc = () =>{
+	$(".desc__item .item__content").addClass("no-active");
+	$(".desc__item h3").addClass("no-active");
+	$(".desc__item h3").click(function(e:any){
+		const parent = $(this).parent();
+		$(parent).children(".item__content").toggleClass("no-active");
+		$(this).toggleClass("no-active");
+	})
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
@@ -462,6 +516,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 	showTextWhenLoveEmpty();
 	//action for login page
 	actionLoginPage();
+	viewImagesDetail();
+	changeQty();
+	showContentDesc();
 });
 
 const fetchData = () => {

@@ -1,13 +1,105 @@
 section.ProDetail
 	.container
-		.container-1175px.detail__wrapper
+		.container-1190px.detail__wrapper
 			.detail__inner
 				.detail__img
 					.detail__mainImg
 						img(src="", alt="")
+						.youtube-api.d-none(data-url="https://www.youtube.com/watch?v=HOcl7DFqlI8")
 					.detail__listImg
 						.swiper-container
 							.swiper-wrapper
 								.swiper-slide
-									img(src="/assets/images/product/pro.png", alt="")
+									img.previews(src="./assets/images/product/pro.png", alt="" data-id)
+								.swiper-slide
+									img.previews(src="./assets/images/product/pro.png", alt="" data-id)
+								.swiper-slide
+									img.previews(src="./assets/images/product/pro.png", alt="",data-id="https://www.youtube.com/watch?v=HOcl7DFqlI8")
 				.detail__info
+					.deInfo__social
+						.social__item.chat
+							h4 Chat
+						.social__item
+							a(href="")
+								img.svg(src="./assets/images/product/mess.svg", alt="")
+						.social__item
+							a(href="")
+								img.svg(src="./assets/images/product/face.svg", alt="")
+						.social__item
+							a(href="")
+								img.svg(src="./assets/images/product/g.svg", alt="")
+					.deInfo__content
+						h2 YẾN SÀO CAO CẤP
+						h4 SLH2AK13885.200
+						.price__detail
+							h3 Giá:
+								span 900000 VNĐ/hộp
+							h3(data-sale="") Giá: 
+								span 900000 VNĐ/hộp
+						.content__info
+							h3 Dung tích:  Một hộp 6 lon
+							h3 Lon 190ml
+						.content__qty
+							h3 Số lượng:
+							.lower
+								span -
+							div
+								input#qty_product(type="number" disabled value="1")
+							.upper
+								span +
+						.content__cart
+							h4 Mua Ngay
+						.content__action
+							.action__item
+								.content
+									.icon
+										img.svg(src="./assets/images/product/cart.svg", alt="")
+									.txt
+										h4 THÊM VÀO GIỎ
+							.action__item
+								.content.active
+									.icon
+										img.svg(src="./assets/images/product/heart.svg", alt="")
+									.txt
+										h4 THÍCH
+				.deInfo__desc
+					.desc__item
+						h3 Công dụng:
+						.item__content
+							ul
+								li - Tổ yến 1%, đường phèn và nước
+								li - Không chất bảo quản, màu nhân tạo. 
+								li - Sản phẩm đặc biệt tốt cho nữ giới trong việc gìn giữ sắc xuân và chăm sóc sức khỏe
+					.desc__item
+						h3 Thành phần:
+						.item__content
+							ul
+								li - Tổ yến 1%, đường phèn và nước
+								li - Không chất bảo quản, màu nhân tạo. 
+								li - Sản phẩm đặc biệt tốt cho nữ giới trong việc gìn giữ sắc xuân và chăm sóc sức khỏe
+					.desc__item
+						h3 Hướng dẫn sử dụng:
+						.item__content
+							ul
+								li - Tổ yến 1%, đường phèn và nước
+								li - Không chất bảo quản, màu nhân tạo. 
+								li - Sản phẩm đặc biệt tốt cho nữ giới trong việc gìn giữ sắc xuân và chăm sóc sức khỏe
+				.deInfo__comment
+					.cmt__dash
+						.cmt__qty
+							p 2 bình luận
+						.cmt__time
+							a(href="/old") Cũ nhất
+							a(href="/news").active Mới nhất
+					.cmt__form
+						.cmt__img
+							img(src="", alt="")
+						.cmt__input
+							input(type="text" placeholder="Comment . . ")
+					.cmt__list
+						.cmt__item
+							.cmt__img
+								img(src="", alt="")
+							.cmt__content
+								p Sản phẩm rất tốt <3 <3 <3
+								p 25 Tháng 4 lúc 23:25

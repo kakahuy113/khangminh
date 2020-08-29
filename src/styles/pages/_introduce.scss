@@ -108,6 +108,9 @@ section.Introduce {
         // -----------------------------
         // -----------------------------
         &.t-4 {
+            #map {
+                height: 100%;
+            }
             .introduce__inner {
                 display: flex;
             }

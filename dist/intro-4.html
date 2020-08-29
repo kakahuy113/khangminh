@@ -141,6 +141,27 @@
 				</div>
 			</div>
 		</header>
+		<!-- SLIDER INIT WHEN #js-page-verify have class "index-page"-->
+		<section class="MainSlider__Banners">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<!-- ADD MORE IMAGE ALL THIS SECITON-->
+					<div class="swiper-slide"><a class="main_banner__link" href="#">
+							<!-- image-size: 1920x965 (index)-->
+							<!-- image-size: 1920x665px (subpage)-->
+							<div class="main_banner__img ov-h"><img class="object-cover fullsize" src="./assets/images/banner/mainbanner.png" alt="BANNER"></div></a></div>
+					<div class="swiper-slide"><a class="main_banner__link" href="#">
+							<!-- image-size: 1920x965 (index)-->
+							<!-- image-size: 1920x665px (subpage)-->
+							<div class="main_banner__img ov-h"><img class="object-cover fullsize" src="./assets/images/banner/mainbanner.png" alt="BANNER"></div></a></div>
+					<div class="swiper-slide"><a class="main_banner__link" href="#">
+							<!-- image-size: 1920x965 (index)-->
+							<!-- image-size: 1920x665px (subpage)-->
+							<div class="main_banner__img ov-h"><img class="object-cover fullsize" src="./assets/images/banner/mainbanner.png" alt="BANNER"></div></a></div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+		</section>
 		<main>
 			<section class="Introduce">
 				<div class="container">
@@ -148,7 +169,10 @@
 						<h2>HỆ THỐNG PHÂN PHỐI</h2>
 						<div class="introduce__inner">
 							<div class="intro__map">
-								<div class="map"></div>
+								<div class="map" id="map"></div>
+							</div>
+							<div class="dealer-locator-list">
+								<div class="list"></div>
 							</div>
 							<div class="introMap__search">
 								<div class="introMap__form">
@@ -318,7 +342,33 @@
 				</div>
 			</div>
 		</footer>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;libraries=places&amp;key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s"></script>
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
+		<script>
+			var locationsInput = [{
+				lat: 10.763806,
+				lng: 106.691302,
+				name: "HO CHI MINH",
+				address: "166A Trần Hưng Đạo ,P.Nguyễn Cư Trinh, Quận 1 ,TP. HCM",
+				phone: "(+028) 3606 8688",
+				image: "./img/icons/address.png"
+			}, {
+				lat: 10.776201,
+				lng: 106.687059,
+				name: "Bảo Tàng Chứng Tích Chiến Tranh",
+				address: "28 Võ Văn Tần, P.6, Quận 3, TP. Hồ Chí Minh, Việt Nam",
+				phone: "+84 28 3930 5587",
+				image: "./img/icons/address.png"
+			}, {
+				lat: 11.234336,
+				lng: 106.650274,
+				name: "Location3",
+				address: "Bình Thạnh, Hồ Chí Minh, Việt Nam",
+				phone: "+84 28 3930 5587",
+				image: "./img/icons/address.png"
+			}];
+		</script>
+		<script src="./js/GoogleMapController.min.js"></script>
 	</body>
 </html>

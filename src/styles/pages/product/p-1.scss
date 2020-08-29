@@ -72,6 +72,26 @@ section.Product {
             -ms-flex: 0 0 40%;
             flex: 0 0 40%;
             max-width: 40%;
+            #rangeProduct {
+                height: unset;
+                margin-top: 8px;
+            }
+            .range__inner {
+                display: flex;
+                justify-content: center;
+                padding: 10px;
+                background: white;
+                span {
+                    color: map-get($mau, main-2);
+                    b {
+                        font-weight: normal;
+                    }
+                }
+            }
+            .sliderPrice {
+                width: 60%;
+                padding: 0 20px;
+            }
             .noUi-handle:after,
             .noUi-handle:before {
                 content: none;
@@ -80,8 +100,9 @@ section.Product {
                 border: unset;
                 border-radius: unset;
                 background: unset;
-                cursor: default;
+                cursor: pointer;
                 box-shadow: unset;
+                top: -3px;
             }
             .noUi-target {
                 background: unset;
@@ -105,7 +126,7 @@ section.Product {
             -ms-flex: 0 0 10%;
             flex: 0 0 10%;
             max-width: 10%;
-            button {
+            #filter {
                 width: 100%;
                 outline: none;
                 border: none;
@@ -113,6 +134,10 @@ section.Product {
                 background: map-get($mau, main-2);
                 color: white;
                 text-transform: uppercase;
+                text-align: center;
+                margin-top: 35px;
+                cursor: pointer;
+                user-select: none;
             }
         }
     }
@@ -186,6 +211,9 @@ section.Product {
         }
     }
     .proItem__price {
+        &.noSale {
+            margin-top: 21px;
+        }
         text-align: center;
         margin-bottom: 20px;
         h4 {
@@ -233,6 +261,7 @@ section.Product {
 }
 
 section.ProDetail {
+    background: #F9F9F9;
     padding: 50px 0;
     .detail__inner {
         display: flex;
@@ -242,10 +271,384 @@ section.ProDetail {
         -ms-flex: 0 0 60%;
         flex: 0 0 60%;
         max-width: 60%;
+        display: flex;
     }
     .detail__info {
         -ms-flex: 0 0 40%;
         flex: 0 0 40%;
         max-width: 40%;
+    }
+    .detail__mainImg {
+        height: 595px;
+        width: 100%;
+        -ms-flex: 0 0 70%;
+        flex: 0 0 70%;
+        max-width: 70%;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .detail__listImg {
+        padding: 0 30px;
+        -ms-flex: 0 0 30%;
+        flex: 0 0 30%;
+        max-width: 30%;
+        .swiper-container {
+            height: 595px;
+        }
+        .swiper-slide {
+            cursor: pointer;
+            height: 100px !important;
+            margin-bottom: 20px;
+            &.active {
+                position: relative;
+                &::before {
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    background: map-get($mau, main-2);
+                    opacity: .4;
+                    z-index: 1;
+                    top: 0;
+                }
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+    .detail__info {
+        background: white;
+        padding: 20px;
+    }
+    .deInfo__social {
+        display: flex;
+        justify-content: flex-end;
+        height: 40px;
+        align-content: center;
+        .social__item {
+            cursor: pointer;
+            &.chat {
+                width: unset;
+                padding: 10px 30px;
+                margin-left: 0px;
+                text-align: center;
+                background: map-get($mau, main-2);
+                h4 {
+                    text-transform: uppercase;
+                    color: white;
+                    font-size: 16px;
+                }
+            }
+            height: 40px;
+            width: 40px;
+            margin-left: 20px;
+        }
+    }
+    .deInfo__content {
+        padding-top: 15px;
+        .content__info {
+            border-bottom: 1px solid #5D5D5D;
+            h3 {
+                display: inline-block;
+                &:last-child {
+                    margin-left: 50px;
+                    position: relative;
+                    &::before {
+                        position: absolute;
+                        top: 10px;
+                        left: -30px;
+                        font-size: 30px;
+                        content: '|';
+                    }
+                }
+            }
+        }
+        h2 {
+            font-size: 30px;
+            font-family: RobotoC-Regular;
+            color: #212121;
+            text-transform: uppercase;
+        }
+        h4 {
+            font-family: Roboto-Regular;
+            font-size: 16px;
+            color: #5d5d5d;
+            margin-bottom: 10px;
+        }
+        .price__detail {
+            border-top: 1px solid #5D5D5D;
+            border-bottom: 1px solid #5D5D5D;
+            h3 {
+                padding: 10px;
+                &:first-child {
+                    padding-bottom: 5px;
+                    span {
+                        text-decoration: line-through;
+                    }
+                }
+                &:last-child {
+                    padding-top: 0;
+                }
+            }
+        }
+        h3 {
+            padding: 20px 0;
+            font-size: 18px;
+            font-family: Roboto-Regular;
+            color: #5d5d5d;
+            >span {
+                font-size: 30px;
+                color: map-get($mau, main-2);
+                margin-left: 20px;
+            }
+        }
+        span {
+            font-family: Roboto-Regular;
+            color: #5d5d5d;
+            font-size: 18px;
+        }
+    }
+    .content__cart {
+        margin: 20px 0;
+        width: 100%;
+        background: #EAEAEA;
+        padding: 20px 0;
+        text-align: center;
+        cursor: pointer;
+        h4 {
+            user-select: none;
+            font-family: RobotoC-Regular;
+            font-size: 23px;
+            text-transform: uppercase;
+            color: #5d5d5d;
+            margin-bottom: unset;
+        }
+        &:hover {
+            background: map-get($mau, main-2);
+            transition: all .3s ease-in-out;
+            h4 {
+                color: white;
+                transition: all .3s ease-in-out;
+            }
+        }
+    }
+    .content__action {
+        display: flex;
+        margin: 0 -10px
+    }
+    .content {
+        background: #EAEAEA;
+        display: flex;
+        height: 66px;
+        justify-content: center;
+        align-items: center;
+        transition: all .3s ease-in-out;
+        cursor: pointer;
+        &:hover {
+            background: map-get($mau, main-2);
+            transition: all .3s ease-in-out;
+            .txt {
+                h4 {
+                    color: white;
+                    transition: all .3s ease-in-out;
+                }
+            }
+        }
+        &.active {
+            background: map-get($mau, main-2);
+            .txt {
+                h4 {
+                    color: white;
+                }
+            }
+        }
+        .icon {
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+        }
+        .txt {
+            h4 {
+                margin-bottom: unset;
+                user-select: none;
+                font-family: RobotoC-Regular;
+                font-size: 18px;
+                text-transform: uppercase;
+                color: #5d5d5d;
+                margin-bottom: unset;
+                transition: all .3s ease-in-out;
+            }
+        }
+    }
+    .action__item {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+        padding: 0 10px;
+    }
+    .content__qty {
+        display: flex;
+        padding: 20px 0;
+        h3 {
+            margin-right: 20px;
+        }
+        input {
+            width: 60px;
+            height: 50px;
+            outline: none;
+            border-top: 1px solid #5d5d5d;
+            border-bottom: 1px solid #5d5d5d;
+            font-size: 26px;
+            padding-left: 10px;
+        }
+        .upper,
+        .lower {
+            &.no-action {
+                background: #5d5d5d;
+                pointer-events: none;
+            }
+            height: 50px;
+            width: 50px;
+            text-align: center;
+            span {
+                width: 100%;
+                height: 100%;
+                display: inline-block;
+                font-size: 40px;
+                border: 1px solid #5d5d5d;
+                cursor: pointer;
+                user-select: none;
+            }
+        }
+    }
+    .deInfo__desc {
+        width: 100%;
+        margin: 40px 0;
+    }
+    .item__content {
+        &.no-active {
+            display: none;
+            padding: 0 0;
+        }
+    }
+    .desc__item {
+        border-bottom: 1px solid #5d5d5d;
+        padding: 10px 0;
+        width: 100%;
+        h3 {
+            font-size: 20px;
+            font-family: RobotoC-Bold;
+            margin-bottom: 20px;
+            cursor: pointer;
+            user-select: none;
+            &.no-active {
+                margin-bottom: 0;
+                &::before {
+                    content: '+';
+                }
+            }
+            &::before {
+                content: '-';
+                position: absolute;
+                right: 10px;
+            }
+        }
+        ul {
+            list-style: none;
+            padding-inline-start: 20px;
+            li {
+                font-family: Roboto-Light;
+                font-size: 18px;
+                margin-bottom: 8px;
+            }
+        }
+    }
+    .deInfo__comment {
+        padding: 20px;
+        background: white;
+        .cmt__dash {
+            padding: 20px 0;
+            border-bottom: 1px solid #5d5d5d;
+            width: 100%;
+            display: flex;
+            .cmt__qty {
+                display: flex;
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+                justify-content: flex-start;
+                p {
+                    color: #5d5d5d;
+                    font-size: 20px;
+                    font-family: RobotoC-Bold;
+                }
+            }
+            .cmt__time {
+                justify-content: flex-end;
+                display: flex;
+                -ms-flex: 0 0 50%;
+                flex: 0 0 50%;
+                max-width: 50%;
+                a {
+                    &.active {
+                        font-family: Roboto-Light;
+                    }
+                    font-family: RobotoC-Bold;
+                    font-size: 20px;
+                    color: #5d5d5d;
+                    &:last-child {
+                        margin-left: 20px;
+                    }
+                }
+            }
+        }
+        width: 100%;
+        .cmt__img {
+            height: 50px;
+            width: 50px;
+            background: map-get($mau, main-2);
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        .cmt__form {
+            margin-top: 20px;
+            display: flex;
+        }
+        .cmt__input {
+            width: 100%;
+            padding-left: 30px;
+            input {
+                height: 50px;
+                outline: none;
+                border: 1px solid map-get($mau, main-2);
+                width: 100%;
+                border-radius: 5px;
+                padding-left: 20px;
+            }
+        }
+        .cmt__item {
+            display: flex;
+            padding: 20px 0;
+            .cmt__content {
+                padding-left: 30px;
+                width: 100%;
+                p {
+                    font-size: 18px;
+                    font-family: Roboto-Light;
+                    &:first-child {
+                        margin-bottom: 8px;
+                    }
+                }
+            }
+        }
     }
 }

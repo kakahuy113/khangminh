@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Page | news</title>
+		<title>Page | Index</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,6 +10,15 @@
 		<link rel="stylesheet" href="./css/main.min.css">
 	</head>
 	<body>
+		<div id="loading-container">
+			<div class="loading-wrapper">
+				<div id="loading-logo"><img src="./assets/loading.gif"></div>
+				<div class="progress">
+					<div id="progress-bar"></div>
+				</div>
+				<div class="progress-status">Loading: <span id="progress-percentage">0</span>%</div>
+			</div>
+		</div>
 		<header>
 			<div class="header__nav--top">
 				<div class="container">
@@ -163,110 +172,7 @@
 			</div>
 		</section>
 		<main>
-			<section class="news home__news">
-				<div class="container">
-					<div class="container-1190px">
-						<div class="news__wrapper home__news__wrapper">
-							<div class="title__wrapper" data-title="NEWS">
-								<div>
-									<h2 class="title">CÔNG DỤNG</h2>
-								</div>
-							</div>
-							<div class="news--list row"><a class="news--item col-6" href="detail-news.html">
-									<div class="img-news overflow-hidden"><img class="ofcv fullsize lazyload blup-up" src="./assets/images/home/news-item-1.png" alt="news"></div>
-									<div class="desc-news row">
-										<div class="calendar col-4" number-calendar="12">
-											<div>
-												<p>December</p>
-											</div>
-										</div>
-										<div class="desc col-8">
-											<h4 class="lcl lcl-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, autem iste repudiandae ad amet pariatur ut inventore corporis nobis sint molestias veniam tenetur, accusantium sequi necessitatibus praesentium porro ex beatae!</h4>
-											<div class="date-time"><strong>24th, December</strong></div>
-											<p class="lcl lcl-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium odit assumenda consequatur nesciunt quis placeat quo, provident quaerat ut, cumque eaque. Quas, vel praesentium ea similique sapiente veritatis vero porro.</p>
-										</div>
-									</div></a><a class="news--item col-6" href="detail-news.html">
-									<div class="img-news overflow-hidden"><img class="ofcv fullsize lazyload blup-up" src="./assets/images/home/news-item-1.png" alt="news"></div>
-									<div class="desc-news row">
-										<div class="calendar col-4" number-calendar="12">
-											<div>
-												<p>December</p>
-											</div>
-										</div>
-										<div class="desc col-8">
-											<h4 class="lcl lcl-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, autem iste repudiandae ad amet pariatur ut inventore corporis nobis sint molestias veniam tenetur, accusantium sequi necessitatibus praesentium porro ex beatae!</h4>
-											<div class="date-time"><strong>24th, December</strong></div>
-											<p class="lcl lcl-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium odit assumenda consequatur nesciunt quis placeat quo, provident quaerat ut, cumque eaque. Quas, vel praesentium ea similique sapiente veritatis vero porro.</p>
-										</div>
-									</div></a><a class="news--item col-6" href="detail-news.html">
-									<div class="img-news overflow-hidden"><img class="ofcv fullsize lazyload blup-up" src="./assets/images/home/news-item-1.png" alt="news"></div>
-									<div class="desc-news row">
-										<div class="calendar col-4" number-calendar="12">
-											<div>
-												<p>December</p>
-											</div>
-										</div>
-										<div class="desc col-8">
-											<h4 class="lcl lcl-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, autem iste repudiandae ad amet pariatur ut inventore corporis nobis sint molestias veniam tenetur, accusantium sequi necessitatibus praesentium porro ex beatae!</h4>
-											<div class="date-time"><strong>24th, December</strong></div>
-											<p class="lcl lcl-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium odit assumenda consequatur nesciunt quis placeat quo, provident quaerat ut, cumque eaque. Quas, vel praesentium ea similique sapiente veritatis vero porro.</p>
-										</div>
-									</div></a><a class="news--item col-6" href="detail-news.html">
-									<div class="img-news overflow-hidden"><img class="ofcv fullsize lazyload blup-up" src="./assets/images/home/news-item-1.png" alt="news"></div>
-									<div class="desc-news row">
-										<div class="calendar col-4" number-calendar="12">
-											<div>
-												<p>December</p>
-											</div>
-										</div>
-										<div class="desc col-8">
-											<h4 class="lcl lcl-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, autem iste repudiandae ad amet pariatur ut inventore corporis nobis sint molestias veniam tenetur, accusantium sequi necessitatibus praesentium porro ex beatae!</h4>
-											<div class="date-time"><strong>24th, December</strong></div>
-											<p class="lcl lcl-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium odit assumenda consequatur nesciunt quis placeat quo, provident quaerat ut, cumque eaque. Quas, vel praesentium ea similique sapiente veritatis vero porro.</p>
-										</div>
-									</div></a><a class="news--item col-6" href="detail-news.html">
-									<div class="img-news overflow-hidden"><img class="ofcv fullsize lazyload blup-up" src="./assets/images/home/news-item-1.png" alt="news"></div>
-									<div class="desc-news row">
-										<div class="calendar col-4" number-calendar="12">
-											<div>
-												<p>December</p>
-											</div>
-										</div>
-										<div class="desc col-8">
-											<h4 class="lcl lcl-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, autem iste repudiandae ad amet pariatur ut inventore corporis nobis sint molestias veniam tenetur, accusantium sequi necessitatibus praesentium porro ex beatae!</h4>
-											<div class="date-time"><strong>24th, December</strong></div>
-											<p class="lcl lcl-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium odit assumenda consequatur nesciunt quis placeat quo, provident quaerat ut, cumque eaque. Quas, vel praesentium ea similique sapiente veritatis vero porro.</p>
-										</div>
-									</div></a><a class="news--item col-6" href="detail-news.html">
-									<div class="img-news overflow-hidden"><img class="ofcv fullsize lazyload blup-up" src="./assets/images/home/news-item-1.png" alt="news"></div>
-									<div class="desc-news row">
-										<div class="calendar col-4" number-calendar="12">
-											<div>
-												<p>December</p>
-											</div>
-										</div>
-										<div class="desc col-8">
-											<h4 class="lcl lcl-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae, autem iste repudiandae ad amet pariatur ut inventore corporis nobis sint molestias veniam tenetur, accusantium sequi necessitatibus praesentium porro ex beatae!</h4>
-											<div class="date-time"><strong>24th, December</strong></div>
-											<p class="lcl lcl-2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium odit assumenda consequatur nesciunt quis placeat quo, provident quaerat ut, cumque eaque. Quas, vel praesentium ea similique sapiente veritatis vero porro.</p>
-										</div>
-									</div></a>
-							</div>
-						</div>
-						<ul class="pagination">
-							<li class="pagination-prev"><a href="#"><<</a></li>
-							<li><a href="#">1</a></li>
-							<li class="active"><a href="#">2</a></li>
-							<li><a href="#">3</a></li>
-							<li><a href="#">4</a></li>
-							<li class="pagination-dot"><a href="#">...</a></li>
-							<li><a href="#">981</a></li>
-							<li class="pagination-next"><a href="#">>></a></li>
-						</ul>
-					</div>
-				</div>
-			</section>
-			<div class="news-page" id="js-page-verify" hidden></div>
+			<div class="index-page" id="js-page-verify" hidden></div>
 		</main>
 		<section class="partner">
 			<div class="container h-100">
