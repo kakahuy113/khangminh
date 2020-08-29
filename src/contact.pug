@@ -11,3 +11,14 @@ block banner,breadcrumb
 block main
 	include _templates/contact/c-1
 block scripts
+	script.
+		var locationsInput = [
+			{
+				lat: 10.8511063,
+				lng: 106.6867113,
+				title: 'Home',
+				address: '134/8A, Trần Bá Giao, Q.Gò Vấp, Tp. HCM',
+				phone: '0914.633.990'
+			}
+		]
+	script(src="./js/GoogleMapController.min.js")
