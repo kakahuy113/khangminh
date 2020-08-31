@@ -1,45 +1,117 @@
-.quantity-input {
-	display: flex;
-	width: 90px;
 
-	.minus,
-	.quantity,
-	.plus {
-		color: #888888;
-		cursor: pointer;
-		flex: 0 0 30px;
-		max-width: 30px;
-		height: 30px;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		border: 0;
-		font-size: 16px;
-		user-select: none;
-	}
-
-	.minus,
-	.plus {
-		font-size: 20px;
-	}
-
-	@media (max-width: 1024.98px) {
-		width: 60px;
-	}
-}
 .cart {
+	font-family: Roboto-Light;
+	td {
+		border-right: 1px solid #5d5d5d;
+		border-left: 1px solid #5d5d5d;
+		border-bottom:1px dashed #5d5d5d !important;
+	}
+	th {
+		border: 1px solid #5d5d5d;
+	}
+
 	table {
 		width: 100%;
+		text-align: center;
 		th {
-			// display: flex;
-			// align-items: center;
-			// justify-content: center;
+			height: 56px;
+			background: #eaeaea;
+			text-align: center;
 			&:not(:first-child) {
 				width: 15%;
 				max-width: 15%;
 			}
 		}
-		
+		.product {
+			.table-content {
+				display: flex;
+				align-items: center;
+				margin-left: 40px;
+				padding-top: 20px;
+				padding-bottom: 20px;
+				.img {
+					-ms-flex: 0 0 30%;
+					flex: 0 0 30%;
+					max-width: 30%;
+				}
+				.desc {
+					-ms-flex: 0 0 70%;
+					flex: 0 0 70%;
+					max-width: 70%;
+					padding-left: 40px;
+				}
+				.state {
+					display: flex;
+					margin-bottom: 10px;
+					p {
+						padding-left: 20px;
+						&:first-child {
+							padding-left: 0;
+						}
+					}
+					svg {
+						width: 23px !important;
+						height: 20px !important;
+					}
+				}
+			}	
+		}
+		.price {
+			text-align: center;
+		}
+		.total {
+			text-align: center;
+		}
+		.num {
+			.quantity-input {
+				display: flex;
+				width: 90px;
+				margin: 0 auto;
+				.minus,
+				.quantity,
+				.plus {
+					color: #888888;
+					cursor: pointer;
+					flex: 0 0 30px;
+					max-width: 30px;
+					height: 30px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					text-align: center;
+					border: 0;
+					font-size: 16px;
+					user-select: none;
+				}
+			
+				.minus,
+				.plus {
+					font-size: 20px;
+				}
+			
+				@media (max-width: 1024.98px) {
+					width: 60px;
+				}
+			}
+		}
+		.tempprice {
+			height: 78px;
+			text-align: left;
+			a {
+				font-size: 1.8rem;
+				font-family: Roboto-Light;
+				color: #a62c32;
+			}
+			td:last-child {
+				text-align: right !important;
+				padding-right: 20px;
+			}
+		}
+		tr:last-child {
+			text-align: right;
+			td {
+				display: flex;
+			}
+		}
 	}
 }

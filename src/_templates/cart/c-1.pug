@@ -12,27 +12,50 @@ section.cart
 							th TỔNG GIÁ
 						-for(var i =0; i < 3; i++)
 							tr
-								td
-									.img
-										img(src="./assets/images/love/love-item.png", alt="item")
-									.desc
-										p Yến sào cao cấp
-										.state
-											img.lazyload.blur-up(src="./assets/images/love/check-cart.png", alt="check")
-											p Còn Hàng
-										.state
-											img.svg(src="./assets/images/love/love.svg", alt="love")
-											p Yêu Thích
+								td.product 
+									.table-content
+										.img
+											img.ofcv.fullsize(src="./assets/images/love/love-item.png", alt="item")
+										.desc
+											.state
+												p Yến sào cao cấp
+											.state
+												img.lazyload.blur-up(src="./assets/images/love/check-cart.png", alt="check")
+												p Còn Hàng
+											.state
+												img.svg(src="./assets/images/love/love.svg", alt="love")
+												p Yêu Thích
 										
-								td
-									p 900.000 VNĐ
-								td
-									.quantity-input
-										span.minus -
-										input.quantity(value="7" readonly)
-										span.plus +
-								td
-									p 900.000 VNĐ
+								td.price
+									.table-content
+										p 900.000 VNĐ
+								td.num
+									.table-content
+										.quantity-input
+											span.minus -
+											input.quantity(value="7" readonly)
+											span.plus +
+								td.total
+									.table-content
+										p 900.000 VNĐ
+						tr.tempprice
+							td.wishlist
+								a(href="javascript:;") + Thêm sản phẩm từ danh sách yêu thích
+							td
+								p Tạm tính
+							td(colspan=2)
+								p 2.700.000 VNĐ
+						tr
+							td(colspan=4)
+								.desc-total
+									strong Tổng Tiền
+									p (Tổng số tiền thanh toán)
+								.price-total
+									p 2.700.000 VNĐ
+			.cart-func
+				button.btn.btn-cart TIẾP TỤC MUA HÀNG
+				button.btn.btn-cart XÓA GIỎ HÀNG
+				button.btn.btn-cart TIẾN HÀNH THANH TOÁN
 			.seemore
 				h3 CÓ THỂ BẠN MUỐN XEM
 				.product__wrapper.text-center

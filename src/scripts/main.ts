@@ -333,7 +333,7 @@ const Login = () => {
 		if($("#login form").valid() === true ) {
 			Axios.post(`${url}` , formData).then((res:any) => {
 				if(res.Code == 200) {
-					window.location.reload();
+					alert(`${res.Message}`)
 				}
 		})
 		}
@@ -358,8 +358,6 @@ const Register = () => {
 				} else {
 					return;
 				}
-		}).then(() => {
-			window.location.reload();
 		})
 		}
 	});
