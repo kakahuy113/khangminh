@@ -1,0 +1,179 @@
+section.Pay
+	.container
+		.container-1190px.pay__wrapper
+			.pay__inner
+				.pay__article
+					.patArticle__item
+						.pay__title
+							span 1
+							.checked.v-h
+								img.svg(src="./assets/images/product/checked.svg", alt="checked")
+							h2 Địa chỉ
+						form(action="")
+							.pay__location
+								.location__item
+									.location__txt
+										h3 Họ và Tên
+									.location__input
+										input(type="text" name="name")
+								.location__item
+									.location__txt
+										h3 Tỉnh/thành phố
+									.location__input.select
+										select(name="city")
+											option(value="1") Tp. Hồ Chí Minh
+								.location__item
+									.location__txt
+										h3 Quận/huyện
+									.location__input.select
+										select(name="district")
+											option(value="1") Gò Vấp
+								.location__item
+									.location__txt
+										h3 Phượng,xã
+									.location__input.select
+										select(name="wards")
+											option(value="1") F11
+								.location__item
+									.location__txt
+										h3 Tầng, số nhà, đường
+									.location__input
+										input(type="text" name="way")
+								.location__item
+									.location__txt
+										h3 Số điện thoại
+									.location__input
+										input(type="text" name="phone")
+								.location__item.checkbox
+									input(type="checkbox", name="location2" id="location2" value="1")
+									label(for="location2") Địa chỉ thanh toán khác
+								.location__item
+									.location__txt
+										h3 Họ và Tên
+									.location__input
+										input(type="text" name="name")
+								.location__item
+									.location__txt
+										h3 Tỉnh/thành phố
+									.location__input.select
+										select(name="city")
+											option(value="1") Tp. Hồ Chí Minh
+								.location__item
+									.location__txt
+										h3 Quận/huyện
+									.location__input.select
+										select(name="district")
+											option(value="1") Gò Vấp
+								.location__item
+									.location__txt
+										h3 Phượng,xã
+									.location__input.select
+										select(name="wards")
+											option(value="1") F11
+								.location__item
+									.location__txt
+										h3 Tầng, số nhà, đường
+									.location__input
+										input(type="text" name="way")
+								.location__item
+									.location__txt
+										h3 Số điện thoại
+									.location__input
+										input(type="text" name="phone")
+						.btn__next-pay
+							span Tiếp tục
+							.img
+								img.svg(src="./assets/images/product/ar-r.svg", alt="")
+					.patArticle__item
+						.pay__title
+							span 2
+							.checked.v-h
+								img.svg(src="./assets/images/product/checked.svg", alt="checked")
+							h2 thanh toán
+						.pay__method
+							//- form(action="#")
+							.method__item.active
+								.mtItem__radio
+									input#1(type="radio", name="method")
+									label(for="1") Thanh Toán Khi Nhận Hàng
+								.mtItem__content
+									p Quý khách sẽ thanh toán bằng tiền mặt khi nhận hàng tại nhà
+									p Bằng cách đặt hàng, bạn đồng ý với Chính sách bảo mật và Điều khoản sử dụng của Khang Minh.
+									p Bạn nhớ kiểm tra kỹ thông tin đơn hàng vì thông tin này sẽ không thể thay đổi sau khi đơn hàng được xác nhận thành công
+							.method__item
+								.mtItem__radio
+									input#2(type="radio", name="method")
+									label(for="2") Thẻ Tín Dụng/ Ghi Nợ
+								.mtItem__content
+									form(action="")
+										.location__item
+											.location__txt
+												h3 Số thẻ
+											.location__input
+												input(type="text" name="card")
+										.location__item
+											.location__txt
+												h3 Tên ghi trên thẻ
+											.location__input
+												input(type="text" name="name")
+										.location__item
+											.location__txt
+												h3 Ngày hết hạn
+											.location__input.dead
+												input(type="text" name="daed-day")
+												input(type="text" name="daed-month")
+										.location__item
+											.location__txt
+												h3 CCV / CVV
+											.location__input.ccv
+												input(type="text" name="daed")
+												span ?
+												//- .content__span
+												//- 	p Hello CVV
+												.save
+													h3 Lưu thông tin thẻ
+													.check__true
+														.img.v-h
+															img.svg(src="./assets/images/product/checked.svg", alt="checked")
+							.method__item
+								.mtItem__radio
+									input#3(type="radio", name="method")
+									label(for="3") Thẻ Atm Nội Địa/ Internet Banking ( 123pay )
+								.mtItem__content
+									p Để thực hiện việc thanh toán, bắt buộc thẻ ATM của bạn đã có đăng ký sử dụng dịch vụ Internet Banking.
+									p 123Pay hiện đã hỗ trợ thanh toán qua 25 ngân hàng tại Việt Nam.
+									p.style Chọn ngân hàng của bạn
+									form(action="")
+										.location__item
+											.location__input.select.w-100
+												select(name="wards")
+													option(value="1") Vui lòng chọn ngân hàng
+							.method__item
+								.mtItem__radio
+									input#4(type="radio", name="method")
+									label(for="4") Thanh Toán Chuyển Khoản
+								.mtItem__content
+									ul
+										li
+											p Chi Nhánh: Hai Bà Trưng, Hà Nội
+											p Ngân hàng Viettinbank , TK: Lê Thị Hằng Stk: 711A03652627
+										li
+											p Chi Nhánh: Bình Tây, Thành phố Hồ Chí Minh
+											p Ngân hàng Vietcombank, TK: Lê Thị Hằng. Stk: 0251002216474
+							.method__item
+								.mtItem__radio
+									input#5(type="radio", name="method")
+									label(for="5") Cửa Hàng Gần Nhà
+								.mtItem__content.smart
+									.cnt__item.active
+										.item__border
+									-for(var i =1;i<12;i++)
+										.cnt__item
+											.item__border
+					.patArticle__item
+						.pay__title
+							span 3
+							.checked.v-h
+								img.svg(src="./assets/images/product/checked.svg", alt="checked")
+							h2 giao hàng
+				.pay__aside

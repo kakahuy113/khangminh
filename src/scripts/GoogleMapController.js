@@ -9,69 +9,114 @@ let mapOption = {
     gestureHandling: "cooperative",
     zoom: 12,
     styles: [{
-            featureType: "administrative",
-            elementType: "labels.text.fill",
-            stylers: [{
-                color: "#444444",
-            }, ],
+            "featureType": "administrative",
+            "elementType": "labels.text.fill",
+            "stylers": [{
+                "color": "#444444"
+            }]
         },
         {
-            featureType: "landscape",
-            elementType: "all",
-            stylers: [{
-                color: "#f2f2f2",
-            }, ],
-        },
-        {
-            featureType: "poi",
-            elementType: "all",
-            stylers: [{
-                visibility: "off",
-            }, ],
-        },
-        {
-            featureType: "road",
-            elementType: "all",
-            stylers: [{
-                    saturation: -100,
+            "featureType": "administrative.country",
+            "elementType": "geometry.fill",
+            "stylers": [{
+                    "saturation": "-42"
                 },
                 {
-                    lightness: 45,
-                },
-            ],
+                    "gamma": "3.11"
+                }
+            ]
         },
         {
-            featureType: "road.highway",
-            elementType: "all",
-            stylers: [{
-                visibility: "simplified",
-            }, ],
+            "featureType": "administrative.locality",
+            "elementType": "geometry.fill",
+            "stylers": [{
+                "visibility": "off"
+            }]
         },
         {
-            featureType: "road.arterial",
-            elementType: "labels.icon",
-            stylers: [{
-                visibility: "off",
-            }, ],
+            "featureType": "landscape",
+            "elementType": "all",
+            "stylers": [{
+                "color": "#f2f2f2"
+            }]
         },
         {
-            featureType: "transit",
-            elementType: "all",
-            stylers: [{
-                visibility: "off",
-            }, ],
+            "featureType": "landscape.man_made",
+            "elementType": "labels.text.stroke",
+            "stylers": [{
+                "lightness": "-82"
+            }]
         },
         {
-            featureType: "water",
-            elementType: "all",
-            stylers: [{
-                    color: "#0c6db5",
+            "featureType": "poi",
+            "elementType": "all",
+            "stylers": [{
+                "visibility": "off"
+            }]
+        },
+        {
+            "featureType": "road",
+            "elementType": "all",
+            "stylers": [{
+                    "saturation": -100
                 },
                 {
-                    visibility: "on",
-                },
-            ],
+                    "lightness": 45
+                }
+            ]
         },
+        {
+            "featureType": "road.highway",
+            "elementType": "all",
+            "stylers": [{
+                "visibility": "simplified"
+            }]
+        },
+        {
+            "featureType": "road.arterial",
+            "elementType": "labels.icon",
+            "stylers": [{
+                "visibility": "off"
+            }]
+        },
+        {
+            "featureType": "road.local",
+            "elementType": "geometry.fill",
+            "stylers": [{
+                    "lightness": "100"
+                },
+                {
+                    "visibility": "on"
+                },
+                {
+                    "hue": "#ff0000"
+                },
+                {
+                    "saturation": "100"
+                },
+                {
+                    "weight": "1.83"
+                }
+            ]
+        },
+        {
+            "featureType": "transit",
+            "elementType": "all",
+            "stylers": [{
+                "visibility": "off"
+            }]
+        },
+        {
+            "featureType": "water",
+            "elementType": "all",
+            "stylers": [{
+                    "color": "#d0304e"
+                },
+                {
+                    "visibility": "on"
+                }
+            ]
+        }
     ],
 };
 

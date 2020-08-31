@@ -473,6 +473,55 @@ const showContentDesc = () =>{
 	})
 }
 
+const getMoreQuestion = () =>{
+	const list = $(".guide__item");
+	for (let i = 0; i < list.length; i++) {
+			if(i>2){
+				$(".guide__item").eq(i).addClass("d-none");
+			}
+	}
+	$(".guide__btn--more").click(function(){
+		$(".guide__item").removeClass("d-none");
+		$(".guide__btn--more").addClass("d-none");
+	});
+}
+
+const ajaxQuestion = () => {
+	$(".btn__submit--guide").on("click", function (e: any) {
+		e.preventDefault();
+		const _thisBtn = $(this);
+		const url = _thisBtn.attr("data-url");
+		const formData = new FormData();
+		const nameText = $(".guide__input textarea").attr(
+			"name",
+		);
+		const valText = $(".guide__input textarea").val();
+		$(".guide__input input").each(function () {
+			const name = $(this).attr("name");
+			const value = $(this).val();
+			formData.append(name, value);
+		});
+		formData.append(nameText, valText);
+		if ($(".guide__form form").valid() === true) {
+			$.ajax({
+				url: url,
+				type: "post",
+				data: formData,
+				processData: false,
+				contentType: false,
+				beforeSend: function () {
+					_thisBtn.attr("disabled", "disabled");
+				},
+				success: function (res: any) {
+					alert(`${res.Message}`);
+					window.location.reload();
+					_thisBtn.removeAttr("disabled");
+				},
+			});
+		}
+	});
+};
+
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
@@ -508,6 +557,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	showVideo();
 	// gui contact
 	ajaxFormContact();
+	// ajaxQuestion
+	ajaxQuestion();
 	Login();
 	Register();
 	//turn of popuu when click
@@ -519,6 +570,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	viewImagesDetail();
 	changeQty();
 	showContentDesc();
+	getMoreQuestion();
 });
 
 const fetchData = () => {
