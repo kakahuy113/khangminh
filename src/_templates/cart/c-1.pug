@@ -1,8 +1,8 @@
-section.cart
+section.cart-page
 	.container
 		.container-1190px
 			.cart__wrapper
-				h3 GIỎ HÀNG CỦA TÔI
+				h3.title GIỎ HÀNG CỦA TÔI
 				.cart--table
 					table
 						tr
@@ -13,6 +13,7 @@ section.cart
 						-for(var i =0; i < 3; i++)
 							tr
 								td.product 
+									.close
 									.table-content
 										.img
 											img.ofcv.fullsize(src="./assets/images/love/love-item.png", alt="item")
@@ -33,7 +34,7 @@ section.cart
 									.table-content
 										.quantity-input
 											span.minus -
-											input.quantity(value="7" readonly)
+											input.quantity(value="5" readonly)
 											span.plus +
 								td.total
 									.table-content
@@ -58,7 +59,7 @@ section.cart
 				button.btn.btn-cart XÓA GIỎ HÀNG
 				button.btn.btn-cart TIẾN HÀNH THANH TOÁN
 			.seemore
-				h3 CÓ THỂ BẠN MUỐN XEM
+				h3 Sản Phẩm Khác
 				.product__wrapper.text-center
 					.swiper-container
 						.swiper-wrapper

@@ -332,6 +332,9 @@ const Login = () => {
 		if($("#login form").valid() === true ) {
 			Axios.post(`${url}` , formData).then((res:any) => {
 				if(res.Code == 200) {
+					window.location.reload();
+				}
+				if(res.Code === 400) {
 					alert(`${res.Message}`)
 				}
 		})
@@ -349,15 +352,18 @@ const Register = () => {
 			const value = $(this).val();
 			formData.append(name, value);
 		});
-		if($("#register form").valid() === true) {
+		// if($("#register form").valid() === true) {
 			Axios.post(`${url}` , formData).then((res:any) => {
 				if(res.Code == 200) {
+					$("#login input[type=text]").val(`${res.username}`);
+					$("#login input[type=password]").val(`${res.password}`);
+					$("#login form .form-button button").trigger("click")
+				}
+				if(res.Code === 400) {
 					alert(`${res.Message}`)
-				} else {
-					return;
 				}
 		})
-		}
+		// }
 	});
 };
 //turn of when click

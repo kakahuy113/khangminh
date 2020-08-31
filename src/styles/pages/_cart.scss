@@ -1,6 +1,15 @@
 
-.cart {
+.cart-page {
+	margin-top: 100px;
+	margin-bottom: 100px;
 	font-family: Roboto-Light;
+	h3.title {
+		color: #000;
+		font-size: 2.5rem;
+		font-family: RobotoC-Regular;
+		line-height: 3rem;
+		margin-bottom: 20px;
+	}
 	td {
 		border-right: 1px solid #5d5d5d;
 		border-left: 1px solid #5d5d5d;
@@ -11,96 +20,131 @@
 	}
 
 	table {
+		font-size: 1.8rem;
 		width: 100%;
 		text-align: center;
+		margin-bottom: 20px;
 		th {
 			height: 56px;
 			background: #eaeaea;
 			text-align: center;
+			font-family: Roboto-Bold;
 			&:not(:first-child) {
 				width: 15%;
 				max-width: 15%;
 			}
 		}
-		.product {
-			.table-content {
-				display: flex;
-				align-items: center;
-				margin-left: 40px;
-				padding-top: 20px;
-				padding-bottom: 20px;
-				.img {
-					-ms-flex: 0 0 30%;
-					flex: 0 0 30%;
-					max-width: 30%;
+		tr {
+			.product {
+				position: relative;
+				.close {
+					cursor: pointer;
+					position: absolute;
+					transition: 1s all ease-in-out;
+					width: 15px;
+					height: 15px;
+					background: #eaeaea;
+					border-radius: 50%;
+					top: 18px;
+					left: 18px;
+					&::after {
+						content: "";
+						position: absolute;
+						width: 7px;
+						height: 7px;
+						background: url("../assets/images/love/close.png") no-repeat;
+						border-radius: 50%;
+						top:50%;
+						left:50%;
+						transform: translate(-50% , -50%);
+					}
 				}
-				.desc {
-					-ms-flex: 0 0 70%;
-					flex: 0 0 70%;
-					max-width: 70%;
-					padding-left: 40px;
-				}
-				.state {
+			
+				.table-content {
 					display: flex;
-					margin-bottom: 10px;
-					p {
-						padding-left: 20px;
-						&:first-child {
-							padding-left: 0;
+					align-items: center;
+					margin-left: 40px;
+					padding-top: 20px;
+					padding-bottom: 20px;
+					.img {
+						-ms-flex: 0 0 30%;
+						flex: 0 0 30%;
+						max-width: 30%;
+					}
+					.desc {
+						-ms-flex: 0 0 70%;
+						flex: 0 0 70%;
+						max-width: 70%;
+						padding-left: 40px;
+					}
+					.state {
+						display: flex;
+						margin-bottom: 10px;
+						p {
+							padding-left: 20px;
+							&:first-child {
+								padding-left: 0;
+							}
+						}
+						svg {
+							width: 23px !important;
+							height: 20px !important;
 						}
 					}
-					svg {
-						width: 23px !important;
-						height: 20px !important;
+				}	
+			}
+			.price {
+				text-align: center;
+			}
+			.total {
+				text-align: center;
+			}
+			.num {
+				.quantity-input {
+					display: flex;
+					width: 90px;
+					margin: 0 auto;
+					.minus,
+					.quantity,
+					.plus {
+						color: #888888;
+						cursor: pointer;
+						flex: 0 0 30px;
+						max-width: 30px;
+						height: 30px;
+						display: flex;
+						justify-content: center;
+						align-items: center;
+						text-align: center;
+						border: 0;
+						font-size: 16px;
+						user-select: none;
+					}
+				
+					.minus,
+					.plus {
+						font-size: 20px;
 					}
 				}
-			}	
-		}
-		.price {
-			text-align: center;
-		}
-		.total {
-			text-align: center;
-		}
-		.num {
-			.quantity-input {
-				display: flex;
-				width: 90px;
-				margin: 0 auto;
-				.minus,
-				.quantity,
-				.plus {
-					color: #888888;
-					cursor: pointer;
-					flex: 0 0 30px;
-					max-width: 30px;
-					height: 30px;
-					display: flex;
-					justify-content: center;
-					align-items: center;
-					text-align: center;
-					border: 0;
-					font-size: 16px;
-					user-select: none;
-				}
-			
-				.minus,
-				.plus {
-					font-size: 20px;
-				}
-			
-				@media (max-width: 1024.98px) {
-					width: 60px;
+			}
+			@media (min-width: 1025px) {
+				&:hover {
+					.close {
+						transition: 1s all ease-in-out;
+						background: #5d5d5d;
+					}
 				}
 			}
 		}
 		.tempprice {
 			height: 78px;
-			text-align: left;
 			a {
 				font-size: 1.8rem;
 				font-family: Roboto-Light;
 				color: #a62c32;
+			}
+			td:first-child {
+				text-align: left;
 			}
 			td:last-child {
 				text-align: right !important;
@@ -109,8 +153,65 @@
 		}
 		tr:last-child {
 			text-align: right;
+			height: 82px;
 			td {
+				border-bottom: 1px solid #5d5d5d !important;
 			}
+			.table-content {
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+				margin-right: 20px;
+				.desc-total {
+					display: flex;
+					flex-direction: column;
+					justify-content: flex-start;
+					font-size: 1.8rem;
+					margin-right: 120px;
+					strong {
+						text-align: left;
+						font-family: Din-Bold;
+					}
+				}
+				.price-total {
+					color: #a62c32;
+					font-family: RobotoC-Regular;
+					font-size: 2.5rem;
+				}
+			}
+		}
+	}
+	.cart-func {
+		width: 100%;
+		height: 84px;
+		background: #eaeaea;
+		display: flex;
+		padding: 0 20px;
+		align-items: center;
+		margin-bottom: 100px;
+		.btn-cart  {
+			height: 40px;
+			font-size: 1.8rem;
+			font-family: Roboto-Light;
+			line-height: 2.7rem;
+			color: #fff;
+			padding: 0 35px;
+			margin-left: 10px;
+			background: #a62c32;
+			&:first-child {
+				color: #000;
+				background: #fff;
+			}
+			&:last-child {
+				margin-left: auto;
+			}
+		}
+	}
+	.seemore {
+		h3 {
+			font-family: Roboto-Regular;
+			font-size: 1.8rem;
+			font-weight: 400;
 		}
 	}
 }

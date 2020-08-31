@@ -52,6 +52,11 @@ header {
 				.sumit {
 					position: absolute;
 					left: 0;
+					svg {
+						path {
+							fill : #fff
+						}
+					}
 				}
 				.form-input {
 					input {
