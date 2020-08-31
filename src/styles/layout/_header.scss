@@ -466,8 +466,10 @@ header {
 		height: 83px;
 		width: 100%;
 		margin-bottom: 10px;
+		transition: .3s all ease-in-out;
 		a {
 			width: 100%;
+			transition: .3s all ease-in-out;
 			height: 100%;
 			font-size: 3.5rem;
 			line-height: 4.2rem;
@@ -478,8 +480,10 @@ header {
 		}
 		@media (min-width: 1025px) {
 			&:hover {
+				transition: .3s all ease-in-out;
 				background: #a62c32;
 				a {
+					transition: .3s all ease-in-out;
 					color: #fff;
 				}
 			}

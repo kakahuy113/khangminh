@@ -1,0 +1,55 @@
+section.cart
+	.container
+		.container-1190px
+			.cart__wrapper
+				h3 GIỎ HÀNG CỦA TÔI
+				.cart--table
+					table
+						tr
+							th SẢN PHẨM
+							th ĐƠN GIÁ
+							th SỐ LƯỢNG
+							th TỔNG GIÁ
+						-for(var i =0; i < 3; i++)
+							tr
+								td
+									.img
+										img(src="./assets/images/love/love-item.png", alt="item")
+									.desc
+										p Yến sào cao cấp
+										.state
+											img.lazyload.blur-up(src="./assets/images/love/check-cart.png", alt="check")
+											p Còn Hàng
+										.state
+											img.svg(src="./assets/images/love/love.svg", alt="love")
+											p Yêu Thích
+										
+								td
+									p 900.000 VNĐ
+								td
+									.quantity-input
+										span.minus -
+										input.quantity(value="7" readonly)
+										span.plus +
+								td
+									p 900.000 VNĐ
+			.seemore
+				h3 CÓ THỂ BẠN MUỐN XEM
+				.product__wrapper.text-center
+					.swiper-container
+						.swiper-wrapper
+							-for(var i = 0; i < 7; i++)
+								.swiper-slide
+									a(href="#").card
+										.card-body
+											.img
+												img(src="./assets/images/home/product-item.png", alt="")
+											.desc
+												p.lcl.lcl-2 Lorem ipsum dolor sit amet, consectetuer elit... 
+											.price
+												p.price 20.000.000 VNĐ/hộp
+												p.sale-price 20.000.000 VNĐ/hộp
+										.card-footer.btn
+											p ADD TO CART
+					.swiper-button-prev
+					.swiper-button-next
