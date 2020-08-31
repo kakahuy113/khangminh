@@ -323,7 +323,6 @@ const Login = () => {
 	$("#login form .form-button button").on("click", (e: any) => {
 		e.preventDefault();
 		const url = $(e.target).attr("data-url")
-		window.location.reload();
 		const formData = new FormData();
 		$('#login form .form-group input').each(function () {
 			const name = $(this).attr('name');
@@ -344,7 +343,6 @@ const Register = () => {
 	$("#register form .form-button button").on("click", (e: any) => {
 		e.preventDefault();
 		const url = $(e.target).attr("data-url")
-		
 		const formData = new FormData();
 		$('#register form .form-group input').each(function () {
 			const name = $(this).attr('name');
