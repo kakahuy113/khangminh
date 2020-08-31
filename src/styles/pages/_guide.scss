@@ -1,0 +1,67 @@
+section.Guide {
+    padding: 50px 0;
+    h2 {
+        font-family: RobotoC-Bold;
+        font-size: 35px;
+        color: map-get($mau, main-2);
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    h6 {
+        margin: auto;
+        width: 70%;
+        font-family: Roboto-Light;
+        font-size: 18px;
+        text-align: center;
+        color: #5D5D5D;
+        margin-bottom: 50px;
+    }
+    .guide__ques {
+        background: map-get($mau, main-2);
+        width: 340px;
+        margin: auto;
+        padding: 20px 0;
+        position: relative;
+        &::before {
+            position: absolute;
+            bottom: 5px;
+            left: 50%;
+            width: 25px;
+            height: 16px;
+            background: url(../assets/images/guide/ar-b.png);
+            background-repeat: no-repeat;
+            content: '';
+            transform: translateX(-50%);
+        }
+        h3 {
+            font-family: Roboto-Light;
+            font-size: 35px;
+            color: white;
+            text-align: center;
+        }
+    }
+    .guide__form {
+        padding: 20px;
+        width: 50%;
+        margin: auto;
+        .guide__input {
+            margin-bottom: 20px;
+            input {
+                width: 100%;
+                outline: none;
+                padding: 10px 20px;
+                border: 1px solid map-get($mau, main-2);
+                border-radius: 10px;
+            }
+            textarea {
+                width: 100%;
+                outline: none;
+                padding: 10px 20px;
+                border: 1px solid map-get($mau, main-2);
+                border-radius: 10px;
+                resize: none;
+            }
+        }
+        .btn__submit--guide {}
+    }
+}
