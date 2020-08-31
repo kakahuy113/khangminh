@@ -352,7 +352,7 @@ const Register = () => {
 			const value = $(this).val();
 			formData.append(name, value);
 		});
-		// if($("#register form").valid() === true) {
+		if($("#register form").valid() === true) {
 			Axios.post(`${url}` , formData).then((res:any) => {
 				if(res.Code == 200) {
 					$("#login input[type=text]").val(`${res.username}`);
@@ -363,7 +363,7 @@ const Register = () => {
 					alert(`${res.Message}`)
 				}
 		})
-		// }
+		}
 	});
 };
 //turn of when click
