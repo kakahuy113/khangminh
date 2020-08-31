@@ -32,11 +32,11 @@
 							</div>
 							<div class="right">
 								<div class="right__wrapper">
-									<div class="account-item" data-login="true" id=""><a href=""><img class="svg" src="./assets/images/header/SVG/register.svg" alt="login"><span>TÀI KHOẢN</span></a>
+									<div class="account-item" data-login="false" id=""><a href="javascipt:;"><img class="svg" src="./assets/images/header/SVG/register.svg" alt="login"><span>TÀI KHOẢN</span></a>
 										<div class="account-box"><a class="btn btn-main" href="javascript:;" data-fancybox="login" data-src="#login">Đăng nhập </a><a class="btn btn-register" href="javascript:;" data-fancybox="register" data-src="#register">Đăng ký </a></div>
 									</div>
 									<div class="check"> <a href="javascript:;"><img class="svg" src="./assets/images/header/SVG/checklist.svg" alt="check"><span>KIỂM TRA ĐƠN HÀNG</span></a></div>
-									<div class="cart"> <a href=""><img class="svg" src="./assets/images/header/SVG/cart.svg" alt="cart"><span class="cart-num">1</span><span>CART</span></a></div>
+									<div class="cart"> <a href="cart.html"><img class="svg" src="./assets/images/header/SVG/cart.svg" alt="cart"><span class="cart-num">1</span><span>CART</span></a></div>
 								</div>
 							</div>
 						</div>
@@ -102,7 +102,7 @@
 					<div class="login-pop-up" id="account">
 						<div class="popup-wrapper">
 							<div class="btn btn-login"><a href="love-list.html">DANH SÁCH YÊU THÍCH  </a></div>
-							<div class="btn btn-login"><a href="">QUẢN LÍ TÀI KHOẢN</a></div>
+							<div class="btn btn-login"><a href="account-manage.html">QUẢN LÍ TÀI KHOẢN</a></div>
 							<div class="btn btn-login"><a href="">ĐĂNG XUẤT</a></div>
 						</div>
 					</div>
@@ -114,7 +114,7 @@
 					<div class="container-1190px">
 						<ul class="nav__wrapper">
 							<li><a class="text-uppercase" href="index.html">Trang Chủ</a></li>
-							<li><a class="text-uppercase" href="#">Giới thiệu</a>
+							<li><a class="text-uppercase" href="javascript:;">Giới thiệu</a>
 								<ul class="nav__wrapper">
 									<li><a href="introduce.html">Welcome to Khang Minh</a></li>
 									<li><a href="intro-2.html">Danh hiệu Giải thưởng</a></li>
@@ -123,18 +123,18 @@
 									<li><a href="intro-5.html">Hình ảnh & Video</a></li>
 								</ul>
 							</li>
-							<li><a class="text-uppercase" href="#">Sản Phẩm</a></li>
-							<li><a class="text-uppercase" href="#">Khuyến mãi</a></li>
-							<li><a class="text-uppercase" href="#">Tin tức</a>
+							<li><a class="text-uppercase" href="product.html">Sản Phẩm</a></li>
+							<li><a class="text-uppercase" href="javascript:;">Khuyến mãi</a></li>
+							<li><a class="text-uppercase" href="javascript:;">Tin tức</a>
 								<ul class="nav__wrapper">
-									<li><a class="active" href="#">Công dụng</a></li>
-									<li><a href="#">Cách chế biến</a></li>
-									<li><a href="#">Món ăn với tổ yến</a></li>
+									<li><a class="active" href="javascript:;">Công dụng</a></li>
+									<li><a href="javascript:;">Cách chế biến</a></li>
+									<li><a href="javascript:;">Món ăn với tổ yến</a></li>
 									<li><a href="news.html">Tin tức Khang Minh</a></li>
 								</ul>
 							</li>
-							<li><a class="text-uppercase" href="#">Hướng dẫn</a></li>
-							<li><a class="text-uppercase" href="#">Liên hệ</a></li>
+							<li><a class="text-uppercase" href="guide.html">Hướng dẫn</a></li>
+							<li><a class="text-uppercase" href="contact.html">Liên hệ</a></li>
 							<div class="background-submenu"></div>
 						</ul>
 					</div>
@@ -163,227 +163,107 @@
 			</div>
 		</section>
 		<main>
-			<section class="love-list">
+			<section class="account-manage">
 				<div class="container">
 					<div class="container-1190px">
-						<div class="love-list__wrapper">
-							<div class="list-of-love">
-								<div class="card-header"><img class="svg" src="./assets/images/love/love.svg" alt="love">
-									<h5>DANH SÁCH YÊU THÍCH</h5>
+						<div class="account-manage__wrapper">
+							<div class="card">
+								<div class="card-header">
+									<p>QUẢN LÍ TÀI KHOẢN</p>
 								</div>
-								<div class="card-body">
-									<div class="empty-list">
-										<p>Danh sách trống</p>
-									</div>
-									<div class="list-wrapper">
-										<div class="item-wrapper">
-											<div class="column-1 item">
-												<h5>4 SẢN PHẨM</h5>
-											</div>
-											<div class="column-2 item">
-												<h5>GIÁ</h5>
-											</div>
-											<div class="column-3 item"></div>
+								<div class="card-body overflow-hidden">
+									<div class="info">
+										<div class="self-info">
+											<p>Thông tin cá nhân</p>
+											<p>Trần Gia Huy</p>
+											<p>huytran.dev.web@gmail.com</p>
 										</div>
-										<div class="item-wrapper">
-											<div class="column-1 item">
-												<div class="wrapper">
-													<div class="img"><img src="./assets/images/love/love-item.png" alt="product"></div>
-													<div class="desc">
-														<p>Yến sào chất lương cao không độc hại</p>
-														<p>Mã SP(SKU): 3133</p>
-														<div class="state">
-															<div class="img"><img class="svg" src="./assets/images/love/check.svg" alt="product"></div>
-															<p>Còn hàng</p>
-														</div>
-														<p>REMOVE</p>
-													</div>
-												</div>
-											</div>
-											<div class="column-2 item">
-												<p>900.000 VNĐ</p>
-											</div>
-											<div class="column-3 item">
-												<button class="btn btn-buynow">MUA NGAY</button>
-											</div>
+										<div class="reveive address-form">
+											<p>Địa chỉ nhận hàng mặc định</p>
+											<p>Trần Gia Huy</p>
+											<p>Trần Minh Tiến 192/68, Nguyễn Oanh Hồ Chí Minh, Quận Gò Vấp, Phường 17 01678216033</p>
 										</div>
-										<div class="item-wrapper">
-											<div class="column-1 item">
-												<div class="wrapper">
-													<div class="img"><img src="./assets/images/love/love-item.png" alt="product"></div>
-													<div class="desc">
-														<p>Yến sào chất lương cao không độc hại</p>
-														<p>Mã SP(SKU): 3133</p>
-														<div class="state">
-															<div class="img"><img class="svg" src="./assets/images/love/check.svg" alt="product"></div>
-															<p>Còn hàng</p>
-														</div>
-														<p>REMOVE</p>
-													</div>
-												</div>
-											</div>
-											<div class="column-2 item">
-												<p>900.000 VNĐ</p>
-											</div>
-											<div class="column-3 item">
-												<button class="btn btn-buynow">MUA NGAY</button>
-											</div>
-										</div>
-										<div class="item-wrapper">
-											<div class="column-1 item">
-												<div class="wrapper">
-													<div class="img"><img src="./assets/images/love/love-item.png" alt="product"></div>
-													<div class="desc">
-														<p>Yến sào chất lương cao không độc hại</p>
-														<p>Mã SP(SKU): 3133</p>
-														<div class="state">
-															<div class="img"><img class="svg" src="./assets/images/love/check.svg" alt="product"></div>
-															<p>Còn hàng</p>
-														</div>
-														<p>REMOVE</p>
-													</div>
-												</div>
-											</div>
-											<div class="column-2 item">
-												<p>900.000 VNĐ</p>
-											</div>
-											<div class="column-3 item">
-												<button class="btn btn-buynow">MUA NGAY</button>
-											</div>
-										</div>
-										<div class="item-wrapper">
-											<div class="column-1 item">
-												<div class="wrapper">
-													<div class="img"><img src="./assets/images/love/love-item.png" alt="product"></div>
-													<div class="desc">
-														<p>Yến sào chất lương cao không độc hại</p>
-														<p>Mã SP(SKU): 3133</p>
-														<div class="state">
-															<div class="img"><img class="svg" src="./assets/images/love/check.svg" alt="product"></div>
-															<p>Còn hàng</p>
-														</div>
-														<p>REMOVE</p>
-													</div>
-												</div>
-											</div>
-											<div class="column-2 item">
-												<p>900.000 VNĐ</p>
-											</div>
-											<div class="column-3 item">
-												<button class="btn btn-buynow">MUA NGAY</button>
-											</div>
+										<div class="payment address-form">
+											<p>Địa chỉ thanh toán mặc định</p>
+											<p>Trần Gia Huy</p>
+											<p>Trần Minh Tiến 192/68, Nguyễn Oanh Hồ Chí Minh, Quận Gò Vấp, Phường 17 01678216033</p>
 										</div>
 									</div>
-									<div class="add-all"><a href="">Thêm tất cả vào giỏ hàng</a></div>
-								</div>
-							</div>
-							<div class="seemore">
-								<h3>CÓ THỂ BẠN MUỐN XEM</h3>
-								<div class="product__wrapper text-center">
-									<div class="swiper-container">
-										<div class="swiper-wrapper">
-											<div class="swiper-slide"><a class="card" href="#">
-													<div class="card-body">
-														<div class="img"><img src="./assets/images/home/product-item.png" alt=""></div>
-														<div class="desc">
-															<p class="lcl lcl-2">Lorem ipsum dolor sit amet, consectetuer elit... </p>
+									<div class="form-account hide" id="self-info">
+										<div class="wrapper">
+											<form>
+												<div class="form-group row">
+													<label class="col-3" for="email">Địa chỉ Email</label>
+													<div class="form-input col-9">
+														<input type="email" id="email" value="">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-3" for="name">Họ và Tên</label>
+													<div class="form-input col-9">
+														<input type="text" id="name" value="">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-3">Giới tính</label>
+													<div class="check-wrapper col-9">
+														<div class="form-check">
+															<label for="male">Nam</label>
+															<input type="radio" id="male" name="gender" value="Nam">
 														</div>
-														<div class="price">
-															<p class="price">20.000.000 VNĐ/hộp</p>
-															<p class="sale-price">20.000.000 VNĐ/hộp</p>
+														<div class="form-check">
+															<label for="female">Nữ</label>
+															<input type="radio" id="female" name="gender" value="Nữ">
 														</div>
 													</div>
-													<div class="card-footer btn">
-														<p>ADD TO CART</p>
-													</div></a></div>
-											<div class="swiper-slide"><a class="card" href="#">
-													<div class="card-body">
-														<div class="img"><img src="./assets/images/home/product-item.png" alt=""></div>
-														<div class="desc">
-															<p class="lcl lcl-2">Lorem ipsum dolor sit amet, consectetuer elit... </p>
-														</div>
-														<div class="price">
-															<p class="price">20.000.000 VNĐ/hộp</p>
-															<p class="sale-price">20.000.000 VNĐ/hộp</p>
-														</div>
-													</div>
-													<div class="card-footer btn">
-														<p>ADD TO CART</p>
-													</div></a></div>
-											<div class="swiper-slide"><a class="card" href="#">
-													<div class="card-body">
-														<div class="img"><img src="./assets/images/home/product-item.png" alt=""></div>
-														<div class="desc">
-															<p class="lcl lcl-2">Lorem ipsum dolor sit amet, consectetuer elit... </p>
-														</div>
-														<div class="price">
-															<p class="price">20.000.000 VNĐ/hộp</p>
-															<p class="sale-price">20.000.000 VNĐ/hộp</p>
-														</div>
-													</div>
-													<div class="card-footer btn">
-														<p>ADD TO CART</p>
-													</div></a></div>
-											<div class="swiper-slide"><a class="card" href="#">
-													<div class="card-body">
-														<div class="img"><img src="./assets/images/home/product-item.png" alt=""></div>
-														<div class="desc">
-															<p class="lcl lcl-2">Lorem ipsum dolor sit amet, consectetuer elit... </p>
-														</div>
-														<div class="price">
-															<p class="price">20.000.000 VNĐ/hộp</p>
-															<p class="sale-price">20.000.000 VNĐ/hộp</p>
-														</div>
-													</div>
-													<div class="card-footer btn">
-														<p>ADD TO CART</p>
-													</div></a></div>
-											<div class="swiper-slide"><a class="card" href="#">
-													<div class="card-body">
-														<div class="img"><img src="./assets/images/home/product-item.png" alt=""></div>
-														<div class="desc">
-															<p class="lcl lcl-2">Lorem ipsum dolor sit amet, consectetuer elit... </p>
-														</div>
-														<div class="price">
-															<p class="price">20.000.000 VNĐ/hộp</p>
-															<p class="sale-price">20.000.000 VNĐ/hộp</p>
-														</div>
-													</div>
-													<div class="card-footer btn">
-														<p>ADD TO CART</p>
-													</div></a></div>
-											<div class="swiper-slide"><a class="card" href="#">
-													<div class="card-body">
-														<div class="img"><img src="./assets/images/home/product-item.png" alt=""></div>
-														<div class="desc">
-															<p class="lcl lcl-2">Lorem ipsum dolor sit amet, consectetuer elit... </p>
-														</div>
-														<div class="price">
-															<p class="price">20.000.000 VNĐ/hộp</p>
-															<p class="sale-price">20.000.000 VNĐ/hộp</p>
-														</div>
-													</div>
-													<div class="card-footer btn">
-														<p>ADD TO CART</p>
-													</div></a></div>
-											<div class="swiper-slide"><a class="card" href="#">
-													<div class="card-body">
-														<div class="img"><img src="./assets/images/home/product-item.png" alt=""></div>
-														<div class="desc">
-															<p class="lcl lcl-2">Lorem ipsum dolor sit amet, consectetuer elit... </p>
-														</div>
-														<div class="price">
-															<p class="price">20.000.000 VNĐ/hộp</p>
-															<p class="sale-price">20.000.000 VNĐ/hộp</p>
-														</div>
-													</div>
-													<div class="card-footer btn">
-														<p>ADD TO CART</p>
-													</div></a></div>
+												</div>
+												<div class="form-button">
+													<button class="btn btn-cancle">HỦY</button>
+													<button class="btn btn-save">LƯU</button>
+												</div>
+											</form>
 										</div>
 									</div>
-									<div class="swiper-button-prev"></div>
-									<div class="swiper-button-next"></div>
+									<div class="form-account hide" id="address">
+										<div class="wrapper">
+											<form>
+												<div class="form-group row">
+													<label class="col-3" for="name">Họ và Tên</label>
+													<div class="form-input col-9">
+														<input type="text" id="email" value="">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-3" for="city">Tỉnh/Thành Phố</label>
+													<div class="form-input col-9">
+														<input type="text" id="city" value="">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-3" for="district">Quận/Huyện</label>
+													<div class="form-input col-9">
+														<input type="text" id="district" value="">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-3" for="road">Tầng,số nhà, đường</label>
+													<div class="form-input col-9">
+														<input type="text" id="road" value="">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-3" for="phone">Số điện thoại</label>
+													<div class="form-input col-9">
+														<input type="number" id="phone" value="">
+													</div>
+												</div>
+												<div class="form-button">
+													<button class="btn btn-cancle">HỦY</button>
+													<button class="btn btn-save">LƯU</button>
+												</div>
+											</form>
+										</div>
+									</div>
 								</div>
 							</div>
 						</div>

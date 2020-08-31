@@ -1,0 +1,80 @@
+section.cart-page
+	.container
+		.container-1190px
+			.cart__wrapper
+				h3.title GIỎ HÀNG CỦA TÔI
+				.cart--table
+					table
+						tr
+							th SẢN PHẨM
+							th ĐƠN GIÁ
+							th SỐ LƯỢNG
+							th TỔNG GIÁ
+						-for(var i =0; i < 3; i++)
+							tr
+								td.product 
+									.close
+									.table-content
+										.img
+											img.ofcv.fullsize(src="./assets/images/love/love-item.png", alt="item")
+										.desc
+											.state
+												p Yến sào cao cấp
+											.state
+												img.lazyload.blur-up(src="./assets/images/love/check-cart.png", alt="check")
+												p Còn Hàng
+											.state
+												img.svg(src="./assets/images/love/love.svg", alt="love")
+												p Yêu Thích
+										
+								td.price
+									.table-content
+										p 900.000 VNĐ
+								td.num
+									.table-content
+										.quantity-input
+											span.minus -
+											input.quantity(value="5" readonly)
+											span.plus +
+								td.total
+									.table-content
+										p 900.000 VNĐ
+						tr.tempprice
+							td.wishlist
+								a(href="javascript:;") + Thêm sản phẩm từ danh sách yêu thích
+							td
+								p Tạm tính
+							td(colspan=2)
+								p 2.700.000 VNĐ
+						tr
+							td(colspan=4)
+								.table-content
+									.desc-total
+										strong Tổng Tiền
+										p (Tổng số tiền thanh toán)
+									.price-total
+										p 2.700.000 VNĐ
+			.cart-func
+				button.btn.btn-cart TIẾP TỤC MUA HÀNG
+				button.btn.btn-cart XÓA GIỎ HÀNG
+				button.btn.btn-cart TIẾN HÀNH THANH TOÁN
+			.seemore
+				h3 Sản Phẩm Khác
+				.product__wrapper.text-center
+					.swiper-container
+						.swiper-wrapper
+							-for(var i = 0; i < 7; i++)
+								.swiper-slide
+									a(href="#").card
+										.card-body
+											.img
+												img(src="./assets/images/home/product-item.png", alt="")
+											.desc
+												p.lcl.lcl-2 Lorem ipsum dolor sit amet, consectetuer elit... 
+											.price
+												p.price 20.000.000 VNĐ/hộp
+												p.sale-price 20.000.000 VNĐ/hộp
+										.card-footer.btn
+											p ADD TO CART
+					.swiper-button-prev
+					.swiper-button-next

@@ -43,3 +43,8 @@
 #map {
 	height: 500px;
 }
+svg {
+	max-height: 25px;
+	max-width: 25px;
+	vertical-align: baseline;
+}
