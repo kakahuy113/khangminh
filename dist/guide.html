@@ -41,11 +41,11 @@
 							</div>
 							<div class="right">
 								<div class="right__wrapper">
-									<div class="account-item" data-login="true" id=""><a href=""><img class="svg" src="./assets/images/header/SVG/register.svg" alt="login"><span>TÀI KHOẢN</span></a>
+									<div class="account-item" data-login="false" id=""><a href="javascipt:;"><img class="svg" src="./assets/images/header/SVG/register.svg" alt="login"><span>TÀI KHOẢN</span></a>
 										<div class="account-box"><a class="btn btn-main" href="javascript:;" data-fancybox="login" data-src="#login">Đăng nhập </a><a class="btn btn-register" href="javascript:;" data-fancybox="register" data-src="#register">Đăng ký </a></div>
 									</div>
 									<div class="check"> <a href="javascript:;"><img class="svg" src="./assets/images/header/SVG/checklist.svg" alt="check"><span>KIỂM TRA ĐƠN HÀNG</span></a></div>
-									<div class="cart"> <a href=""><img class="svg" src="./assets/images/header/SVG/cart.svg" alt="cart"><span class="cart-num">1</span><span>CART</span></a></div>
+									<div class="cart"> <a href="cart.html"><img class="svg" src="./assets/images/header/SVG/cart.svg" alt="cart"><span class="cart-num">1</span><span>CART</span></a></div>
 								</div>
 							</div>
 						</div>
@@ -110,8 +110,8 @@
 					</div>
 					<div class="login-pop-up" id="account">
 						<div class="popup-wrapper">
-							<div class="btn btn-login"><a href="love-lis.html">DANH SÁCH YÊU THÍCH  </a></div>
-							<div class="btn btn-login"><a href="">QUẢN LÍ TÀI KHOẢN</a></div>
+							<div class="btn btn-login"><a href="love-list.html">DANH SÁCH YÊU THÍCH  </a></div>
+							<div class="btn btn-login"><a href="account-manage.html">QUẢN LÍ TÀI KHOẢN</a></div>
 							<div class="btn btn-login"><a href="">ĐĂNG XUẤT</a></div>
 						</div>
 					</div>
@@ -123,7 +123,7 @@
 					<div class="container-1190px">
 						<ul class="nav__wrapper">
 							<li><a class="text-uppercase" href="index.html">Trang Chủ</a></li>
-							<li><a class="text-uppercase" href="#">Giới thiệu</a>
+							<li><a class="text-uppercase" href="javascript:;">Giới thiệu</a>
 								<ul class="nav__wrapper">
 									<li><a href="introduce.html">Welcome to Khang Minh</a></li>
 									<li><a href="intro-2.html">Danh hiệu Giải thưởng</a></li>
@@ -132,18 +132,18 @@
 									<li><a href="intro-5.html">Hình ảnh & Video</a></li>
 								</ul>
 							</li>
-							<li><a class="text-uppercase" href="#">Sản Phẩm</a></li>
-							<li><a class="text-uppercase" href="#">Khuyến mãi</a></li>
-							<li><a class="text-uppercase" href="#">Tin tức</a>
+							<li><a class="text-uppercase" href="product.html">Sản Phẩm</a></li>
+							<li><a class="text-uppercase" href="javascript:;">Khuyến mãi</a></li>
+							<li><a class="text-uppercase" href="javascript:;">Tin tức</a>
 								<ul class="nav__wrapper">
-									<li><a class="active" href="#">Công dụng</a></li>
-									<li><a href="#">Cách chế biến</a></li>
-									<li><a href="#">Món ăn với tổ yến</a></li>
+									<li><a class="active" href="javascript:;">Công dụng</a></li>
+									<li><a href="javascript:;">Cách chế biến</a></li>
+									<li><a href="javascript:;">Món ăn với tổ yến</a></li>
 									<li><a href="news.html">Tin tức Khang Minh</a></li>
 								</ul>
 							</li>
-							<li><a class="text-uppercase" href="#">Hướng dẫn</a></li>
-							<li><a class="text-uppercase" href="#">Liên hệ</a></li>
+							<li><a class="text-uppercase" href="guide.html">Hướng dẫn</a></li>
+							<li><a class="text-uppercase" href="contact.html">Liên hệ</a></li>
 							<div class="background-submenu"></div>
 						</ul>
 					</div>
@@ -172,6 +172,48 @@
 			</div>
 		</section>
 		<main>
+			<section class="Guide">
+				<div class="container">
+					<div class="container-1190px guide__wrapper">
+						<h2>HỎI ĐÁP</h2>
+						<h6>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes. </h6>
+						<div class="guide__ques">
+							<h3>ĐẶT CÂU HỎI</h3>
+						</div>
+						<div class="guide__form">
+							<form action="#">
+								<input type="text" hidden>
+								<div class="guide__input">
+									<input type="text" name="name" placeholder="Full name*">
+								</div>
+								<div class="guide__input">
+									<input type="text" name="email" placeholder="Email*">
+								</div>
+								<div class="guide__input">
+									<input type="text" name="name" placeholder="Telephone*">
+								</div>
+								<div class="guide__input">
+									<textarea name="question" cols="30" rows="10" placeholder="Message*"></textarea>
+								</div>
+								<div class="btn__submit--guide">
+									<h4>GỬI</h4>
+								</div>
+							</form>
+						</div>
+						<div class="guide__list">
+							<div class="guide__item">
+								<div class="guide__stt">
+									<h2>1</h2>
+								</div>
+								<div class="guide__content">
+									<h5>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem ?</h5>
+									<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem ?Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem ?</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
 			<div class="index-page" id="js-page-verify" hidden></div>
 		</main>
 		<section class="partner">

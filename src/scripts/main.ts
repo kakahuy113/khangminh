@@ -323,7 +323,6 @@ const Login = () => {
 	$("#login form .form-button button").on("click", (e: any) => {
 		e.preventDefault();
 		const url = $(e.target).attr("data-url")
-		window.location.reload();
 		const formData = new FormData();
 		$('#login form .form-group input').each(function () {
 			const name = $(this).attr('name');
@@ -335,6 +334,9 @@ const Login = () => {
 				if(res.Code == 200) {
 					window.location.reload();
 				}
+				if(res.Code === 400) {
+					alert(`${res.Message}`)
+				}
 		})
 		}
 	});
@@ -344,7 +346,6 @@ const Register = () => {
 	$("#register form .form-button button").on("click", (e: any) => {
 		e.preventDefault();
 		const url = $(e.target).attr("data-url")
-		
 		const formData = new FormData();
 		$('#register form .form-group input').each(function () {
 			const name = $(this).attr('name');
@@ -354,12 +355,13 @@ const Register = () => {
 		if($("#register form").valid() === true) {
 			Axios.post(`${url}` , formData).then((res:any) => {
 				if(res.Code == 200) {
-					alert(`${res.Message}`)
-				} else {
-					return;
+					$("#login input[type=text]").val(`${res.username}`);
+					$("#login input[type=password]").val(`${res.password}`);
+					$("#login form .form-button button").trigger("click")
 				}
-		}).then(() => {
-			window.location.reload();
+				if(res.Code === 400) {
+					alert(`${res.Message}`)
+				}
 		})
 		}
 	});
@@ -377,7 +379,7 @@ const turnOffPopupWhenClicked = () => {
 };
 // show text when love empty
 const showTextWhenLoveEmpty = () => {
-	if(document.querySelector("love-list")) {
+	if(document.querySelector(".love-list")) {
 		const listItem = document.querySelectorAll(".list-of-love .item-wrapper")
 		const num = listItem.length;
 		if(num > 0) {
@@ -473,6 +475,63 @@ const showContentDesc = () =>{
 	})
 }
 
+const showInfoToManage = () => {
+	$(".self-info").on("click" , (e:any) => {
+		$("#address").addClass("hide")
+		$("#self-info").removeClass("hide")
+	})
+	document.querySelectorAll(".address-form").forEach(item => {
+		item.addEventListener("click" , () => {
+			$("#self-info").addClass("hide")
+			$("#address").removeClass("hide")
+		})
+	})
+	$(".self-info").trigger("click");
+}
+
+const cartQuantity = () => {
+	$('.quantity-input .minus').each(function() {
+		$(this).on("click", function() {
+			let alertContent = $(this).attr('data-alert');
+			let curVal = Number($(this).siblings("input").val())
+			if (curVal <= 0) {
+				curVal = 0;
+				alert(alertContent);
+			} else {
+				curVal -= 1;
+			}
+			$(this).siblings("input").val(curVal)
+		})
+	})
+
+	$('.quantity-input .plus').each(function() {
+		$(this).on("click", function() {
+			let alertContent = $(this).attr('data-alert');
+			let curVal = Number($(this).siblings("input").val())
+			if (curVal >= 5) {
+				curVal = 5;
+				alert(alertContent)
+			} else {
+				curVal += 1;
+			}
+			$(this).siblings("input").val(curVal)
+		})
+	})
+
+	$('.quantity-input .quantity').each(function() {
+		const alertContentMax = $('.quantity-input .plus').attr('data-alert');
+		const alertContentMin = $('.quantity-input .minus').attr('data-alert');
+		$(this).on("keyup", function() {
+			if ($(this).val() >= 5) {
+				// alert(alertContentMax)
+				$(this).val(5);
+			} else if ($(this).val() <= 0) {
+				// alert(alertContentMin)
+				$(this).val(0);
+			}
+		})
+	})
+}
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
@@ -516,9 +575,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 	showTextWhenLoveEmpty();
 	//action for login page
 	actionLoginPage();
+	//show info account manage page
+	showInfoToManage();
 	viewImagesDetail();
 	changeQty();
 	showContentDesc();
+	cartQuantity();
 });
 
 const fetchData = () => {

@@ -10,15 +10,6 @@
 		<link rel="stylesheet" href="./css/main.min.css">
 	</head>
 	<body>
-		<div id="loading-container">
-			<div class="loading-wrapper">
-				<div id="loading-logo"><img src="./assets/loading.gif"></div>
-				<div class="progress">
-					<div id="progress-bar"></div>
-				</div>
-				<div class="progress-status">Loading: <span id="progress-percentage">0</span>%</div>
-			</div>
-		</div>
 		<header>
 			<div class="header__nav--top">
 				<div class="container">
@@ -41,11 +32,11 @@
 							</div>
 							<div class="right">
 								<div class="right__wrapper">
-									<div class="account-item" data-login="true" id=""><a href=""><img class="svg" src="./assets/images/header/SVG/register.svg" alt="login"><span>TÀI KHOẢN</span></a>
+									<div class="account-item" data-login="false" id=""><a href="javascipt:;"><img class="svg" src="./assets/images/header/SVG/register.svg" alt="login"><span>TÀI KHOẢN</span></a>
 										<div class="account-box"><a class="btn btn-main" href="javascript:;" data-fancybox="login" data-src="#login">Đăng nhập </a><a class="btn btn-register" href="javascript:;" data-fancybox="register" data-src="#register">Đăng ký </a></div>
 									</div>
 									<div class="check"> <a href="javascript:;"><img class="svg" src="./assets/images/header/SVG/checklist.svg" alt="check"><span>KIỂM TRA ĐƠN HÀNG</span></a></div>
-									<div class="cart"> <a href=""><img class="svg" src="./assets/images/header/SVG/cart.svg" alt="cart"><span class="cart-num">1</span><span>CART</span></a></div>
+									<div class="cart"> <a href="cart.html"><img class="svg" src="./assets/images/header/SVG/cart.svg" alt="cart"><span class="cart-num">1</span><span>CART</span></a></div>
 								</div>
 							</div>
 						</div>
@@ -110,8 +101,8 @@
 					</div>
 					<div class="login-pop-up" id="account">
 						<div class="popup-wrapper">
-							<div class="btn btn-login"><a href="love-lis.html">DANH SÁCH YÊU THÍCH  </a></div>
-							<div class="btn btn-login"><a href="">QUẢN LÍ TÀI KHOẢN</a></div>
+							<div class="btn btn-login"><a href="love-list.html">DANH SÁCH YÊU THÍCH  </a></div>
+							<div class="btn btn-login"><a href="account-manage.html">QUẢN LÍ TÀI KHOẢN</a></div>
 							<div class="btn btn-login"><a href="">ĐĂNG XUẤT</a></div>
 						</div>
 					</div>
@@ -123,7 +114,7 @@
 					<div class="container-1190px">
 						<ul class="nav__wrapper">
 							<li><a class="text-uppercase" href="index.html">Trang Chủ</a></li>
-							<li><a class="text-uppercase" href="#">Giới thiệu</a>
+							<li><a class="text-uppercase" href="javascript:;">Giới thiệu</a>
 								<ul class="nav__wrapper">
 									<li><a href="introduce.html">Welcome to Khang Minh</a></li>
 									<li><a href="intro-2.html">Danh hiệu Giải thưởng</a></li>
@@ -132,18 +123,18 @@
 									<li><a href="intro-5.html">Hình ảnh & Video</a></li>
 								</ul>
 							</li>
-							<li><a class="text-uppercase" href="#">Sản Phẩm</a></li>
-							<li><a class="text-uppercase" href="#">Khuyến mãi</a></li>
-							<li><a class="text-uppercase" href="#">Tin tức</a>
+							<li><a class="text-uppercase" href="product.html">Sản Phẩm</a></li>
+							<li><a class="text-uppercase" href="javascript:;">Khuyến mãi</a></li>
+							<li><a class="text-uppercase" href="javascript:;">Tin tức</a>
 								<ul class="nav__wrapper">
-									<li><a class="active" href="#">Công dụng</a></li>
-									<li><a href="#">Cách chế biến</a></li>
-									<li><a href="#">Món ăn với tổ yến</a></li>
+									<li><a class="active" href="javascript:;">Công dụng</a></li>
+									<li><a href="javascript:;">Cách chế biến</a></li>
+									<li><a href="javascript:;">Món ăn với tổ yến</a></li>
 									<li><a href="news.html">Tin tức Khang Minh</a></li>
 								</ul>
 							</li>
-							<li><a class="text-uppercase" href="#">Hướng dẫn</a></li>
-							<li><a class="text-uppercase" href="#">Liên hệ</a></li>
+							<li><a class="text-uppercase" href="guide.html">Hướng dẫn</a></li>
+							<li><a class="text-uppercase" href="contact.html">Liên hệ</a></li>
 							<div class="background-submenu"></div>
 						</ul>
 					</div>
@@ -218,8 +209,7 @@
 							<div class="product__wrapper text-center">
 								<div class="swiper-container">
 									<div class="swiper-wrapper">
-										<div class="swiper-slide">
-											<div class="card">
+										<div class="swiper-slide"><a class="card" href="">
 												<div class="card-body">
 													<div class="img"><img src="./assets/images/home/product-item.png" alt=""></div>
 													<div class="desc">
@@ -232,11 +222,8 @@
 												</div>
 												<div class="card-footer btn">
 													<p>ADD TO CART</p>
-												</div>
-											</div>
-										</div>
-										<div class="swiper-slide">
-											<div class="card">
+												</div></a></div>
+										<div class="swiper-slide"><a class="card" href="">
 												<div class="card-body">
 													<div class="img"><img src="./assets/images/home/product-item.png" alt=""></div>
 													<div class="desc">
@@ -249,11 +236,8 @@
 												</div>
 												<div class="card-footer btn">
 													<p>ADD TO CART</p>
-												</div>
-											</div>
-										</div>
-										<div class="swiper-slide">
-											<div class="card">
+												</div></a></div>
+										<div class="swiper-slide"><a class="card" href="">
 												<div class="card-body">
 													<div class="img"><img src="./assets/images/home/product-item.png" alt=""></div>
 													<div class="desc">
@@ -266,9 +250,7 @@
 												</div>
 												<div class="card-footer btn">
 													<p>ADD TO CART</p>
-												</div>
-											</div>
-										</div>
+												</div></a></div>
 									</div>
 								</div>
 								<div class="swiper-button-prev"></div>
@@ -287,8 +269,7 @@
 							<h2 class="title">OUR PRODUCTS</h2>
 							<div class="swiper-container">
 								<div class="swiper-wrapper">
-									<div class="swiper-slide">
-										<div class="card">
+									<div class="swiper-slide"><a class="card" href="">
 											<div class="card-body">
 												<div class="img"><img src="./assets/images/home/product-item.png" alt=""></div>
 												<div class="desc">
@@ -300,11 +281,8 @@
 											</div>
 											<div class="card-footer btn">
 												<p>ADD TO CART</p>
-											</div>
-										</div>
-									</div>
-									<div class="swiper-slide">
-										<div class="card">
+											</div></a></div>
+									<div class="swiper-slide"><a class="card" href="">
 											<div class="card-body">
 												<div class="img"><img src="./assets/images/home/product-item.png" alt=""></div>
 												<div class="desc">
@@ -316,11 +294,8 @@
 											</div>
 											<div class="card-footer btn">
 												<p>ADD TO CART</p>
-											</div>
-										</div>
-									</div>
-									<div class="swiper-slide">
-										<div class="card">
+											</div></a></div>
+									<div class="swiper-slide"><a class="card" href="">
 											<div class="card-body">
 												<div class="img"><img src="./assets/images/home/product-item.png" alt=""></div>
 												<div class="desc">
@@ -332,11 +307,8 @@
 											</div>
 											<div class="card-footer btn">
 												<p>ADD TO CART</p>
-											</div>
-										</div>
-									</div>
-									<div class="swiper-slide">
-										<div class="card">
+											</div></a></div>
+									<div class="swiper-slide"><a class="card" href="">
 											<div class="card-body">
 												<div class="img"><img src="./assets/images/home/product-item.png" alt=""></div>
 												<div class="desc">
@@ -348,11 +320,8 @@
 											</div>
 											<div class="card-footer btn">
 												<p>ADD TO CART</p>
-											</div>
-										</div>
-									</div>
-									<div class="swiper-slide">
-										<div class="card">
+											</div></a></div>
+									<div class="swiper-slide"><a class="card" href="">
 											<div class="card-body">
 												<div class="img"><img src="./assets/images/home/product-item.png" alt=""></div>
 												<div class="desc">
@@ -364,11 +333,8 @@
 											</div>
 											<div class="card-footer btn">
 												<p>ADD TO CART</p>
-											</div>
-										</div>
-									</div>
-									<div class="swiper-slide">
-										<div class="card">
+											</div></a></div>
+									<div class="swiper-slide"><a class="card" href="">
 											<div class="card-body">
 												<div class="img"><img src="./assets/images/home/product-item.png" alt=""></div>
 												<div class="desc">
@@ -380,11 +346,8 @@
 											</div>
 											<div class="card-footer btn">
 												<p>ADD TO CART</p>
-											</div>
-										</div>
-									</div>
-									<div class="swiper-slide">
-										<div class="card">
+											</div></a></div>
+									<div class="swiper-slide"><a class="card" href="">
 											<div class="card-body">
 												<div class="img"><img src="./assets/images/home/product-item.png" alt=""></div>
 												<div class="desc">
@@ -396,11 +359,8 @@
 											</div>
 											<div class="card-footer btn">
 												<p>ADD TO CART</p>
-											</div>
-										</div>
-									</div>
-									<div class="swiper-slide">
-										<div class="card">
+											</div></a></div>
+									<div class="swiper-slide"><a class="card" href="">
 											<div class="card-body">
 												<div class="img"><img src="./assets/images/home/product-item.png" alt=""></div>
 												<div class="desc">
@@ -412,9 +372,7 @@
 											</div>
 											<div class="card-footer btn">
 												<p>ADD TO CART</p>
-											</div>
-										</div>
-									</div>
+											</div></a></div>
 								</div>
 							</div>
 							<div class="swiper-button-prev"></div>

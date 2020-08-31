@@ -1,0 +1,70 @@
+section.account-manage
+	.container
+		.container-1190px
+			.account-manage__wrapper
+				.card
+					.card-header
+						p QUẢN LÍ TÀI KHOẢN
+					.card-body.overflow-hidden
+						.info
+							.self-info
+								p Thông tin cá nhân
+								p Trần Gia Huy
+								p huytran.dev.web@gmail.com
+							.reveive.address-form
+								p Địa chỉ nhận hàng mặc định
+								p Trần Gia Huy
+								p Trần Minh Tiến 192/68, Nguyễn Oanh Hồ Chí Minh, Quận Gò Vấp, Phường 17 01678216033
+							.payment.address-form
+								p Địa chỉ thanh toán mặc định
+								p Trần Gia Huy
+								p Trần Minh Tiến 192/68, Nguyễn Oanh Hồ Chí Minh, Quận Gò Vấp, Phường 17 01678216033
+						#self-info.form-account.hide
+							.wrapper
+								form
+									.form-group.row
+										label.col-3(for="email") Địa chỉ Email
+										.form-input.col-9
+											input(type="email", id="email", value="")
+									.form-group.row
+										label.col-3(for="name") Họ và Tên
+										.form-input.col-9
+											input(type="text", id="name", value="")
+									.form-group.row
+										label.col-3 Giới tính
+										.check-wrapper.col-9
+											.form-check
+												label(for="male") Nam
+												input(type="radio", id="male", name="gender", value="Nam")
+											.form-check
+												label(for="female") Nữ
+												input(type="radio", id="female", name="gender", value="Nữ")
+									.form-button
+										button.btn.btn-cancle HỦY
+										button.btn.btn-save LƯU
+						#address.form-account.hide
+							.wrapper
+								form
+									.form-group.row
+										label.col-3(for="name") Họ và Tên
+										.form-input.col-9
+											input(type="text", id="email", value="")
+									.form-group.row
+										label.col-3(for="city") Tỉnh/Thành Phố
+										.form-input.col-9
+											input(type="text", id="city", value="")
+									.form-group.row
+										label.col-3(for="district") Quận/Huyện
+										.form-input.col-9
+											input(type="text", id="district", value="")
+									.form-group.row
+										label.col-3(for="road") Tầng,số nhà, đường
+										.form-input.col-9
+											input(type="text", id="road", value="")
+									.form-group.row
+										label.col-3(for="phone") Số điện thoại
+										.form-input.col-9
+											input(type="number", id="phone", value="")
+									.form-button
+										button.btn.btn-cancle HỦY
+										button.btn.btn-save LƯU

@@ -181,7 +181,7 @@
 		width: 100%;
 		height: 100%;
 		img {
-			opacity: .7;
+			opacity: 0.7;
 		}
 		&::after {
 			content: "";
@@ -211,7 +211,7 @@
 			z-index: 100;
 		}
 	}
-	
+
 	.banner--content {
 		z-index: 10;
 		h2.title {
@@ -239,6 +239,9 @@
 	position: relative;
 	margin-bottom: 50px;
 	.card {
+		color: #5d5d5d !important;
+		transition: 1s all ease-in-out;
+		display: block;
 		.card-body {
 			background: #fff;
 			text-align: center;
@@ -246,7 +249,7 @@
 			.img {
 				overflow: hidden;
 				img {
-					transition: 1s all ease-in-out;
+					transition: 0.3s all ease-in-out;
 				}
 			}
 			.desc {
@@ -262,7 +265,7 @@
 					font-size: 1.8rem;
 					font-family: Roboto-Regular;
 					line-height: 2.7rem;
-					transition: 1s all ease-in-out;
+					transition: 0.3s all ease-in-out;
 					&.price {
 						text-decoration-line: line-through;
 					}
@@ -273,19 +276,24 @@
 			background: #eaeaea;
 			width: 100%;
 			height: 48px;
-			transition: 1s all ease-in-out;
+			transition: 0.3s all ease-in-out;
+			p {
+				transition: 0.3s all ease-in-out;
+			}
 		}
 		@media (min-width: 1025px) {
 			&:hover {
+				transition: 1s all ease-in-out;
 				box-shadow: 1px 1px 5px rgba($color: #000000, $alpha: 0.3);
 				.img {
 					img {
-						transition: 1s all ease-in-out;
+						transition: 0.3s all ease-in-out;
 						transform: scale(1.1);
 					}
 				}
 				.price {
 					p {
+						transition: 0.3s all ease-in-out;
 						color: #a62c32;
 						opacity: 1;
 					}
@@ -293,6 +301,8 @@
 				.card-footer {
 					background: #a62c32;
 					p {
+						transition: 0.3s all ease-in-out;
+
 						color: #fff;
 					}
 				}
@@ -303,10 +313,7 @@
 		margin: 0 75px;
 		padding: 10px 5px;
 	}
-
-	
 }
-
 
 .home__ourproducts {
 	padding: 85px 0;
@@ -314,6 +321,7 @@
 	overflow: hidden;
 	.slogan {
 		z-index: 100;
+		pointer-events: none;
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -324,9 +332,9 @@
 		font-family: HelvelticaNeuePro;
 		font-size: 20rem;
 		font-weight: 900;
-		line-height: .8;
-		color: #EAEAEA;
-		opacity: .3;
+		line-height: 0.8;
+		color: #eaeaea;
+		opacity: 0.3;
 		overflow: hidden;
 		&::after {
 			position: absolute;
@@ -335,11 +343,11 @@
 			height: 100%;
 			top: 0;
 			right: 0;
-			background: url("../assets/images/home/thebest.png") ;
+			background: url("../assets/images/home/thebest.png");
 		}
 	}
 	h2.title {
-		font-size: 3.5rem; 
+		font-size: 3.5rem;
 		color: #a62c32;
 		line-height: 4.2rem;
 		text-align: center;
@@ -356,7 +364,6 @@
 		grid-auto-flow: column;
 	}
 }
-
 
 .home__news {
 	margin-bottom: 90px;
@@ -376,7 +383,6 @@
 				}
 			}
 		}
-		
 	}
 }
 
@@ -420,17 +426,17 @@
 					z-index: 10;
 				}
 				p {
-					color: #2B2B2B;
+					color: #2b2b2b;
 					font-size: 2rem;
 				}
-				
 			}
 			.desc {
 				h4 {
 					font-size: 1.7rem;
 					line-height: 2rem;
-					color: #2B2B2B;
+					color: #2b2b2b;
 					margin-bottom: 10px;
+					transition: 0.3 all ease-in-out;
 				}
 				.date-time {
 					margin-bottom: 10px;
@@ -453,7 +459,13 @@
 						transition: 1s all ease-in-out;
 					}
 				}
+				.desc {
+					h4 {
+						color: #a62c32;
+						transition: 0.3 all ease-in-out;
+					}
+				}
 			}
 		}
 	}
-} 
+}

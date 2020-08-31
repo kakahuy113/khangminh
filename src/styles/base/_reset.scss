@@ -308,3 +308,22 @@ template {
 *:active {
 	outline: none;
 }
+::-webkit-scrollbar-track {
+	
+	background-color: #CDD1D8;
+}
+
+::-webkit-scrollbar {
+	width           : 5px;
+	height          : 5px;
+	background-color: #fff;
+}
+
+::-webkit-scrollbar-thumb {
+	
+	background-color: map-get($mau, main-2);
+}
+.fancybox-active {
+    position: fixed;
+    overflow-y: scroll !important;
+}

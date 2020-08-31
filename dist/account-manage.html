@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Acount-manage | KhanhMinh</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="shortcut icon" type="image/png" href="/favicon/favicon.ico">
+		<link rel="stylesheet" href="./css/core.min.css">
+		<link rel="stylesheet" href="./css/main.min.css">
+	</head>
+	<body>
+		<header>
+			<div class="header__nav--top">
+				<div class="container">
+					<div class="container-1190px">
+						<div class="wrapper__utilities">
+							<div class="left">
+								<ul class="language">
+									<li class="languages__item item" data-language="vi"><a href="#">VN</a></li>
+									<li class="languages__item item" data-language="cn"><a href="#">CN</a></li>
+									<li class="languages__item item" data-language="en"><a href="#">EN</a></li>
+									<li>
+										<div class="form-input">
+											<input type="text">
+										</div>
+										<div class="sumit">
+											<button class="btn"><img class="svg" src="./assets/images/header/SVG/lookup.svg" alt="find"></button>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="right">
+								<div class="right__wrapper">
+									<div class="account-item" data-login="false" id=""><a href="javascipt:;"><img class="svg" src="./assets/images/header/SVG/register.svg" alt="login"><span>TÀI KHOẢN</span></a>
+										<div class="account-box"><a class="btn btn-main" href="javascript:;" data-fancybox="login" data-src="#login">Đăng nhập </a><a class="btn btn-register" href="javascript:;" data-fancybox="register" data-src="#register">Đăng ký </a></div>
+									</div>
+									<div class="check"> <a href="javascript:;"><img class="svg" src="./assets/images/header/SVG/checklist.svg" alt="check"><span>KIỂM TRA ĐƠN HÀNG</span></a></div>
+									<div class="cart"> <a href="cart.html"><img class="svg" src="./assets/images/header/SVG/cart.svg" alt="cart"><span class="cart-num">1</span><span>CART</span></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="d-none">
+					<div class="account-popup" id="login">
+						<div class="popup-wrapper">
+							<div class="pop-up-header">
+								<h3>ĐĂNG NHẬP</h3>
+							</div>
+							<div class="pop-up-body">
+								<form id="login-form">
+									<div class="form-group">
+										<input name="username" type="text" placeholder="Điện thoại/Email">
+									</div>
+									<div class="form-group">
+										<input name="password" type="password" placeholder="Mật khẩu">
+									</div>
+									<div class="form-button btn__wrapper">
+										<button class="btn btn-readmore" data-url="../api/test.json">ĐĂNG NHẬP</button>
+									</div>
+								</form>
+								<div class="bottom-ask">
+									<p>Chưa có tài khoản? <a href="#" data-fancybox="register2" data-src="">Đăng ký ngay</a></p>
+								</div>
+								<div class="social"><a class="btn btn-google" href="#"><img src="./assets/icons/icon-google-plus.svg" alt="icon google plus"><span>Đăng ký qua Google</span></a><a class="btn btn-facebook" href="#"><img src="./assets/icons/icon-facebook-2.svg" alt="icon facebook"><span>Đăng ký qua Facebook</span></a></div>
+							</div>
+						</div>
+					</div>
+					<div class="account-popup" id="register">
+						<div class="popup-wrapper">
+							<div class="pop-up-header">
+								<h3>ĐĂNG KÍ</h3>
+							</div>
+							<div class="pop-up-body">
+								<form>
+									<div class="form-group">
+										<input name="name" type="text" placeholder="Họ &amp; Tên">
+									</div>
+									<div class="form-group">
+										<input name="phone" type="numbber" placeholder="Phone">
+									</div>
+									<div class="form-group">
+										<input name="username" type="text" placeholder="Tên Người Dùng">
+									</div>
+									<div class="form-group">
+										<input name="email" type="email" placeholder="Email">
+									</div>
+									<div class="form-group">
+										<input name="password" type="password" placeholder="Mật Khẩu">
+									</div>
+									<div class="form-group">
+										<input name="confirm-password" type="password" placeholder="Xác Nhận Mật Khẩu">
+									</div>
+									<div class="form-button btn__wrapper">
+										<button class="btn btn-readmore" data-url="../api/test.json">ĐĂNG KÍ</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="login-pop-up" id="account">
+						<div class="popup-wrapper">
+							<div class="btn btn-login"><a href="love-list.html">DANH SÁCH YÊU THÍCH  </a></div>
+							<div class="btn btn-login"><a href="account-manage.html">QUẢN LÍ TÀI KHOẢN</a></div>
+							<div class="btn btn-login"><a href="">ĐĂNG XUẤT</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header__logo"><a class="img" href="index.html"><img src="./assets/images/header/SVG/Logo.png" alt="Khang Minh"></a></div>
+			<div class="header__nav--bottom">
+				<div class="container">
+					<div class="container-1190px">
+						<ul class="nav__wrapper">
+							<li><a class="text-uppercase" href="index.html">Trang Chủ</a></li>
+							<li><a class="text-uppercase" href="javascript:;">Giới thiệu</a>
+								<ul class="nav__wrapper">
+									<li><a href="introduce.html">Welcome to Khang Minh</a></li>
+									<li><a href="intro-2.html">Danh hiệu Giải thưởng</a></li>
+									<li><a href="intro-3.html">Đối tác</a></li>
+									<li><a href="intro-4.html">Hệ thống phân phối</a></li>
+									<li><a href="intro-5.html">Hình ảnh & Video</a></li>
+								</ul>
+							</li>
+							<li><a class="text-uppercase" href="product.html">Sản Phẩm</a></li>
+							<li><a class="text-uppercase" href="javascript:;">Khuyến mãi</a></li>
+							<li><a class="text-uppercase" href="javascript:;">Tin tức</a>
+								<ul class="nav__wrapper">
+									<li><a class="active" href="javascript:;">Công dụng</a></li>
+									<li><a href="javascript:;">Cách chế biến</a></li>
+									<li><a href="javascript:;">Món ăn với tổ yến</a></li>
+									<li><a href="news.html">Tin tức Khang Minh</a></li>
+								</ul>
+							</li>
+							<li><a class="text-uppercase" href="guide.html">Hướng dẫn</a></li>
+							<li><a class="text-uppercase" href="contact.html">Liên hệ</a></li>
+							<div class="background-submenu"></div>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- SLIDER INIT WHEN #js-page-verify have class "index-page"-->
+		<section class="MainSlider__Banners">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<!-- ADD MORE IMAGE ALL THIS SECITON-->
+					<div class="swiper-slide"><a class="main_banner__link" href="#">
+							<!-- image-size: 1920x965 (index)-->
+							<!-- image-size: 1920x665px (subpage)-->
+							<div class="main_banner__img ov-h"><img class="object-cover fullsize" src="./assets/images/banner/mainbanner.png" alt="BANNER"></div></a></div>
+					<div class="swiper-slide"><a class="main_banner__link" href="#">
+							<!-- image-size: 1920x965 (index)-->
+							<!-- image-size: 1920x665px (subpage)-->
+							<div class="main_banner__img ov-h"><img class="object-cover fullsize" src="./assets/images/banner/mainbanner.png" alt="BANNER"></div></a></div>
+					<div class="swiper-slide"><a class="main_banner__link" href="#">
+							<!-- image-size: 1920x965 (index)-->
+							<!-- image-size: 1920x665px (subpage)-->
+							<div class="main_banner__img ov-h"><img class="object-cover fullsize" src="./assets/images/banner/mainbanner.png" alt="BANNER"></div></a></div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+		</section>
+		<main>
+			<section class="account-manage">
+				<div class="container">
+					<div class="container-1190px">
+						<div class="account-manage__wrapper">
+							<div class="card">
+								<div class="card-header">
+									<p>QUẢN LÍ TÀI KHOẢN</p>
+								</div>
+								<div class="card-body overflow-hidden">
+									<div class="info">
+										<div class="self-info">
+											<p>Thông tin cá nhân</p>
+											<p>Trần Gia Huy</p>
+											<p>huytran.dev.web@gmail.com</p>
+										</div>
+										<div class="reveive address-form">
+											<p>Địa chỉ nhận hàng mặc định</p>
+											<p>Trần Gia Huy</p>
+											<p>Trần Minh Tiến 192/68, Nguyễn Oanh Hồ Chí Minh, Quận Gò Vấp, Phường 17 01678216033</p>
+										</div>
+										<div class="payment address-form">
+											<p>Địa chỉ thanh toán mặc định</p>
+											<p>Trần Gia Huy</p>
+											<p>Trần Minh Tiến 192/68, Nguyễn Oanh Hồ Chí Minh, Quận Gò Vấp, Phường 17 01678216033</p>
+										</div>
+									</div>
+									<div class="form-account hide" id="self-info">
+										<div class="wrapper">
+											<form>
+												<div class="form-group row">
+													<label class="col-3" for="email">Địa chỉ Email</label>
+													<div class="form-input col-9">
+														<input type="email" id="email" value="">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-3" for="name">Họ và Tên</label>
+													<div class="form-input col-9">
+														<input type="text" id="name" value="">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-3">Giới tính</label>
+													<div class="check-wrapper col-9">
+														<div class="form-check">
+															<label for="male">Nam</label>
+															<input type="radio" id="male" name="gender" value="Nam">
+														</div>
+														<div class="form-check">
+															<label for="female">Nữ</label>
+															<input type="radio" id="female" name="gender" value="Nữ">
+														</div>
+													</div>
+												</div>
+												<div class="form-button">
+													<button class="btn btn-cancle">HỦY</button>
+													<button class="btn btn-save">LƯU</button>
+												</div>
+											</form>
+										</div>
+									</div>
+									<div class="form-account hide" id="address">
+										<div class="wrapper">
+											<form>
+												<div class="form-group row">
+													<label class="col-3" for="name">Họ và Tên</label>
+													<div class="form-input col-9">
+														<input type="text" id="email" value="">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-3" for="city">Tỉnh/Thành Phố</label>
+													<div class="form-input col-9">
+														<input type="text" id="city" value="">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-3" for="district">Quận/Huyện</label>
+													<div class="form-input col-9">
+														<input type="text" id="district" value="">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-3" for="road">Tầng,số nhà, đường</label>
+													<div class="form-input col-9">
+														<input type="text" id="road" value="">
+													</div>
+												</div>
+												<div class="form-group row">
+													<label class="col-3" for="phone">Số điện thoại</label>
+													<div class="form-input col-9">
+														<input type="number" id="phone" value="">
+													</div>
+												</div>
+												<div class="form-button">
+													<button class="btn btn-cancle">HỦY</button>
+													<button class="btn btn-save">LƯU</button>
+												</div>
+											</form>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="love-list-page" id="js-page-verify" hidden></div>
+		</main>
+		<section class="partner">
+			<div class="container h-100">
+				<div class="container-1190px h-100">
+					<div class="swiper-container h-100">
+						<div class="swiper-wrapper h-100">
+							<div class="swiper-slide h-100">
+								<div class="img"><img src="./assets/images/footer/logo-1.png" alt="logo"></div>
+							</div>
+							<div class="swiper-slide h-100">
+								<div class="img"><img src="./assets/images/footer/logo-2.png" alt="logo"></div>
+							</div>
+							<div class="swiper-slide h-100">
+								<div class="img"><img src="./assets/images/footer/logo-3.png" alt="logo"></div>
+							</div>
+							<div class="swiper-slide h-100">
+								<div class="img"><img src="./assets/images/footer/logo-4.png" alt="logo"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="container">
+				<div class="container-1190px">
+					<div class="footer__content">
+						<div class="footer__about">
+							<h3 class="text-uppercase">About Us</h3>
+							<div class="img"><img src="./assets/images/footer/logo-footer.png" alt=""></div>
+							<div class="address">
+								<p>Lầu 8, Tòa nhà SAMCO, 326 Võ Văn Kiệt, Phường Cô Giang, Quận 1, TP.HCM.</p>
+							</div>
+						</div>
+						<div class="footer__menu">
+							<h3 class="text-uppercase">Menu</h3>
+							<ul>
+								<li><a class="text-uppercase" href="#">Giới Thiệu</a></li>
+								<li><a class="text-uppercase" href="#">Sản Phẩm</a></li>
+								<li><a class="text-uppercase" href="#">Khuyến mãi</a></li>
+								<li><a class="text-uppercase" href="#">Tin tức</a></li>
+								<li><a class="text-uppercase" href="#">Hướng dẫn</a></li>
+								<li><a class="text-uppercase" href="#">Liên Hệ</a></li>
+							</ul>
+						</div>
+						<div class="footer__subscribe">
+							<h3 class="text-uppercase">Subscribe</h3>
+							<p>Lorem ipsum dolor sit amet your email oke oke</p>
+							<input class="btn subscribe--input" type="text" placeholder="Your Email">
+							<button class="btn btn--sendus" data-url=""><span>SEND US</span></button>
+							<div class="social">
+								<div class="right"><img src="./assets/images/footer/subscibe-logo.png" alt="Ministry"></div>
+								<div class="left"><a href=""><img src="./assets/images/footer/face.png" alt="Ministry"></a><a href=""><img src="./assets/images/footer/youtube.png" alt="Ministry"></a><a href=""><img src="./assets/images/footer/twiter.png" alt="Ministry"></a><a href=""><img src="./assets/images/footer/google.png" alt="Ministry"></a></div>
+							</div>
+							<div class="copyright">
+								<p>© Design by Web4gsolutions</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;libraries=places&amp;key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s"></script>
+		<script type="text/javascript" src="./js/core.min.js"></script>
+		<script type="text/javascript" src="./js/main.min.js"></script>
+	</body>
+</html>

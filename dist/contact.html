@@ -32,11 +32,11 @@
 							</div>
 							<div class="right">
 								<div class="right__wrapper">
-									<div class="account-item" data-login="true" id=""><a href=""><img class="svg" src="./assets/images/header/SVG/register.svg" alt="login"><span>TÀI KHOẢN</span></a>
+									<div class="account-item" data-login="false" id=""><a href="javascipt:;"><img class="svg" src="./assets/images/header/SVG/register.svg" alt="login"><span>TÀI KHOẢN</span></a>
 										<div class="account-box"><a class="btn btn-main" href="javascript:;" data-fancybox="login" data-src="#login">Đăng nhập </a><a class="btn btn-register" href="javascript:;" data-fancybox="register" data-src="#register">Đăng ký </a></div>
 									</div>
 									<div class="check"> <a href="javascript:;"><img class="svg" src="./assets/images/header/SVG/checklist.svg" alt="check"><span>KIỂM TRA ĐƠN HÀNG</span></a></div>
-									<div class="cart"> <a href=""><img class="svg" src="./assets/images/header/SVG/cart.svg" alt="cart"><span class="cart-num">1</span><span>CART</span></a></div>
+									<div class="cart"> <a href="cart.html"><img class="svg" src="./assets/images/header/SVG/cart.svg" alt="cart"><span class="cart-num">1</span><span>CART</span></a></div>
 								</div>
 							</div>
 						</div>
@@ -101,8 +101,8 @@
 					</div>
 					<div class="login-pop-up" id="account">
 						<div class="popup-wrapper">
-							<div class="btn btn-login"><a href="love-lis.html">DANH SÁCH YÊU THÍCH  </a></div>
-							<div class="btn btn-login"><a href="">QUẢN LÍ TÀI KHOẢN</a></div>
+							<div class="btn btn-login"><a href="love-list.html">DANH SÁCH YÊU THÍCH  </a></div>
+							<div class="btn btn-login"><a href="account-manage.html">QUẢN LÍ TÀI KHOẢN</a></div>
 							<div class="btn btn-login"><a href="">ĐĂNG XUẤT</a></div>
 						</div>
 					</div>
@@ -114,7 +114,7 @@
 					<div class="container-1190px">
 						<ul class="nav__wrapper">
 							<li><a class="text-uppercase" href="index.html">Trang Chủ</a></li>
-							<li><a class="text-uppercase" href="#">Giới thiệu</a>
+							<li><a class="text-uppercase" href="javascript:;">Giới thiệu</a>
 								<ul class="nav__wrapper">
 									<li><a href="introduce.html">Welcome to Khang Minh</a></li>
 									<li><a href="intro-2.html">Danh hiệu Giải thưởng</a></li>
@@ -123,18 +123,18 @@
 									<li><a href="intro-5.html">Hình ảnh & Video</a></li>
 								</ul>
 							</li>
-							<li><a class="text-uppercase" href="#">Sản Phẩm</a></li>
-							<li><a class="text-uppercase" href="#">Khuyến mãi</a></li>
-							<li><a class="text-uppercase" href="#">Tin tức</a>
+							<li><a class="text-uppercase" href="product.html">Sản Phẩm</a></li>
+							<li><a class="text-uppercase" href="javascript:;">Khuyến mãi</a></li>
+							<li><a class="text-uppercase" href="javascript:;">Tin tức</a>
 								<ul class="nav__wrapper">
-									<li><a class="active" href="#">Công dụng</a></li>
-									<li><a href="#">Cách chế biến</a></li>
-									<li><a href="#">Món ăn với tổ yến</a></li>
+									<li><a class="active" href="javascript:;">Công dụng</a></li>
+									<li><a href="javascript:;">Cách chế biến</a></li>
+									<li><a href="javascript:;">Món ăn với tổ yến</a></li>
 									<li><a href="news.html">Tin tức Khang Minh</a></li>
 								</ul>
 							</li>
-							<li><a class="text-uppercase" href="#">Hướng dẫn</a></li>
-							<li><a class="text-uppercase" href="#">Liên hệ</a></li>
+							<li><a class="text-uppercase" href="guide.html">Hướng dẫn</a></li>
+							<li><a class="text-uppercase" href="contact.html">Liên hệ</a></li>
 							<div class="background-submenu"></div>
 						</ul>
 					</div>
@@ -198,7 +198,9 @@
 						</div>
 					</div>
 				</div>
-				<div class="contact__map"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d244.97797404885512!2d106.69580957754465!3d10.761620132571371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x8b46c4a713086302!2sSAMCO%20Building%20-%20Managed%20by%20SAVISTA!5e0!3m2!1svi!2s!4v1598586850645!5m2!1svi!2s" width="100%" height="1200" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+				<div class="contact__map">
+					<div class="map" id="map"></div>
+				</div>
 			</section>
 			<div class="introduce-page" id="js-page-verify" hidden></div>
 		</main>
@@ -266,5 +268,17 @@
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;libraries=places&amp;key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s"></script>
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
+		<script>
+			var locationsInput = [
+				{
+					lat: 10.8511063,
+					lng: 106.6867113,
+					title: 'Home',
+					address: '134/8A, Trần Bá Giao, Q.Gò Vấp, Tp. HCM',
+					phone: '0914.633.990'
+				}
+			]
+		</script>
+		<script src="./js/GoogleMapController.min.js"></script>
 	</body>
 </html>
