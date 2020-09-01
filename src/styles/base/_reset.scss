@@ -24,7 +24,7 @@ body {
     line-height: 1.2;
     color: #5D5D5D;
     background-color: #ffffff;
-    overflow: hidden auto;
+    overflow-y: auto;
 }
 
 article,
@@ -322,6 +322,18 @@ template {
 }
 
 .fancybox-active {
-    position: fixed;
-    overflow-y: scroll !important;
+    overflow: auto;
+}
+
+
+/* Required to enable scroll on iOS. But in core.js you refer 
+to iOS bug with inputs inside fixed elements. So removing position: fixed on  
+can break something? */
+
+.fancybox-iosfix {
+    position: static;
+}
+
+.compensate-for-scrollbar {
+    margin-right: 0;
 }

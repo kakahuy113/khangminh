@@ -95,3 +95,33 @@
 	color: #fff;
 	padding: 0 10px;
 }
+.btn-cart  {
+	height: 40px;
+	font-size: 1.8rem;
+	font-family: Roboto-Light;
+	line-height: 2.7rem;
+	color: #fff;
+	padding: 0 35px;
+	margin-left: 10px;
+	background: #a62c32;
+}
+.fancybox-button.fancybox-close-small {
+	padding: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 50%;
+	opacity: 1 !important;
+	svg {
+		background: #000;
+		border-radius: 50%;
+		path {
+			fill: #fff
+		}
+	}
+}
+.fancybox-slide--html .fancybox-close-small {
+	right: -17px !important;
+	top: -17px !important;
+}

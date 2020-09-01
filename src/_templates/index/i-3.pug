@@ -2,23 +2,24 @@ section.home__ourproducts.overflow-hidden
 	.slogan THE BEST 2020
 	.container
 		.container-1190px
-			.product__wrapper.text-center
+			.product__wrappers.text-center
 				h2.title OUR PRODUCTS
-				.swiper-container
-					.swiper-wrapper
-						-for(var i = 0; i < 8; i++)
-							.swiper-slide
-								a(href="").card
-									.card-body
-										.img
-											img(src="./assets/images/home/product-item.png", alt="")
-										.desc
-											p.lcl.lcl-2 Lorem ipsum dolor sit amet, consectetuer elit... 
-										.price
-											p.sale-price 20.000.000 VNĐ/hộp
-									.card-footer.btn
-										p ADD TO CART
-				.swiper-button-prev
-				.swiper-button-next
+				.wrapper
+					.swiper-container
+						.swiper-wrapper
+							-for(var i = 0; i < 8; i++)
+								.swiper-slide
+									a(href="").card
+										.card-body
+											.img
+												img(src="./assets/images/home/product-item.png", alt="")
+											.desc
+												p.lcl.lcl-2 Lorem ipsum dolor sit amet, consectetuer elit... 
+											.price
+												p.sale-price 20.000.000 VNĐ/hộp
+										.card-footer.btn
+											p ADD TO CART
+					.swiper-button-prev
+					.swiper-button-next
 			.btn__wrapper
 				a(href="#").btn.btn-readmore Read more
