@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Pay | KhanhMinh</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="shortcut icon" type="image/png" href="/favicon/favicon.ico">
+		<link rel="stylesheet" href="./css/core.min.css">
+		<link rel="stylesheet" href="./css/main.min.css">
+	</head>
+	<body>
+		<header>
+			<div class="header__nav--top">
+				<div class="container">
+					<div class="container-1190px">
+						<div class="wrapper__utilities">
+							<div class="left">
+								<ul class="language">
+									<li class="languages__item item" data-language="vi"><a href="#">VN</a></li>
+									<li class="languages__item item" data-language="cn"><a href="#">CN</a></li>
+									<li class="languages__item item" data-language="en"><a href="#">EN</a></li>
+									<li>
+										<div class="form-input">
+											<input type="text">
+										</div>
+										<div class="sumit">
+											<button class="btn"><img class="svg" src="./assets/images/header/SVG/lookup.svg" alt="find"></button>
+										</div>
+									</li>
+								</ul>
+							</div>
+							<div class="right">
+								<div class="right__wrapper">
+									<div class="account-item" data-login="false" id=""><a href="javascipt:;"><img class="svg" src="./assets/images/header/SVG/register.svg" alt="login"><span>TÀI KHOẢN</span></a>
+										<div class="account-box"><a class="btn btn-main" href="javascript:;" data-fancybox="login" data-src="#login">Đăng nhập </a><a class="btn btn-register" href="javascript:;" data-fancybox="register" data-src="#register">Đăng ký </a></div>
+									</div>
+									<div class="check"> <a href="javascript:;"><img class="svg" src="./assets/images/header/SVG/checklist.svg" alt="check"><span>KIỂM TRA ĐƠN HÀNG</span></a></div>
+									<div class="cart"> <a href="cart.html"><img class="svg" src="./assets/images/header/SVG/cart.svg" alt="cart"><span class="cart-num">1</span><span>CART</span></a></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="d-none">
+					<div class="account-popup" id="login">
+						<div class="popup-wrapper">
+							<div class="pop-up-header">
+								<h3>ĐĂNG NHẬP</h3>
+							</div>
+							<div class="pop-up-body">
+								<form id="login-form">
+									<div class="form-group">
+										<input name="username" type="text" placeholder="Điện thoại/Email">
+									</div>
+									<div class="form-group">
+										<input name="password" type="password" placeholder="Mật khẩu">
+									</div>
+									<div class="form-button btn__wrapper">
+										<button class="btn btn-readmore" data-url="../api/test.json">ĐĂNG NHẬP</button>
+									</div>
+								</form>
+								<div class="bottom-ask">
+									<p>Chưa có tài khoản? <a href="#" data-fancybox="register2" data-src="">Đăng ký ngay</a></p>
+								</div>
+								<div class="social"><a class="btn btn-google" href="#"><img src="./assets/icons/icon-google-plus.svg" alt="icon google plus"><span>Đăng ký qua Google</span></a><a class="btn btn-facebook" href="#"><img src="./assets/icons/icon-facebook-2.svg" alt="icon facebook"><span>Đăng ký qua Facebook</span></a></div>
+							</div>
+						</div>
+					</div>
+					<div class="account-popup" id="register">
+						<div class="popup-wrapper">
+							<div class="pop-up-header">
+								<h3>ĐĂNG KÍ</h3>
+							</div>
+							<div class="pop-up-body">
+								<form>
+									<div class="form-group">
+										<input name="name" type="text" placeholder="Họ &amp; Tên">
+									</div>
+									<div class="form-group">
+										<input name="phone" type="numbber" placeholder="Phone">
+									</div>
+									<div class="form-group">
+										<input name="username" type="text" placeholder="Tên Người Dùng">
+									</div>
+									<div class="form-group">
+										<input name="email" type="email" placeholder="Email">
+									</div>
+									<div class="form-group">
+										<input name="password" type="password" placeholder="Mật Khẩu">
+									</div>
+									<div class="form-group">
+										<input name="confirm-password" type="password" placeholder="Xác Nhận Mật Khẩu">
+									</div>
+									<div class="form-button btn__wrapper">
+										<button class="btn btn-readmore" data-url="../api/test.json">ĐĂNG KÍ</button>
+									</div>
+								</form>
+							</div>
+						</div>
+					</div>
+					<div class="login-pop-up" id="account">
+						<div class="popup-wrapper">
+							<div class="btn btn-login"><a href="love-list.html">DANH SÁCH YÊU THÍCH  </a></div>
+							<div class="btn btn-login"><a href="account-manage.html">QUẢN LÍ TÀI KHOẢN</a></div>
+							<div class="btn btn-login"><a href="">ĐĂNG XUẤT</a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="header__logo"><a class="img" href="index.html"><img src="./assets/images/header/SVG/Logo.png" alt="Khang Minh"></a></div>
+			<div class="header__nav--bottom">
+				<div class="container">
+					<div class="container-1190px">
+						<ul class="nav__wrapper">
+							<li><a class="text-uppercase" href="index.html">Trang Chủ1</a></li>
+							<li><a class="text-uppercase" href="javascript:;">Giới thiệu</a>
+								<ul class="nav__wrapper">
+									<li><a href="introduce.html">Welcome to Khang Minh</a></li>
+									<li><a href="intro-2.html">Danh hiệu Giải thưởng</a></li>
+									<li><a href="intro-3.html">Đối tác</a></li>
+									<li><a href="intro-4.html">Hệ thống phân phối</a></li>
+									<li><a href="intro-5.html">Hình ảnh & Video</a></li>
+								</ul>
+							</li>
+							<li><a class="text-uppercase" href="product.html">Sản Phẩm</a></li>
+							<li><a class="text-uppercase" href="javascript:;">Khuyến mãi</a></li>
+							<li><a class="text-uppercase" href="javascript:;">Tin tức</a>
+								<ul class="nav__wrapper">
+									<li><a class="active" href="javascript:;">Công dụng</a></li>
+									<li><a href="javascript:;">Cách chế biến</a></li>
+									<li><a href="javascript:;">Món ăn với tổ yến</a></li>
+									<li><a href="news.html">Tin tức Khang Minh</a></li>
+								</ul>
+							</li>
+							<li><a class="text-uppercase" href="guide.html">Hướng dẫn</a></li>
+							<li><a class="text-uppercase" href="contact.html">Liên hệ</a></li>
+							<div class="background-submenu"></div>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</header>
+		<!-- SLIDER INIT WHEN #js-page-verify have class "index-page"-->
+		<section class="MainSlider__Banners">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<!-- ADD MORE IMAGE ALL THIS SECITON-->
+					<div class="swiper-slide"><a class="main_banner__link" href="#">
+							<!-- image-size: 1920x965 (index)-->
+							<!-- image-size: 1920x665px (subpage)-->
+							<div class="main_banner__img ov-h"><img class="object-cover fullsize" src="./assets/images/banner/mainbanner.png" alt="BANNER"></div></a></div>
+					<div class="swiper-slide"><a class="main_banner__link" href="#">
+							<!-- image-size: 1920x965 (index)-->
+							<!-- image-size: 1920x665px (subpage)-->
+							<div class="main_banner__img ov-h"><img class="object-cover fullsize" src="./assets/images/banner/mainbanner.png" alt="BANNER"></div></a></div>
+					<div class="swiper-slide"><a class="main_banner__link" href="#">
+							<!-- image-size: 1920x965 (index)-->
+							<!-- image-size: 1920x665px (subpage)-->
+							<div class="main_banner__img ov-h"><img class="object-cover fullsize" src="./assets/images/banner/mainbanner.png" alt="BANNER"></div></a></div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+		</section>
+		<main>
+			<section class="Pay">
+				<div class="container">
+					<div class="container-1190px pay__wrapper">
+						<div class="pay__inner">
+							<div class="pay__article">
+								<div class="patArticle__item location">
+									<div class="pay__title location"><span>1</span>
+										<div class="checked v-h"><img class="svg" src="./assets/images/product/checked.svg" alt="checked"></div>
+										<h2>Địa chỉ</h2><b class="d-n change">Thay đổi</b>
+									</div>
+									<div class="pay__location">
+										<form action="">
+											<div class="location__item">
+												<div class="location__txt">
+													<h3>Họ và Tên</h3>
+												</div>
+												<div class="location__input">
+													<input type="text" name="name">
+												</div>
+											</div>
+											<div class="location__item">
+												<div class="location__txt">
+													<h3>Tỉnh/thành phố</h3>
+												</div>
+												<div class="location__input select">
+													<select name="city">
+														<option value="1">Tp. Hồ Chí Minh</option>
+													</select>
+												</div>
+											</div>
+											<div class="location__item">
+												<div class="location__txt">
+													<h3>Quận/huyện</h3>
+												</div>
+												<div class="location__input select">
+													<select name="district">
+														<option value="1">Gò Vấp</option>
+													</select>
+												</div>
+											</div>
+											<div class="location__item">
+												<div class="location__txt">
+													<h3>Phượng,xã</h3>
+												</div>
+												<div class="location__input select">
+													<select name="wards">
+														<option value="1">F11</option>
+													</select>
+												</div>
+											</div>
+											<div class="location__item">
+												<div class="location__txt">
+													<h3>Tầng, số nhà, đường</h3>
+												</div>
+												<div class="location__input">
+													<input type="text" name="way">
+												</div>
+											</div>
+											<div class="location__item">
+												<div class="location__txt">
+													<h3>Số điện thoại</h3>
+												</div>
+												<div class="location__input">
+													<input type="text" name="phone">
+												</div>
+											</div>
+											<div class="location__item checkbox">
+												<input type="checkbox" name="location2" id="location2" value="1">
+												<label for="location2">Địa chỉ thanh toán khác</label>
+											</div>
+											<div class="location__item">
+												<div class="location__txt">
+													<h3>Họ và Tên</h3>
+												</div>
+												<div class="location__input">
+													<input type="text" name="name">
+												</div>
+											</div>
+											<div class="location__item">
+												<div class="location__txt">
+													<h3>Tỉnh/thành phố</h3>
+												</div>
+												<div class="location__input select">
+													<select name="city">
+														<option value="1">Tp. Hồ Chí Minh</option>
+													</select>
+												</div>
+											</div>
+											<div class="location__item">
+												<div class="location__txt">
+													<h3>Quận/huyện</h3>
+												</div>
+												<div class="location__input select">
+													<select name="district">
+														<option value="1">Gò Vấp</option>
+													</select>
+												</div>
+											</div>
+											<div class="location__item">
+												<div class="location__txt">
+													<h3>Phượng,xã</h3>
+												</div>
+												<div class="location__input select">
+													<select name="wards">
+														<option value="1">F11</option>
+													</select>
+												</div>
+											</div>
+											<div class="location__item">
+												<div class="location__txt">
+													<h3>Tầng, số nhà, đường</h3>
+												</div>
+												<div class="location__input">
+													<input type="text" name="way">
+												</div>
+											</div>
+											<div class="location__item">
+												<div class="location__txt">
+													<h3>Số điện thoại</h3>
+												</div>
+												<div class="location__input">
+													<input type="text" name="phone">
+												</div>
+											</div>
+											<div class="btn__next-pay step-1" data-url="/location"><span>Tiếp tục</span>
+												<div class="img"><img class="svg" src="./assets/images/product/ar-r.svg" alt=""></div>
+											</div>
+										</form>
+									</div>
+								</div>
+								<div class="patArticle__item">
+									<div class="pay__title"><span>2</span>
+										<div class="checked v-h"><img class="svg" src="./assets/images/product/checked.svg" alt="checked"></div>
+										<h2>thanh toán</h2>
+									</div>
+									<div class="pay__method">
+										<div class="method__item">
+											<div class="mtItem__radio">
+												<input id="1" type="radio" name="method">
+												<label for="1">Thanh Toán Khi Nhận Hàng</label>
+											</div>
+											<div class="mtItem__content">
+												<p>Quý khách sẽ thanh toán bằng tiền mặt khi nhận hàng tại nhà</p>
+												<p>Bằng cách đặt hàng, bạn đồng ý với Chính sách bảo mật và Điều khoản sử dụng của Khang Minh.</p>
+												<p>Bạn nhớ kiểm tra kỹ thông tin đơn hàng vì thông tin này sẽ không thể thay đổi sau khi đơn hàng được xác nhận thành công</p>
+											</div>
+										</div>
+										<div class="method__item">
+											<div class="mtItem__radio">
+												<input id="2" type="radio" name="method">
+												<label for="2">Thẻ Tín Dụng/ Ghi Nợ</label>
+											</div>
+											<div class="mtItem__content">
+												<form action="">
+													<div class="location__item">
+														<div class="location__txt">
+															<h3>Số thẻ</h3>
+														</div>
+														<div class="location__input">
+															<input type="text" name="card">
+														</div>
+													</div>
+													<div class="location__item">
+														<div class="location__txt">
+															<h3>Tên ghi trên thẻ</h3>
+														</div>
+														<div class="location__input">
+															<input type="text" name="name">
+														</div>
+													</div>
+													<div class="location__item">
+														<div class="location__txt">
+															<h3>Ngày hết hạn</h3>
+														</div>
+														<div class="location__input dead">
+															<input type="text" name="daed-day">
+															<input type="text" name="daed-month">
+														</div>
+													</div>
+													<div class="location__item">
+														<div class="location__txt">
+															<h3>CCV / CVV</h3>
+														</div>
+														<div class="location__input ccv">
+															<input type="text" name="daed"><span>?</span>
+															<div class="save">
+																<h3>Lưu thông tin thẻ</h3>
+																<div class="check__true">
+																	<div class="img v-h"><img class="svg" src="./assets/images/product/checked.svg" alt="checked"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</form>
+											</div>
+										</div>
+										<div class="method__item">
+											<div class="mtItem__radio">
+												<input id="3" type="radio" name="method">
+												<label for="3">Thẻ Atm Nội Địa/ Internet Banking ( 123pay )</label>
+											</div>
+											<div class="mtItem__content">
+												<p>Để thực hiện việc thanh toán, bắt buộc thẻ ATM của bạn đã có đăng ký sử dụng dịch vụ Internet Banking.</p>
+												<p>123Pay hiện đã hỗ trợ thanh toán qua 25 ngân hàng tại Việt Nam.</p>
+												<p class="style">Chọn ngân hàng của bạn</p>
+												<form action="">
+													<div class="location__item">
+														<div class="location__input select w-100">
+															<select name="wards">
+																<option value="1">Vui lòng chọn ngân hàng</option>
+															</select>
+														</div>
+													</div>
+												</form>
+											</div>
+										</div>
+										<div class="method__item">
+											<div class="mtItem__radio">
+												<input id="4" type="radio" name="method">
+												<label for="4">Thanh Toán Chuyển Khoản</label>
+											</div>
+											<div class="mtItem__content">
+												<ul>
+													<li>
+														<p>Chi Nhánh: Hai Bà Trưng, Hà Nội</p>
+														<p>Ngân hàng Viettinbank , TK: Lê Thị Hằng Stk: 711A03652627</p>
+													</li>
+													<li>
+														<p>Chi Nhánh: Bình Tây, Thành phố Hồ Chí Minh</p>
+														<p>Ngân hàng Vietcombank, TK: Lê Thị Hằng. Stk: 0251002216474</p>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="method__item">
+											<div class="mtItem__radio">
+												<input id="5" type="radio" name="method">
+												<label for="5">Cửa Hàng Gần Nhà</label>
+											</div>
+											<div class="mtItem__content smart">
+												<div class="cnt__item active">
+													<div class="item__border"></div>
+												</div>
+												<div class="cnt__item">
+													<div class="item__border"></div>
+												</div>
+												<div class="cnt__item">
+													<div class="item__border"></div>
+												</div>
+												<div class="cnt__item">
+													<div class="item__border"></div>
+												</div>
+												<div class="cnt__item">
+													<div class="item__border"></div>
+												</div>
+												<div class="cnt__item">
+													<div class="item__border"></div>
+												</div>
+												<div class="cnt__item">
+													<div class="item__border"></div>
+												</div>
+												<div class="cnt__item">
+													<div class="item__border"></div>
+												</div>
+												<div class="cnt__item">
+													<div class="item__border"></div>
+												</div>
+												<div class="cnt__item">
+													<div class="item__border"></div>
+												</div>
+												<div class="cnt__item">
+													<div class="item__border"></div>
+												</div>
+												<div class="cnt__item">
+													<div class="item__border"></div>
+												</div>
+											</div>
+										</div>
+										<div class="btn__next-pay step-2">
+											<div class="img"><img class="svg" src="./assets/images/product/cart.svg" alt=""></div><span>ĐẶT HÀNG</span>
+										</div>
+									</div>
+								</div>
+								<div class="patArticle__item">
+									<div class="pay__title"><span>3</span>
+										<div class="checked v-h"><img class="svg" src="./assets/images/product/checked.svg" alt="checked"></div>
+										<h2>giao hàng</h2>
+									</div>
+									<div class="pay__ship">
+										<h3>CẢM ƠN BẠN ĐÃ ĐẶT HÀNG TẠI KHANG MINH !</h3>
+										<p>Giao hàng Thứ Ba, 9 - Thứ Sáu, 12 Tháng 5 2017</p>
+									</div>
+								</div>
+							</div>
+							<div class="pay__aside">
+								<div class="patAside__item">
+									<div class="pay__title bg-2">
+										<h2>MÃ GIẢM GIÁ CHO ĐƠN HÀNG</h2>
+									</div>
+									<div class="patAside__code">
+										<form action="">
+											<div class="code__input active">
+												<input type="text" name="code" placeholder="Nhập mã giảm giá nếu có.	">
+												<input type="button" value="Áp Dụng">
+											</div><span>Mục mã giảm giá là băt buộc.</span>
+											<div class="code__info">
+												<h4>Áp dụng chương trình khuyến mãi.</h4>
+												<p>Mua Online 2017: đơn hàng của Khang Minh khi mua từ 10.000.000 trở lên tặng 300.000đ.</p>
+											</div>
+										</form>
+									</div>
+								</div>
+								<div class="patAside__item bg-w">
+									<div class="pay__title bg-2">
+										<h2>THÔNG TIN ĐƠN HÀNG</h2>
+									</div>
+									<div class="patAside__table">
+										<table>
+											<thead>
+												<th>SẢN PHẨM</th>
+												<th>SỐ LƯỢNG</th>
+												<th>ĐƠN GIÁ</th>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Yến sào cao cấp</td>
+													<td>1</td>
+													<td>2.700.000 VNĐ</td>
+												</tr>
+												<tr>
+													<td>Yến sào cao cấp</td>
+													<td>1</td>
+													<td>2.700.000 VNĐ</td>
+												</tr>
+												<tr>
+													<td>Yến sào cao cấp</td>
+													<td>1</td>
+													<td>2.700.000 VNĐ</td>
+												</tr>
+												<tr class="no-border">
+													<td colspan="2"> 
+														<h3>Tạm tính</h3><span class="c-b">Phí vận chuyển</span>
+													</td>
+													<td> 
+														<h3>5.406.000 VNĐ</h3><span class="c-b">6.000 VNĐ</span>
+													</td>
+												</tr>
+												<tr class="no-border total">
+													<td colspan="2"> 
+														<h3>Tổng tiền</h3><span>(Tổng số tiền thanh toán)</span>
+													</td>
+													<td>5.406.000 VNĐ</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="pay-page" id="js-page-verify" hidden></div>
+		</main>
+		<section class="partner">
+			<div class="container h-100">
+				<div class="container-1190px h-100">
+					<div class="swiper-container h-100">
+						<div class="swiper-wrapper h-100">
+							<div class="swiper-slide h-100">
+								<div class="img"><img src="./assets/images/footer/logo-1.png" alt="logo"></div>
+							</div>
+							<div class="swiper-slide h-100">
+								<div class="img"><img src="./assets/images/footer/logo-2.png" alt="logo"></div>
+							</div>
+							<div class="swiper-slide h-100">
+								<div class="img"><img src="./assets/images/footer/logo-3.png" alt="logo"></div>
+							</div>
+							<div class="swiper-slide h-100">
+								<div class="img"><img src="./assets/images/footer/logo-4.png" alt="logo"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			<div class="container">
+				<div class="container-1190px">
+					<div class="footer__content">
+						<div class="footer__about">
+							<h3 class="text-uppercase">About Us</h3>
+							<div class="img"><img src="./assets/images/footer/logo-footer.png" alt=""></div>
+							<div class="address">
+								<p>Lầu 8, Tòa nhà SAMCO, 326 Võ Văn Kiệt, Phường Cô Giang, Quận 1, TP.HCM.</p>
+							</div>
+						</div>
+						<div class="footer__menu">
+							<h3 class="text-uppercase">Menu</h3>
+							<ul>
+								<li><a class="text-uppercase" href="#">Giới Thiệu</a></li>
+								<li><a class="text-uppercase" href="#">Sản Phẩm</a></li>
+								<li><a class="text-uppercase" href="#">Khuyến mãi</a></li>
+								<li><a class="text-uppercase" href="#">Tin tức</a></li>
+								<li><a class="text-uppercase" href="#">Hướng dẫn</a></li>
+								<li><a class="text-uppercase" href="#">Liên Hệ</a></li>
+							</ul>
+						</div>
+						<div class="footer__subscribe">
+							<h3 class="text-uppercase">Subscribe</h3>
+							<p>Lorem ipsum dolor sit amet your email oke oke</p>
+							<input class="btn subscribe--input" type="text" placeholder="Your Email">
+							<button class="btn btn--sendus" data-url=""><span>SEND US</span></button>
+							<div class="social">
+								<div class="right"><img src="./assets/images/footer/subscibe-logo.png" alt="Ministry"></div>
+								<div class="left"><a href=""><img src="./assets/images/footer/face.png" alt="Ministry"></a><a href=""><img src="./assets/images/footer/youtube.png" alt="Ministry"></a><a href=""><img src="./assets/images/footer/twiter.png" alt="Ministry"></a><a href=""><img src="./assets/images/footer/google.png" alt="Ministry"></a></div>
+							</div>
+							<div class="copyright">
+								<p>© Design by Web4gsolutions</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;libraries=places&amp;key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s"></script>
+		<script type="text/javascript" src="./js/core.min.js"></script>
+		<script type="text/javascript" src="./js/main.min.js"></script>
+	</body>
+</html>

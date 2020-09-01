@@ -3,11 +3,12 @@ section.Introduce {
     .introduce__wrapper {
         h2 {
             margin-bottom: 40px;
-            font-family: RobotoC-bold;
+            font-family: RobotoC-Regular;
             font-size: 35px;
             color: map-get($mau, main-2);
             text-align: center;
             text-transform: uppercase;
+            font-weight: normal;
         }
         h4 {
             font-family: Roboto-Light;
@@ -62,6 +63,7 @@ section.Introduce {
             }
             .swiper-container {
                 padding-top: 50px;
+                margin: 0 50px;
             }
             .swiper-button-next,
             .swiper-button-prev {
@@ -143,17 +145,18 @@ section.Introduce {
                     background: #EAEAEA;
                     border: none;
                 }
-                select {
+                &.select {
                     position: relative;
                     &::before {
+                        z-index: 100;
                         position: absolute;
-                        top: 0;
-                        right: 0;
+                        top: 40%;
+                        right: 15px;
+                        width: 25px;
+                        height: 20px;
+                        background: url(../../assets/images/product/ar-b.png);
+                        background-repeat: no-repeat;
                         content: '';
-                        width: 40px;
-                        height: 40px;
-                        background: map-get($mau, main-2);
-                        z-index: 10;
                     }
                 }
             }
@@ -219,6 +222,7 @@ section.Introduce {
             }
             h4 {
                 padding-top: 30px;
+                font-weight: normal;
             }
             p {
                 text-align: center;

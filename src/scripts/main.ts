@@ -609,6 +609,107 @@ const showBackToTop = () => {
 		});
 	});
 };
+const getMoreQuestion = () =>{
+	const list = $(".guide__item");
+	for (let i = 0; i < list.length; i++) {
+			if(i>2){
+				$(".guide__item").eq(i).addClass("d-none");
+			}
+	}
+	$(".guide__btn--more").click(function(){
+		$(".guide__item").removeClass("d-none");
+		$(".guide__btn--more").addClass("d-none");
+	});
+}
+
+const ajaxQuestion = () => {
+	$(".btn__submit--guide").on("click", function (e: any) {
+		e.preventDefault();
+		const _thisBtn = $(this);
+		const url = _thisBtn.attr("data-url");
+		const formData = new FormData();
+		const nameText = $(".guide__input textarea").attr(
+			"name",
+		);
+		const valText = $(".guide__input textarea").val();
+		$(".guide__input input").each(function () {
+			const name = $(this).attr("name");
+			const value = $(this).val();
+			formData.append(name, value);
+		});
+		formData.append(nameText, valText);
+		if ($(".guide__form form").valid() === true) {
+			$.ajax({
+				url: url,
+				type: "post",
+				data: formData,
+				processData: false,
+				contentType: false,
+				beforeSend: function () {
+					_thisBtn.attr("disabled", "disabled");
+				},
+				success: function (res: any) {
+					alert(`${res.Message}`);
+					window.location.reload();
+					_thisBtn.removeAttr("disabled");
+				},
+			});
+		}
+	});
+};
+
+const payContinue = () =>{
+	$(".pay__method").addClass("d-n");
+	$(".pay__ship").addClass("d-n");
+	$(".mtItem__radio").click(function(){
+		$(".method__item").removeClass("active");
+		$(this).parent().addClass("active");
+	});
+	$(".check__true").click(function(){
+		$(this).children(".img").toggleClass("v-h");
+	});
+	$(".btn__next-pay.step-1").click(function(e:any){
+		e.preventDefault();
+		const _thisBtn = $(this);
+		const url = _thisBtn.attr("data-url");
+		const formData = new FormData();
+		$(".location__input input").each(function () {
+			const name = $(this).attr("name");
+			const value = $(this).val();
+			formData.append(name, value);
+		});
+		if ($(".pay__location form").valid() === true) {
+			$.ajax({
+				url: url,
+				type: "post",
+				data: formData,
+				processData: false,
+				contentType: false,
+				beforeSend: function () {
+					_thisBtn.attr("disabled", "disabled");
+				},
+				success: function (res: any) {
+					alert(`${res.Message}`);
+					window.location.reload();
+					_thisBtn.removeAttr("disabled");
+				},
+			});
+		$(".pay__location").slideUp("slow");
+		$(".pay__method").slideDown("slow");
+		$(".pay__title b").removeClass("d-n");
+		$(".pay__title.location span").addClass("d-n");
+		$(".pay__title.location .checked").removeClass("v-h");
+		}
+		
+	});
+	$(".btn__next-pay.step-2").click(function(){
+		$(".pay__ship").slideDown("slow");
+	});
+	$(".pay__title.location").click(function(){
+		$(".pay__location").slideDown("slow");
+	});
+}
+
 
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
@@ -645,6 +746,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	showVideo();
 	// gui contact
 	ajaxFormContact();
+	// ajaxQuestion
+	ajaxQuestion();
 	Login();
 	Register();
 	//turn of popuu when click
@@ -662,6 +765,9 @@ document.addEventListener("DOMContentLoaded", async () => {
 	cartQuantity();
 	//show back to top
 	showBackToTop();
+	getMoreQuestion();
+	cartQuantity();
+	payContinue();
 });
 
 const fetchData = () => {
