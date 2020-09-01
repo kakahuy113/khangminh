@@ -14,7 +14,6 @@ header {
 	display:  inline-block;
 	width: 30px;
 	height: 30px;
-	margin: 25px;
 }
 .menu span {
 	margin: 0 auto;
@@ -37,12 +36,23 @@ header {
 .menu span:after {
 	margin-top: 12px;
 }
-/* example 5 */
+
 .hamburger_menu span {
 	-webkit-transition-duration: 0s; transition-duration: 0s;
 	-webkit-transition-delay: 0.2s; transition-delay: 0.2s;
+	&::before {
+		-webkit-transition-property: margin, -webkit-transform; transition-property: margin, transform;
+		-webkit-transition-duration: 0.2s; transition-duration: 0.2s;
+		-webkit-transition-delay: 0.2s, 0s; transition-delay: 0.2s, 0s;
+	}
+	&::after {
+		-webkit-transition-property: margin, -webkit-transform; transition-property: margin, transform;
+		-webkit-transition-duration: 0.2s; transition-duration: 0.2s;
+		-webkit-transition-delay: 0.2s, 0s; transition-delay: 0.2s, 0s;
+	}
 }
-.hamburger_menu:hover span {
+
+.hamburger_menu.active span {
 	background-color: rgba(0,0,0,0.0);
 	-webkit-transition-delay: 0.2s; transition-delay: 0.2s;
 	&::before {
@@ -50,23 +60,13 @@ header {
 		-webkit-transform: rotate(45deg); transform: rotate(45deg);
 		-webkit-transition-delay: 0s, 0.2s; transition-delay: 0s, 0.2s;
 	}
-}
-.hamburger_menu span:before {
-	-webkit-transition-property: margin, -webkit-transform; transition-property: margin, transform;
-	-webkit-transition-duration: 0.2s; transition-duration: 0.2s;
-	-webkit-transition-delay: 0.2s, 0s; transition-delay: 0.2s, 0s;
+	&::after {
+		margin-top: 0;
+		-webkit-transform: rotate(-45deg); transform: rotate(-45deg);
+		-webkit-transition-delay: 0s, 0.2s; transition-delay: 0s, 0.2s;
+	}
 }
 
-.hamburger_menu span:after {
-	-webkit-transition-property: margin, -webkit-transform; transition-property: margin, transform;
-	-webkit-transition-duration: 0.2s; transition-duration: 0.2s;
-	-webkit-transition-delay: 0.2s, 0s; transition-delay: 0.2s, 0s;
-}
-.hamburger_menu:hover span:after {
-	margin-top: 0;
-	-webkit-transform: rotate(-45deg); transform: rotate(-45deg);
-	-webkit-transition-delay: 0s, 0.2s; transition-delay: 0s, 0.2s;
-}
 
 .ishavesubmenu {
 	position: relative;
