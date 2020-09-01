@@ -493,19 +493,33 @@ const actionLoginPage = () => {
 }
 
 const viewImagesDetail = () =>{
+	const listThumbnail= document.querySelectorAll(".detail__listImg .previews");
+	if(listThumbnail){
+		listThumbnail.forEach(element => {
+			const id =$(element).attr("data-id");
+			if(id !== ""){
+				$(element).parent().addClass("video");
+				$(element).addClass("video-x");
+				const src = 'http://img.youtube.com/vi/'+id+'/0.jpg';
+				$(".previews.video-x").attr("src",src);
+			}
+		});
+	}
 	$(".previews").click(function(e:any){
 		e.preventDefault();
 		$(".previews").parent().removeClass("active");
 		const id = $(this).attr("data-id");
 		if(id !== ""){
-			$(".detail__mainImg img").addClass("d-none");
-			$(".detail__mainImg .youtube-api").removeClass("d-none");
+			$(".detail__mainImg img").addClass("d-n");
+			$(".detail__mainImg .youtube-api").removeClass("d-n");
 			const idYt = $(".youtube-api").attr("id");
 			let url = $('#' + idYt).attr('src');
 			$('#' + idYt).attr('src', url + "&autoplay=1");
-		}else{
-			$(".detail__mainImg .youtube-api").addClass("d-none");
-			$(".detail__mainImg img").removeClass("d-none");
+		}
+		else
+		{
+			$(".detail__mainImg .youtube-api").addClass("d-n");
+			$(".detail__mainImg img").removeClass("d-n");
 			const src = $(this).attr('src');
 			const alt = $(this).attr("alt");
 			$(".detail__mainImg img").attr('src',src);

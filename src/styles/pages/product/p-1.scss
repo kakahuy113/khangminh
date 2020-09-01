@@ -29,6 +29,7 @@ section.Product {
             outline: none;
             border: none;
             color: map-get($mau, main-3);
+            appearance: none;
         }
         label {
             color: map-get($mau, main-4);
@@ -283,9 +284,9 @@ section.ProDetail {
     .detail__mainImg {
         height: 595px;
         width: 100%;
-        -ms-flex: 0 0 70%;
-        flex: 0 0 70%;
-        max-width: 70%;
+        -ms-flex: 0 0 75%;
+        flex: 0 0 75%;
+        max-width: 75%;
         img {
             width: 100%;
             height: 100%;
@@ -294,16 +295,17 @@ section.ProDetail {
     }
     .detail__listImg {
         padding: 0 30px;
-        -ms-flex: 0 0 30%;
-        flex: 0 0 30%;
-        max-width: 30%;
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%;
         .swiper-container {
             height: 595px;
         }
         .swiper-slide {
             cursor: pointer;
-            height: 100px !important;
+            height: 120px !important;
             margin-bottom: 20px;
+            position: relative;
             &.active {
                 position: relative;
                 &::before {
@@ -315,6 +317,30 @@ section.ProDetail {
                     opacity: .4;
                     z-index: 1;
                     top: 0;
+                }
+            }
+            &.video {
+                position: relative;
+                &::before {
+                    position: absolute;
+                    content: '';
+                    background: url(../assets/images/product/play.png);
+                    width: 36px;
+                    height: 36px;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    pointer-events: none;
+                }
+                &::after {
+                    position: absolute;
+                    content: '';
+                    width: 100%;
+                    height: 100%;
+                    background: rgba($color: #000000, $alpha: .2);
+                    top: 0;
+                    left: 0;
+                    pointer-events: none;
                 }
             }
             img {
@@ -337,23 +363,24 @@ section.ProDetail {
             cursor: pointer;
             &.chat {
                 width: unset;
-                padding: 10px 30px;
+                padding: 3px 30px;
                 margin-left: 0px;
                 text-align: center;
                 background: map-get($mau, main-2);
                 h4 {
+                    font-weight: normal;
                     text-transform: uppercase;
                     color: white;
                     font-size: 16px;
                 }
             }
-            height: 40px;
-            width: 40px;
+            height: 25px;
+            width: 25px;
             margin-left: 20px;
         }
     }
     .deInfo__content {
-        padding-top: 15px;
+        padding-top: 30px;
         .content__info {
             border-bottom: 1px solid #5D5D5D;
             h3 {
@@ -447,6 +474,7 @@ section.ProDetail {
         }
     }
     .content__action {
+        margin-top: 185px;
         display: flex;
         margin: 0 -10px
     }
