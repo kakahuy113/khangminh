@@ -34,9 +34,27 @@
 
 .swiper-button-prev,
 .swiper-button-next {
-	color: #a62c32;
 	&::after {
-		font-size: 8.1rem !important;
+		content: "";
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		background: url("../assets/images/home/next.png");
+	}
+}
+.swiper-button-prev {
+	&::after {
+		background: url("../assets/images/home/prev.png") no-repeat;
+		background-size: 100% 100%;
+	}
+}
+.swiper-button-next {
+	&::after {
+		background: url("../assets/images/home/next.png") no-repeat;
+		background-size: 100% 100%;
 	}
 }
 
@@ -47,4 +65,14 @@ svg {
 	max-height: 25px;
 	max-width: 25px;
 	vertical-align: baseline;
+}
+.fake-toolbar {
+	z-index: 999;
+    position: fixed;
+    top: 0;
+	right: 0;
+	background: #CDD1D8;
+    height: 100%;
+	width: 5px;
+	display: none;
 }

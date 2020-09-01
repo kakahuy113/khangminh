@@ -121,6 +121,14 @@ const partnerSwiper = () => {
 			delay: 3000,
 			disableOnInteraction: false,
 		},
+		breakpoints: {
+			300: {
+				slidesPerView: 3,
+			},
+			600: {
+				slidesPerView: 4,
+			}
+		}
 	});
 };
 
@@ -133,6 +141,18 @@ const swiperProductHome = () => {
 			nextEl: ".product__wrapper .swiper-button-next",
 			prevEl: ".product__wrapper .swiper-button-prev",
 		},
+		breakpoints: {
+			300: {
+				slidesPerView: 1
+			},
+			550: {
+				spaceBetween: 20,
+				slidesPerView: 2,
+			},
+			800: {
+				slidesPerView: 3
+			}
+		}
 	});
 };
 
@@ -140,11 +160,25 @@ const swiperourproduct = () => {
 	const swiper = new Swiper(".home__ourproducts .swiper-container", {
 		slidesPerView: 3,
 		slidesPerColumn: 2,
-		spaceBetween: 40,
+		spaceBetween: 10,
 		navigation: {
 			nextEl: ".home__ourproducts .swiper-button-next",
 			prevEl: ".home__ourproducts .swiper-button-prev",
 		},
+		breakpoints: {
+			300: {
+				slidesPerView: 1,
+			},
+			550: {
+				slidesPerView: 2,
+			},
+			750: {
+				spaceBetween: 10,
+			},
+			1440: {
+				spaceBetween: 40,
+			}
+		}
 	});
 };
 
@@ -157,6 +191,17 @@ const swiperRelateNews = () => {
 			nextEl: ".relate-news .swiper-button-next",
 			prevEl: ".relate-news  .swiper-button-prev",
 		},
+		breakpoints: {
+			300: {
+				slidesPerView: 1,
+			},
+			500: {
+				slidesPerView: 2,
+			},
+			700: {
+				slidesPerView: 3,
+			}
+		}
 	});
 };
 
@@ -329,12 +374,13 @@ const Login = () => {
 			const value = $(this).val();
 			formData.append(name, value);
 		});
+
 		if($("#login form").valid() === true ) {
 			Axios.post(`${url}` , formData).then((res:any) => {
 				if(res.Code == 200) {
 					window.location.reload();
 				}
-				if(res.Code === 400) {
+				if(res.Code == 400) {
 					alert(`${res.Message}`)
 				}
 		})
@@ -357,9 +403,10 @@ const Register = () => {
 				if(res.Code == 200) {
 					$("#login input[type=text]").val(`${res.username}`);
 					$("#login input[type=password]").val(`${res.password}`);
-					$("#login form .form-button button").trigger("click")
+					$("#login form .form-button button").trigger("click");
+					window.location.reload();
 				}
-				if(res.Code === 400) {
+				if(res.Code == 400) {
 					alert(`${res.Message}`)
 				}
 		})
@@ -369,7 +416,19 @@ const Register = () => {
 //turn of when click
 const turnOffPopupWhenClicked = () => {
 	//set default hash = false
+	// $.fancybox.defaults.animationEffect = "fade";
 	$.fancybox.defaults.hash = false;
+	// $.fancybox.defaults.hideScrollbar = false;
+	$('[data-fancybox]').fancybox({
+		beforeShow : () => {
+			$(".fake-toolbar").css("display" , "block");
+			$("header").css("margin-right" , "5px")
+		},
+		afterClose : () => {
+			$(".fake-toolbar").css("display" , "none")
+			$("header").css("margin-right" , "0")
+		}
+	});
 	$('[data-fancybox="register2"]').click(() => {
 		$.fancybox.close();
 	})
@@ -532,6 +591,25 @@ const cartQuantity = () => {
 		})
 	})
 }
+
+// SHOW BACK TO TOP
+const showBackToTop = () => {
+	$(window).scroll(function () {
+		if ($(this).scrollTop() > 800) {
+			$('#back_to_top').addClass('show');
+		} else {
+			$('#back_to_top').removeClass('show');
+		}
+	});
+
+	$('#back_to_top').on('click', function (e: any) {
+		e.preventDefault();
+		$('html,body').animate({
+			scrollTop: 0,
+		});
+	});
+};
+
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
@@ -580,7 +658,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 	viewImagesDetail();
 	changeQty();
 	showContentDesc();
+	//cart quantity
 	cartQuantity();
+	//show back to top
+	showBackToTop();
 });
 
 const fetchData = () => {

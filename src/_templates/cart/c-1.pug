@@ -24,7 +24,7 @@ section.cart-page
 												img.lazyload.blur-up(src="./assets/images/love/check-cart.png", alt="check")
 												p Còn Hàng
 											.state
-												img.svg(src="./assets/images/love/love.svg", alt="love")
+												img.lazyload.blup-up(src="./assets/images/love/love.png", alt="love")
 												p Yêu Thích
 										
 								td.price
@@ -41,7 +41,7 @@ section.cart-page
 										p 900.000 VNĐ
 						tr.tempprice
 							td.wishlist
-								a(href="javascript:;") + Thêm sản phẩm từ danh sách yêu thích
+								a(href="javascript:;", data-fancybox, data-options="{'touch' : false}", data-src="#wishlist") + Thêm sản phẩm từ danh sách yêu thích
 							td
 								p Tạm tính
 							td(colspan=2)
@@ -78,3 +78,19 @@ section.cart-page
 											p ADD TO CART
 					.swiper-button-prev
 					.swiper-button-next
+	.d-none
+		#wishlist
+			.pop-up__wrapper
+				.pop-up__header
+					img.lazyload.blur-up(src="./assets/images/love/love.png", alt="love")
+					h3 DANH SÁCH YÊU THÍCH
+				.pop-up__body
+					-for(var i=0;i< 3; i++)
+						.wrapper.row
+							.img.col-2
+								img.lazyload.blur-up.ofcv(src="./assets/images/love/love-item.png", alt="love")
+							.desc.col-6
+								p Yến sào cao cấp
+								p 900.000 VNĐ
+							.add-to-cart.col-4
+								button.btn.btn-cart THÊM VÀO GIỎ

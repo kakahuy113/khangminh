@@ -21,18 +21,18 @@ header
 						.right__wrapper
 							.account-item(data-login="false" , id="")
 								a(href="javascipt:;")
-									img.svg(src="./assets/images/header/SVG/register.svg", alt="login")
+									img.lazyload.blur-up.svg(src="./assets/images/header/SVG/register.svg", alt="login")
 									span TÀI KHOẢN
 								.account-box
-									a(href="javascript:;" data-fancybox="login" data-src="#login").btn.btn-main Đăng nhập 
-									a(href="javascript:;" data-fancybox="register" data-src="#register").btn.btn-register Đăng ký 
+									a(href="javascript:;" data-fancybox, data-src="#login").btn.btn-main Đăng nhập 
+									a(href="javascript:;" data-fancybox, data-src="#register").btn.btn-register Đăng ký 
 							.check 
 								a(href="javascript:;")
-									img.svg(src="./assets/images/header/SVG/checklist.svg", alt="check")
+									img.lazyload.blur-up.svg(src="./assets/images/header/SVG/checklist.svg", alt="check")
 									span KIỂM TRA ĐƠN HÀNG
 							.cart 
 								a(href="cart.html")
-									img.svg(src="./assets/images/header/SVG/cart.svg", alt="cart")
+									img.lazyload.blur-up.svg(src="./assets/images/header/SVG/cart.svg", alt="cart")
 									span.cart-num 1
 									span CART
 		.d-none
@@ -50,13 +50,13 @@ header
 								button.btn.btn-readmore(data-url="../api/test.json") ĐĂNG NHẬP
 						.bottom-ask
 							p Chưa có tài khoản? 
-								a(href="#" data-fancybox="register2" data-src="") Đăng ký ngay
+								a(href="javascript:;", data-fancybox, data-src="") Đăng ký ngay
 						.social
 							a.btn.btn-google(href="#")
-								img(src="./assets/icons/icon-google-plus.svg", alt="icon google plus")
+								img.lazyload.blur-up.svg(src="./assets/icons/icon-google-plus.svg", alt="icon google plus")
 								span Đăng ký qua Google
 							a.btn.btn-facebook(href="#")
-								img(src="./assets/icons/icon-facebook-2.svg", alt="icon facebook")
+								img.lazyload.blur-up.svg(src="./assets/icons/icon-facebook-2.svg", alt="icon facebook")
 								span Đăng ký qua Facebook
 			#register.account-popup
 				.popup-wrapper
@@ -88,7 +88,7 @@ header
 						a(href="") ĐĂNG XUẤT
 	.header__logo
 		a(href="index.html").img
-			img(src="./assets/images/header/SVG/Logo.png", alt="Khang Minh")
+			img.lazyload.blur-up(src="./assets/images/header/SVG/Logo.png", alt="Khang Minh")
 	.header__nav--bottom
 		.container
 			.container-1190px
@@ -128,3 +128,5 @@ header
 					li
 						a(href="contact.html").text-uppercase Liên hệ
 					div.background-submenu
+				.hamburger_menu.menu
+					span
