@@ -12,6 +12,17 @@ const slideAwardIntroduce = () => {
 		speed: 800,
 		centeredSlides: true,
 		slidesPerView: 3,
+		breakpoints: {
+			// when window width is >= 320px
+			320: {
+			slidesPerView: 1,
+			spaceBetween: 20
+			},
+			1024: {
+			slidesPerView: 3,
+			spaceBetween: 20
+			},
+		},
 		navigation: {
 			nextEl: ".introduce__wrapper.t-2 .swiper-button-next",
 			prevEl: ".introduce__wrapper.t-2 .swiper-button-prev",
@@ -659,14 +670,17 @@ const ajaxQuestion = () => {
 };
 
 const payContinue = () =>{
-	$(".pay__method").addClass("d-n");
-	$(".pay__ship").addClass("d-n");
+	// $(".pay__method").addClass("d-n");
+	// $(".pay__ship").addClass("d-n");
 	$(".mtItem__radio").click(function(){
 		$(".method__item").removeClass("active");
 		$(this).parent().addClass("active");
 	});
 	$(".check__true").click(function(){
 		$(this).children(".img").toggleClass("v-h");
+	});
+	$(".location__item.checkbox").click(function(){
+		$(".location__2").slideToggle("slow");
 	});
 	$(".btn__next-pay.step-1").click(function(e:any){
 		e.preventDefault();

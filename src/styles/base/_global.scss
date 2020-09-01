@@ -1,78 +1,81 @@
 .clearfix {
-	&:after {
-		content: "";
-		display: table;
-		clear: both;
-	}
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 }
 
 .fullsize {
-	width: 100%;
-	height: 100%;
+    width: 100%;
+    height: 100%;
 }
 
 .object-cover {
-	object-fit: cover;
-	object-position: center;
-	background-size: cover;
+    object-fit: cover;
+    object-position: center;
+    background-size: cover;
 }
 
 .object-contain {
-	object-fit: contain;
-	object-position: center;
-	background-size: contain;
+    object-fit: contain;
+    object-position: center;
+    background-size: contain;
 }
 
 .blur-up {
-	filter: blur(10px);
-	transition: filter 1s;
-
-	&.lazyloaded {
-		filter: blur(0);
-	}
+    filter: blur(10px);
+    transition: filter 1s;
+    &.lazyloaded {
+        filter: blur(0);
+    }
 }
 
 .swiper-button-prev,
 .swiper-button-next {
-	&::after {
-		content: "";
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%,-50%);
-		background: url("../assets/images/home/next.png");
-	}
+    &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: url("../assets/images/home/next.png");
+    }
 }
+
 .swiper-button-prev {
-	&::after {
-		background: url("../assets/images/home/prev.png") no-repeat;
-		background-size: 100% 100%;
-	}
+    &::after {
+        background: url("../assets/images/home/prev.png") no-repeat;
+        background-size: 100% 100%;
+    }
 }
+
 .swiper-button-next {
-	&::after {
-		background: url("../assets/images/home/next.png") no-repeat;
-		background-size: 100% 100%;
-	}
+    &::after {
+        background: url("../assets/images/home/next.png") no-repeat;
+        background-size: 100% 100%;
+    }
 }
 
 #map {
-	height: 500px;
+    height: 500px;
 }
+
 svg {
-	max-height: 25px;
-	max-width: 25px;
-	vertical-align: baseline;
+    max-height: 25px;
+    max-width: 25px;
+    vertical-align: baseline;
 }
+
 .fake-toolbar {
-	z-index: 999;
+    z-index: 999;
     position: fixed;
     top: 0;
-	right: 0;
-	background: #CDD1D8;
+    right: 0;
+    background: #CDD1D8;
     height: 100%;
-	width: 5px;
-	display: none;
+    width: 5px;
+    display: none;
 }

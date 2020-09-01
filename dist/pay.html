@@ -206,16 +206,6 @@
 											</div>
 											<div class="location__item">
 												<div class="location__txt">
-													<h3>Phượng,xã</h3>
-												</div>
-												<div class="location__input select">
-													<select name="wards">
-														<option value="1">F11</option>
-													</select>
-												</div>
-											</div>
-											<div class="location__item">
-												<div class="location__txt">
 													<h3>Tầng, số nhà, đường</h3>
 												</div>
 												<div class="location__input">
@@ -234,58 +224,50 @@
 												<input type="checkbox" name="location2" id="location2" value="1">
 												<label for="location2">Địa chỉ thanh toán khác</label>
 											</div>
-											<div class="location__item">
-												<div class="location__txt">
-													<h3>Họ và Tên</h3>
+											<div class="location__2 d-n">
+												<div class="location__item">
+													<div class="location__txt">
+														<h3>Họ và Tên</h3>
+													</div>
+													<div class="location__input">
+														<input type="text" name="name">
+													</div>
 												</div>
-												<div class="location__input">
-													<input type="text" name="name">
+												<div class="location__item">
+													<div class="location__txt">
+														<h3>Tỉnh/thành phố</h3>
+													</div>
+													<div class="location__input select">
+														<select name="city">
+															<option value="1">Tp. Hồ Chí Minh</option>
+														</select>
+													</div>
 												</div>
-											</div>
-											<div class="location__item">
-												<div class="location__txt">
-													<h3>Tỉnh/thành phố</h3>
+												<div class="location__item">
+													<div class="location__txt">
+														<h3>Quận/huyện</h3>
+													</div>
+													<div class="location__input select">
+														<select name="district">
+															<option value="1">Gò Vấp</option>
+														</select>
+													</div>
 												</div>
-												<div class="location__input select">
-													<select name="city">
-														<option value="1">Tp. Hồ Chí Minh</option>
-													</select>
+												<div class="location__item">
+													<div class="location__txt">
+														<h3>Tầng, số nhà, đường</h3>
+													</div>
+													<div class="location__input">
+														<input type="text" name="way">
+													</div>
 												</div>
-											</div>
-											<div class="location__item">
-												<div class="location__txt">
-													<h3>Quận/huyện</h3>
-												</div>
-												<div class="location__input select">
-													<select name="district">
-														<option value="1">Gò Vấp</option>
-													</select>
-												</div>
-											</div>
-											<div class="location__item">
-												<div class="location__txt">
-													<h3>Phượng,xã</h3>
-												</div>
-												<div class="location__input select">
-													<select name="wards">
-														<option value="1">F11</option>
-													</select>
-												</div>
-											</div>
-											<div class="location__item">
-												<div class="location__txt">
-													<h3>Tầng, số nhà, đường</h3>
-												</div>
-												<div class="location__input">
-													<input type="text" name="way">
-												</div>
-											</div>
-											<div class="location__item">
-												<div class="location__txt">
-													<h3>Số điện thoại</h3>
-												</div>
-												<div class="location__input">
-													<input type="text" name="phone">
+												<div class="location__item">
+													<div class="location__txt">
+														<h3>Số điện thoại</h3>
+													</div>
+													<div class="location__input">
+														<input type="text" name="phone">
+													</div>
 												</div>
 											</div>
 											<div class="btn__next-pay step-1" data-url="/location"><span>Tiếp tục</span>
@@ -309,55 +291,6 @@
 												<p>Quý khách sẽ thanh toán bằng tiền mặt khi nhận hàng tại nhà</p>
 												<p>Bằng cách đặt hàng, bạn đồng ý với Chính sách bảo mật và Điều khoản sử dụng của Khang Minh.</p>
 												<p>Bạn nhớ kiểm tra kỹ thông tin đơn hàng vì thông tin này sẽ không thể thay đổi sau khi đơn hàng được xác nhận thành công</p>
-											</div>
-										</div>
-										<div class="method__item">
-											<div class="mtItem__radio">
-												<input id="2" type="radio" name="method">
-												<label for="2">Thẻ Tín Dụng/ Ghi Nợ</label>
-											</div>
-											<div class="mtItem__content">
-												<form action="">
-													<div class="location__item">
-														<div class="location__txt">
-															<h3>Số thẻ</h3>
-														</div>
-														<div class="location__input">
-															<input type="text" name="card">
-														</div>
-													</div>
-													<div class="location__item">
-														<div class="location__txt">
-															<h3>Tên ghi trên thẻ</h3>
-														</div>
-														<div class="location__input">
-															<input type="text" name="name">
-														</div>
-													</div>
-													<div class="location__item">
-														<div class="location__txt">
-															<h3>Ngày hết hạn</h3>
-														</div>
-														<div class="location__input dead">
-															<input type="text" name="daed-day">
-															<input type="text" name="daed-month">
-														</div>
-													</div>
-													<div class="location__item">
-														<div class="location__txt">
-															<h3>CCV / CVV</h3>
-														</div>
-														<div class="location__input ccv">
-															<input type="text" name="daed"><span>?</span>
-															<div class="save">
-																<h3>Lưu thông tin thẻ</h3>
-																<div class="check__true">
-																	<div class="img v-h"><img class="svg" src="./assets/images/product/checked.svg" alt="checked"></div>
-																</div>
-															</div>
-														</div>
-													</div>
-												</form>
 											</div>
 										</div>
 										<div class="method__item">
@@ -396,50 +329,6 @@
 														<p>Ngân hàng Vietcombank, TK: Lê Thị Hằng. Stk: 0251002216474</p>
 													</li>
 												</ul>
-											</div>
-										</div>
-										<div class="method__item">
-											<div class="mtItem__radio">
-												<input id="5" type="radio" name="method">
-												<label for="5">Cửa Hàng Gần Nhà</label>
-											</div>
-											<div class="mtItem__content smart">
-												<div class="cnt__item active">
-													<div class="item__border"></div>
-												</div>
-												<div class="cnt__item">
-													<div class="item__border"></div>
-												</div>
-												<div class="cnt__item">
-													<div class="item__border"></div>
-												</div>
-												<div class="cnt__item">
-													<div class="item__border"></div>
-												</div>
-												<div class="cnt__item">
-													<div class="item__border"></div>
-												</div>
-												<div class="cnt__item">
-													<div class="item__border"></div>
-												</div>
-												<div class="cnt__item">
-													<div class="item__border"></div>
-												</div>
-												<div class="cnt__item">
-													<div class="item__border"></div>
-												</div>
-												<div class="cnt__item">
-													<div class="item__border"></div>
-												</div>
-												<div class="cnt__item">
-													<div class="item__border"></div>
-												</div>
-												<div class="cnt__item">
-													<div class="item__border"></div>
-												</div>
-												<div class="cnt__item">
-													<div class="item__border"></div>
-												</div>
 											</div>
 										</div>
 										<div class="btn__next-pay step-2">

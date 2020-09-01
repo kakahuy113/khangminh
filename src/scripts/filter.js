@@ -119,8 +119,9 @@ const showSale = () => {
         const sale = Number($(element).children("h4").eq(1).attr("data-sale"));
         const current = $(element).children("h4").eq(1).attr("data-txt");
         const nicePrice = formatMoney(price);
+        const salePrice = formatMoney(sale);
         if (sale > 0) {
-            $(element).children("h4").eq(1).text(nicePrice + " " + current);
+            $(element).children("h4").eq(1).text(salePrice + " " + current);
             $(element).children("h4").eq(0).text(nicePrice + " " + current);
         } else {
             $(element).children("h4").eq(1).text(nicePrice + " " + current);
