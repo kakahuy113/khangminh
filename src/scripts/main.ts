@@ -580,6 +580,60 @@ const ajaxQuestion = () => {
 		}
 	});
 };
+
+const payContinue = () =>{
+	$(".pay__method").addClass("d-n");
+	$(".pay__ship").addClass("d-n");
+	$(".mtItem__radio").click(function(){
+		$(".method__item").removeClass("active");
+		$(this).parent().addClass("active");
+	});
+	$(".check__true").click(function(){
+		$(this).children(".img").toggleClass("v-h");
+	});
+	$(".btn__next-pay.step-1").click(function(e:any){
+		e.preventDefault();
+		const _thisBtn = $(this);
+		const url = _thisBtn.attr("data-url");
+		const formData = new FormData();
+		$(".location__input input").each(function () {
+			const name = $(this).attr("name");
+			const value = $(this).val();
+			formData.append(name, value);
+		});
+		if ($(".pay__location form").valid() === true) {
+			$.ajax({
+				url: url,
+				type: "post",
+				data: formData,
+				processData: false,
+				contentType: false,
+				beforeSend: function () {
+					_thisBtn.attr("disabled", "disabled");
+				},
+				success: function (res: any) {
+					alert(`${res.Message}`);
+					window.location.reload();
+					_thisBtn.removeAttr("disabled");
+				},
+			});
+		$(".pay__location").slideUp("slow");
+		$(".pay__method").slideDown("slow");
+		$(".pay__title b").removeClass("d-n");
+		$(".pay__title.location span").addClass("d-n");
+		$(".pay__title.location .checked").removeClass("v-h");
+		}
+		
+	});
+	$(".btn__next-pay.step-2").click(function(){
+		$(".pay__ship").slideDown("slow");
+	});
+	$(".pay__title.location").click(function(){
+		$(".pay__location").slideDown("slow");
+	});
+}
+
+
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
@@ -632,7 +686,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	showContentDesc();
 	getMoreQuestion();
 	cartQuantity();
-
+payContinue();
 });
 
 const fetchData = () => {

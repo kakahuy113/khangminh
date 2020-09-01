@@ -7,6 +7,12 @@ section.Pay {
         -ms-flex: 0 0 60%;
         flex: 0 0 60%;
         max-width: 60%;
+        padding-right: 20px;
+    }
+    .pay__aside {
+        -ms-flex: 0 0 40%;
+        flex: 0 0 40%;
+        max-width: 40%;
     }
     .patArticle__item {
         border: 1px solid #A1A1A1;
@@ -15,6 +21,17 @@ section.Pay {
     .pay__title {
         background: #a1a1a1;
         position: relative;
+        b {
+            position: absolute;
+            font-family: Roboto-Light;
+            font-weight: normal;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+            cursor: pointer;
+            color: white;
+            text-transform: uppercase;
+        }
         span {
             position: absolute;
             width: 30px;
@@ -49,6 +66,12 @@ section.Pay {
             padding-left: 60px;
             user-select: none;
             cursor: pointer;
+        }
+        &.bg-2 {
+            background: map-get($mau, main-2);
+            h2 {
+                padding-left: 20px;
+            }
         }
     }
     .pay__location,
@@ -189,6 +212,12 @@ section.Pay {
         }
     }
     .btn__next-pay {
+        &.step-2 {
+            .img {
+                margin-right: 10px;
+                margin-left: unset;
+            }
+        }
         display: flex;
         align-items: center;
         padding: 20px 40px;
@@ -311,6 +340,211 @@ section.Pay {
                 .item__border {
                     height: 50px;
                     border: 2px solid map-get($mau, main-3);
+                }
+            }
+        }
+    }
+    .pay__ship {
+        padding: 30px 0;
+        text-align: center;
+        h3 {
+            text-transform: uppercase;
+            font-weight: normal;
+            font-family: Roboto-Regular;
+            font-size: 24px;
+            color: map-get($mau, main-2);
+            padding-bottom: 15px;
+        }
+        p {
+            font-family: Roboto-Regular;
+            font-size: 18px;
+        }
+    }
+    .patAside__item {
+        background: #F2F2F2;
+        margin-bottom: 20px;
+        &.bg-w {
+            background: white;
+            border: 1px solid #5D5D5D;
+        }
+    }
+    .patAside__code {
+        padding: 20px;
+        span {
+            display: inline-block;
+            padding-left: 10px;
+            margin-top: 8px;
+            color: map-get($mau, main-2);
+        }
+        .code__input {
+            &.active {
+                input[type="button"] {
+                    background: #a1a1a1;
+                }
+            }
+            display: flex;
+            input[type="text"] {
+                width: 100%;
+                padding: 10px 20px;
+                outline: none;
+                border: none;
+                font-size: 18px;
+                -ms-flex: 0 0 70%;
+                flex: 0 0 70%;
+                max-width: 70%;
+                background: white;
+            }
+            input[type="button"] {
+                -ms-flex: 0 0 30%;
+                flex: 0 0 30%;
+                max-width: 30%;
+                width: 100%;
+                padding: 10px 20px;
+                outline: none;
+                border: none;
+                background: map-get($mau, main-2);
+                font-size: 18px;
+                color: white;
+                font-family: Roboto-Regular;
+                font-weight: normal;
+                text-transform: capitalize;
+            }
+        }
+        .code__info {
+            margin-top: 25px;
+            background: white;
+            padding: 20px;
+            position: relative;
+            &::before {
+                position: absolute;
+                content: '';
+                width: 0;
+                height: 0;
+                border-left: 20px solid transparent;
+                border-right: 20px solid transparent;
+                border-bottom: 20px solid white;
+                top: -15px;
+                left: 50px;
+            }
+            h4 {
+                color: map-get($mau, main-2);
+                font-size: 14px;
+                font-family: RobotoC-Regular;
+            }
+            p {
+                font-size: 13px;
+                color: #5D5D5D;
+            }
+        }
+    }
+    .patAside__table {
+        padding: 20px;
+        padding-top: 0;
+        position: relative;
+        padding-bottom: 0;
+        &::before {
+            position: absolute;
+            width: 20px;
+            height: 49px;
+            background: #F2F2F2;
+            content: '';
+            left: 0;
+        }
+        &::after {
+            position: absolute;
+            width: 20px;
+            height: 49px;
+            background: #F2F2F2;
+            content: '';
+            right: 0;
+            top: 0;
+        }
+        table {
+            width: 100%;
+        }
+        thead {
+            text-align: center;
+            justify-content: center;
+            th {
+                z-index: 1;
+                &:first-child {
+                    width: 40%;
+                }
+                &:nth-child(2) {
+                    width: 20%;
+                }
+                &:last-child {
+                    width: 40%;
+                }
+                padding: 15px 0;
+                background: #F2F2F2;
+                text-align: center;
+            }
+        }
+        tbody {
+            tr {
+                &.no-border {
+                    border: none;
+                }
+                &.total {
+                    background: #EAEAEA;
+                    td {
+                        h3 {
+                            font-family: Roboto-Bold;
+                            font-size: 18px;
+                        }
+                        padding: 30px 0;
+                        &:first-child {
+                            position: relative;
+                            &::before {
+                                position: absolute;
+                                width: 20px;
+                                height: 100%;
+                                background: #EAEAEA;
+                                content: '';
+                                right: 100%;
+                                top: 0;
+                            }
+                        }
+                        &:last-child {
+                            color: map-get($mau, main-2);
+                            font-size: 18px;
+                            font-family: Roboto-Bold;
+                            position: relative;
+                            &::before {
+                                position: absolute;
+                                width: 20px;
+                                height: 100%;
+                                background: #EAEAEA;
+                                content: '';
+                                left: 100%;
+                                top: 0;
+                            }
+                        }
+                    }
+                }
+                border-bottom: 1px dashed #A1A1A1;
+                td {
+                    padding: 20px 0;
+                    font-size: 14px;
+                    font-family: Roboto-Light;
+                    &:nth-child(2) {
+                        text-align: center;
+                    }
+                    &:last-child {
+                        text-align: right;
+                    }
+                    h3 {
+                        font-size: 14px;
+                        font-family: Roboto-Light;
+                    }
+                    span {
+                        font-size: 12px;
+                        font-family: Roboto-Light;
+                        &.c-b {
+                            color: blue;
+                        }
+                    }
                 }
             }
         }
