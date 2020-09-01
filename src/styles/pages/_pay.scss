@@ -91,10 +91,13 @@ section.Pay {
                 font-size: 18px;
                 font-family: Roboto-Regular;
                 color: white;
+                margin-left: 20px;
             }
             input[type="checkbox"] {
+                cursor: pointer;
                 height: 20px;
                 width: 20px;
+                margin-left: 20px;
             }
         }
     }
@@ -193,6 +196,7 @@ section.Pay {
             font-size: 18px;
         }
         select {
+            appearance: none;
             cursor: pointer;
         }
         &.select {

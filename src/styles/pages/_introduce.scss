@@ -1,5 +1,11 @@
 section.Introduce {
     padding: 90px 0;
+    @media (max-width: 1024px) {
+        padding: 40px 0;
+    }
+    @media (max-width: 575.98px) {
+        padding: 20px 0;
+    }
     .introduce__wrapper {
         h2 {
             margin-bottom: 40px;
@@ -9,12 +15,19 @@ section.Introduce {
             text-align: center;
             text-transform: uppercase;
             font-weight: normal;
+            @media (max-width: 575.98px) {
+                font-size: 22px;
+                margin-bottom: 20px;
+            }
         }
         h4 {
             font-family: Roboto-Light;
             font-size: 18px;
             color: map-get($mau, main-3);
             text-align: center;
+            @media (max-width: 575.98px) {
+                font-size: 12px;
+            }
         }
         h3 {
             text-transform: uppercase;
@@ -22,6 +35,12 @@ section.Introduce {
             padding: 40px 0;
             color: map-get($mau, main-2);
             font-family: RobotoC-bold;
+            @media (max-width: 1024px) {
+                padding: 25px 0;
+            }
+            @media (max-width: 575.98px) {
+                padding: 20px 0;
+            }
         }
         p {
             font-family: Roboto-Light;
@@ -31,12 +50,23 @@ section.Introduce {
             &:last-child {
                 margin-bottom: 0;
             }
+            @media (max-width: 1024px) {
+                margin-bottom: 20px;
+            }
+            @media (max-width: 575.98px) {
+                font-size: 14px;
+                margin-bottom: 15px;
+            }
         }
         &.t-1 {
             .introduce__img {
-                padding: 40px 0;
+                padding-top: 40px;
                 width: 100%;
                 height: 540px;
+                @media (max-width: 575.98px) {
+                    padding-top: 20px;
+                    height: 300px;
+                }
                 img {
                     width: 100%;
                     height: 100%;
@@ -64,6 +94,9 @@ section.Introduce {
             .swiper-container {
                 padding-top: 50px;
                 margin: 0 50px;
+                @media (max-width: 575.98px) {
+                    padding-top: 10px;
+                }
             }
             .swiper-button-next,
             .swiper-button-prev {
@@ -84,7 +117,6 @@ section.Introduce {
                     font-family: Roboto-Light;
                     text-align: center;
                     opacity: 0;
-                    transition: .5s all ease-in-out;
                     overflow: hidden;
                     display: -webkit-box;
                     text-overflow: ellipsis;
@@ -102,6 +134,13 @@ section.Introduce {
                     color: map-get($mau, main-2);
                     text-align: center;
                     text-transform: uppercase;
+                    @media (max-width: 575.98px) {
+                        font-size: 22px;
+                        margin-bottom: unset;
+                    }
+                }
+                @media (max-width: 575.98px) {
+                    font-size: 16px;
                 }
                 padding-top: 0;
             }
@@ -115,22 +154,40 @@ section.Introduce {
             }
             .introduce__inner {
                 display: flex;
+                flex-wrap: wrap;
             }
             .intro__map {
                 -ms-flex: 0 0 70%;
                 flex: 0 0 70%;
                 max-width: 70%;
                 padding-right: 40px;
+                @media (max-width: 768.98px) {
+                    -ms-flex: 0 0 100%;
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    padding-right: unset;
+                    margin-top: 20px;
+                    order: 2;
+                }
                 .map {
                     width: 100%;
                     height: 100%;
                     background: map-get($mau, main-3);
+                    @media (max-width: 768.98px) {
+                        height: 500px !important;
+                    }
                 }
             }
             .introMap__search {
                 -ms-flex: 0 0 30%;
                 flex: 0 0 30%;
                 max-width: 30%;
+                @media (max-width: 768.98px) {
+                    -ms-flex: 0 0 100%;
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                    order: 1;
+                }
             }
             .introMap__input {
                 margin-bottom: 15px;

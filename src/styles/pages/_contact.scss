@@ -7,11 +7,34 @@ section.Contact {
         font-family: RobotoC-Bold;
         margin-bottom: 40px;
         text-align: center;
+        position: relative;
+        &::before {
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            width: 1095px;
+            height: 358px;
+            background: url(../assets/images/contact/bg.png);
+            content: "";
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            background-size: cover;
+            @media (max-width: 768.98px) {
+                width: 520px;
+                height: 120px;
+            }
+        }
     }
     .contact__form {
         width: 40%;
         margin: auto;
         margin-bottom: 20px;
+        @media (max-width: 768.98px) {
+            width: 60%;
+        }
+        @media (max-width: 575.98px) {
+            width: 90%;
+        }
     }
     .form__group {
         margin-bottom: 20px;
@@ -20,9 +43,9 @@ section.Contact {
         textarea {
             width: 100%;
             outline: none;
-            border: 1px solid map-get($mau, main-2);
             padding: 10px 20px;
             border-radius: 10px;
+            box-shadow: 0 3px 6px rgba($color: #a1a1a1, $alpha: 0.3);
         }
         textarea {
             resize: none;
@@ -52,6 +75,15 @@ section.Contact {
         text-align: center;
         display: flex;
         flex-wrap: wrap;
+        @media (max-width: 768.98px) {
+            text-align: left;
+            width: fit-content;
+            margin: 0 7vw;
+        }
+        @media (max-width: 575.98px) {
+            display: block;
+            text-align: left;
+        }
         p {
             font-size: 18px;
             &:first-child {
@@ -64,6 +96,14 @@ section.Contact {
                 -ms-flex: 0 0 50%;
                 flex: 0 0 50%;
                 max-width: 50%;
+                @media (max-width: 575.98px) {
+                    -ms-flex: 0 0 100%;
+                    flex: 0 0 100%;
+                    max-width: 100%;
+                }
+            }
+            @media (max-width: 1024.98px) {
+                font-size: 15px;
             }
             span {
                 font-weight: bold;
