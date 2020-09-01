@@ -55,14 +55,16 @@ section.Guide {
                 width: 100%;
                 outline: none;
                 padding: 10px 20px;
-                border: 1px solid map-get($mau, main-2);
                 border-radius: 10px;
+                border: none;
+                box-shadow: 0px 3px 4px rgba($color: #000000, $alpha: .2);
             }
             textarea {
+                border: none;
+                box-shadow: 0px 3px 4px rgba($color: #000000, $alpha: .2);
                 width: 100%;
                 outline: none;
                 padding: 10px 20px;
-                border: 1px solid map-get($mau, main-2);
                 border-radius: 10px;
                 resize: none;
             }
