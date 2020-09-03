@@ -378,8 +378,24 @@ section.Introduce {
                     padding: 20px 0;
                 }
                 .video__item {
+                    &:hover {
+                        &:first-child {
+                            .videoItem__thumbnail {
+                                height: 100%;
+                            }
+                        }
+                    }
+                    &.active {
+                        .videoItem__thumbnail {
+                            opacity: .5;
+                            position: relative;
+                            &::before {
+                                position: absolute;
+                            }
+                        }
+                    }
                     cursor: pointer;
-                    &:first-child {
+                    &-preview {
                         margin-bottom: 42px;
                         -ms-flex: 0 0 100%;
                         flex: 0 0 100%;
@@ -392,6 +408,7 @@ section.Introduce {
                             flex: 0 0 60%;
                             max-width: 60%;
                             height: 425px;
+                            position: relative;
                             @media (max-width: 575.98px) {
                                 -ms-flex: 0 0 100%;
                                 flex: 0 0 100%;
@@ -417,12 +434,35 @@ section.Introduce {
                         .videoItem__thumbnail {
                             height: 100%;
                             background: map-get($mau, main-3);
+                            position: absolute;
+                            top: 0;
+                            cursor: pointer;
+                            // pointer-events: none;
+                            &::before {
+                                position: absolute;
+                                width: 84px;
+                                height: 84px;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                content: '';
+                                background: url(../assets/images/intro/play.png);
+                            }
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                        .videoItem__src {
+                            height: 425px;
                         }
                         span {
                             display: none;
                         }
                     }
                     &:not(:first-child) {
+                        position: relative;
                         -ms-flex: 0 0 33.3333%;
                         flex: 0 0 33.3333%;
                         max-width: 33.3333%;
@@ -445,13 +485,23 @@ section.Introduce {
                             -webkit-line-clamp: 2;
                         }
                         .videoItem__thumbnail {
+                            margin-bottom: 30px;
                             height: 238px;
                             background: map-get($mau, main-3);
-                            margin-bottom: 30px;
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                object-fit: cover;
+                            }
+                        }
+                        .videoItem__src {
+                            display: none;
+                            height: 238px;
                         }
                     }
                 }
                 .videoItem__content {
+                    margin-top: 20px;
                     h6 {
                         font-size: 18px;
                         color: map-get($mau, main-2);
@@ -507,5 +557,8 @@ section.Introduce {
                 }
             }
         }
+    }
+    button.ytp-large-play-button {
+        display: none;
     }
 }

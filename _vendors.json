@@ -5,7 +5,8 @@
         "node_modules/lazysizes/lazysizes.js",
         "node_modules/swiper/js/swiper.js",
         "node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js",
-        "node_modules/nouislider/distribute/nouislider.js"
+        "node_modules/nouislider/distribute/nouislider.js",
+        "node_modules/wnumb/wNumb.js"
     ],
     "css": [
         "node_modules/swiper/css/swiper.css",

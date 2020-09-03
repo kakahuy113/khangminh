@@ -5,6 +5,7 @@ import { commonController } from "./libraries/CommonController";
 
 declare var Swiper: any;
 declare var $: any;
+declare var player:any,loadVideoById:any;
 
 const slideAwardIntroduce = () => {
 	const mySwiper = new Swiper(".introduce__wrapper.t-2 .swiper-container", {
@@ -247,17 +248,41 @@ const addIdPopup = () => {
 const showVideo = () => {
 	const listVideo = document.querySelectorAll(".video__item");
 	const video = document.getElementsByClassName("video__item");
-	if (listVideo.length > 4) {
+	const preview = document.getElementsByClassName("video__item-preview");
+	if (listVideo.length > 3) {
 		for (let i = 0; i < listVideo.length; i++) {
-			if (i > 3) {
+			if (i > 2) {
 				$(".video__item").eq(i).addClass("d-none");
 			}
 		}
 	}
+	
 	if (video) {
-		// video.addEventListener("click",function(){
-		// 	console.log(1);
-		// })
+		listVideo.forEach((element,index) => {
+			//get images
+			const id = $(element).children().children().attr("data-id");
+			const src = 'http://img.youtube.com/vi/'+id+'/maxresdefault.jpg';
+			$(element).children().children().children().attr("src",src);
+			//get_video
+		});
+		$(video).click(function (e:any) { 
+			e.preventDefault();
+			const idVideo = $(this).find(".videoItem__thumbnail").attr("data-id");
+			const srcVideo = "https://www.youtube.com/embed/"+ idVideo +"?rel=0&showinfo=0&controls=1&enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A8000&widgetid=1";
+			$(".videoItem__src.first iframe").attr("src",srcVideo);
+			const imgItem = $(this).children().children().children().attr("src");
+			$(".videoItem__thumbnail.first img").attr("src",imgItem);
+			const content = $(this).find(".videoItem__content").html();
+			$(".videoItem__content.first").html(content);
+			
+		});
+		$(video).first().trigger("click");
+	}
+	if(preview){
+		$(preview).click(function (e:any) { 
+			e.preventDefault();
+			$(this).find(".videoItem__thumbnail").addClass("d-n");
+		});
 	}
 };
 //init submenu
@@ -339,6 +364,9 @@ const ajaxFormContact = () => {
 					_thisBtn.removeAttr("disabled");
 				},
 			});
+		}
+		else{
+			$(".contact__form .form-group input").addClass("input-validation-error");
 		}
 	});
 };
@@ -738,6 +766,14 @@ const payContinue = () =>{
 	});
 }
 
+const getMapApi = () =>{
+	const listMap = document.querySelectorAll("li.introMap__item");
+	if(listMap){
+		listMap.forEach(element => {
+			console.log(1);
+		});
+	}
+}
 
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
@@ -796,6 +832,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	getMoreQuestion();
 	cartQuantity();
 	payContinue();
+	getMapApi();
 });
 
 const fetchData = () => {

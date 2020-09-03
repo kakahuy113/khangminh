@@ -159,23 +159,23 @@ const getLocationList = () => {
     if (BranchListDOM) {
         BranchListDOM.innerHTML = "";
         markers.forEach((marker, index) => {
-            const newMarker = document.createElement("li");
-            newMarker.classList.add("introMap__item");
-            newMarker.innerHTML = `
-				<h6>${locationsInput[index].title}</h6>
-				<div class="item__info">
-				<div class="info__icon"><img src="./assets/images/intro/home.png" alt="home"></div>
-				<div class="info__text location">
-				<p>${locationsInput[index].address}</p>
-				</div>
-				</div>
-				<div class="item__info">
-				<div class="info__icon"><img src="./assets/images/intro/phone.png" alt="phone"></div>
-				<div class="info__text">
-				<p>${locationsInput[index].phone}</p>
-				</div>
-				</div>
-			`;
+            // const newMarker = document.createElement("li");
+            // newMarker.classList.add("introMap__item");
+            // newMarker.innerHTML = `
+            // 	<h6>${locationsInput[index].name}</h6>
+            // 	<div class="item__info">
+            // 	<div class="info__icon"><img src="./assets/images/intro/home.png" alt="home"></div>
+            // 	<div class="info__text location">
+            // 	<p>${locationsInput[index].address}</p>
+            // 	</div>
+            // 	</div>
+            // 	<div class="item__info">
+            // 	<div class="info__icon"><img src="./assets/images/intro/phone.png" alt="phone"></div>
+            // 	<div class="info__text">
+            // 	<p>${locationsInput[index].phone}</p>
+            // 	</div>
+            // 	</div>
+            // `;
             newMarker.setAttribute("marker-id", `${index}`);
             newMarker.addEventListener("click", () => {
                 const markerIndex = newMarker.getAttribute("marker-id");

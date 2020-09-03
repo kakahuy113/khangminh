@@ -40,6 +40,12 @@ section.Product {
         label {
             color: map-get($mau, main-4);
             margin-bottom: 15px;
+            span {
+                color: map-get($mau, main-3);
+            }
+        }
+        span.priceLow__range {
+            padding-left: 20px;
         }
         &.style {
             -ms-flex: 0 0 25%;

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Product | KhanhMinh</title>
+		<title>Page | Index</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,6 +10,15 @@
 		<link rel="stylesheet" href="./css/main.min.css">
 	</head>
 	<body>
+		<div id="loading-container">
+			<div class="loading-wrapper">
+				<div id="loading-logo"><img src="./assets/loading.gif"></div>
+				<div class="progress">
+					<div id="progress-bar"></div>
+				</div>
+				<div class="progress-status">Loading: <span id="progress-percentage">0</span>%</div>
+			</div>
+		</div>
 		<header>
 			<div class="header__nav--top">
 				<div class="container">
@@ -163,192 +172,7 @@
 			</div>
 		</section>
 		<main>
-			<section class="Product">
-				<div class="container">
-					<div class="product__wrapper container-1175px">
-						<h2>Sản phẩm</h2>
-						<form class="product__filter">
-							<div class="proFilter__item style">
-								<label for="price">Loại mặt hàng:</label>
-								<select name="catalog">
-									<option value="1">Tổ Yên Thô</option>
-								</select>
-							</div>
-							<div class="proFilter__item price">
-								<label for="price">Sắp xếp theo:</label>
-								<select name="price">
-									<option value="1">Giá thấp đến cao</option>
-									<option value="2">Giá cao đến thấp</option>
-								</select>
-							</div>
-							<div class="proFilter__item range">
-								<label for="price" data-current="vnđ">Giá:<span class="priceLow__range">2000</span><span> -  </span><span class="priceHigh__range">20000</span></label>
-								<div class="range__inner">
-									<div class="priceLow"><span id="low">2000</span></div>
-									<div class="sliderPrice">
-										<div id="rangeProduct"></div>
-									</div>
-									<div class="priceHigh"><span id="high">20000</span></div>
-								</div>
-							</div>
-							<div class="proFilter__item submit">
-								<div id="filter">Tìm</div>
-							</div>
-						</form>
-						<div class="product__list">
-							<div class="product__item"><a class="proItem__inner" href="product-detail.html">
-									<div class="proItem__img overflow-hidden"><img src="./assets/images/product/pro.png" alt="product"></div>
-									<div class="proItem__desc">
-										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
-									</div>
-									<div class="proItem__price">
-										<h4 class="sale">20000000</h4>
-										<h4 data-sale="" data-txt="VNĐ/hộp">00000 </h4>
-									</div>
-									<div class="proItem__cart">
-										<h3>add to cart</h3>
-									</div></a></div>
-							<div class="product__item"><a class="proItem__inner" href="product-detail.html">
-									<div class="proItem__img overflow-hidden"><img src="./assets/images/product/pro.png" alt="product"></div>
-									<div class="proItem__desc">
-										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
-									</div>
-									<div class="proItem__price">
-										<h4 class="sale">20000000</h4>
-										<h4 data-sale="" data-txt="VNĐ/hộp">10000 </h4>
-									</div>
-									<div class="proItem__cart">
-										<h3>add to cart</h3>
-									</div></a></div>
-							<div class="product__item"><a class="proItem__inner" href="product-detail.html">
-									<div class="proItem__img overflow-hidden"><img src="./assets/images/product/pro.png" alt="product"></div>
-									<div class="proItem__desc">
-										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
-									</div>
-									<div class="proItem__price">
-										<h4 class="sale">20000000</h4>
-										<h4 data-sale="" data-txt="VNĐ/hộp">20000 </h4>
-									</div>
-									<div class="proItem__cart">
-										<h3>add to cart</h3>
-									</div></a></div>
-							<div class="product__item"><a class="proItem__inner" href="product-detail.html">
-									<div class="proItem__img overflow-hidden"><img src="./assets/images/product/pro.png" alt="product"></div>
-									<div class="proItem__desc">
-										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
-									</div>
-									<div class="proItem__price">
-										<h4 class="sale">20000000</h4>
-										<h4 data-sale="" data-txt="VNĐ/hộp">30000 </h4>
-									</div>
-									<div class="proItem__cart">
-										<h3>add to cart</h3>
-									</div></a></div>
-							<div class="product__item"><a class="proItem__inner" href="product-detail.html">
-									<div class="proItem__img overflow-hidden"><img src="./assets/images/product/pro.png" alt="product"></div>
-									<div class="proItem__desc">
-										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
-									</div>
-									<div class="proItem__price">
-										<h4 class="sale">20000000</h4>
-										<h4 data-sale="" data-txt="VNĐ/hộp">40000 </h4>
-									</div>
-									<div class="proItem__cart">
-										<h3>add to cart</h3>
-									</div></a></div>
-							<div class="product__item"><a class="proItem__inner" href="product-detail.html">
-									<div class="proItem__img overflow-hidden"><img src="./assets/images/product/pro.png" alt="product"></div>
-									<div class="proItem__desc">
-										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
-									</div>
-									<div class="proItem__price">
-										<h4 class="sale">20000000</h4>
-										<h4 data-sale="" data-txt="VNĐ/hộp">50000 </h4>
-									</div>
-									<div class="proItem__cart">
-										<h3>add to cart</h3>
-									</div></a></div>
-							<div class="product__item"><a class="proItem__inner" href="product-detail.html">
-									<div class="proItem__img overflow-hidden"><img src="./assets/images/product/pro.png" alt="product"></div>
-									<div class="proItem__desc">
-										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
-									</div>
-									<div class="proItem__price">
-										<h4 class="sale">20000000</h4>
-										<h4 data-sale="" data-txt="VNĐ/hộp">60000 </h4>
-									</div>
-									<div class="proItem__cart">
-										<h3>add to cart</h3>
-									</div></a></div>
-							<div class="product__item"><a class="proItem__inner" href="product-detail.html">
-									<div class="proItem__img overflow-hidden"><img src="./assets/images/product/pro.png" alt="product"></div>
-									<div class="proItem__desc">
-										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
-									</div>
-									<div class="proItem__price">
-										<h4 class="sale">20000000</h4>
-										<h4 data-sale="" data-txt="VNĐ/hộp">70000 </h4>
-									</div>
-									<div class="proItem__cart">
-										<h3>add to cart</h3>
-									</div></a></div>
-							<div class="product__item"><a class="proItem__inner" href="product-detail.html">
-									<div class="proItem__img overflow-hidden"><img src="./assets/images/product/pro.png" alt="product"></div>
-									<div class="proItem__desc">
-										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
-									</div>
-									<div class="proItem__price">
-										<h4 class="sale">20000000</h4>
-										<h4 data-sale="" data-txt="VNĐ/hộp">80000 </h4>
-									</div>
-									<div class="proItem__cart">
-										<h3>add to cart</h3>
-									</div></a></div>
-							<div class="product__item"><a class="proItem__inner" href="product-detail.html">
-									<div class="proItem__img overflow-hidden"><img src="./assets/images/product/pro.png" alt="product"></div>
-									<div class="proItem__desc">
-										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
-									</div>
-									<div class="proItem__price">
-										<h4 class="sale">20000000</h4>
-										<h4 data-sale="" data-txt="VNĐ/hộp">90000 </h4>
-									</div>
-									<div class="proItem__cart">
-										<h3>add to cart</h3>
-									</div></a></div>
-							<div class="product__item"><a class="proItem__inner" href="product-detail.html">
-									<div class="proItem__img overflow-hidden"><img src="./assets/images/product/pro.png" alt="product"></div>
-									<div class="proItem__desc">
-										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!</p>
-									</div>
-									<div class="proItem__price">
-										<h4 class="sale">20000000</h4>
-										<h4 data-sale="" data-txt="VNĐ/hộp">100000 </h4>
-									</div>
-									<div class="proItem__cart">
-										<h3>add to cart</h3>
-									</div></a></div>
-							<div class="product__item"><a class="proItem__inner" href="product-detail.html">
-									<div class="proItem__img overflow-hidden"><img src="./assets/images/product/pro.png" alt="product"></div>
-									<div class="proItem__desc">
-										<p>Lorem ipsum dolor sit</p>
-									</div>
-									<div class="proItem__price">
-										<h4 class="sale">0 </h4>
-										<h4 data-sale="15000" data-txt="VNĐ/hộp">20000</h4>
-									</div>
-									<div class="proItem__cart">
-										<h3>add to cart</h3>
-									</div></a></div>
-						</div>
-						<div class="productGetAll" data-url="/product">
-							<div class="get">
-								xem thêm (<span>456</span>  sản phẩm)</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<div class="product-page" id="js-page-verify" hidden></div>
+			<div class="index-page" id="js-page-verify" hidden></div>
 		</main>
 		<section class="partner">
 			<div class="container h-100">
@@ -416,6 +240,5 @@
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;libraries=places&amp;key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s"></script>
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
-		<script type="text/javascript" src="./js/filter.min.js"></script>
 	</body>
 </html>

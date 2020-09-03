@@ -79,7 +79,8 @@
 		"lazysizes": "^5.2.2",
 		"nouislider": "^14.6.1",
 		"rxjs": "^6.6.2",
-		"swiper": "^5.4.5"
+		"swiper": "^5.4.5",
+		"wnumb": "^1.2.0"
 	},
 	"prettier": {
 		"useTabs": true,
