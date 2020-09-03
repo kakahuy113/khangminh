@@ -95,3 +95,26 @@ section.ProDetail
 							.cmt__content
 								p Sản phẩm rất tốt <3 <3 <3
 								p 25 Tháng 4 lúc 23:25
+section.Related
+	.container
+		.container-1190px
+			.seemore.customer
+					h3 SẢN PHẨM CÙNG LOẠI
+					.product__wrapper.text-center
+						.swiper-container
+							.swiper-wrapper
+								-for(var i = 0; i < 7; i++)
+									.swiper-slide
+										a(href="#").card
+											.card-body
+												.img
+													img.lazyload-blur-up(src="./assets/images/home/product-item.png", alt="")
+												.desc
+													p.lcl.lcl-2 Lorem ipsum dolor sit amet, consectetuer elit... 
+												.price
+													p.price 20.000.000 VNĐ/hộp
+													p.sale-price 20.000.000 VNĐ/hộp
+											.card-footer.btn
+												p ADD TO CART
+						.swiper-button-prev
+						.swiper-button-next

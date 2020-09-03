@@ -1,134 +1,140 @@
 .love-list {
-	margin-top: 125px;
-	margin-bottom: 125px;
+    margin-top: 125px;
+    margin-bottom: 125px;
 }
+
 .love-list__wrapper {
-	svg {
-		width: 20px;
-		height: 20px;
-		vertical-align: baseline;
-	}
-	.list-of-love {
-		margin-bottom: 70px;
-	}
-	.card-header {
-		display: flex;
-		align-items: center;
-		justify-content: flex-start;
-		height: 50px;
-		width: 100%;
-		background: #eaeaea;
-		padding:0 70px;
-		svg {
-			margin-right: 10px;
-			.cls-1 {
-				fill: #a62c32 !important;
-			}
-		}
-	}
-	.card-body {
-		border: 1px solid #eaeaea;
-		border-top: none !important;
-		padding: 0 70px;
-		padding-bottom: 10px;
-		.list-wrapper {
-			overflow: hidden;
-			margin-bottom: 40px;
-		}
-		.item-wrapper {
-			display: flex;
-			flex-wrap: wrap;
-			// justify-content: space-between;
-			border-bottom: 1px dashed #5e5e5e;
-			padding-top: 20px;
-			padding-bottom: 20px;
-			margin-right: -10px;
-			margin-left: -10px;
-			> div {
-				padding-left: 10px;
-				padding-right: 10px;
-			}
-			&:first-child {
-				border-bottom: 1px solid #5e5e5e !important;
-				h5 {
-					font-size: 1.8rem;
-					line-height: 2.7rem;
-					font-family: Roboto-Bold;
-				}
-			}
-			.column-1 {
-				-ms-flex: 0 0 65%;
-				flex: 0 0 65%;
-				max-width: 65%;
-				.wrapper {
-					display: flex;
-					margin-left: -10px;
-					margin-right: -10px;
-					> div {
-						padding-left: 10px;
-						padding-right: 10px;
-					}
-					p {
-						font-family: Roboto-Light;
-						font-size: 1.8rem;
-						line-height: 2.1rem;
-						&:nth-child(2) {
-							font-family: Din-Light !important;
-							color: #929292;
-							font-size: 1.6rem !important;
-						}
-					}
-					.desc {
-						> p {
-							margin-bottom: 5px;
-							&:last-child {
-								font-weight: 500;
-								color: #a62c32 !important;
-							}
-						}
-					}
-					.state  {
-						display: flex;
-						margin-bottom: 10px;
-						p {
-							padding-left: 10px;
-							line-height: normal !important;
-						}
-					}
-				}
-			}
-			.column-2 {
-				-ms-flex: 0 0 15%;
-				flex: 0 0 15%;
-				max-width: 15%;
-				p {
-					font-family: Roboto-Light;
-					font-size: 1.8rem;
-				}
-			}
-			.column-3 {
-				-ms-flex: 0 0 20%;
-				flex: 0 0 20%;
-				max-width: 20%;
-				text-align: right;
-			}
-		}
-		.add-all {
-			text-align: right;
-			a {
-				color: #a62c32;
-				font-size: 1.8rem;
-				line-height: 2.1rem;
-				font-family: Roboto-Light;
-			}
-		}
-	}
+    svg {
+        width: 20px;
+        height: 20px;
+        vertical-align: baseline;
+    }
+    .list-of-love {
+        margin-bottom: 70px;
+    }
+    .card-header {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 50px;
+        width: 100%;
+        background: #eaeaea;
+        padding: 0 70px;
+        svg {
+            margin-right: 10px;
+            .cls-1 {
+                fill: #a62c32 !important;
+            }
+        }
+    }
+    .card-body {
+        border: 1px solid #eaeaea;
+        border-top: none !important;
+        padding: 0 70px;
+        padding-bottom: 10px;
+        .list-wrapper {
+            overflow: hidden;
+            margin-bottom: 40px;
+        }
+        .item-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            // justify-content: space-between;
+            border-bottom: 1px dashed #5e5e5e;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            margin-right: -10px;
+            margin-left: -10px;
+            >div {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            &:first-child {
+                border-bottom: 1px solid #5e5e5e !important;
+                h5 {
+                    font-size: 1.8rem;
+                    line-height: 2.7rem;
+                    font-family: Roboto-Bold;
+                }
+            }
+            .column-1 {
+                -ms-flex: 0 0 65%;
+                flex: 0 0 65%;
+                max-width: 65%;
+                .wrapper {
+                    display: flex;
+                    margin-left: -10px;
+                    margin-right: -10px;
+                    >div {
+                        padding-left: 10px;
+                        padding-right: 10px;
+                    }
+                    p {
+                        font-family: Roboto-Light;
+                        font-size: 1.8rem;
+                        line-height: 2.1rem;
+                        &:nth-child(2) {
+                            font-family: Din-Light !important;
+                            color: #929292;
+                            font-size: 1.6rem !important;
+                        }
+                    }
+                    .desc {
+                        >p {
+                            margin-bottom: 5px;
+                            &:last-child {
+                                font-weight: 500;
+                                color: #a62c32 !important;
+                            }
+                        }
+                    }
+                    .state {
+                        display: flex;
+                        margin-bottom: 10px;
+                        p {
+                            padding-left: 10px;
+                            line-height: normal !important;
+                        }
+                    }
+                }
+            }
+            .column-2 {
+                -ms-flex: 0 0 15%;
+                flex: 0 0 15%;
+                max-width: 15%;
+                p {
+                    font-family: Roboto-Light;
+                    font-size: 1.8rem;
+                }
+            }
+            .column-3 {
+                -ms-flex: 0 0 20%;
+                flex: 0 0 20%;
+                max-width: 20%;
+                text-align: right;
+            }
+        }
+        .add-all {
+            text-align: right;
+            a {
+                color: #a62c32;
+                font-size: 1.8rem;
+                line-height: 2.1rem;
+                font-family: Roboto-Light;
+            }
+        }
+    }
 }
+
 .seemore {
-	h3 {
-		text-align: center;
-		font-size: 1.8rem;
-		font-family: Roboto-Bold;
-		margin-bottom: 60px;
-	}
+    &.customer {
+        padding-top: 50px;
+        background: white;
+    }
+    h3 {
+        text-align: center;
+        font-size: 1.8rem;
+        font-family: Roboto-Bold;
+        margin-bottom: 60px;
+    }
 }
