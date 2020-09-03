@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>Introduce | KhanhMinh</title>
+		<title>Page | Index</title>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 		<meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,6 +10,15 @@
 		<link rel="stylesheet" href="./css/main.min.css">
 	</head>
 	<body>
+		<div id="loading-container">
+			<div class="loading-wrapper">
+				<div id="loading-logo"><img src="./assets/loading.gif"></div>
+				<div class="progress">
+					<div id="progress-bar"></div>
+				</div>
+				<div class="progress-status">Loading: <span id="progress-percentage">0</span>%</div>
+			</div>
+		</div>
 		<header>
 			<div class="header__nav--top">
 				<div class="container">
@@ -17,39 +26,26 @@
 						<div class="wrapper__utilities">
 							<div class="left">
 								<ul class="language">
-									<li class="desktop desktop languages__item item" data-language="vi"><a href="#">VN</a></li>
-									<li class="desktop languages__item item" data-language="cn"><a href="#">CN</a></li>
-									<li class="desktop languages__item item" data-language="en"><a href="#">EN</a></li>
-									<li class="mobile">
-										<div class="dropdown">
-											<div class="dropdown__select"><span class="dropdown__selected">VN</span></div>
-											<ul class="dropdown__list language">
-												<li class="dropdown__item languages__item item" data-language="vi"><a href="#">VN</a></li>
-												<li class="dropdown__item languages__item item" data-language="cn"><a href="#">CN</a></li>
-												<li class="dropdown__item languages__item item" data-language="en"><a href="#">EN</a></li>
-											</ul>
-										</div>
-									</li>
+									<li class="languages__item item" data-language="vi"><a href="#">VN</a></li>
+									<li class="languages__item item" data-language="cn"><a href="#">CN</a></li>
+									<li class="languages__item item" data-language="en"><a href="#">EN</a></li>
 									<li>
-										<form>
-											<div class="form-input">
-												<input type="text" name="lookup">
-											</div>
-											<div class="sumit">
-												<button class="btn" data-url="qwe"><img class="svg" src="./assets/images/header/SVG/lookup.svg" alt="find"></button>
-											</div>
-										</form>
+										<div class="form-input">
+											<input type="text">
+										</div>
+										<div class="sumit">
+											<button class="btn"><img class="svg" src="./assets/images/header/SVG/lookup.svg" alt="find"></button>
+										</div>
 									</li>
 								</ul>
 							</div>
 							<div class="right">
 								<div class="right__wrapper">
-									<div class="account-item" data-login="false" id="">
-										<div><img class="lazyload blur-up svg" src="./assets/images/header/SVG/register.svg" alt="login"><span class="custom-display">TÀI KHOẢN</span></div>
+									<div class="account-item" data-login="false" id=""><a href="javascipt:;"><img class="lazyload blur-up svg" src="./assets/images/header/SVG/register.svg" alt="login"><span>TÀI KHOẢN</span></a>
 										<div class="account-box"><a class="btn btn-main" href="javascript:;" data-fancybox data-src="#login">Đăng nhập </a><a class="btn btn-register" href="javascript:;" data-fancybox data-src="#register">Đăng ký </a></div>
 									</div>
-									<div class="check"> <a href="javascript:;"><img class="lazyload blur-up svg" src="./assets/images/header/SVG/checklist.svg" alt="check"><span class="custom-display">KIỂM TRA ĐƠN HÀNG</span></a></div>
-									<div class="cart"> <a href="cart.html"><img class="lazyload blur-up svg" src="./assets/images/header/SVG/cart.svg" alt="cart"><span class="cart-num">1</span><span class="custom-display">CART</span></a></div>
+									<div class="check"> <a href="javascript:;"><img class="lazyload blur-up svg" src="./assets/images/header/SVG/checklist.svg" alt="check"><span>KIỂM TRA ĐƠN HÀNG</span></a></div>
+									<div class="cart"> <a href="cart.html"><img class="lazyload blur-up svg" src="./assets/images/header/SVG/cart.svg" alt="cart"><span class="cart-num">1</span><span>CART</span></a></div>
 								</div>
 							</div>
 						</div>
@@ -76,7 +72,7 @@
 								<div class="bottom-ask">
 									<p>Chưa có tài khoản? <a href="javascript:;" data-fancybox data-src="">Đăng ký ngay</a></p>
 								</div>
-								<div class="social"><a class="btn btn-google" href="#" data-api="google"><img class="lazyload blur-up svg" src="./assets/icons/icon-google-plus.svg" alt="icon google plus"><span>Đăng ký qua Google</span></a><a class="btn btn-facebook" href="#" data-api="facebook"><img class="lazyload blur-up svg" src="./assets/icons/icon-facebook-2.svg" alt="icon facebook"><span>Đăng ký qua Facebook</span></a></div>
+								<div class="social"><a class="btn btn-google" href="#"><img class="lazyload blur-up svg" src="./assets/icons/icon-google-plus.svg" alt="icon google plus"><span>Đăng ký qua Google</span></a><a class="btn btn-facebook" href="#"><img class="lazyload blur-up svg" src="./assets/icons/icon-facebook-2.svg" alt="icon facebook"><span>Đăng ký qua Facebook</span></a></div>
 							</div>
 						</div>
 					</div>
@@ -121,16 +117,12 @@
 					</div>
 				</div>
 			</div>
-			<div class="header__logo">
-				<div class="container">
-					<div class="container-1190px"><a class="img" href="index.html"><img class="lazyload blur-up desktop" src="./assets/images/header/SVG/Logo.png" alt="Khang Minh"><img class="lazyload blur-up mobile" src="./assets/images/header/SVG/mobile-logo.png" alt="Khang Minh"></a></div>
-				</div>
-			</div>
+			<div class="header__logo"><a class="img" href="index.html"><img class="lazyload blur-up" src="./assets/images/header/SVG/Logo.png" alt="Khang Minh"></a></div>
 			<div class="header__nav--bottom">
 				<div class="container">
 					<div class="container-1190px">
-						<ul class="nav__wrapper" data-btn-back-content="Trở về">
-							<li><a class="text-uppercase" href="index.html">Trang Chủ</a></li>
+						<ul class="nav__wrapper">
+							<li><a class="text-uppercase" href="index.html">Trang Chủ1</a></li>
 							<li><a class="text-uppercase" href="javascript:;">Giới thiệu</a>
 								<ul class="nav__wrapper">
 									<li><a href="introduce.html">Welcome to Khang Minh</a></li>
@@ -150,16 +142,10 @@
 									<li><a href="news.html">Tin tức Khang Minh</a></li>
 								</ul>
 							</li>
-							<li><a class="text-uppercase" href="guide.html">Hướng dẫn</a>
-								<ul class="nav__wrapper">
-									<li><a href=" guide.html">Hướng dẫn text</a></li>
-									<li><a href="guide-txt.html">Hướng dẫn form</a></li>
-								</ul>
-							</li>
+							<li><a class="text-uppercase" href="guide.html">Hướng dẫn</a></li>
 							<li><a class="text-uppercase" href="contact.html">Liên hệ</a></li>
 							<div class="background-submenu"></div>
 						</ul>
-						<div class="hamburger_menu menu"><span></span></div>
 					</div>
 				</div>
 			</div>
@@ -186,123 +172,7 @@
 			</div>
 		</section>
 		<main>
-			<section class="Introduce">
-				<div class="container">
-					<div class="introduce__wrapper t-4 container-1175px">
-						<h2>HỆ THỐNG PHÂN PHỐI</h2>
-						<div class="introduce__inner">
-							<div class="intro__map">
-								<div class="map" id="map"></div>
-							</div>
-							<div class="dealer-locator-list">
-								<div class="list"></div>
-							</div>
-							<div class="introMap__search">
-								<div class="introMap__form">
-									<div class="introMap__input">
-										<input id="location-search" type="text" placeholder="Tìm địa chỉ . . .">
-									</div>
-									<div class="introMap__input select">
-										<select name="country">
-											<option value="1">Việt Nam</option>
-										</select>
-									</div>
-									<div class="introMap__input select">
-										<select name="city">
-											<option value="1">Tp. Hồ Chí Minh</option>
-										</select>
-									</div>
-									<div class="introMap__input select">
-										<select name="district">
-											<option value="1">Chọn Quận/Huyện</option>
-										</select>
-									</div>
-								</div>
-								<div class="introMap__list">
-									<ul>
-										<li class="introMap__item">
-											<h6>Lorem ipsum dolor sit amet.</h6>
-											<div class="item__info">
-												<div class="info__icon"><img src="./assets/images/intro/home.png" alt="home"></div>
-												<div class="info__text location">
-													<p>Lầu 8, Tòa nhà SAMCO, 320 Võ Văn Kiệt, Phường Cô Giang, Quận 1, TP.HCM.</p>
-												</div>
-											</div>
-											<div class="item__info">
-												<div class="info__icon"><img src="./assets/images/intro/phone.png" alt="phone"></div>
-												<div class="info__text phone">
-													<p>(08) 2365 1254 - (08) 6582 3254</p>
-												</div>
-											</div>
-										</li>
-										<li class="introMap__item">
-											<h6>Lorem ipsum dolor sit amet.</h6>
-											<div class="item__info">
-												<div class="info__icon"><img src="./assets/images/intro/home.png" alt="home"></div>
-												<div class="info__text location">
-													<p>Lầu 8, Tòa nhà SAMCO, 321 Võ Văn Kiệt, Phường Cô Giang, Quận 1, TP.HCM.</p>
-												</div>
-											</div>
-											<div class="item__info">
-												<div class="info__icon"><img src="./assets/images/intro/phone.png" alt="phone"></div>
-												<div class="info__text phone">
-													<p>(08) 2365 1254 - (08) 6582 3254</p>
-												</div>
-											</div>
-										</li>
-										<li class="introMap__item">
-											<h6>Lorem ipsum dolor sit amet.</h6>
-											<div class="item__info">
-												<div class="info__icon"><img src="./assets/images/intro/home.png" alt="home"></div>
-												<div class="info__text location">
-													<p>Lầu 8, Tòa nhà SAMCO, 322 Võ Văn Kiệt, Phường Cô Giang, Quận 1, TP.HCM.</p>
-												</div>
-											</div>
-											<div class="item__info">
-												<div class="info__icon"><img src="./assets/images/intro/phone.png" alt="phone"></div>
-												<div class="info__text phone">
-													<p>(08) 2365 1254 - (08) 6582 3254</p>
-												</div>
-											</div>
-										</li>
-										<li class="introMap__item">
-											<h6>Lorem ipsum dolor sit amet.</h6>
-											<div class="item__info">
-												<div class="info__icon"><img src="./assets/images/intro/home.png" alt="home"></div>
-												<div class="info__text location">
-													<p>Lầu 8, Tòa nhà SAMCO, 323 Võ Văn Kiệt, Phường Cô Giang, Quận 1, TP.HCM.</p>
-												</div>
-											</div>
-											<div class="item__info">
-												<div class="info__icon"><img src="./assets/images/intro/phone.png" alt="phone"></div>
-												<div class="info__text phone">
-													<p>(08) 2365 1254 - (08) 6582 3254</p>
-												</div>
-											</div>
-										</li>
-										<li class="introMap__item">
-											<h6>Lorem ipsum dolor sit amet.</h6>
-											<div class="item__info">
-												<div class="info__icon"><img src="./assets/images/intro/home.png" alt="home"></div>
-												<div class="info__text location">
-													<p>Lầu 8, Tòa nhà SAMCO, 324 Võ Văn Kiệt, Phường Cô Giang, Quận 1, TP.HCM.</p>
-												</div>
-											</div>
-											<div class="item__info">
-												<div class="info__icon"><img src="./assets/images/intro/phone.png" alt="phone"></div>
-												<div class="info__text phone">
-													<p>(08) 2365 1254 - (08) 6582 3254</p>
-												</div>
-											</div>
-										</li>
-									</ul>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-			<div class="introduce-page" id="js-page-verify" hidden></div>
+			<div class="index-page" id="js-page-verify" hidden></div>
 		</main>
 		<section class="partner">
 			<div class="container h-100">
@@ -366,16 +236,9 @@
 			</div>
 		</footer>
 		<div class="fake-toolbar"></div>
-		<div id="overlay"></div>
 		<div id="back_to_top"><img class="lazyload blur-up" data-src="./assets/images/home/back-to-top.png" alt="BACK-TO-TOP"></div>
 		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;libraries=places&amp;key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s"></script>
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
-		<script type="text/javascript" src="./js/AccountController.min.js"></script>
-		<script>
-			var locationsInput = [
-			];
-		</script>
-		<script src="./js/GoogleMapController.min.js"></script>
 	</body>
 </html>

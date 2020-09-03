@@ -4,6 +4,19 @@
     display: none !important;
 }
 
+input,
+select,
+textarea {
+    &.input-validation-error {
+        color: red !important;
+        border: 1px solid red !important;
+        transition: 0.3s all ease-in-out;
+        &::placeholder {
+            color: red !important;
+        }
+    }
+}
+
 .desktop {
     @media (max-width: 1024px) {
         display: none !important;
@@ -116,27 +129,25 @@
 }
 
 #back_to_top {
-	cursor: pointer;
-	position: fixed;
-	right: 25px;
-	bottom: 240px;
-	opacity: 0;
-	visibility: hidden;
-	transition: .3s all ease-in-out;
-	z-index: 300;
-	width: 35px;
-
-	&.show {
-		opacity: 1;
-		visibility: visible;
-	}
-
-	@media (max-width: 575.98px) {
-		right: unset;
-		left: 10px;
-		bottom: 10px;
-		height: 40px;
-	}
+    cursor: pointer;
+    position: fixed;
+    right: 25px;
+    bottom: 240px;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s all ease-in-out;
+    z-index: 300;
+    width: 35px;
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
+    @media (max-width: 575.98px) {
+        right: unset;
+        left: 10px;
+        bottom: 10px;
+        height: 40px;
+    }
 }
 
 .lcl {

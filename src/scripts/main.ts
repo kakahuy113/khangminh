@@ -4,6 +4,7 @@ import Axios from "axios";
 import { commonController } from "./libraries/CommonController";
 declare var Swiper: any;
 declare var $: any;
+declare var player:any,loadVideoById:any;
 
 const slideAwardIntroduce = () => {
 	const mySwiper = new Swiper(".introduce__wrapper.t-2 .swiper-container", {
@@ -246,17 +247,41 @@ const addIdPopup = () => {
 const showVideo = () => {
 	const listVideo = document.querySelectorAll(".video__item");
 	const video = document.getElementsByClassName("video__item");
-	if (listVideo.length > 4) {
+	const preview = document.getElementsByClassName("video__item-preview");
+	if (listVideo.length > 3) {
 		for (let i = 0; i < listVideo.length; i++) {
-			if (i > 3) {
+			if (i > 2) {
 				$(".video__item").eq(i).addClass("d-none");
 			}
 		}
 	}
+	
 	if (video) {
-		// video.addEventListener("click",function(){
-		// 	console.log(1);
-		// })
+		listVideo.forEach((element,index) => {
+			//get images
+			const id = $(element).children().children().attr("data-id");
+			const src = 'http://img.youtube.com/vi/'+id+'/maxresdefault.jpg';
+			$(element).children().children().children().attr("src",src);
+			//get_video
+		});
+		$(video).click(function (e:any) { 
+			e.preventDefault();
+			const idVideo = $(this).find(".videoItem__thumbnail").attr("data-id");
+			const srcVideo = "https://www.youtube.com/embed/"+ idVideo +"?rel=0&showinfo=0&controls=1&enablejsapi=1&origin=http%3A%2F%2Flocalhost%3A8000&widgetid=1";
+			$(".videoItem__src.first iframe").attr("src",srcVideo);
+			const imgItem = $(this).children().children().children().attr("src");
+			$(".videoItem__thumbnail.first img").attr("src",imgItem);
+			const content = $(this).find(".videoItem__content").html();
+			$(".videoItem__content.first").html(content);
+			
+		});
+		$(video).first().trigger("click");
+	}
+	if(preview){
+		$(preview).click(function (e:any) { 
+			e.preventDefault();
+			$(this).find(".videoItem__thumbnail").addClass("d-n");
+		});
 	}
 };
 //init submenu
@@ -349,6 +374,9 @@ const ajaxFormContact = () => {
 					_thisBtn.removeAttr("disabled");
 				},
 			});
+		}
+		else{
+			$(".contact__form .form-group input").addClass("input-validation-error");
 		}
 	});
 };
@@ -503,19 +531,33 @@ const actionLoginPage = () => {
 }
 
 const viewImagesDetail = () =>{
+	const listThumbnail= document.querySelectorAll(".detail__listImg .previews");
+	if(listThumbnail){
+		listThumbnail.forEach(element => {
+			const id =$(element).attr("data-id");
+			if(id !== ""){
+				$(element).parent().addClass("video");
+				$(element).addClass("video-x");
+				const src = 'http://img.youtube.com/vi/'+id+'/0.jpg';
+				$(".previews.video-x").attr("src",src);
+			}
+		});
+	}
 	$(".previews").click(function(e:any){
 		e.preventDefault();
 		$(".previews").parent().removeClass("active");
 		const id = $(this).attr("data-id");
 		if(id !== ""){
-			$(".detail__mainImg img").addClass("d-none");
-			$(".detail__mainImg .youtube-api").removeClass("d-none");
+			$(".detail__mainImg img").addClass("d-n");
+			$(".detail__mainImg .youtube-api").removeClass("d-n");
 			const idYt = $(".youtube-api").attr("id");
 			let url = $('#' + idYt).attr('src');
 			$('#' + idYt).attr('src', url + "&autoplay=1");
-		}else{
-			$(".detail__mainImg .youtube-api").addClass("d-none");
-			$(".detail__mainImg img").removeClass("d-none");
+		}
+		else
+		{
+			$(".detail__mainImg .youtube-api").addClass("d-n");
+			$(".detail__mainImg img").removeClass("d-n");
 			const src = $(this).attr('src');
 			const alt = $(this).attr("alt");
 			$(".detail__mainImg img").attr('src',src);
@@ -831,7 +873,14 @@ const lookUpHeader = () => {
 	});
 }
 
-
+const getMapApi = () =>{
+	const listMap = document.querySelectorAll("li.introMap__item");
+	if(listMap){
+		listMap.forEach(element => {
+			console.log(1);
+		});
+	}
+}
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
@@ -895,6 +944,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	menuMoble();
 	//look up header
 	lookUpHeader();
+	getMapApi();
 });
 
 const fetchData = () => {

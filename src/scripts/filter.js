@@ -1,6 +1,6 @@
 const rangeProduct = () => {
-    const min = Number($(".priceLow span").text());
-    const max = Number($(".priceHigh span").text());
+    const min = Number($("#low").text());
+    const max = Number($("#high").text());
     var startSlider = document.getElementById('rangeProduct');
     if (startSlider) {
         noUiSlider.create(startSlider, {
@@ -10,15 +10,24 @@ const rangeProduct = () => {
                 'max': [max]
             },
             step: 1000,
+            format: wNumb({
+                decimals: 3,
+                thousand: '.',
+                suffix: ' vnđ'
+            })
         });
         var skipValues = [
-            document.querySelector('.priceLow span'),
-            document.querySelector('.priceHigh span')
+            document.querySelector('span.priceLow__range'),
+            document.querySelector('span.priceHigh__range')
         ];
 
         startSlider.noUiSlider.on('update', function(values, handle) {
             skipValues[handle].innerHTML = values[handle];
         });
+        const ftMin = formatMoney(Number($("#low").text()));
+        const ftMax = formatMoney(Number($("#high").text()));
+        $("#low").text(ftMin + " vnđ")
+        $("#high").text(ftMax + " vnđ")
     }
 }
 
@@ -38,9 +47,12 @@ const orderPrice = () => {
     if (btn) {
         $(".proFilter__item.submit").click(function(e) {
             e.preventDefault();
+            const curRange = $(".proFilter__item.range label").attr("data-current");
             const sort = $(".proFilter__item.price select").val();
-            const min = Number($("#low").text());
-            const max = Number($("#high").text());
+            const strMin = $(".priceLow__range").text();
+            const strMax = $(".priceHigh__range").text();
+            const min = Number(strMin.replace(".", "").replace(" " + curRange, ""));
+            const max = Number(strMax.replace(".", "").replace(" " + curRange, ""));
             listPrice.forEach(element => {
                 const current = $(element).children("h4").eq(1).attr("data-txt");
                 const strPrice = $(element).children("h4").eq(1).text();
@@ -155,9 +167,32 @@ const showSaleDetail = () => {
     }
 }
 
+const ajaxGetMoreProduct = () => {
+    const btn = document.querySelector(".productGetAll");
+    if (btn) {
+        $(btn).click(function(e) {
+            e.preventDefault();
+            const url = $(this).attr("data-url");
+            $.ajax({
+                type: "get",
+                url: url,
+                success: (res) => {
+                    const item = res;
+                    const currentItem = $(".product__list");
+                    currentItem.html(item);
+                },
+                error: (res) => {
+                    console.log(res);
+                },
+            });
+        });
+    }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
     rangeProduct();
     orderPrice();
     showSale();
     showSaleDetail();
+    ajaxGetMoreProduct();
 });

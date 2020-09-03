@@ -13,7 +13,10 @@ section.Product
 						option(value="1") Giá thấp đến cao
 						option(value="2") Giá cao đến thấp
 				.proFilter__item.range
-					label(for="price") Giá:
+					label(for="price" data-current="vnđ") Giá:
+						span.priceLow__range 2000
+						span  -  
+						span.priceHigh__range 20000
 					.range__inner
 						.priceLow
 							span#low 2000
@@ -41,13 +44,13 @@ section.Product
 						.proItem__img.overflow-hidden
 							img(src="./assets/images/product/pro.png", alt="product")
 						.proItem__desc
-							p Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit pariatur quos quae omnis eos explicabo, quia in doloremque excepturi dolorum veritatis voluptate eum doloribus. Vel voluptatibus harum ea impedit ut!
+							p Lorem ipsum dolor sit
 						.proItem__price
 							h4.sale 0 
 							h4(data-sale="15000",data-txt="VNĐ/hộp") 20000
 						.proItem__cart
 							h3 add to cart
-			.productGetAll
+			.productGetAll(data-url="/product")
 				.get xem thêm (
 					|
 					span 456
