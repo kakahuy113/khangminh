@@ -5,36 +5,48 @@ header
 				.wrapper__utilities
 					.left
 						ul.language
-							li.languages__item.item(data-language="vi")
+							li.desktop.desktop.languages__item.item(data-language="vi")
 								a(href="#") VN
-							li.languages__item.item(data-language="cn")
+							li.desktop.languages__item.item(data-language="cn")
 								a(href="#") CN
-							li.languages__item.item(data-language="en")
+							li.desktop.languages__item.item(data-language="en")
 								a(href="#") EN
+							li.mobile
+								.dropdown
+									.dropdown__select
+										span.dropdown__selected VN
+									ul.dropdown__list.language
+										li.dropdown__item.languages__item.item(data-language="vi")
+											a(href="#") VN
+										li.dropdown__item.languages__item.item(data-language="cn")
+											a(href="#") CN
+										li.dropdown__item.languages__item.item(data-language="en")
+											a(href="#") EN
 							li
-								.form-input
-									input(type="text")
-								.sumit
-									button.btn
-										img.svg(src="./assets/images/header/SVG/lookup.svg", alt="find")
+								form
+									.form-input
+										input(type="text", name="lookup")
+									.sumit
+										button.btn(data-url="qwe")
+											img.svg(src="./assets/images/header/SVG/lookup.svg", alt="find")
 					.right
 						.right__wrapper
 							.account-item(data-login="false" , id="")
-								a(href="javascipt:;")
+								div
 									img.lazyload.blur-up.svg(src="./assets/images/header/SVG/register.svg", alt="login")
-									span TÀI KHOẢN
+									span.custom-display TÀI KHOẢN
 								.account-box
 									a(href="javascript:;" data-fancybox, data-src="#login").btn.btn-main Đăng nhập 
 									a(href="javascript:;" data-fancybox, data-src="#register").btn.btn-register Đăng ký 
 							.check 
 								a(href="javascript:;")
 									img.lazyload.blur-up.svg(src="./assets/images/header/SVG/checklist.svg", alt="check")
-									span KIỂM TRA ĐƠN HÀNG
+									span.custom-display KIỂM TRA ĐƠN HÀNG
 							.cart 
 								a(href="cart.html")
 									img.lazyload.blur-up.svg(src="./assets/images/header/SVG/cart.svg", alt="cart")
 									span.cart-num 1
-									span CART
+									span.custom-display CART
 		.d-none
 			#login.account-popup
 				.popup-wrapper
@@ -52,10 +64,10 @@ header
 							p Chưa có tài khoản? 
 								a(href="javascript:;", data-fancybox, data-src="") Đăng ký ngay
 						.social
-							a.btn.btn-google(href="#")
+							a.btn.btn-google(href="#", data-api="google")
 								img.lazyload.blur-up.svg(src="./assets/icons/icon-google-plus.svg", alt="icon google plus")
 								span Đăng ký qua Google
-							a.btn.btn-facebook(href="#")
+							a.btn.btn-facebook(href="#", data-api="facebook")
 								img.lazyload.blur-up.svg(src="./assets/icons/icon-facebook-2.svg", alt="icon facebook")
 								span Đăng ký qua Facebook
 			#register.account-popup
@@ -87,14 +99,17 @@ header
 					.btn.btn-login
 						a(href="") ĐĂNG XUẤT
 	.header__logo
-		a(href="index.html").img
-			img.lazyload.blur-up(src="./assets/images/header/SVG/Logo.png", alt="Khang Minh")
+		.container
+			.container-1190px
+				a(href="index.html").img
+					img.lazyload.blur-up.desktop(src="./assets/images/header/SVG/Logo.png", alt="Khang Minh")
+					img.lazyload.blur-up.mobile(src="./assets/images/header/SVG/mobile-logo.png", alt="Khang Minh")
 	.header__nav--bottom
 		.container
 			.container-1190px
-				ul.nav__wrapper
+				ul.nav__wrapper(data-btn-back-content="Trở về")
 					li
-						a(href="index.html").text-uppercase Trang Chủ1
+						a(href="index.html").text-uppercase Trang Chủ
 					li
 						a(href="javascript:;").text-uppercase Giới thiệu
 						ul.nav__wrapper
@@ -125,8 +140,13 @@ header
 								a(href="news.html") Tin tức Khang Minh
 					li
 						a(href="guide.html").text-uppercase Hướng dẫn
+						ul.nav__wrapper
+							li
+								a(href=" guide.html") Hướng dẫn text
+							li
+								a(href="guide-txt.html") Hướng dẫn form
 					li
 						a(href="contact.html").text-uppercase Liên hệ
 					div.background-submenu
-				//- .hamburger_menu.menu
-				//- 	span
+				.hamburger_menu.menu
+					span

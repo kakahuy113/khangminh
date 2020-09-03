@@ -132,3 +132,12 @@
 		margin-bottom: 60px;
 	}
 }
+.empty-list {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #a62c32;
+	font-family: Roboto-Light;
+	font-size: 2rem;
+	margin:40px 0
+}
