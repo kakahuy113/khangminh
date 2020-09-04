@@ -2,7 +2,6 @@ import { getSVGs, Loading } from "./utilities/util";
 // import { Fullpage, FullpageOptions } from "./libraries/Fullpage";
 import Axios from "axios";
 import { commonController } from "./libraries/CommonController";
-
 declare var Swiper: any;
 declare var $: any;
 declare var player:any,loadVideoById:any;
@@ -287,29 +286,40 @@ const showVideo = () => {
 };
 //init submenu
 const initClassSubMenu = () => {
+	const header = document.querySelector("header");
 	const items__MainMenu = document.querySelectorAll(
 		".header__nav--bottom ul li",
 	);
-	return new Promise((resolve, reject) => {
-		items__MainMenu.forEach((item) => {
-			const isHaveSub = item.querySelectorAll("ul");
-			// CHECK MAIN MENU IS HAVE SUB ???
-			if (isHaveSub.length > 0) {
-				// ADD CLASS IS HAVE SUB
-				item.classList.add("ishavesubmenu");
-				// ADD CLASS LIST MENU LV1
-				isHaveSub.forEach((item) => {
-					item.classList.add("navBar--lv1");
-				});
-				// ADD CLASS ITEM MENU LV1
-				const items__MenuLv1 = item.querySelectorAll("li");
-				items__MenuLv1.forEach((item) => {
-					item.classList.add("navBar__item--lv1");
-				});
-			}
+	// ADD LOADING HEADER
+	header.setAttribute('loading', '');
+	const init = () => {
+		return new Promise((resolve, reject) => {
+			items__MainMenu.forEach((item) => {
+				const isHaveSub = item.querySelectorAll("ul");
+				// CHECK MAIN MENU IS HAVE SUB ???
+				if (isHaveSub.length > 0) {
+					// ADD CLASS IS HAVE SUB
+					item.classList.add("ishavesubmenu");
+					// ADD CLASS LIST MENU LV1
+					isHaveSub.forEach((item) => {
+						item.classList.add("navBar--lv1");
+					});
+					// ADD CLASS ITEM MENU LV1
+					const items__MenuLv1 = item.querySelectorAll("li");
+					items__MenuLv1.forEach((item) => {
+						item.classList.add("navBar__item--lv1");
+					});
+				}
+			});
+			resolve();
 		});
-		resolve();
-	});
+	}
+	init().then(() => {
+		setTimeout(() => {
+			header.removeAttribute('loading');
+			header.setAttribute('loaded', '');
+		}, 300);
+	})
 };
 //active menu
 const activeMenu = () => {
@@ -384,23 +394,23 @@ const activeLanguage = () => {
 };
 // change height backgournd sub nav
 const changeHeightBackgroundSubNav = () => {
-	const submenu = document.querySelectorAll<HTMLElement>(
-		".header__nav--bottom ul li.ishavesubmenu",
-	);
-
-	submenu.forEach((item) => {
-		item.addEventListener("mouseenter", () => {
-			const height = item.querySelector<HTMLElement>("ul").offsetHeight;
-			document
-				.querySelector(".background-submenu")
-				.setAttribute("style", `height: ${height}px`);
+		const submenu = document.querySelectorAll<HTMLElement>(
+			".header__nav--bottom ul li.ishavesubmenu",
+		);
+	
+		submenu.forEach((item) => {
+			item.addEventListener("mouseenter", () => {
+				const height = item.querySelector<HTMLElement>("ul").offsetHeight;
+				document
+					.querySelector(".background-submenu")
+					.setAttribute("style", `height: ${height}px`);
+			});
+			item.addEventListener("mouseleave", () => {
+				document
+					.querySelector(".background-submenu")
+					.setAttribute("style", `height: 0px`);
+			});
 		});
-		item.addEventListener("mouseleave", () => {
-			document
-				.querySelector(".background-submenu")
-				.setAttribute("style", `height: 0px`);
-		});
-	});
 };
 //login
 const Login = () => {
@@ -766,6 +776,103 @@ const payContinue = () =>{
 	});
 }
 
+// INIT BUTTON BACK
+const initElementButtonBackSubMenu = () => {
+	const menusLv1 = document.querySelectorAll('.navBar--lv1');
+	menusLv1.forEach((item) => {
+		const mainMenu = document.querySelector('.header__nav--bottom .nav__wrapper');
+		const btn__content = mainMenu.getAttribute('data-btn-back-content');
+		const btn__wrapper = document.createElement('li');
+		// GẮN NÚT MẶC ĐỊNH
+		btn__wrapper.classList.add(
+			'navBar__item--lv1',
+			'mobile'
+		);
+		item.prepend(btn__wrapper);
+		// INER HTML
+		btn__wrapper.innerHTML = `<a href="javascript:;" class="navBar__back">${btn__content}</a>`;
+	});
+};
+
+// show menu in moble
+const menuMoble = () => {
+	const btn = document.querySelector(".hamburger_menu	")
+	const mainMenu = document.querySelector(".header__nav--bottom .nav__wrapper")
+	const itemHaveSubMenu = document.querySelectorAll(".ishavesubmenu")
+	const overlay = document.querySelector('#overlay');
+
+	if(btn) {
+		btn.addEventListener("click", (e) => {
+			document.querySelector('body').classList.toggle('disabled');
+			btn.classList.toggle("active")
+			mainMenu.classList.toggle('show');
+			overlay.classList.toggle('show');
+			itemHaveSubMenu.forEach((item) => {
+				item.querySelector('.navBar--lv1').classList.remove('show');
+			});
+		})
+	}
+	
+	// SHOW SUB MENU
+	itemHaveSubMenu.forEach((item) => {
+		const menuLv1 = item.querySelector('.navBar--lv1');
+		const btnBack = menuLv1.querySelector('.navBar__back');
+		// SHOW MENU LV 1
+		item.addEventListener('click', (e) => {
+			menuLv1.classList.add('show');
+		});
+		// BACK TO MAIN MENU
+		if (btnBack) {
+			btnBack.addEventListener('click', (e) => {
+				console.log(1);
+				e.stopPropagation();
+				menuLv1.classList.remove('show');
+			});
+		} else {
+			console.log(`Không tồn tại element :=> .navBar__back`);
+		}
+	});
+	if (overlay) {
+		overlay.addEventListener('click', (e) => {
+			mainMenu.classList.remove('show');
+			overlay.classList.remove('show');
+			btn.classList.remove('active');
+			itemHaveSubMenu.forEach((item:any) => {
+				item.querySelector('.navBar--lv1').classList.remove('show');
+			});
+		});
+	}
+}
+//find header 
+const lookUpHeader = () => {
+	$(".wrapper__utilities .left form button").on("click", function (e: any) {
+		e.preventDefault();
+		const _thisBtn = $(this);
+		const url = _thisBtn.attr("data-url");
+		const formData = new FormData();
+		$(".left form input").each(function () {
+			const name = $(this).attr("name");
+			const value = $(this).val();
+			formData.append(name, value);
+		});
+			$.ajax({
+				url: url,
+				type: "post",
+				data: formData,
+				processData: false,
+				contentType: false,
+				beforeSend: function () {
+					_thisBtn.attr("disabled", "disabled");
+				},
+				success: function (res: any) {
+					alert(`${res.Message}`);
+					window.location.reload();
+					_thisBtn.removeAttr("disabled");
+				},
+			});
+	});
+}
+
 const getMapApi = () =>{
 	const listMap = document.querySelectorAll("li.introMap__item");
 	if(listMap){
@@ -774,7 +881,6 @@ const getMapApi = () =>{
 		});
 	}
 }
-
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
@@ -832,6 +938,12 @@ document.addEventListener("DOMContentLoaded", async () => {
 	getMoreQuestion();
 	cartQuantity();
 	payContinue();
+	// init btn back sub menu
+	initElementButtonBackSubMenu();
+	//show menu moblie
+	menuMoble();
+	//look up header
+	lookUpHeader();
 	getMapApi();
 });
 

@@ -127,6 +127,21 @@
 }
 
 .seemore {
+	h3 {
+		text-align: center;
+		font-size: 1.8rem;
+		font-family: Roboto-Bold;
+		margin-bottom: 60px;
+	}
+}
+.empty-list {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #a62c32;
+	font-family: Roboto-Light;
+	font-size: 2rem;
+	margin:40px 0;
     &.customer {
         padding-top: 50px;
         background: white;

@@ -28,7 +28,7 @@
 		flex-direction: row;
 		margin-left: -20px;
 		margin-right: -20px;
-		.item {
+		> a {
 			-ms-flex: 0 0 33.33%;
 			flex: 0 0 33.33%;
 			max-width: 33.33%;
@@ -122,7 +122,7 @@
 		@media (max-width: 1024px) {
 			margin-left: -10px;
 			margin-right: -10px;
-			.item {
+			> a {
 				padding-right: 10px;
 				padding-left: 10px;
 			}
@@ -130,7 +130,7 @@
 		@media (max-width: 767.98px) {
 			margin-left: -3px;
 			margin-right: -3px;
-			.item {
+			> a {
 				padding-right: 3px;
 				padding-left: 3px;
 				.desc-img {
@@ -498,7 +498,6 @@
 					left: 50%;
 					transform: translate(-50%, -50%);
 					font-size: 15rem;
-					line-height: normal;
 					font-family: HelvelticaNeuePro;
 					text-align: center;
 					color: #eaeaea;

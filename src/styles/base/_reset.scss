@@ -24,7 +24,10 @@ body {
     line-height: 1.2;
     color: #5D5D5D;
     background-color: #ffffff;
-    overflow-y: auto;
+    overflow-x: hidden;
+    &.disabled {
+        overflow: hidden;
+    }
 }
 
 article,
