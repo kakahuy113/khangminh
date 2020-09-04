@@ -1,6 +1,6 @@
 section.home__news
 	.home__news--banner
-		img.ofcv.fullsize.lazyload.blur-up(src="./assets/images/home/banner-news.png", alt="banner")
+		img.object-cover.fullsize.lazyload.blur-up(src="./assets/images/home/banner-news.png", alt="banner")
 	.container
 		.container-1190px
 			.home__news__wrapper
@@ -11,7 +11,7 @@ section.home__news
 					-for(var i =0; i< 2; i++)
 						a(href="detail-news.html").news--item.col-6
 							.img-news.overflow-hidden
-								img.ofcv.fullsize.lazyload.blup-up(src=`./assets/images/home/news-item-${i +1}.png`, alt="news")
+								img.object-cover.fullsize.lazyload.blup-up(src=`./assets/images/home/news-item-${i +1}.png`, alt="news")
 							.desc-news.row
 								.calendar.col-4(number-calendar="12")
 									div

@@ -94,6 +94,10 @@ const mainTs_Browserify = () => {
 	return MainBuild(_).tsBrowserify();
 };
 
+const mainTs_Browserify2 = () => {
+	return MainBuild(_).tsBrowserify2();
+};
+
 const mainJs_NormalBabel = () => {
 	return MainBuild(_).jsNormalBabel();
 };
@@ -120,6 +124,7 @@ exports.dev = gulp.series(
 	coreJs,
 	coreCss,
 	mainTs_Browserify,
+	mainTs_Browserify2,
 	mainJs_NormalBabel,
 	mainCss,
 	mainHtml,
