@@ -151,6 +151,20 @@ section.Introduce {
         &.t-4 {
             #map {
                 height: 100%;
+
+                .gm-style-iw-c {
+                    width: 400px;
+                }
+                .map-markers {
+
+                    h3 {
+                        padding: unset;
+                    }
+
+                    p {
+                        margin-bottom: unset;
+                    }
+                }
             }
             .introduce__inner {
                 display: flex;
@@ -231,6 +245,7 @@ section.Introduce {
                 }
             }
             .introMap__item {
+                cursor: pointer;
                 margin-bottom: 30px;
                 h6 {
                     font-size: 18px;

@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded",  () => {
+document.addEventListener("DOMContentLoaded", () => {
 	var AccountController = AccountController || {};
 	var auth2;
 	AccountController = {
@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded",  () => {
 				.querySelector(".btn-facebook")
 				.getAttribute("data-api");
 			// INIT GOOGLE
+
 			Array.from(document.querySelectorAll(".btn-google")).forEach(
 				function (btn) {
 					gapi.load("auth2", function () {
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded",  () => {
 					});
 				},
 			);
+
 			// INIT FACEBOOK
 			window.fbAsyncInit = function () {
 				FB.init({
@@ -76,6 +78,7 @@ document.addEventListener("DOMContentLoaded",  () => {
 					btn,
 					{},
 					function (googleUser) {
+						console.log(1);
 						var profile = googleUser.getBasicProfile();
 						AccountController.events.google({
 							id: profile.getId(),
@@ -146,6 +149,5 @@ document.addEventListener("DOMContentLoaded",  () => {
 			},
 		},
 	};
-
 	AccountController.init();
 });

@@ -17,7 +17,7 @@
 						<div class="wrapper__utilities">
 							<div class="left">
 								<ul class="language">
-									<li class="desktop desktop languages__item item" data-language="vi"><a href="#">VN</a></li>
+									<li class="desktop languages__item item" data-language="vi"><a href="#">VN</a></li>
 									<li class="desktop languages__item item" data-language="cn"><a href="#">CN</a></li>
 									<li class="desktop languages__item item" data-language="en"><a href="#">EN</a></li>
 									<li class="mobile">
@@ -76,7 +76,9 @@
 								<div class="bottom-ask">
 									<p>Chưa có tài khoản? <a href="javascript:;" data-fancybox data-src="">Đăng ký ngay</a></p>
 								</div>
-								<div class="social"><a class="btn btn-google" href="#" data-api="google"><img class="lazyload blur-up svg" src="./assets/icons/icon-google-plus.svg" alt="icon google plus"><span>Đăng ký qua Google</span></a><a class="btn btn-facebook" href="#" data-api="facebook"><img class="lazyload blur-up svg" src="./assets/icons/icon-facebook-2.svg" alt="icon facebook"><span>Đăng ký qua Facebook</span></a></div>
+								<div class="social">
+									<div class="btn btn-google" data-api="google"><img class="lazyload blur-up svg" src="./assets/icons/icon-google-plus.svg" alt="icon google plus"><span>Đăng ký qua Google</span></div><a class="btn btn-facebook" href="#" data-api="facebook"><img class="lazyload blur-up svg" src="./assets/icons/icon-facebook-2.svg" alt="icon facebook"><span>Đăng ký qua Facebook</span></a>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -134,10 +136,10 @@
 							<li><a class="text-uppercase" href="javascript:;">Giới thiệu</a>
 								<ul class="nav__wrapper">
 									<li><a href="introduce.html">Welcome to Khang Minh</a></li>
-									<li><a href="intro-2.html">Danh hiệu Giải thưởng</a></li>
-									<li><a href="intro-3.html">Đối tác</a></li>
-									<li><a href="intro-4.html">Hệ thống phân phối</a></li>
-									<li><a href="intro-5.html">Hình ảnh & Video</a></li>
+									<li><a href="price-tittle.html">Danh hiệu Giải thưởng</a></li>
+									<li><a href="partner.html">Đối tác</a></li>
+									<li><a href="system-divider.html">Hệ thống phân phối</a></li>
+									<li><a href="gallery.html">Hình ảnh & Video</a></li>
 								</ul>
 							</li>
 							<li><a class="text-uppercase" href="product.html">Sản Phẩm</a></li>
@@ -193,141 +195,145 @@
 							<h3 class="title">GIỎ HÀNG CỦA TÔI</h3>
 							<div class="cart--table">
 								<table>
-									<tr>
-										<th>SẢN PHẨM</th>
-										<th>ĐƠN GIÁ</th>
-										<th>SỐ LƯỢNG</th>
-										<th>TỔNG GIÁ</th>
-									</tr>
-									<tr>
-										<td class="product"> 
-											<div class="close"></div>
-											<div class="table-content">
-												<div class="img"><img class="ofcv fullsize" src="./assets/images/love/love-item.png" alt="item"></div>
-												<div class="desc">
-													<div class="state">
-														<p>Yến sào cao cấp</p>
-													</div>
-													<div class="state"><img class="lazyload blur-up" src="./assets/images/love/check-cart.png" alt="check">
-														<p>Còn Hàng</p>
-													</div>
-													<div class="state"><img class="lazyload blup-up" src="./assets/images/love/love.png" alt="love">
-														<p>Yêu Thích</p>
-													</div>
-												</div>
-											</div>
-										</td>
-										<td class="price">
-											<div class="table-content">
-												<p>900.000 VNĐ</p>
-											</div>
-										</td>
-										<td class="num">
-											<div class="table-content">
-												<div class="quantity-input"><span class="minus">-</span>
-													<input class="quantity" value="5" readonly><span class="plus">+</span>
-												</div>
-											</div>
-										</td>
-										<td class="total">
-											<div class="table-content">
-												<p>900.000 VNĐ</p>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td class="product"> 
-											<div class="close"></div>
-											<div class="table-content">
-												<div class="img"><img class="ofcv fullsize" src="./assets/images/love/love-item.png" alt="item"></div>
-												<div class="desc">
-													<div class="state">
-														<p>Yến sào cao cấp</p>
-													</div>
-													<div class="state"><img class="lazyload blur-up" src="./assets/images/love/check-cart.png" alt="check">
-														<p>Còn Hàng</p>
-													</div>
-													<div class="state"><img class="lazyload blup-up" src="./assets/images/love/love.png" alt="love">
-														<p>Yêu Thích</p>
+									<thead>
+										<tr>
+											<th>SẢN PHẨM</th>
+											<th>ĐƠN GIÁ</th>
+											<th>SỐ LƯỢNG</th>
+											<th>TỔNG GIÁ</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td class="product" data-title="SẢN PHẨM"> 
+												<div class="close"></div>
+												<div class="table-content">
+													<div class="img"><img class="object-cover fullsize" src="./assets/images/love/love-item.png" alt="item"></div>
+													<div class="desc">
+														<div class="state">
+															<p class="lcl lcl-1">Yến sào cao cấp</p>
+														</div>
+														<div class="state"><img class="lazyload blur-up" src="./assets/images/love/check-cart.png" alt="check">
+															<p>Còn Hàng</p>
+														</div>
+														<div class="state"><img class="lazyload blup-up" src="./assets/images/love/love.png" alt="love">
+															<p>Yêu Thích</p>
+														</div>
 													</div>
 												</div>
-											</div>
-										</td>
-										<td class="price">
-											<div class="table-content">
-												<p>900.000 VNĐ</p>
-											</div>
-										</td>
-										<td class="num">
-											<div class="table-content">
-												<div class="quantity-input"><span class="minus">-</span>
-													<input class="quantity" value="5" readonly><span class="plus">+</span>
+											</td>
+											<td class="price" data-title="GIÁ">
+												<div class="table-content">
+													<p>900.000 VNĐ</p>
 												</div>
-											</div>
-										</td>
-										<td class="total">
-											<div class="table-content">
-												<p>900.000 VNĐ</p>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td class="product"> 
-											<div class="close"></div>
-											<div class="table-content">
-												<div class="img"><img class="ofcv fullsize" src="./assets/images/love/love-item.png" alt="item"></div>
-												<div class="desc">
-													<div class="state">
-														<p>Yến sào cao cấp</p>
-													</div>
-													<div class="state"><img class="lazyload blur-up" src="./assets/images/love/check-cart.png" alt="check">
-														<p>Còn Hàng</p>
-													</div>
-													<div class="state"><img class="lazyload blup-up" src="./assets/images/love/love.png" alt="love">
-														<p>Yêu Thích</p>
+											</td>
+											<td class="num" data-title="SỐ LƯỢNG">
+												<div class="table-content">
+													<div class="quantity-input"><span class="minus">-</span>
+														<input class="quantity" value="5" readonly><span class="plus">+</span>
 													</div>
 												</div>
-											</div>
-										</td>
-										<td class="price">
-											<div class="table-content">
-												<p>900.000 VNĐ</p>
-											</div>
-										</td>
-										<td class="num">
-											<div class="table-content">
-												<div class="quantity-input"><span class="minus">-</span>
-													<input class="quantity" value="5" readonly><span class="plus">+</span>
+											</td>
+											<td class="total" data-title="TỔNG GIÁ">
+												<div class="table-content">
+													<p>900.000 VNĐ</p>
 												</div>
-											</div>
-										</td>
-										<td class="total">
-											<div class="table-content">
-												<p>900.000 VNĐ</p>
-											</div>
-										</td>
-									</tr>
-									<tr class="tempprice">
-										<td class="wishlist"><a href="javascript:;" data-fancybox data-options="{'touch' : false}" data-src="#wishlist">+ Thêm sản phẩm từ danh sách yêu thích</a></td>
-										<td>
-											<p>Tạm tính</p>
-										</td>
-										<td colspan="2">
-											<p>2.700.000 VNĐ</p>
-										</td>
-									</tr>
-									<tr>
-										<td colspan="4">
-											<div class="table-content">
-												<div class="desc-total"><strong>Tổng Tiền</strong>
-													<p>(Tổng số tiền thanh toán)</p>
+											</td>
+										</tr>
+										<tr>
+											<td class="product" data-title="SẢN PHẨM"> 
+												<div class="close"></div>
+												<div class="table-content">
+													<div class="img"><img class="object-cover fullsize" src="./assets/images/love/love-item.png" alt="item"></div>
+													<div class="desc">
+														<div class="state">
+															<p class="lcl lcl-1">Yến sào cao cấp</p>
+														</div>
+														<div class="state"><img class="lazyload blur-up" src="./assets/images/love/check-cart.png" alt="check">
+															<p>Còn Hàng</p>
+														</div>
+														<div class="state"><img class="lazyload blup-up" src="./assets/images/love/love.png" alt="love">
+															<p>Yêu Thích</p>
+														</div>
+													</div>
 												</div>
-												<div class="price-total">
-													<p>2.700.000 VNĐ</p>
+											</td>
+											<td class="price" data-title="GIÁ">
+												<div class="table-content">
+													<p>900.000 VNĐ</p>
 												</div>
-											</div>
-										</td>
-									</tr>
+											</td>
+											<td class="num" data-title="SỐ LƯỢNG">
+												<div class="table-content">
+													<div class="quantity-input"><span class="minus">-</span>
+														<input class="quantity" value="5" readonly><span class="plus">+</span>
+													</div>
+												</div>
+											</td>
+											<td class="total" data-title="TỔNG GIÁ">
+												<div class="table-content">
+													<p>900.000 VNĐ</p>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td class="product" data-title="SẢN PHẨM"> 
+												<div class="close"></div>
+												<div class="table-content">
+													<div class="img"><img class="object-cover fullsize" src="./assets/images/love/love-item.png" alt="item"></div>
+													<div class="desc">
+														<div class="state">
+															<p class="lcl lcl-1">Yến sào cao cấp</p>
+														</div>
+														<div class="state"><img class="lazyload blur-up" src="./assets/images/love/check-cart.png" alt="check">
+															<p>Còn Hàng</p>
+														</div>
+														<div class="state"><img class="lazyload blup-up" src="./assets/images/love/love.png" alt="love">
+															<p>Yêu Thích</p>
+														</div>
+													</div>
+												</div>
+											</td>
+											<td class="price" data-title="GIÁ">
+												<div class="table-content">
+													<p>900.000 VNĐ</p>
+												</div>
+											</td>
+											<td class="num" data-title="SỐ LƯỢNG">
+												<div class="table-content">
+													<div class="quantity-input"><span class="minus">-</span>
+														<input class="quantity" value="5" readonly><span class="plus">+</span>
+													</div>
+												</div>
+											</td>
+											<td class="total" data-title="TỔNG GIÁ">
+												<div class="table-content">
+													<p>900.000 VNĐ</p>
+												</div>
+											</td>
+										</tr>
+										<tr class="tempprice">
+											<td class="wishlist"><a href="javascript:;" data-fancybox data-options="{'touch' : false}" data-src="#wishlist">+ Thêm sản phẩm từ danh sách yêu thích</a></td>
+											<td>
+												<p>Tạm tính</p>
+											</td>
+											<td colspan="2">
+												<p>2.700.000 VNĐ</p>
+											</td>
+										</tr>
+										<tr class="total">
+											<td colspan="4">
+												<div class="table-content">
+													<div class="desc-total"><strong>Tổng Tiền</strong>
+														<p>(Tổng số tiền thanh toán)</p>
+													</div>
+													<div class="price-total">
+														<p>2.700.000 VNĐ</p>
+													</div>
+												</div>
+											</td>
+										</tr>
+									</tbody>
 								</table>
 							</div>
 						</div>
@@ -455,7 +461,7 @@
 							</div>
 							<div class="pop-up__body">
 								<div class="wrapper row">
-									<div class="img col-2"><img class="lazyload blur-up ofcv" src="./assets/images/love/love-item.png" alt="love"></div>
+									<div class="img col-2"><img class="lazyload blur-up object-cover" src="./assets/images/love/love-item.png" alt="love"></div>
 									<div class="desc col-6">
 										<p>Yến sào cao cấp</p>
 										<p>900.000 VNĐ</p>
@@ -465,7 +471,7 @@
 									</div>
 								</div>
 								<div class="wrapper row">
-									<div class="img col-2"><img class="lazyload blur-up ofcv" src="./assets/images/love/love-item.png" alt="love"></div>
+									<div class="img col-2"><img class="lazyload blur-up object-cover" src="./assets/images/love/love-item.png" alt="love"></div>
 									<div class="desc col-6">
 										<p>Yến sào cao cấp</p>
 										<p>900.000 VNĐ</p>
@@ -475,7 +481,7 @@
 									</div>
 								</div>
 								<div class="wrapper row">
-									<div class="img col-2"><img class="lazyload blur-up ofcv" src="./assets/images/love/love-item.png" alt="love"></div>
+									<div class="img col-2"><img class="lazyload blur-up object-cover" src="./assets/images/love/love-item.png" alt="love"></div>
 									<div class="desc col-6">
 										<p>Yến sào cao cấp</p>
 										<p>900.000 VNĐ</p>
@@ -555,9 +561,9 @@
 		<div class="fake-toolbar"></div>
 		<div id="overlay"></div>
 		<div id="back_to_top"><img class="lazyload blur-up" data-src="./assets/images/home/back-to-top.png" alt="BACK-TO-TOP"></div>
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?&amp;libraries=places&amp;key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s"></script>
+		<script src="https://apis.google.com/js/platform.js?onload=myFunc"></script>
+		<script type="text/javascript" src="./js/AccountController.min.js"></script>
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
-		<script type="text/javascript" src="./js/AccountController.min.js"></script>
 	</body>
 </html>

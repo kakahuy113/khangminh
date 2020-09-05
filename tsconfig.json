@@ -1,7 +1,14 @@
 {
-	"files": ["src/scripts/main.ts"],
+	"files": [
+		"src/scripts/main.ts",
+		"src/scripts/GoogleMapController.ts"
+	],
 	"compilerOptions": {
 		"noImplicitAny": true,
-		"target": "ES5"
+		"lib": ["es6", "dom", "es2018"],
+		"target": "ES5",
+		"types": [ "googlemaps"],
+		"outDir": "ts-built",
+        "rootDir": "src"
 	}
 }

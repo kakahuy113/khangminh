@@ -3,6 +3,10 @@
 	margin-top: 100px;
 	margin-bottom: 100px;
 	font-family: Roboto-Light;
+	@media (max-width: 1024px) {
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
 	h3.title {
 		color: #000;
 		font-size: 2.5rem;
@@ -18,12 +22,225 @@
 	th {
 		border: 1px solid #5d5d5d;
 	}
-
+	.cart--table {
+		margin-bottom: 20px;
+			// @media (max-width: 767.98px) {
+			// 	overflow-x: auto;
+			// 	table {
+			// 	width: 768px;
+			// 	.product {
+			// 		.table-content {
+			// 			margin-left: 0;
+			// 		}
+			// 	}
+			// 	th {
+			// 		height: 35px;
+			// 	}
+			// 	.table-content {
+			// 		padding-top: 0 !important;
+			// 		padding-bottom: 0 !important;
+			// 	}
+			// 	.tempprice {
+			// 		height: 45px;
+			// 	}
+			// 	}
+			// }
+			@media (max-width: 767.98px) {
+				table {
+					thead {
+						display: none;
+					}
+					tbody {
+						.product {
+							.close {
+								top: 10px;
+								background: #5d5d5d;
+								right: 18px;
+								left: unset;
+								z-index: 10;
+							}
+						}
+						td {
+							display: flex;
+							position: relative;
+							align-items: center;
+							min-height: 30px;
+							.table-content {
+								margin-left: 0;
+								width: 100%;
+								.img {
+									-ms-flex: 0 0 50%;
+									flex: 0 0 50%;
+									max-width: 50%;
+									img {
+										max-width: 150px;
+										max-height: 150px;
+									}
+								}
+								.desc {
+									-ms-flex: 0 0 50%;
+									flex: 0 0 50%;
+									max-width: 50%;
+									padding-left: 10px;
+								}
+								> p {
+									-ms-flex: 0 0 50%;
+									flex: 0 0 50%;
+									max-width: 50%;
+									padding: 10px;
+								}
+							}
+							&:nth-child(1) {
+								padding-top: 30px;
+								&::after {
+									display: flex;
+									align-items: center;
+									justify-content: center;
+									width: 100%;
+									position: absolute;
+									background: #eaeaea;
+									height: 30px;
+									top: 0;
+									content: attr(data-title);
+								}
+								
+							}
+							&:nth-child(2) {
+								.table-content {
+									-ms-flex: 0 0 50%;
+									flex: 0 0 50%;
+									max-width: 50%;
+									text-align: center;
+								}
+								&::before {
+									-ms-flex: 0 0 50%;
+									text-align: center;
+									flex: 0 0 50%;
+									max-width: 50%;
+									content: attr(data-title);
+								}
+								
+							}
+							&:nth-child(3) {
+								.table-content {
+									-ms-flex: 0 0 50%;
+									flex: 0 0 50%;
+									max-width: 50%;
+									text-align: center;
+									.quantity-input {
+										padding-left: 10px;
+										margin: 0 !important;
+									}
+								}
+								&::before {
+									-ms-flex: 0 0 50%;
+									text-align: center;
+									flex: 0 0 50%;
+									max-width: 50%;
+									content: attr(data-title);
+								}
+								
+							}
+							&:nth-child(4) {
+								margin-bottom: 10px;
+								.table-content {
+									-ms-flex: 0 0 50%;
+									flex: 0 0 50%;
+									max-width: 50%;
+									text-align: center;
+								}
+								&::before {
+									-ms-flex: 0 0 50%;
+									text-align: center;
+									flex: 0 0 50%;
+									max-width: 50%;
+									content: attr(data-title);
+								}
+								
+							}
+						}
+						.tempprice {
+							background: #eaeaea;
+							display: flex;
+							flex-wrap: wrap;
+							align-items: center;
+							border: none !important;
+							.wishlist {
+								border: none !important;
+								padding-top: 0;
+								margin: 10px 0;
+								
+							}
+							td {
+								border: none;
+								display: unset;
+								align-self: center;
+								&::after {
+									content: none !important;
+								}
+								&::before {
+									content: none !important;
+								}
+								&:first-child {
+									-ms-flex: 0 0 100%;
+									flex: 0 0 100%;
+									max-width: 100%;
+								}
+								&:not(:first-child) {
+									background: #eaeaea;
+									-ms-flex: 0 0 50%;
+									flex: 0 0 50%;
+									max-width: 50%;
+									height: 30px;
+									margin-bottom: 0;
+									border-top: 1px dashed #5d5d5d;
+								}
+							}
+						}
+						.total {
+							background: #eaeaea;
+							td {
+								margin-bottom: 0;
+								border: none;
+								padding-top: 0;
+								&::after {
+									content: none;
+								}
+								&::before {
+									content: none !important;
+								}
+							}
+							.table-content {
+								display: flex;
+								justify-content: center;
+								
+								> div {
+									margin-right: 0;
+									-ms-flex: 0 0 50%;
+									flex: 0 0 50%;
+									max-width: 50%;
+									strong {
+										text-align: center;
+									}
+									p {
+										text-align: center;
+									}
+									&.price-total {
+										p {
+											text-align: right;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+	}
 	table {
 		font-size: 1.8rem;
 		width: 100%;
 		text-align: center;
-		margin-bottom: 20px;
 		th {
 			height: 56px;
 			background: #eaeaea;
@@ -32,6 +249,10 @@
 			&:not(:first-child) {
 				width: 15%;
 				max-width: 15%;
+				@media (max-width: 767.98px) {
+					width: 20%;
+					max-width: 20%;
+				}
 			}
 		}
 		tr {
@@ -179,6 +400,9 @@
 					font-size: 2.5rem;
 				}
 			}
+			@media (max-width: 767.98px) {
+				height: 60px;
+			}
 		}
 	}
 	.cart-func {
@@ -196,7 +420,22 @@
 			}
 			&:last-child {
 				margin-left: auto;
+				@media (max-width: 767.98px) {
+				margin-left: 10px;
+				}
 			}
+			@media (max-width: 767.98px) {
+				font-size: 1.3rem;
+			}
+			@media (max-width: 575.98px) {
+				font-size: 1rem;
+			}
+		}
+		@media (max-width: 1024px) {
+			margin-bottom: 30px;
+		}
+		@media (max-width: 767.98px) {
+			height: 50px;
 		}
 	}
 	.seemore {
@@ -234,7 +473,7 @@
 			.desc {
 				p:first-child {
 					margin-bottom: 15px;
-					font-size: Roboto-Light;
+					font-family: Roboto-Light;
 					font-size: 1.8rem;
 				}
 				p:last-child {
@@ -247,6 +486,29 @@
 					font-size: 1.8rem;
 					font-family: RobotoC-Regular;
 				}
+			}
+		}
+	}
+	@media (max-width: 575.98px) {
+		.img {
+			-ms-flex: 0 0 33.33%;
+			flex: 0 0 33.33%;
+			max-width: 33.33%;
+		}	
+		.desc {
+			-ms-flex: 0 0 33.33%;
+			flex: 0 0 33.33%;
+			max-width: 33.33%;
+			p {
+				font-size: 1.3rem !important; 
+			}
+		}
+		.add-to-cart {
+			-ms-flex: 0 0 33.33%;
+			flex: 0 0 33.33%;
+			max-width: 33.33%;
+			button {
+				font-size: 1rem !important;
 			}
 		}
 	}

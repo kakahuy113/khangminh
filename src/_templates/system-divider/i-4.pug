@@ -1,0 +1,44 @@
+section.Introduce
+	.container
+		.introduce__wrapper.t-4.container-1175px
+			h2 HỆ THỐNG PHÂN PHỐI
+			.introduce__inner
+				.intro__map
+					.map#map
+				.dealer-locator-list
+					.list
+				.introMap__search
+					.introMap__form
+						.introMap__input
+							input#location-search(type="text" name="address" placeholder="Tìm địa chỉ . . .")
+						.introMap__input.select
+							select(name="country")
+								option(value="1") Việt Nam
+								option(value="2") Trung Quốc
+						.introMap__input.select
+							select(name="city")
+								option(value="0") Chọn Tỉnh - thành phố
+								option(value="1", data-country="1") Tp. Hồ Chí Minh
+								option(value="2", data-country="2") Tp. Quảng Châu
+								option(value="3", data-country="2") Tp. Bắc Kinh
+						.introMap__input.select
+							select(name="district")
+								option(value="0") Chọn Quận - huyện
+								option(value="1", data-city="1") Quận Gò Vấp
+								option(value="2", data-city="2") Quận Thuộc Quảng Châu
+								option(value="3", data-city="3") Quận Thuộc Bắc Kinh
+					.introMap__list
+						ul
+							-for(var i = 0;i<5;i++)
+								li.introMap__item(data-lat="1" + i + ".511063", data-lng="10" + i + ".867113", data-district= i%3 + 1)
+									h6 Lorem ipsum dolor sit ame #{i}
+									.item__info
+										.info__icon
+											img(src="./assets/images/intro/home.png", alt="home")
+										.info__text.location
+											p Lầu 8, Tòa nhà SAMCO, 32 Võ Văn Kiệt, Phường Cô Giang, Quận #{i}, TP.HCM.
+									.item__info
+										.info__icon
+											img(src="./assets/images/intro/phone.png", alt="phone")
+										.info__text.phone
+											p (08) 2365 1254 - (08) 6582 3254

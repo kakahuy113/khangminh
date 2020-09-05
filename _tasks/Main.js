@@ -6,6 +6,7 @@ export default (_) => {
 				_.plumber(function (err) {
 					console.error(err.message.toString());
 					this.emit("end");
+					console.log(err);
 				}),
 			)
 			.pipe(
@@ -80,6 +81,36 @@ export default (_) => {
 			.pipe(_.gulp.dest("dist/js"));
 	}
 
+	function tsBrowserify2() {
+		return _.browserify({
+			basedir: ".",
+			debug: true,
+			entries: ["src/scripts/GoogleMapController.ts"],
+			cache: {},
+			packageCache: {},
+		})
+			.plugin(_.tsify)
+			.transform("babelify", {
+				presets: ["@babel/env"],
+				plugins: [
+					"@babel/plugin-proposal-class-properties",
+					"@babel/plugin-proposal-async-generator-functions",
+				],
+				extensions: [".ts", ".js"],
+			})
+			.bundle()
+			.on("error", function (err) {
+				console.error(err.toString());
+				this.emit("end");
+			})
+			.pipe(_.source("GoogleMapController.min.js"))
+			.pipe(_.buffer())
+			.pipe(_.sourcemaps.init({ loadMaps: true }))
+			.pipe(_.uglify())
+			.pipe(_.sourcemaps.write("./"))
+			.pipe(_.gulp.dest("dist/js"));
+	}
+
 	function jsNormalBabel() {
 		return _.gulp
 			.src(["src/scripts/**.js"])
@@ -111,6 +142,7 @@ export default (_) => {
 		html,
 		css,
 		tsBrowserify,
+		tsBrowserify2,
 		jsNormalBabel,
 	};
 };

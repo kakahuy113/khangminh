@@ -33,6 +33,10 @@ export default (_) => {
 		return MainBuild(_).tsBrowserify();
 	};
 
+	const watchTypescript2 = () => {
+		return MainBuild(_).tsBrowserify2();
+	};
+
 	const watchJavascript = () => {
 		return MainBuild(_).jsNormalBabel();
 	};
@@ -100,10 +104,11 @@ export default (_) => {
 		_.gulp.watch(
 			[
 				"src/scripts/main.ts",
+				"src/scripts/GoogleMapController.ts",
 				"src/scripts/libraries/**.ts",
 				"src/scripts/utilities/**.ts",
 			],
-			_.gulp.series(watchTypescript),
+			_.gulp.series(watchTypescript, watchTypescript2),
 		);
 
 		_.gulp.watch(["src/styles/**/**.scss"], _.gulp.series(watchScss));

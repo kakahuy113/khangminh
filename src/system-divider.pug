@@ -9,5 +9,7 @@ block var
 block banner,breadcrumb
 	include _templates/_layout/mainBanner
 block main
-	include _templates/introduce/i-2
+	include _templates/system-divider/i-4
 block scripts
+	script(type="text/javascript", src="https://maps.googleapis.com/maps/api/js?&libraries=places&key=AIzaSyCHvmyTralDp2Y0m7zEiN185u1vtArcC5s")
+	script(src="./js/GoogleMapController.min.js")

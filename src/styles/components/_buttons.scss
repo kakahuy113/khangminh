@@ -94,6 +94,9 @@
 	line-height: 2.7rem;
 	color: #fff;
 	padding: 0 10px;
+	@media (max-width: 1024px) {
+		font-size: 1.5rem;
+	}
 }
 .btn-cart  {
 	height: 40px;
@@ -104,6 +107,11 @@
 	padding: 0 35px;
 	margin-left: 10px;
 	background: #a62c32;
+	@media (max-width: 767.98px) {
+		height: 25px;
+		line-height: normal;
+		padding: 0 10px !important;
+	}
 }
 .fancybox-button.fancybox-close-small {
 	padding: 0 !important;
@@ -119,6 +127,9 @@
 		path {
 			fill: #fff
 		}
+	}
+	@media (max-width: 767.98px) {
+		display: none !important;
 	}
 }
 .fancybox-slide--html .fancybox-close-small {
