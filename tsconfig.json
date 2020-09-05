@@ -7,6 +7,8 @@
 		"noImplicitAny": true,
 		"lib": ["es6", "dom", "es2018"],
 		"target": "ES5",
-		"types": [ "googlemaps"]
+		"types": [ "googlemaps"],
+		"outDir": "ts-built",
+        "rootDir": "src"
 	}
 }

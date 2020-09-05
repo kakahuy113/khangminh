@@ -108,8 +108,7 @@ export default (_) => {
 				"src/scripts/libraries/**.ts",
 				"src/scripts/utilities/**.ts",
 			],
-			_.gulp.series(watchTypescript),
-			_.gulp.series(watchTypescript2),
+			_.gulp.series(watchTypescript, watchTypescript2),
 		);
 
 		_.gulp.watch(["src/styles/**/**.scss"], _.gulp.series(watchScss));
