@@ -1,0 +1,55 @@
+section.Pay
+	.container
+		.container-1190px.pay__wrapper
+			.pay__inner
+				.pay__article
+					.patArticle__item
+						.pay__title
+							span 3
+							.checked.v-h
+								img.svg(src="./assets/images/product/checked.svg", alt="checked")
+							h2 giao hàng
+						.pay__ship
+							h3 CẢM ƠN BẠN ĐÃ ĐẶT HÀNG TẠI KHANG MINH !
+							p Giao hàng Thứ Ba, 9 - Thứ Sáu, 12 Tháng 5 2017
+				.pay__aside
+					.patAside__item
+						.pay__title.bg-2
+							h2 MÃ GIẢM GIÁ CHO ĐƠN HÀNG
+						.patAside__code
+							form(action="")
+								.code__input.active
+									input(type="text" name="code" placeholder="Nhập mã giảm giá nếu có.	")
+									input(type="button", value="Áp Dụng")
+								span Mục mã giảm giá là băt buộc.
+								.code__info
+									h4 Áp dụng chương trình khuyến mãi.
+									p Mua Online 2017: đơn hàng của Khang Minh khi mua từ 10.000.000 trở lên tặng 300.000đ.
+					.patAside__item.bg-w
+						.pay__title.bg-2
+							h2 THÔNG TIN ĐƠN HÀNG
+						.patAside__table
+							table
+								thead
+									th SẢN PHẨM
+									th SỐ LƯỢNG
+									th ĐƠN GIÁ
+								tbody
+									-for(var i =0; i < 3; i++)
+										tr
+											td Yến sào cao cấp
+											td 1
+											td 2.700.000 VNĐ
+									tr.no-border
+										td(colspan="2") 
+											h3 Tạm tính
+											span.c-b Phí vận chuyển
+										td 
+											h3 5.406.000 VNĐ
+											span.c-b 6.000 VNĐ
+									tr.no-border.total
+										td(colspan="2") 
+											h3 Tổng tiền
+											span (Tổng số tiền thanh toán)
+										td 5.406.000 VNĐ
+								
