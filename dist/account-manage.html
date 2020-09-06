@@ -76,9 +76,7 @@
 								<div class="bottom-ask">
 									<p>Chưa có tài khoản? <a href="javascript:;" data-fancybox data-src="">Đăng ký ngay</a></p>
 								</div>
-								<div class="social">
-									<div class="btn btn-google" data-api="google"><img class="lazyload blur-up svg" src="./assets/icons/icon-google-plus.svg" alt="icon google plus"><span>Đăng ký qua Google</span></div><a class="btn btn-facebook" href="#" data-api="facebook"><img class="lazyload blur-up svg" src="./assets/icons/icon-facebook-2.svg" alt="icon facebook"><span>Đăng ký qua Facebook</span></a>
-								</div>
+								<div class="social"><a class="btn btn-google" data-api="google" href="#"><img class="lazyload blur-up svg" src="./assets/icons/icon-google-plus.svg" alt="icon google plus"><span>Đăng ký qua Google</span></a><a class="btn btn-facebook" href="#" data-api="facebook"><img class="lazyload blur-up svg" src="./assets/icons/icon-facebook-2.svg" alt="icon facebook"><span>Đăng ký qua Facebook</span></a></div>
 							</div>
 						</div>
 					</div>
@@ -152,7 +150,7 @@
 									<li><a href="news.html">Tin tức Khang Minh</a></li>
 								</ul>
 							</li>
-							<li><a class="text-uppercase" href="guide.html">Hướng dẫn</a>
+							<li><a class="text-uppercase" href="javascript:;">Hướng dẫn</a>
 								<ul class="nav__wrapper">
 									<li><a href=" guide.html">Hướng dẫn text</a></li>
 									<li><a href="guide-txt.html">Hướng dẫn form</a></li>
@@ -214,19 +212,19 @@
 											<p>Trần Minh Tiến 192/68, Nguyễn Oanh Hồ Chí Minh, Quận Gò Vấp, Phường 17 01678216033</p>
 										</div>
 									</div>
-									<div class="form-account hide" id="self-info">
+									<div class="form-account" id="self-info">
 										<div class="wrapper">
 											<form>
 												<div class="form-group row">
 													<label class="col-3" for="email">Địa chỉ Email</label>
 													<div class="form-input col-9">
-														<input type="email" id="email" value="">
+														<input type="email" name="emal" id="email" value="">
 													</div>
 												</div>
 												<div class="form-group row">
 													<label class="col-3" for="name">Họ và Tên</label>
 													<div class="form-input col-9">
-														<input type="text" id="name" value="">
+														<input type="text" name="name" id="name" value="">
 													</div>
 												</div>
 												<div class="form-group row">
@@ -242,49 +240,45 @@
 														</div>
 													</div>
 												</div>
-												<div class="form-button">
-													<button class="btn btn-cancle">HỦY</button>
-													<button class="btn btn-save">LƯU</button>
-												</div>
-											</form>
-										</div>
-									</div>
-									<div class="form-account hide" id="address">
-										<div class="wrapper">
-											<form>
 												<div class="form-group row">
 													<label class="col-3" for="name">Họ và Tên</label>
 													<div class="form-input col-9">
-														<input type="text" id="email" value="">
+														<input type="text" id="email" name="name" value="">
 													</div>
 												</div>
 												<div class="form-group row">
 													<label class="col-3" for="city">Tỉnh/Thành Phố</label>
 													<div class="form-input col-9">
-														<input type="text" id="city" value="">
+														<select name="city" id="city">
+															<option value="Tphcm">TPHCM</option>
+															<option value="Ha Noi">HA NOI</option>
+														</select>
 													</div>
 												</div>
 												<div class="form-group row">
 													<label class="col-3" for="district">Quận/Huyện</label>
 													<div class="form-input col-9">
-														<input type="text" id="district" value="">
+														<select name="district" id="district">
+															<option value="1">QUAN 1</option>
+															<option value="2">QUAN 2</option>
+														</select>
 													</div>
 												</div>
 												<div class="form-group row">
 													<label class="col-3" for="road">Tầng,số nhà, đường</label>
 													<div class="form-input col-9">
-														<input type="text" id="road" value="">
+														<input type="text" name="road" id="road" value="">
 													</div>
 												</div>
 												<div class="form-group row">
 													<label class="col-3" for="phone">Số điện thoại</label>
 													<div class="form-input col-9">
-														<input type="number" id="phone" value="">
+														<input type="number" name="phone" id="phone" value="">
 													</div>
 												</div>
 												<div class="form-button">
 													<button class="btn btn-cancle">HỦY</button>
-													<button class="btn btn-save">LƯU</button>
+													<button class="btn btn-save" data-url="/something">LƯU</button>
 												</div>
 											</form>
 										</div>

@@ -2,6 +2,7 @@ import { getSVGs, Loading } from "./utilities/util";
 // import { Fullpage, FullpageOptions } from "./libraries/Fullpage";
 import Axios from "axios";
 import { commonController } from "./libraries/CommonController";
+import { cartController } from "./libraries/cart"
 declare var Swiper: any;
 declare var $: any;
 declare var player: any, loadVideoById: any;
@@ -910,9 +911,50 @@ const lookUpHeader = () => {
 // 		console.log(locationsInput)
 // 	}
 // }
+
+//update User
+const updateAccount = () => {
+	if(document.querySelector(".account-manage")) {
+		document.querySelector(".btn-save").addEventListener("click", (e:any) => {
+			e.preventDefault();
+			document.querySelector(".btn-cancle").addEventListener("click", (e:any) => {
+				window.location.reload();
+			})
+			const formAccount = new FormData();
+			document.querySelectorAll("#self-info form .form-input input").forEach((item:any) => {
+				const name = item.getAttribute("name")
+				const value = item.value;
+				formAccount.append(name,value)
+			})
+			document.querySelectorAll("#self-info form .form-input select").forEach((item:any) => {
+				const name = item.getAttribute("name")
+				const value = item.value
+				formAccount.append(name,value)
+			})
+			document.querySelectorAll("#self-info form .form-check input:checked").forEach((item:any) => {
+				const name = item.getAttribute("name")
+				const value = item.value
+				formAccount.append(name,value)
+			})
+			const url = e.target.getAttribute("data-url")
+			Axios.post(`${url}` , FormData, {
+				
+			}).then((res:any) => {
+				e.targ
+				if(res.Code == 200) {
+					window.location.reload();
+				}
+
+			})
+		})
+	}
+
+}
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
+	//cart Controller
+	cartController();
 	//commonController
 	commonController();
 	//init main banner
@@ -973,6 +1015,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	menuMoble();
 	//look up header
 	lookUpHeader();
+	//update User
+	updateAccount();
 	// getMapApi();
 	// GoogleMapController();
 });

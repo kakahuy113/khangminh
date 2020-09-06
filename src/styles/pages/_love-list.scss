@@ -15,7 +15,9 @@
 	}
 	.list-of-love {
 		margin-bottom: 70px;
-		
+		@media (max-width: 767.98px) {
+			margin-bottom: 30px;
+		}
 	}
 	.card-header {
 		display: flex;
@@ -37,9 +39,16 @@
 		border-top: none !important;
 		padding: 0 70px;
 		padding-bottom: 10px;
+		@media (max-width: 767.98px) {
+			padding-left: 10px;
+			padding-right: 10px;
+		}
 		.list-wrapper {
 			overflow: hidden;
 			margin-bottom: 40px;
+			@media (max-width: 767.98px) {
+				margin-bottom: 20px;
+			}
 		}
 		.item-wrapper {
 			display: flex;
@@ -60,6 +69,9 @@
 					font-size: 1.8rem;
 					line-height: 2.7rem;
 					font-family: Roboto-Bold;
+				}
+				@media (max-width: 767.98px) {
+					display: none;
 				}
 			}
 			.column-1 {
@@ -99,8 +111,33 @@
 						p {
 							padding-left: 10px;
 							line-height: normal !important;
+							align-self: center;
 						}
 					}
+				}
+				@media (max-width: 767.98px) {
+					-ms-flex: 0 0 100%;
+					flex: 0 0 100%;
+					max-width: 100%;
+					.img {
+						-ms-flex: 0 0 50%;
+						flex: 0 0 50%;
+						max-width: 50%;
+						text-align: center;
+					}
+					.desc {
+						-ms-flex: 0 0 50%;
+						flex: 0 0 50%;
+						max-width: 50%;
+						.img {
+							-ms-flex: unset;
+							flex: unset;
+							max-width: unset;
+						}
+					}
+				};
+				@media (max-width: 575.98px) {
+					
 				}
 			}
 			.column-2 {
@@ -111,12 +148,30 @@
 					font-family: Roboto-Light;
 					font-size: 1.8rem;
 				}
+				@media (max-width: 767.98px) {
+					-ms-flex: 0 0 50%;
+					flex: 0 0 50%;
+					max-width: 50%;
+					align-self: center;
+					text-align: center;
+					&::before {
+						content: attr(data-title);
+						font-size: 2rem;
+					}
+				}
 			}
 			.column-3 {
 				-ms-flex: 0 0 20%;
 				flex: 0 0 20%;
 				max-width: 20%;
 				text-align: right;
+				@media (max-width: 767.98px) {
+					-ms-flex: 0 0 50%;
+					flex: 0 0 50%;
+					max-width: 50%;
+					align-self: center;
+					text-align: center;
+				}
 			}
 		}
 		.add-all {

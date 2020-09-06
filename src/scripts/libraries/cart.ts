@@ -1,6 +1,6 @@
 declare var $:any;
 export const cartController = () => {
-	var CartController = CartController || {};
+	var CartController:any = CartController || {};
 
 	CartController = {
 		model: {
@@ -47,7 +47,7 @@ export const cartController = () => {
 		},
 		events: {
 			// THÊM VÀO GIỎ HÀNG
-			addToCart: function(e) {
+			addToCart: function(e:any) {
 				e.preventDefault();
 				// URL
 				const url = $(this).attr('data-url');
@@ -72,7 +72,7 @@ export const cartController = () => {
 						propertyId: Number(propertyId)
 					}),
 					cache: false,
-					success: function(res) {
+					success: function(res:any) {
 						if (res.Code == 200) {
 							let item = headerCartList.find(`.cart-item[data-pid='${res.Result.Id}']`);
 							// TRUYỂN KẾT QUẢ VÀO SỐ LƯỢNG GIỎ HÀNG TRÊN THANH MENU
@@ -86,14 +86,14 @@ export const cartController = () => {
 						} else
 							alert(res.Message);
 					},
-					failure: function(errMsg) {
+					failure: function(errMsg:any) {
 						alert(errMsg);
 					}
 				});
 				return false;
 			},
 			// TĂNG SỐ LƯỢNG SẲN PHẨM
-			upQuantity: function(e) {
+			upQuantity: function(e:any) {
 				e.preventDefault();
 				if (CartController.model.isDelay == false) {
 					CartController.model.isDelay == true;
@@ -135,7 +135,7 @@ export const cartController = () => {
 				return false;
 			},
 			// GIẢM SỐ LƯỢNG SẢN PHẨM
-			downQuantity: function(e) {
+			downQuantity: function(e:any) {
 				e.preventDefault();
 				if (CartController.model.isDelay == false) {
 					CartController.model.isDelay == true;
@@ -174,7 +174,7 @@ export const cartController = () => {
 				return false;
 			},
 			// NHẬP MÃ GIẢM GIÁ
-			applyCouponCode: function(e) {
+			applyCouponCode: function(e:any) {
 				e.preventDefault();
 				// Get coupon code
 				const url = $(this).attr('data-url');
@@ -194,7 +194,7 @@ export const cartController = () => {
 						valCouponCode: valCouponCode
 					}),
 					cache: false,
-					success: function(res) {
+					success: function(res:any) {
 						if (res.Code == 200) {
 							// SỐ TIỀN ĐƯỢC GIẢM
 							discountAmount.text(res.Result.discountAmount);
@@ -206,14 +206,14 @@ export const cartController = () => {
 							alert(res.Message);
 						}
 					},
-					failure: function(errMsg) {
+					failure: function(errMsg:any) {
 						alert(errMsg);
 					}
 				});
 				return false;
 			},
 			// THAY ĐỔI SỐ LƯỢNG SẢN PHẨM TRONG TRANG GIỎ HÀNG
-			changeQuantityProductInCart: function(e) {
+			changeQuantityProductInCart: function(e:any) {
 				e.preventDefault();
 				const input_val = $(this);
 				let current_val = parseInt(input_val.val());
@@ -234,7 +234,7 @@ export const cartController = () => {
 				return false;
 			},
 			// XÓA SẢN PHẨM KHỎI GIỎ HÀNG
-			removeFromCart: function(e) {
+			removeFromCart: function(e:any) {
 				e.preventDefault();
 				const productId = $(this).attr("data-pid");
 				const url = $(this).attr('data-url');
@@ -258,7 +258,7 @@ export const cartController = () => {
 							propertyId: Number(propertyId)
 						}),
 						cache: false,
-						success: function(res) {
+						success: function(res:any) {
 							if (res.Code == 200) {
 								// SỐ LƯỢNG GIỎ HÀNG TRONG MENU
 								headerCartNumber.text(res.Result.ItemCount);
@@ -272,7 +272,7 @@ export const cartController = () => {
 								headerCartList.find(`.cart-item[data-pid='${productId}']`).remove();
 							}
 						},
-						failure: function(errMsg) {
+						failure: function(errMsg:any) {
 							alert(errMsg);
 						}
 					});
@@ -282,7 +282,7 @@ export const cartController = () => {
 				return false;
 			},
 			// ĐẾN TRANG THANH TOÁN
-			goToPayment: function(e) {
+			goToPayment: function(e:any) {
 				e.preventDefault();
 				const url = $(this).attr('data-url');
 				const urlPagePaymen = $(this).attr('data-url-paymen');
@@ -292,7 +292,7 @@ export const cartController = () => {
 					type: 'GET',
 					contentType: "application/json; charset=utf-8",
 					cache: false,
-					success: function(res) {
+					success: function(res:any) {
 						if (res.Code == 200) {
 							// Redirect to get-payment-info page
 							window.location.href = urlPagePaymen;
@@ -305,14 +305,14 @@ export const cartController = () => {
 						}
 
 					},
-					failure: function(errMsg) {
+					failure: function(errMsg:any) {
 						alert(errMsg);
 					}
 				});
 				return false;
 			},
 			// CẬP NHẬT GIỎ HÀNG
-			updateToCart: function(productId, propertyId, quantity, urlUpdate) {
+			updateToCart: function(productId:any, propertyId:any, quantity:any, urlUpdate:any) {
 				const headerCartList = $("header .cart-panel .cart-list")
 				// Check product's Id and quantity is number
 				if (productId != '' && $.isNumeric(productId) &&
@@ -328,7 +328,7 @@ export const cartController = () => {
 							quantity: quantity
 						}),
 						cache: false,
-						success: function(res) {
+						success: function(res:any) {
 							const headerCartItemCount = $('#header-cart-item-count');
 							const totalQuantityTable = $('#total-quantity-table');
 							const actualAmountTotal = $("#actual_amount_total");
@@ -348,7 +348,7 @@ export const cartController = () => {
 								console.log('Giỏ hàng không được thay đổi');
 							}
 						},
-						failure: function(errMsg) {
+						failure: function(errMsg:any) {
 							alert(errMsg);
 						}
 					});
@@ -371,17 +371,17 @@ export const cartController = () => {
 						$('#ShippingCitySelectedValue').attr("disabled", true);
 						$('#ShippingCitySelectedValue').html('<option>Đang tải...</option>')
 					},
-					success: function(response) {
+					success: function(response:any) {
 						$('#ShippingCitySelectedValue').attr("disabled", false);
 						$('#ShippingCitySelectedValue').children().remove();
 						$("#ShippingCitySelectedValue").append($('<option></option>').val('').html('Chọn Tỉnh/Thành phố').attr('selected', true));
-						$.each(response, function(i, item) {
+						$.each(response, function(i:any, item:any) {
 							$("#ShippingCitySelectedValue").append($('<option></option>').val(item.Value).html(item.Text).attr('selected', item.Selected));
 						})
 
 						$("#ShippingCitySelectedValue").trigger("change");
 					},
-					failure: function(errmsg) {
+					failure: function(errmsg:any) {
 						alert(errmsg);
 					}
 				});
@@ -402,15 +402,15 @@ export const cartController = () => {
 						$('#ShippingDistrictSelectedValue').attr("disabled", true);
 						$('#ShippingDistrictSelectedValue').html('<option>Đang tải...</option>')
 					},
-					success: function(response) {
+					success: function(response:any) {
 						$('#ShippingDistrictSelectedValue').attr("disabled", false);
 						$('#ShippingDistrictSelectedValue').children().remove();
 						$("#ShippingDistrictSelectedValue").append($('<option></option>').val('').html('Chọn Quận/Huyện').attr('selected', true));
-						$.each(response, function(i, item) {
+						$.each(response, function(i:any, item:any) {
 							$("#ShippingDistrictSelectedValue").append($('<option></option>').val(item.Value).html(item.Text).attr('selected', item.Selected));
 						})
 					},
-					failure: function(errmsg) {
+					failure: function(errmsg:any) {
 						alert(errmsg);
 					}
 				});
@@ -423,7 +423,7 @@ export const cartController = () => {
 			},
 		},
 		helpers: {
-			generateCartItem: function(res) {
+			generateCartItem: function(res:any) {
 				return `<div class="cart-item" data-pid="${res.Result.Id}">
 					<div class="info">
 					<h4 class="name"><a id="header-cart-name" href=${res.Result.Url}>${res.Result.Name} </a></h4>
