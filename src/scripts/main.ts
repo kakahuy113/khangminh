@@ -850,6 +850,78 @@ const lookUpHeader = () => {
 // 		console.log(locationsInput)
 // 	}
 // }
+
+const nextStepOnPay = () =>{
+	const btnStep1 = document.querySelector(".btn__next-pay.step-1");
+	const btnStep2 = document.querySelector(".btn__next-pay.step-2");
+	if(btnStep1){
+		btnStep1.addEventListener("click",(e)=>{
+			const _thisBtn = $(this);
+			const href = _thisBtn.attr("data-next");
+			const url = _thisBtn.attr("data-url");
+			const formData = new FormData();
+			$(".location__input input").each(function () {
+				const name = $(this).attr("name");
+				const value = $(this).val();
+				formData.append(name, value);
+			});
+			if ($(".pay__location form").valid() === true) {
+				$.ajax({
+					url: url,
+					type: "post",
+					data: formData,
+					processData: false,
+					contentType: false,
+					beforeSend: function () {
+						_thisBtn.attr("disabled", "disabled");
+					},
+					success: function (res: any) {
+						if(res.code==200){
+							window.location.href = href;
+							_thisBtn.removeAttr("disabled");
+						}else{
+							alert(`${res.Message}`);
+						}
+					},
+				});
+			}
+		});
+	}
+	if(btnStep2){
+		btnStep2.addEventListener("click",(e) =>{
+			const _thisBtn = $(this);
+			const href = _thisBtn.attr("data-next");
+			const url = _thisBtn.attr("data-url");
+			const formData = new FormData();
+			$(".mtItem__radio input").each(function () {
+				const name = $(this).attr("name");
+				const value = $(this).val();
+				formData.append(name, value);
+			});
+			if ($(".pay__method form").valid() === true) {
+				$.ajax({
+					url: url,
+					type: "post",
+					data: formData,
+					processData: false,
+					contentType: false,
+					beforeSend: function () {
+						_thisBtn.attr("disabled", "disabled");
+					},
+					success: function (res: any) {
+						if(res.code==200){
+							window.location.href = href;
+							_thisBtn.removeAttr("disabled");
+						}else{
+							alert(`${res.Message}`);
+						}
+					},
+				});
+			}
+		});
+	}
+}
+
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
@@ -905,13 +977,13 @@ document.addEventListener("DOMContentLoaded", async () => {
 	showBackToTop();
 	getMoreQuestion();
 	cartQuantity();
-	payContinue();
 	// init btn back sub menu
 	initElementButtonBackSubMenu();
 	//show menu moblie
 	menuMoble();
 	//look up header
 	lookUpHeader();
+	nextStepOnPay();
 	// getMapApi();
 	// GoogleMapController();
 });
