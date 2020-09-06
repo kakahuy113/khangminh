@@ -70,64 +70,10 @@ section.Pay
 											h3 Số điện thoại
 										.location__input
 											input(type="text" name="phone")
-								.btn__next-pay.step-1(data-url="/location")
+								.btn__next-pay.step-1(data-url="/location",data-next="pay-step-2.html")
 									span Tiếp tục
 									.img
 										img.svg(src="./assets/images/product/ar-r.svg", alt="")
-					.patArticle__item
-						.pay__title
-							span 2
-							.checked.v-h
-								img.svg(src="./assets/images/product/checked.svg", alt="checked")
-							h2 thanh toán
-						.pay__method
-							//- form(action="#")
-							.method__item
-								.mtItem__radio
-									input#1(type="radio", name="method")
-									label(for="1") Thanh Toán Khi Nhận Hàng
-								.mtItem__content
-									p Quý khách sẽ thanh toán bằng tiền mặt khi nhận hàng tại nhà
-									p Bằng cách đặt hàng, bạn đồng ý với Chính sách bảo mật và Điều khoản sử dụng của Khang Minh.
-									p Bạn nhớ kiểm tra kỹ thông tin đơn hàng vì thông tin này sẽ không thể thay đổi sau khi đơn hàng được xác nhận thành công
-							.method__item
-								.mtItem__radio
-									input#3(type="radio", name="method")
-									label(for="3") Thẻ Atm Nội Địa/ Internet Banking ( 123pay )
-								.mtItem__content
-									p Để thực hiện việc thanh toán, bắt buộc thẻ ATM của bạn đã có đăng ký sử dụng dịch vụ Internet Banking.
-									p 123Pay hiện đã hỗ trợ thanh toán qua 25 ngân hàng tại Việt Nam.
-									p.style Chọn ngân hàng của bạn
-									form(action="")
-										.location__item
-											.location__input.select.w-100
-												select(name="wards")
-													option(value="1") Vui lòng chọn ngân hàng
-							.method__item
-								.mtItem__radio
-									input#4(type="radio", name="method")
-									label(for="4") Thanh Toán Chuyển Khoản
-								.mtItem__content
-									ul
-										li
-											p Chi Nhánh: Hai Bà Trưng, Hà Nội
-											p Ngân hàng Viettinbank , TK: Lê Thị Hằng Stk: 711A03652627
-										li
-											p Chi Nhánh: Bình Tây, Thành phố Hồ Chí Minh
-											p Ngân hàng Vietcombank, TK: Lê Thị Hằng. Stk: 0251002216474
-							.btn__next-pay.step-2
-								.img
-									img.svg(src="./assets/images/product/cart.svg", alt="")
-								span ĐẶT HÀNG
-					.patArticle__item
-						.pay__title
-							span 3
-							.checked.v-h
-								img.svg(src="./assets/images/product/checked.svg", alt="checked")
-							h2 giao hàng
-						.pay__ship
-							h3 CẢM ƠN BẠN ĐÃ ĐẶT HÀNG TẠI KHANG MINH !
-							p Giao hàng Thứ Ba, 9 - Thứ Sáu, 12 Tháng 5 2017
 				.pay__aside
 					.patAside__item
 						.pay__title.bg-2

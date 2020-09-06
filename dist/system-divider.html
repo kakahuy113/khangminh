@@ -200,7 +200,7 @@
 							<div class="introMap__search">
 								<div class="introMap__form">
 									<div class="introMap__input">
-										<input id="location-search" type="text" placeholder="Tìm địa chỉ . . .">
+										<input id="location-search" type="text" name="address" placeholder="Tìm địa chỉ . . .">
 									</div>
 									<div class="introMap__input select">
 										<select name="country">
@@ -210,21 +210,40 @@
 									</div>
 									<div class="introMap__input select">
 										<select name="city">
+											<option value="0">Chọn Tỉnh - thành phố</option>
 											<option value="1" data-country="1">Tp. Hồ Chí Minh</option>
 											<option value="2" data-country="2">Tp. Quảng Châu</option>
+											<option value="3" data-country="2">Tp. Bắc Kinh</option>
 										</select>
 									</div>
 									<div class="introMap__input select">
 										<select name="district">
+											<option value="0">Chọn Quận - huyện</option>
 											<option value="1" data-city="1">Quận Gò Vấp</option>
 											<option value="2" data-city="2">Quận Thuộc Quảng Châu</option>
+											<option value="3" data-city="3">Quận Thuộc Bắc Kinh</option>
 										</select>
 									</div>
 								</div>
 								<div class="introMap__list">
 									<ul>
-										<li class="introMap__item" data-lat="10.511063" data-lng="100.867113">
-											<h6>Lorem ipsum dolor sit ame</h6>
+										<li class="introMap__item" data-lat="10.511063" data-lng="100.867113" data-district="1">
+											<h6>Lorem ipsum dolor sit ame 0</h6>
+											<div class="item__info">
+												<div class="info__icon"><img src="./assets/images/intro/home.png" alt="home"></div>
+												<div class="info__text location">
+													<p>Lầu 8, Tòa nhà SAMCO, 32 Võ Văn Kiệt, Phường Cô Giang, Quận 0, TP.HCM.</p>
+												</div>
+											</div>
+											<div class="item__info">
+												<div class="info__icon"><img src="./assets/images/intro/phone.png" alt="phone"></div>
+												<div class="info__text phone">
+													<p>(08) 2365 1254 - (08) 6582 3254</p>
+												</div>
+											</div>
+										</li>
+										<li class="introMap__item" data-lat="11.511063" data-lng="101.867113" data-district="2">
+											<h6>Lorem ipsum dolor sit ame 1</h6>
 											<div class="item__info">
 												<div class="info__icon"><img src="./assets/images/intro/home.png" alt="home"></div>
 												<div class="info__text location">
@@ -238,12 +257,12 @@
 												</div>
 											</div>
 										</li>
-										<li class="introMap__item" data-lat="11.511063" data-lng="101.867113">
-											<h6>Lorem ipsum dolor sit ame</h6>
+										<li class="introMap__item" data-lat="12.511063" data-lng="102.867113" data-district="3">
+											<h6>Lorem ipsum dolor sit ame 2</h6>
 											<div class="item__info">
 												<div class="info__icon"><img src="./assets/images/intro/home.png" alt="home"></div>
 												<div class="info__text location">
-													<p>Lầu 8, Tòa nhà SAMCO, 32 Võ Văn Kiệt, Phường Cô Giang, Quận 1, TP.HCM.</p>
+													<p>Lầu 8, Tòa nhà SAMCO, 32 Võ Văn Kiệt, Phường Cô Giang, Quận 2, TP.HCM.</p>
 												</div>
 											</div>
 											<div class="item__info">
@@ -253,12 +272,12 @@
 												</div>
 											</div>
 										</li>
-										<li class="introMap__item" data-lat="12.511063" data-lng="102.867113">
-											<h6>Lorem ipsum dolor sit ame</h6>
+										<li class="introMap__item" data-lat="13.511063" data-lng="103.867113" data-district="1">
+											<h6>Lorem ipsum dolor sit ame 3</h6>
 											<div class="item__info">
 												<div class="info__icon"><img src="./assets/images/intro/home.png" alt="home"></div>
 												<div class="info__text location">
-													<p>Lầu 8, Tòa nhà SAMCO, 32 Võ Văn Kiệt, Phường Cô Giang, Quận 1, TP.HCM.</p>
+													<p>Lầu 8, Tòa nhà SAMCO, 32 Võ Văn Kiệt, Phường Cô Giang, Quận 3, TP.HCM.</p>
 												</div>
 											</div>
 											<div class="item__info">
@@ -268,27 +287,12 @@
 												</div>
 											</div>
 										</li>
-										<li class="introMap__item" data-lat="13.511063" data-lng="103.867113">
-											<h6>Lorem ipsum dolor sit ame</h6>
+										<li class="introMap__item" data-lat="14.511063" data-lng="104.867113" data-district="2">
+											<h6>Lorem ipsum dolor sit ame 4</h6>
 											<div class="item__info">
 												<div class="info__icon"><img src="./assets/images/intro/home.png" alt="home"></div>
 												<div class="info__text location">
-													<p>Lầu 8, Tòa nhà SAMCO, 32 Võ Văn Kiệt, Phường Cô Giang, Quận 1, TP.HCM.</p>
-												</div>
-											</div>
-											<div class="item__info">
-												<div class="info__icon"><img src="./assets/images/intro/phone.png" alt="phone"></div>
-												<div class="info__text phone">
-													<p>(08) 2365 1254 - (08) 6582 3254</p>
-												</div>
-											</div>
-										</li>
-										<li class="introMap__item" data-lat="14.511063" data-lng="104.867113">
-											<h6>Lorem ipsum dolor sit ame</h6>
-											<div class="item__info">
-												<div class="info__icon"><img src="./assets/images/intro/home.png" alt="home"></div>
-												<div class="info__text location">
-													<p>Lầu 8, Tòa nhà SAMCO, 32 Võ Văn Kiệt, Phường Cô Giang, Quận 1, TP.HCM.</p>
+													<p>Lầu 8, Tòa nhà SAMCO, 32 Võ Văn Kiệt, Phường Cô Giang, Quận 4, TP.HCM.</p>
 												</div>
 											</div>
 											<div class="item__info">
