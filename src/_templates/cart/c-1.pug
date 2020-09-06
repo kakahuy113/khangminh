@@ -1,4 +1,4 @@
-section.cart-page
+section.cart-page.cart-list-page
 	.container
 		.container-1190px
 			.cart__wrapper
@@ -15,7 +15,7 @@ section.cart-page
 							-for(var i =0; i < 3; i++)
 								tr
 									td(data-title="SẢN PHẨM").product 
-										.close
+										.close.remove-cart(type='button' value='Xóa' data-pid="11223344" data-propertyid="11223344" data-url="/xoa-khoi-gio-hang")
 										.table-content
 											.img
 												img.object-cover.fullsize(src="./assets/images/love/love-item.png", alt="item")
@@ -35,9 +35,9 @@ section.cart-page
 									td(data-title="SỐ LƯỢNG").num
 										.table-content
 											.quantity-input
-												span.minus -
+												span.minus.downQuantity(data-pid="11223344" data-propertyid="11223344" data-url-update="/cap-nhat-gio-hang") -
 												input.quantity(value="5" readonly)
-												span.plus +
+												span.plus.upQuantity(data-pid="11223344" data-propertyid="11223344" data-url-update="/cap-nhat-gio-hang") +
 									td(data-title="TỔNG GIÁ").total
 										.table-content
 											p 900.000 VNĐ
@@ -57,9 +57,11 @@ section.cart-page
 										.price-total
 											p 2.700.000 VNĐ
 			.cart-func
-				button.btn.btn-cart TIẾP TỤC MUA HÀNG
+				button.btn.btn-cart
+					a(href="") TIẾP TỤC MUA HÀNG
 				button.btn.btn-cart XÓA GIỎ HÀNG
-				button.btn.btn-cart TIẾN HÀNH THANH TOÁN
+				button.btn.btn-cart
+					a(href="") TIẾN HÀNH THANH TOÁN
 			.seemore
 				h3 Sản Phẩm Khác
 				.product__wrapper.text-center

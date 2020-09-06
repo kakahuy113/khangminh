@@ -76,9 +76,7 @@
 								<div class="bottom-ask">
 									<p>Chưa có tài khoản? <a href="javascript:;" data-fancybox data-src="">Đăng ký ngay</a></p>
 								</div>
-								<div class="social">
-									<div class="btn btn-google" data-api="google"><img class="lazyload blur-up svg" src="./assets/icons/icon-google-plus.svg" alt="icon google plus"><span>Đăng ký qua Google</span></div><a class="btn btn-facebook" href="#" data-api="facebook"><img class="lazyload blur-up svg" src="./assets/icons/icon-facebook-2.svg" alt="icon facebook"><span>Đăng ký qua Facebook</span></a>
-								</div>
+								<div class="social"><a class="btn btn-google" data-api="google" href="#"><img class="lazyload blur-up svg" src="./assets/icons/icon-google-plus.svg" alt="icon google plus"><span>Đăng ký qua Google</span></a><a class="btn btn-facebook" href="#" data-api="facebook"><img class="lazyload blur-up svg" src="./assets/icons/icon-facebook-2.svg" alt="icon facebook"><span>Đăng ký qua Facebook</span></a></div>
 							</div>
 						</div>
 					</div>
@@ -152,7 +150,7 @@
 									<li><a href="news.html">Tin tức Khang Minh</a></li>
 								</ul>
 							</li>
-							<li><a class="text-uppercase" href="guide.html">Hướng dẫn</a>
+							<li><a class="text-uppercase" href="javascript:;">Hướng dẫn</a>
 								<ul class="nav__wrapper">
 									<li><a href=" guide.html">Hướng dẫn text</a></li>
 									<li><a href="guide-txt.html">Hướng dẫn form</a></li>
@@ -188,7 +186,7 @@
 			</div>
 		</section>
 		<main>
-			<section class="cart-page">
+			<section class="cart-page cart-list-page">
 				<div class="container">
 					<div class="container-1190px">
 						<div class="cart__wrapper">
@@ -206,7 +204,7 @@
 									<tbody>
 										<tr>
 											<td class="product" data-title="SẢN PHẨM"> 
-												<div class="close"></div>
+												<div class="close remove-cart" type="button" value="Xóa" data-pid="11223344" data-propertyid="11223344" data-url="/xoa-khoi-gio-hang"></div>
 												<div class="table-content">
 													<div class="img"><img class="object-cover fullsize" src="./assets/images/love/love-item.png" alt="item"></div>
 													<div class="desc">
@@ -229,8 +227,8 @@
 											</td>
 											<td class="num" data-title="SỐ LƯỢNG">
 												<div class="table-content">
-													<div class="quantity-input"><span class="minus">-</span>
-														<input class="quantity" value="5" readonly><span class="plus">+</span>
+													<div class="quantity-input"><span class="minus downQuantity" data-pid="11223344" data-propertyid="11223344" data-url-update="/cap-nhat-gio-hang">-</span>
+														<input class="quantity" value="5" readonly><span class="plus upQuantity" data-pid="11223344" data-propertyid="11223344" data-url-update="/cap-nhat-gio-hang">+</span>
 													</div>
 												</div>
 											</td>
@@ -242,7 +240,7 @@
 										</tr>
 										<tr>
 											<td class="product" data-title="SẢN PHẨM"> 
-												<div class="close"></div>
+												<div class="close remove-cart" type="button" value="Xóa" data-pid="11223344" data-propertyid="11223344" data-url="/xoa-khoi-gio-hang"></div>
 												<div class="table-content">
 													<div class="img"><img class="object-cover fullsize" src="./assets/images/love/love-item.png" alt="item"></div>
 													<div class="desc">
@@ -265,8 +263,8 @@
 											</td>
 											<td class="num" data-title="SỐ LƯỢNG">
 												<div class="table-content">
-													<div class="quantity-input"><span class="minus">-</span>
-														<input class="quantity" value="5" readonly><span class="plus">+</span>
+													<div class="quantity-input"><span class="minus downQuantity" data-pid="11223344" data-propertyid="11223344" data-url-update="/cap-nhat-gio-hang">-</span>
+														<input class="quantity" value="5" readonly><span class="plus upQuantity" data-pid="11223344" data-propertyid="11223344" data-url-update="/cap-nhat-gio-hang">+</span>
 													</div>
 												</div>
 											</td>
@@ -278,7 +276,7 @@
 										</tr>
 										<tr>
 											<td class="product" data-title="SẢN PHẨM"> 
-												<div class="close"></div>
+												<div class="close remove-cart" type="button" value="Xóa" data-pid="11223344" data-propertyid="11223344" data-url="/xoa-khoi-gio-hang"></div>
 												<div class="table-content">
 													<div class="img"><img class="object-cover fullsize" src="./assets/images/love/love-item.png" alt="item"></div>
 													<div class="desc">
@@ -301,8 +299,8 @@
 											</td>
 											<td class="num" data-title="SỐ LƯỢNG">
 												<div class="table-content">
-													<div class="quantity-input"><span class="minus">-</span>
-														<input class="quantity" value="5" readonly><span class="plus">+</span>
+													<div class="quantity-input"><span class="minus downQuantity" data-pid="11223344" data-propertyid="11223344" data-url-update="/cap-nhat-gio-hang">-</span>
+														<input class="quantity" value="5" readonly><span class="plus upQuantity" data-pid="11223344" data-propertyid="11223344" data-url-update="/cap-nhat-gio-hang">+</span>
 													</div>
 												</div>
 											</td>
@@ -338,9 +336,9 @@
 							</div>
 						</div>
 						<div class="cart-func">
-							<button class="btn btn-cart">TIẾP TỤC MUA HÀNG</button>
+							<button class="btn btn-cart"><a href="">TIẾP TỤC MUA HÀNG</a></button>
 							<button class="btn btn-cart">XÓA GIỎ HÀNG</button>
-							<button class="btn btn-cart">TIẾN HÀNH THANH TOÁN</button>
+							<button class="btn btn-cart"><a href="">TIẾN HÀNH THANH TOÁN</a></button>
 						</div>
 						<div class="seemore">
 							<h3>Sản Phẩm Khác</h3>
@@ -544,8 +542,10 @@
 						<div class="footer__subscribe">
 							<h3 class="text-uppercase">Subscribe</h3>
 							<p>Lorem ipsum dolor sit amet your email oke oke</p>
-							<input class="btn subscribe--input" type="text" placeholder="Your Email">
-							<button class="btn btn--sendus" data-url=""><span>SEND US</span></button>
+							<form>
+								<input class="btn subscribe--input" type="email" name="subcribe" placeholder="Your Email">
+								<button class="btn btn--sendus" data-url=""><span>SEND US</span></button>
+							</form>
 							<div class="social">
 								<div class="right"><img src="./assets/images/footer/subscibe-logo.png" alt="Ministry"></div>
 								<div class="left"><a href=""><img src="./assets/images/footer/face.png" alt="Ministry"></a><a href=""><img src="./assets/images/footer/youtube.png" alt="Ministry"></a><a href=""><img src="./assets/images/footer/twiter.png" alt="Ministry"></a><a href=""><img src="./assets/images/footer/google.png" alt="Ministry"></a></div>

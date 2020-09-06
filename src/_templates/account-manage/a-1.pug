@@ -19,18 +19,18 @@ section.account-manage
 								p Địa chỉ thanh toán mặc định
 								p Trần Gia Huy
 								p Trần Minh Tiến 192/68, Nguyễn Oanh Hồ Chí Minh, Quận Gò Vấp, Phường 17 01678216033
-						#self-info.form-account.hide
+						#self-info.form-account
 							.wrapper
 								form
-									.form-group.row
+									.form-group.row.info-account
 										label.col-3(for="email") Địa chỉ Email
 										.form-input.col-9
-											input(type="email", id="email", value="")
-									.form-group.row
+											input(type="email",name="emal", id="email", value="")
+									.form-group.row.info-account
 										label.col-3(for="name") Họ và Tên
 										.form-input.col-9
-											input(type="text", id="name", value="")
-									.form-group.row
+											input(type="text",name="name", id="name", value="tran gia huy")
+									.form-group.row.info-account
 										label.col-3 Giới tính
 										.check-wrapper.col-9
 											.form-check
@@ -39,32 +39,30 @@ section.account-manage
 											.form-check
 												label(for="female") Nữ
 												input(type="radio", id="female", name="gender", value="Nữ")
-									.form-button
-										button.btn.btn-cancle HỦY
-										button.btn.btn-save LƯU
-						#address.form-account.hide
-							.wrapper
-								form
-									.form-group.row
+									.form-group.row.address
 										label.col-3(for="name") Họ và Tên
 										.form-input.col-9
-											input(type="text", id="email", value="")
-									.form-group.row
+											input(type="text", id="email",name="name" value="")
+									.form-group.row.address
 										label.col-3(for="city") Tỉnh/Thành Phố
 										.form-input.col-9
-											input(type="text", id="city", value="")
-									.form-group.row
+											select(name="city", id="city")
+												option(value="Tphcm") TPHCM
+												option(value="Ha Noi") HA NOI
+									.form-group.row.address
 										label.col-3(for="district") Quận/Huyện
 										.form-input.col-9
-											input(type="text", id="district", value="")
-									.form-group.row
+											select(name="district", id="district")
+												option(value="1") QUAN 1
+												option(value="2") QUAN 2
+									.form-group.row.address
 										label.col-3(for="road") Tầng,số nhà, đường
 										.form-input.col-9
-											input(type="text", id="road", value="")
-									.form-group.row
+											input(type="text",name="road", id="road", value="")
+									.form-group.row.address
 										label.col-3(for="phone") Số điện thoại
 										.form-input.col-9
-											input(type="number", id="phone", value="")
+											input(type="number",name="phone", id="phone", value="")
 									.form-button
 										button.btn.btn-cancle HỦY
-										button.btn.btn-save LƯU
+										button.btn.btn-save(data-url="/something") LƯU
