@@ -2,7 +2,7 @@ import { getSVGs, Loading } from "./utilities/util";
 // import { Fullpage, FullpageOptions } from "./libraries/Fullpage";
 import Axios from "axios";
 import { commonController } from "./libraries/CommonController";
-import { cartController } from "./libraries/cart"
+import { cartController } from "./libraries/cart";
 declare var Swiper: any;
 declare var $: any;
 declare var player: any, loadVideoById: any;
@@ -562,13 +562,13 @@ const showContentDesc = () => {
 
 const showInfoToManage = () => {
 	$(".self-info").on("click", (e: any) => {
-		$("#address").addClass("hide");
-		$("#self-info").removeClass("hide");
+			$("#self-info .address").css("display", "none");
+			$("#self-info .info-account").css("display", "flex");
 	});
 	document.querySelectorAll(".address-form").forEach((item) => {
 		item.addEventListener("click", () => {
-			$("#self-info").addClass("hide");
-			$("#address").removeClass("hide");
+			$("#self-info .info-account").css("display", "none");
+			$("#self-info .address").css("display", "flex");
 		});
 	});
 	$(".self-info").trigger("click");
@@ -812,26 +812,38 @@ const lookUpHeader = () => {
 		const _thisBtn = $(this);
 		const url = _thisBtn.attr("data-url");
 		const formData = new FormData();
-		$(".left form input").each(function () {
+		$(".wrapper__utilities .left form input").each(function () {
 			const name = $(this).attr("name");
 			const value = $(this).val();
 			formData.append(name, value);
 		});
-		$.ajax({
-			url: url,
-			type: "post",
-			data: formData,
-			processData: false,
-			contentType: false,
-			beforeSend: function () {
+		if($(".wrapper__utilities .left form").valid() == true) {
+			Axios.interceptors.request.use((config) => {
 				_thisBtn.attr("disabled", "disabled");
-			},
-			success: function (res: any) {
-				alert(`${res.Message}`);
+				return config
+			})
+			Axios.post(url,formData).then((res:any) => {
 				window.location.reload();
 				_thisBtn.removeAttr("disabled");
-			},
-		});
+			}).catch((err:any) => {
+				_thisBtn.removeAttr("disabled");
+			})
+		}
+		// $.ajax({
+		// 	url: url,
+		// 	type: "post",
+		// 	data: formData,
+		// 	processData: false,
+		// 	contentType: false,
+		// 	beforeSend: function () {
+		// 		_thisBtn.attr("disabled", "disabled");
+		// 	},
+		// 	success: function (res: any) {
+		// 		alert(`${res.Message}`);
+		// 		window.location.reload();
+		// 		_thisBtn.removeAttr("disabled");
+		// 	},
+		// });
 	});
 };
 
@@ -854,12 +866,12 @@ const lookUpHeader = () => {
 
 //update User
 const updateAccount = () => {
-	if(document.querySelector(".account-manage")) {
+		document.querySelector(".btn-cancle").addEventListener("click", (e:any) => {
+			window.location.reload();
+		})
 		document.querySelector(".btn-save").addEventListener("click", (e:any) => {
 			e.preventDefault();
-			document.querySelector(".btn-cancle").addEventListener("click", (e:any) => {
-				window.location.reload();
-			})
+		
 			const formAccount = new FormData();
 			document.querySelectorAll("#self-info form .form-input input").forEach((item:any) => {
 				const name = item.getAttribute("name")
@@ -877,18 +889,61 @@ const updateAccount = () => {
 				formAccount.append(name,value)
 			})
 			const url = e.target.getAttribute("data-url")
-			Axios.post(`${url}` , FormData, {
-				
-			}).then((res:any) => {
-				e.targ
-				if(res.Code == 200) {
-					window.location.reload();
-				}
-
-			})
+			if($("#self-info form").valid() == true) {
+				Axios.interceptors.request.use( (config) => {
+					$(e.target).attr("disabled", "disabled");
+					return config;
+				})
+				Axios.post(`${url}` , formAccount,{headers: {'Content-Type': 'application/json'}}).then((res:any) => {
+					if(res.Code == 200) {
+						window.location.reload();
+					} else {
+						console.log(res.Message);
+						$(e.target).removeAttr("disabled");
+					}
+				}).catch((err: any) => {
+					console.log(err);
+					$(e.target).removeAttr("disabled");
+				})
+			}
 		})
-	}
-
+}
+const subscribeFooter = () => {
+	document.querySelector(".footer__subscribe form button")
+		.addEventListener("click" , (e:any) => {
+			e.preventDefault();
+			const formdata = new FormData();
+			document.querySelectorAll(".footer__subscribe form input").forEach((item:any) => {
+				const name = item.getAttribute("name");
+				const value = item.value;
+				formdata.append(name , value);
+			})
+			
+			const url = $(e.target).attr("data-url");
+			if($(".footer__subscribe form").valid() == true) {
+				Axios.interceptors.request.use((config) => {
+					$(e.target).attr("disabled", "disabled");
+					return config;
+				})
+				Axios.post(url, formdata, {headers : {'Content-Type': 'application/json'}}).then((res:any) => {
+					if(res.Code==200) {
+						alert(res.Message)
+						$(e.target).removeAttr("disabled");
+						window.location.reload();
+					}
+					if(res.Code == 400) {
+						console.log(res.Message);
+						$(e.target).removeAttr("disabled");
+					}
+				}).then(res => {
+					console.log(res);
+					$(e.target).removeAttr("disabled");
+				}).catch(err => {
+					console.log(err);
+					$(e.target).removeAttr("disabled");
+				})
+			}
+		})
 }
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
@@ -956,6 +1011,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	lookUpHeader();
 	//update User
 	updateAccount();
+	// Subcribe Footer
+	subscribeFooter();
 	// getMapApi();
 	// GoogleMapController();
 });
