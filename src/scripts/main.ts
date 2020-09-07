@@ -1078,10 +1078,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 	//look up header
 	lookUpHeader();
 	nextStepOnPay();
-		//update User
-		updateAccount();
-		// Subcribe Footer
-		subscribeFooter();
+	//update User
+	updateAccount();
+	// Subcribe Footer
+	subscribeFooter();
 	// getMapApi();
 	// GoogleMapController();
 });
