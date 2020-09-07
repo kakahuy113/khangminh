@@ -864,9 +864,78 @@ const lookUpHeader = () => {
 // 	}
 // }
 
-//update User
+const nextStepOnPay = () =>{
+	const btnStep1 = document.querySelector(".btn__next-pay.step-1");
+	const btnStep2 = document.querySelector(".btn__next-pay.step-2");
+	if(btnStep1){
+		btnStep1.addEventListener("click",(e)=>{
+			const _thisBtn = $(this);
+			const href = _thisBtn.attr("data-next");
+			const url = _thisBtn.attr("data-url");
+			const formData = new FormData();
+			$(".location__input input").each(function () {
+				const name = $(this).attr("name");
+				const value = $(this).val();
+				formData.append(name, value);
+			});
+			if ($(".pay__location form").valid() === true) {
+				$.ajax({
+					url: url,
+					type: "post",
+					data: formData,
+					processData: false,
+					contentType: false,
+					beforeSend: function () {
+						_thisBtn.attr("disabled", "disabled");
+					},
+					success: function (res: any) {
+						if(res.code==200){
+							window.location.href = href;
+							_thisBtn.removeAttr("disabled");
+						}else{
+							alert(`${res.Message}`);
+						}
+					},
+				});
+			}
+		});
+	}
+	if(btnStep2){
+		btnStep2.addEventListener("click",(e) =>{
+			const _thisBtn = $(this);
+			const href = _thisBtn.attr("data-next");
+			const url = _thisBtn.attr("data-url");
+			const formData = new FormData();
+			$(".mtItem__radio input").each(function () {
+				const name = $(this).attr("name");
+				const value = $(this).val();
+				formData.append(name, value);
+			});
+			if ($(".pay__method form").valid() === true) {
+				$.ajax({
+					url: url,
+					type: "post",
+					data: formData,
+					processData: false,
+					contentType: false,
+					beforeSend: function () {
+						_thisBtn.attr("disabled", "disabled");
+					},
+					success: function (res: any) {
+						if(res.code==200){
+							window.location.href = href;
+							_thisBtn.removeAttr("disabled");
+						}else{
+							alert(`${res.Message}`);
+						}
+					},
+				});
+			}
+		});
+	}
+}
 const updateAccount = () => {
-	if(document.querySelector("account-manage")) {
+	if(document.querySelector(".account-manage")) {
 		document.querySelector(".btn-cancle").addEventListener("click", (e:any) => {
 			window.location.reload();
 		})
@@ -911,41 +980,41 @@ const updateAccount = () => {
 	}
 }
 const subscribeFooter = () => {
-	document.querySelector(".footer__subscribe form button")
-		.addEventListener("click" , (e:any) => {
-			e.preventDefault();
-			const formdata = new FormData();
-			document.querySelectorAll(".footer__subscribe form input").forEach((item:any) => {
-				const name = item.getAttribute("name");
-				const value = item.value;
-				formdata.append(name , value);
-			})
-			
-			const url = $(e.target).attr("data-url");
-			if($(".footer__subscribe form").valid() == true) {
-				Axios.interceptors.request.use((config) => {
-					$(e.target).attr("disabled", "disabled");
-					return config;
-				})
-				Axios.post(url, formdata, {headers : {'Content-Type': 'application/json'}}).then((res:any) => {
-					if(res.Code==200) {
-						alert(res.Message)
-						$(e.target).removeAttr("disabled");
-						window.location.reload();
-					}
-					if(res.Code == 400) {
-						console.log(res.Message);
-						$(e.target).removeAttr("disabled");
-					}
-				}).then(res => {
-					console.log(res);
-					$(e.target).removeAttr("disabled");
-				}).catch(err => {
-					console.log(err);
-					$(e.target).removeAttr("disabled");
-				})
-			}
+document.querySelector(".footer__subscribe form button")
+	.addEventListener("click" , (e:any) => {
+		e.preventDefault();
+		const formdata = new FormData();
+		document.querySelectorAll(".footer__subscribe form input").forEach((item:any) => {
+			const name = item.getAttribute("name");
+			const value = item.value;
+			formdata.append(name , value);
 		})
+		
+		const url = $(e.target).attr("data-url");
+		if($(".footer__subscribe form").valid() == true) {
+			Axios.interceptors.request.use((config) => {
+				$(e.target).attr("disabled", "disabled");
+				return config;
+			})
+			Axios.post(url, formdata, {headers : {'Content-Type': 'application/json'}}).then((res:any) => {
+				if(res.Code==200) {
+					alert(res.Message)
+					$(e.target).removeAttr("disabled");
+					window.location.reload();
+				}
+				if(res.Code == 400) {
+					console.log(res.Message);
+					$(e.target).removeAttr("disabled");
+				}
+			}).then(res => {
+				console.log(res);
+				$(e.target).removeAttr("disabled");
+			}).catch(err => {
+				console.log(err);
+				$(e.target).removeAttr("disabled");
+			})
+		}
+	})
 }
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
@@ -1004,17 +1073,17 @@ document.addEventListener("DOMContentLoaded", async () => {
 	showBackToTop();
 	getMoreQuestion();
 	cartQuantity();
-	payContinue();
 	// init btn back sub menu
 	initElementButtonBackSubMenu();
 	//show menu moblie
 	menuMoble();
 	//look up header
 	lookUpHeader();
-	//update User
-	updateAccount();
-	// Subcribe Footer
-	subscribeFooter();
+	nextStepOnPay();
+		//update User
+		updateAccount();
+		// Subcribe Footer
+		subscribeFooter();
 	// getMapApi();
 	// GoogleMapController();
 });
