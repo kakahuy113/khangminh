@@ -866,6 +866,7 @@ const lookUpHeader = () => {
 
 //update User
 const updateAccount = () => {
+	if(document.querySelector("account-manage")) {
 		document.querySelector(".btn-cancle").addEventListener("click", (e:any) => {
 			window.location.reload();
 		})
@@ -907,6 +908,7 @@ const updateAccount = () => {
 				})
 			}
 		})
+	}
 }
 const subscribeFooter = () => {
 	document.querySelector(".footer__subscribe form button")
