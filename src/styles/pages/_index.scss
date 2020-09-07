@@ -28,7 +28,7 @@
 		flex-direction: row;
 		margin-left: -20px;
 		margin-right: -20px;
-		> a {
+		> .item {
 			-ms-flex: 0 0 33.33%;
 			flex: 0 0 33.33%;
 			max-width: 33.33%;
@@ -49,6 +49,9 @@
 				height: 90px;
 				p {
 					color: #5d5d5d;
+					a {
+						color: #5d5d5d;
+					}
 				}
 				&:first-child {
 					&::before {
@@ -114,6 +117,10 @@
 						p {
 							transition: 1s all ease-in-out;
 							color: #a62c32;
+							a {
+								transition: 1s all ease-in-out;
+								color: #a62c32;
+							}
 						}
 					}
 				}

@@ -935,47 +935,49 @@ const nextStepOnPay = () =>{
 	}
 }
 const updateAccount = () => {
-	document.querySelector(".btn-cancle").addEventListener("click", (e:any) => {
-		window.location.reload();
-	})
-	document.querySelector(".btn-save").addEventListener("click", (e:any) => {
-		e.preventDefault();
-	
-		const formAccount = new FormData();
-		document.querySelectorAll("#self-info form .form-input input").forEach((item:any) => {
-			const name = item.getAttribute("name")
-			const value = item.value;
-			formAccount.append(name,value)
+	if(document.querySelector(".account-manage")) {
+		document.querySelector(".btn-cancle").addEventListener("click", (e:any) => {
+			window.location.reload();
 		})
-		document.querySelectorAll("#self-info form .form-input select").forEach((item:any) => {
-			const name = item.getAttribute("name")
-			const value = item.value
-			formAccount.append(name,value)
-		})
-		document.querySelectorAll("#self-info form .form-check input:checked").forEach((item:any) => {
-			const name = item.getAttribute("name")
-			const value = item.value
-			formAccount.append(name,value)
-		})
-		const url = e.target.getAttribute("data-url")
-		if($("#self-info form").valid() == true) {
-			Axios.interceptors.request.use( (config) => {
-				$(e.target).attr("disabled", "disabled");
-				return config;
+		document.querySelector(".btn-save").addEventListener("click", (e:any) => {
+			e.preventDefault();
+		
+			const formAccount = new FormData();
+			document.querySelectorAll("#self-info form .form-input input").forEach((item:any) => {
+				const name = item.getAttribute("name")
+				const value = item.value;
+				formAccount.append(name,value)
 			})
-			Axios.post(`${url}` , formAccount,{headers: {'Content-Type': 'application/json'}}).then((res:any) => {
-				if(res.Code == 200) {
-					window.location.reload();
-				} else {
-					console.log(res.Message);
+			document.querySelectorAll("#self-info form .form-input select").forEach((item:any) => {
+				const name = item.getAttribute("name")
+				const value = item.value
+				formAccount.append(name,value)
+			})
+			document.querySelectorAll("#self-info form .form-check input:checked").forEach((item:any) => {
+				const name = item.getAttribute("name")
+				const value = item.value
+				formAccount.append(name,value)
+			})
+			const url = e.target.getAttribute("data-url")
+			if($("#self-info form").valid() == true) {
+				Axios.interceptors.request.use( (config) => {
+					$(e.target).attr("disabled", "disabled");
+					return config;
+				})
+				Axios.post(`${url}` , formAccount,{headers: {'Content-Type': 'application/json'}}).then((res:any) => {
+					if(res.Code == 200) {
+						window.location.reload();
+					} else {
+						console.log(res.Message);
+						$(e.target).removeAttr("disabled");
+					}
+				}).catch((err: any) => {
+					console.log(err);
 					$(e.target).removeAttr("disabled");
-				}
-			}).catch((err: any) => {
-				console.log(err);
-				$(e.target).removeAttr("disabled");
-			})
-		}
-	})
+				})
+			}
+		})
+	}
 }
 const subscribeFooter = () => {
 document.querySelector(".footer__subscribe form button")
