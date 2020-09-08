@@ -1037,10 +1037,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 	//show menu moblie
 	menuMoble();
 	nextStepOnPay();
-		//update User
-		updateAccount();
-		// Subcribe Footer
-		subscribeFooter();
+	//update User
+	updateAccount();
+	// Subcribe Footer
+	subscribeFooter();
 	// getMapApi();
 	// GoogleMapController();
 });
