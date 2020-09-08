@@ -1,9 +1,9 @@
 import {} from "googlemaps";
-declare var google:any;
 //let map: google.maps.Map;
 let markers: google.maps.Marker[] = [];
 let infoWindow: google.maps.InfoWindow = new google.maps.InfoWindow();
 declare var google: any;
+declare var $: any;
 
 let mapOption = {
 	gestureHandling: "cooperative",
@@ -100,6 +100,7 @@ const addFilterEvent = (map: google.maps.Map) => {
 
 const filterFunction = (map: google.maps.Map, item: any) => {
 	const selectName = item.getAttribute("name");
+	
 	// Address filter
 	if (selectName === "address") {
 		// Trigger Country Select Box
@@ -108,7 +109,7 @@ const filterFunction = (map: google.maps.Map, item: any) => {
 		));
 	}
 	// Country Select Box
-	if (selectName === "country") {
+	else if (selectName === "country") {
 		document
 			.querySelectorAll(
 				".introMap__input select[name='city'] option",
@@ -201,11 +202,10 @@ const filterFunction = (map: google.maps.Map, item: any) => {
 				document.querySelectorAll(
 					".introMap__input select[name='city'] option[data-country='" + countryValue + "']"
 						).forEach(city => {
-							console.log(isHideAll)
 							document.querySelectorAll(
 								".introMap__input select[name='district'] option[data-city='" + (<HTMLOptionElement>city).value + "']"
 									).forEach((disctrict, index) => {
-										console.log(disctrict)
+										// console.log(1)
 										showLocation((<HTMLOptionElement>disctrict).value, isHideAll)
 										isHideAll = isHideAll ? !isHideAll : isHideAll;
 									});
@@ -214,11 +214,10 @@ const filterFunction = (map: google.maps.Map, item: any) => {
 				document.querySelectorAll(
 					".introMap__input select[name='district'] option[data-city='" + cityValue + "']"
 						).forEach((disctrict, index) => {
+							// console.log(1)
 							showLocation((<HTMLOptionElement>disctrict).value, index == 0)
 						});
 			}
-		} else {
-			showLocation((<HTMLSelectElement>item).value, true)
 		}
 		
 		initMarkers(map);
@@ -228,7 +227,7 @@ const filterFunction = (map: google.maps.Map, item: any) => {
 
 const showLocation = (value: string, isHiddenAll: boolean) => {
 	const addressValue = (<HTMLInputElement>document.querySelector(".introMap__input input[name='address']")).value;
-	console.log(isHiddenAll, addressValue)
+	// console.log(isHiddenAll, addressValue)
 	document
 		.querySelectorAll(".introMap__list ul li")
 		.forEach(element => {
