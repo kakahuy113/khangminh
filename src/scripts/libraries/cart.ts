@@ -1,4 +1,4 @@
-declare var $:any;
+declare var $ : any;
 export const cartController = () => {
 	var CartController:any = CartController || {};
 
@@ -34,6 +34,7 @@ export const cartController = () => {
 			couponCode.on('click', CartController.events.applyCouponCode);
 			// THAY ĐỔI SỐ LƯỢNG SẢN PHẨM TRONG TRANG GIỎ HÀNG
 			quantityInput.on('keyup', '.quantity-cart', CartController.events.changeQuantityProductInCart);
+			quantityInput.on('keyup', '.quantity-cart', CartController.events.changeQuantityProductInCart);
 			// XÓA SẢN PHẨM KHỎI GIỎ HÀNG
 			removeItemCart.on('click', CartController.events.removeFromCart);
 			// ĐẾN TRANG THANH TOÁN (TÙY DỰ ÁN)
@@ -68,7 +69,7 @@ export const cartController = () => {
 					contentType: "application/json; charset=utf-8",
 					data: JSON.stringify({
 						pId: Number(dataId),
-						quantity: Number(quantity),
+						quantity: 1,
 						propertyId: Number(propertyId)
 					}),
 					cache: false,
@@ -97,81 +98,81 @@ export const cartController = () => {
 				e.preventDefault();
 				if (CartController.model.isDelay == false) {
 					CartController.model.isDelay == true;
-					// Disable button for executing request to server
-					$(this).attr("disabled", "disabled");
-					// INPUT SỐ LƯỢNG SẢN PHẨM
-					const input_val = $(this).parents('.quantity-input').find('.quantity-cart[name="quantity"]');
-					// LẤY GIÁ TRỊ CŨ CỦA INPUT
-					let current_val = parseInt(input_val.val());
-					// GIÁ TRỊ MỚI
-					let new_val = current_val >= 5 ? 5 : current_val += 1;
+				// Disable button for executing request to server
+				$(this).attr("disabled", "disabled");
+				// INPUT SỐ LƯỢNG SẢN PHẨM
+				const input_val = $(this).parents('.quantity-input').find('.quantity-cart[name="quantity"]');
+				// LẤY GIÁ TRỊ CŨ CỦA INPUT
+				let current_val = parseInt(input_val.val());
+				// GIÁ TRỊ MỚI
+				let new_val = current_val >= 5 ? 5 : current_val += 1;
 
-					// ĐIỀU KIỆN SỐ LƯỢNG
-					if ($.isNumeric(current_val) && current_val > 0) {
-						// THÕA MÃN THÌ +1
-						new_val
-					} else {
-						// KHÔNG THÕA MÃN THÌ TRỞ VỀ MẶC ĐỊNH 1
-						new_val = 1;
-					}
-					// MÃ SẢN PHẨM
-					const productId = $(this).attr("data-pid");
-					// THUỘC TÍNH SẢN PHẨM
-					const propertyId = $(this).attr("data-propertyid");
-					// ĐỊA CHỈ URL UPDATE
-					const urlUpdate = $(this).attr('data-url-update');
-					// TRUYỀN SÓ LƯỢNG SẢN PHẨM VÀO INPUT
-					input_val.val(new_val);
-					// GỌI HÀM UPDATE GIỎ HÀNG TRUYỀN 4 THÔNG SỐ VÀO (MÃ SẢN PHẨM, THUỘC TÍNH, SỐ LƯỢNG, ĐỊA CHỈ URL UPDATE)
-					CartController.events.updateToCart(productId, propertyId, new_val, urlUpdate);
-					// CÀI ĐẶT THỜI GIAN RESQUEST LÊN SEVER
-					let time = 300;
-					setTimeout(function() {
-						CartController.events.delayClick();
-					}, time);
-					CartController.model.isDelay == false;
+				// ĐIỀU KIỆN SỐ LƯỢNG
+				if ($.isNumeric(current_val) && current_val > 0) {
+					// THÕA MÃN THÌ +1
+					new_val
+				} else {
+					// KHÔNG THÕA MÃN THÌ TRỞ VỀ MẶC ĐỊNH 1
+					new_val = 1;
 				}
+				// MÃ SẢN PHẨM
+				const productId = $(this).attr("data-pid");
+				// THUỘC TÍNH SẢN PHẨM
+				const propertyId = $(this).attr("data-propertyid");
+				// ĐỊA CHỈ URL UPDATE
+				const urlUpdate = $(this).attr('data-url-update');
+				// TRUYỀN SÓ LƯỢNG SẢN PHẨM VÀO INPUT
+				input_val.val(new_val);
+				// GỌI HÀM UPDATE GIỎ HÀNG TRUYỀN 4 THÔNG SỐ VÀO (MÃ SẢN PHẨM, THUỘC TÍNH, SỐ LƯỢNG, ĐỊA CHỈ URL UPDATE)
+				CartController.events.updateToCart(productId, propertyId, new_val, urlUpdate);
+				// CÀI ĐẶT THỜI GIAN RESQUEST LÊN SEVER
+				let time = 300;
+				setTimeout(function() {
+					CartController.events.delayClick();
+				}, time);
+				CartController.model.isDelay == false;
+			}
 
-				return false;
+			return false;
 			},
 			// GIẢM SỐ LƯỢNG SẢN PHẨM
 			downQuantity: function(e:any) {
 				e.preventDefault();
 				if (CartController.model.isDelay == false) {
 					CartController.model.isDelay == true;
-					// INPUT SỐ LƯỢNG SẢN PHẨM
-					const input_val = $(this).parents('.quantity-input').find('.quantity-cart[name="quantity"]');
-					// LẤY GIÁ TRỊ CŨ CỦA INPUT
-					let current_val = parseInt(input_val.val());
-					// GIÁ TRỊ MỚI
-					let new_val = --current_val;
-					// ĐIỀU KIỆN SỐ LƯỢNG
-					if ($.isNumeric(current_val) && current_val > 0) {
-						// THÕA MÃN THÌ -1
-						new_val
-					} else {
-						// KHÔNG THÕA MÃN THÌ TRỞ VỀ MẶC ĐỊNH 1
-						new_val = 1;
+						// INPUT SỐ LƯỢNG SẢN PHẨM
+						const input_val = $(this).parents('.quantity-input').find('.quantity-cart[name="quantity"]');
+						// LẤY GIÁ TRỊ CŨ CỦA INPUT
+						let current_val = parseInt(input_val.val());
+						// GIÁ TRỊ MỚI
+						let new_val = --current_val;
+						// ĐIỀU KIỆN SỐ LƯỢNG
+						if ($.isNumeric(current_val) && current_val > 0) {
+							// THÕA MÃN THÌ -1
+							new_val
+						} else {
+							// KHÔNG THÕA MÃN THÌ TRỞ VỀ MẶC ĐỊNH 1
+							new_val = 1;
+						}
+						// MÃ SẢN PHẨM
+						const productId = $(this).attr("data-pid");
+						// THUỘC TÍNH SẢN PHẨM
+						const propertyId = $(this).attr("data-propertyid");
+						// TRUYỀN SÓ LƯỢNG SẢN PHẨM VÀO INPUT
+						input_val.val(new_val);
+						// ĐỊA CHỈ URL UPDATE
+						const urlUpdate = $(this).attr('data-url-update');
+						// GỌI HÀM UPDATE GIỎ HÀNG TRUYỀN 4 THÔNG SỐ VÀO (MÃ SẢN PHẨM, THUỘC TÍNH, SỐ LƯỢNG, ĐỊA CHỈ URL UPDATE)
+						CartController.events.updateToCart(productId, propertyId, new_val, urlUpdate);
+						// CÀI ĐẶT THỜI GIAN RESQUEST LÊN SEVER
+						let time = 300;
+						setTimeout(function() {
+							CartController.events.delayClick();
+						}, time);
+						CartController.model.isDelay == false;
 					}
-					// MÃ SẢN PHẨM
-					const productId = $(this).attr("data-pid");
-					// THUỘC TÍNH SẢN PHẨM
-					const propertyId = $(this).attr("data-propertyid");
-					// TRUYỀN SÓ LƯỢNG SẢN PHẨM VÀO INPUT
-					input_val.val(new_val);
-					// ĐỊA CHỈ URL UPDATE
-					const urlUpdate = $(this).attr('data-url-update');
-					// GỌI HÀM UPDATE GIỎ HÀNG TRUYỀN 4 THÔNG SỐ VÀO (MÃ SẢN PHẨM, THUỘC TÍNH, SỐ LƯỢNG, ĐỊA CHỈ URL UPDATE)
-					CartController.events.updateToCart(productId, propertyId, new_val, urlUpdate);
-					// CÀI ĐẶT THỜI GIAN RESQUEST LÊN SEVER
-					let time = 300;
-					setTimeout(function() {
-						CartController.events.delayClick();
-					}, time);
-					CartController.model.isDelay == false;
-				}
-
-				return false;
+	
+					return false;
 			},
 			// NHẬP MÃ GIẢM GIÁ
 			applyCouponCode: function(e:any) {
@@ -207,7 +208,7 @@ export const cartController = () => {
 						}
 					},
 					failure: function(errMsg:any) {
-						alert(errMsg);
+						// alert(errMsg);
 					}
 				});
 				return false;

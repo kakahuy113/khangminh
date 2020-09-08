@@ -1,8 +1,8 @@
 import { getSVGs, Loading } from "./utilities/util";
 // import { Fullpage, FullpageOptions } from "./libraries/Fullpage";
 import Axios from "axios";
+import { cartController } from "./libraries/cart"
 import { commonController } from "./libraries/CommonController";
-import { cartController } from "./libraries/cart";
 declare var Swiper: any;
 declare var $: any;
 declare var player: any, loadVideoById: any;
@@ -531,25 +531,6 @@ const viewImagesDetail = () => {
 	$(".previews").first().trigger("click");
 };
 
-const changeQty = () => {
-	$(".lower").click(function (e: any) {
-		const qty = Number($("#qty_product").val());
-		if (qty == 1) {
-			$(".lower").addClass("no-action");
-		} else {
-			$("#qty_product").val(qty - 1);
-		}
-	});
-	$(".upper").click(function (e: any) {
-		const qty = Number($("#qty_product").val());
-		if (qty == 1) {
-			$(".lower").removeClass("no-action");
-		}
-		$("#qty_product").val(qty + 1);
-	});
-	//
-};
-
 const showContentDesc = () => {
 	$(".desc__item .item__content").addClass("no-active");
 	$(".desc__item h3").addClass("no-active");
@@ -572,50 +553,6 @@ const showInfoToManage = () => {
 		});
 	});
 	$(".self-info").trigger("click");
-};
-
-const cartQuantity = () => {
-	$(".quantity-input .minus").each(function () {
-		$(this).on("click", function () {
-			let alertContent = $(this).attr("data-alert");
-			let curVal = Number($(this).siblings("input").val());
-			if (curVal <= 0) {
-				curVal = 0;
-				alert(alertContent);
-			} else {
-				curVal -= 1;
-			}
-			$(this).siblings("input").val(curVal);
-		});
-	});
-
-	$(".quantity-input .plus").each(function () {
-		$(this).on("click", function () {
-			let alertContent = $(this).attr("data-alert");
-			let curVal = Number($(this).siblings("input").val());
-			if (curVal >= 5) {
-				curVal = 5;
-				alert(alertContent);
-			} else {
-				curVal += 1;
-			}
-			$(this).siblings("input").val(curVal);
-		});
-	});
-
-	$(".quantity-input .quantity").each(function () {
-		const alertContentMax = $(".quantity-input .plus").attr("data-alert");
-		const alertContentMin = $(".quantity-input .minus").attr("data-alert");
-		$(this).on("keyup", function () {
-			if ($(this).val() >= 5) {
-				// alert(alertContentMax)
-				$(this).val(5);
-			} else if ($(this).val() <= 0) {
-				// alert(alertContentMin)
-				$(this).val(0);
-			}
-		});
-	});
 };
 
 // SHOW BACK TO TOP
@@ -975,10 +912,11 @@ document.querySelector(".footer__subscribe form button")
 		}
 	})
 }
+
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
-	//cart Controller
+	// cart
 	cartController();
 	//commonController
 	commonController();
@@ -1024,14 +962,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 	//show info account manage page
 	showInfoToManage();
 	viewImagesDetail();
-	changeQty();
 	showContentDesc();
-	//cart quantity
-	cartQuantity();
 	//show back to top
 	showBackToTop();
 	getMoreQuestion();
-	cartQuantity();
 	// init btn back sub menu
 	initElementButtonBackSubMenu();
 	//show menu moblie
