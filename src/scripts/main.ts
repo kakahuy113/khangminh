@@ -1016,6 +1016,21 @@ document.querySelector(".footer__subscribe form button")
 		}
 	})
 }
+
+const showProcess = () =>{
+	const process = $(".checkItem__body-process").attr("data-process");
+	if(process == 1){
+		$(".process__item-step-1").addClass("active");
+	}else if(process==2){
+		$(".process__item-step-2").addClass("active");
+		$(".process").addClass("done-1");
+	}
+	else{
+		$(".process__item-step-3").addClass("active");
+		$(".process").addClass("done-2");
+
+	}}
+
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
@@ -1086,6 +1101,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 	subscribeFooter();
 	// getMapApi();
 	// GoogleMapController();
+	showProcess();
 });
 
 const fetchData = () => {

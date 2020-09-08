@@ -35,6 +35,37 @@ section.Check {
                 height: 2px;
                 width: 100%;
                 background: map-get($mau, main-2);
+                position: relative;
+                &.done-1 {
+                    &::before {
+                        content: none;
+                    }
+                }
+                &.done-2 {
+                    &::after {
+                        content: '';
+                    }
+                }
+                &::before {
+                    position: absolute;
+                    width: 50%;
+                    height: 2px;
+                    top: 0;
+                    left: 0;
+                    background: #5d5d5d;
+                    content: '';
+                    z-index: 1;
+                }
+                &::after {
+                    position: absolute;
+                    width: 50%;
+                    height: 2px;
+                    top: 0;
+                    right: 0;
+                    background: #5d5d5d;
+                    content: '';
+                    z-index: 1;
+                }
             }
             .process__item {
                 &-step-1 {
@@ -46,6 +77,22 @@ section.Check {
                     top: 0;
                     transform: translate(-50%, -50%);
                     left: 0;
+                    z-index: 2;
+                    &.active {
+                        width: 25px;
+                        height: 25px;
+                        &::before {
+                            position: absolute;
+                            content: '';
+                            width: 10px;
+                            height: 10px;
+                            background: white;
+                            border-radius: 50%;
+                            transform: translate(-50%, -50%);
+                            top: 50%;
+                            left: 50%;
+                        }
+                    }
                 }
                 &-step-2 {
                     position: absolute;
@@ -55,9 +102,26 @@ section.Check {
                     background: map-get($mau, main-2);
                     top: 0;
                     transform: translate(-50%, -50%);
+                    z-index: 2;
                     left: 50%;
+                    &.active {
+                        width: 25px;
+                        height: 25px;
+                        &::before {
+                            position: absolute;
+                            content: '';
+                            width: 10px;
+                            height: 10px;
+                            background: white;
+                            border-radius: 50%;
+                            transform: translate(-50%, -50%);
+                            top: 50%;
+                            left: 50%;
+                        }
+                    }
                 }
                 &-step-3 {
+                    z-index: 2;
                     position: absolute;
                     width: 18px;
                     height: 18px;
@@ -66,8 +130,28 @@ section.Check {
                     top: 0;
                     transform: translate(-50%, -50%);
                     left: 100%;
+                    &.active {
+                        width: 25px;
+                        height: 25px;
+                        &::before {
+                            position: absolute;
+                            content: '';
+                            width: 10px;
+                            height: 10px;
+                            background: white;
+                            border-radius: 50%;
+                            transform: translate(-50%, -50%);
+                            top: 50%;
+                            left: 50%;
+                        }
+                    }
                 }
             }
+        }
+        .process-text {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 15px;
         }
         .checkITem__body-table {
             table {
