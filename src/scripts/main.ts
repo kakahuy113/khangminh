@@ -805,47 +805,6 @@ const menuMoble = () => {
 		});
 	}
 };
-//find header
-const lookUpHeader = () => {
-	$(".wrapper__utilities .left form button").on("click", function (e: any) {
-		e.preventDefault();
-		const _thisBtn = $(this);
-		const url = _thisBtn.attr("data-url");
-		const formData = new FormData();
-		$(".wrapper__utilities .left form input").each(function () {
-			const name = $(this).attr("name");
-			const value = $(this).val();
-			formData.append(name, value);
-		});
-		if($(".wrapper__utilities .left form").valid() == true) {
-			Axios.interceptors.request.use((config) => {
-				_thisBtn.attr("disabled", "disabled");
-				return config
-			})
-			Axios.post(url,formData).then((res:any) => {
-				window.location.reload();
-				_thisBtn.removeAttr("disabled");
-			}).catch((err:any) => {
-				_thisBtn.removeAttr("disabled");
-			})
-		}
-		// $.ajax({
-		// 	url: url,
-		// 	type: "post",
-		// 	data: formData,
-		// 	processData: false,
-		// 	contentType: false,
-		// 	beforeSend: function () {
-		// 		_thisBtn.attr("disabled", "disabled");
-		// 	},
-		// 	success: function (res: any) {
-		// 		alert(`${res.Message}`);
-		// 		window.location.reload();
-		// 		_thisBtn.removeAttr("disabled");
-		// 	},
-		// });
-	});
-};
 
 // const getMapApi = () =>{
 // 	const listMap = document.querySelectorAll("li.introMap__item");
@@ -1077,8 +1036,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 	initElementButtonBackSubMenu();
 	//show menu moblie
 	menuMoble();
-	//look up header
-	lookUpHeader();
 	nextStepOnPay();
 		//update User
 		updateAccount();

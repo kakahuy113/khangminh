@@ -30,6 +30,7 @@ const initMarkers = (map: google.maps.Map) => {
 	if (document.querySelector(".introMap__list ul")) {
 		// Get location information in html
 		document.querySelectorAll(".introMap__list ul li:not(.d-none)").forEach((item, index) => {
+			console.log(item.getAttribute("data-lat"));
 			let location: LocationInfo = {
 				order: index,
 				lat: Number(item.getAttribute("data-lat")),
@@ -269,7 +270,7 @@ const initialize = () => {
 	if (document.querySelector("#map")) {
 		let map: google.maps.Map = new google.maps.Map(document.querySelector("#map"), mapOption);
 		// Location markers have filter box
-		if (document.querySelector(".introMap__list ul")) {
+		if (document.querySelector(".introMap__search")) {
 			addFilterEvent(map);
 			// Trigger filter event
 			filterFunction(map, document.querySelector(

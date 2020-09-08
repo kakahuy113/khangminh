@@ -69,8 +69,8 @@ section.cart-page.cart-list-page
 						.swiper-wrapper
 							-for(var i = 0; i < 7; i++)
 								.swiper-slide
-									a(href="#").card
-										.card-body
+									.card
+										a(href="#").card-body
 											.img
 												img(src="./assets/images/home/product-item.png", alt="")
 											.desc
@@ -78,7 +78,7 @@ section.cart-page.cart-list-page
 											.price
 												p.price 20.000.000 VNĐ/hộp
 												p.sale-price 20.000.000 VNĐ/hộp
-										.card-footer.btn
+										.card-footer.btn.add-cart
 											p ADD TO CART
 					.swiper-button-prev
 					.swiper-button-next

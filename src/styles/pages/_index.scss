@@ -313,9 +313,11 @@
 		transition: 1s all ease-in-out;
 		display: block;
 		.card-body {
+			display: block;
 			background: #fff;
 			text-align: center;
 			padding: 35px 50px;
+			color: #5d5d5d;
 			.img {
 				overflow: hidden;
 				img {
