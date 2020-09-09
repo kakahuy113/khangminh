@@ -88,6 +88,7 @@ const swiperProductHome = () => {
 	const swiper = new Swiper(".product__wrapper .swiper-container", {
 		slidesPerView: 3,
 		slidesPerGroup: 1,
+		loop:true,
 		navigation: {
 			nextEl: ".product__wrapper .swiper-button-next",
 			prevEl: ".product__wrapper .swiper-button-prev",
@@ -118,6 +119,7 @@ const swiperourproduct = () => {
 	const swiper = new Swiper(".home__ourproducts .swiper-container", {
 		slidesPerView: 3,
 		slidesPerColumn: 2,
+		loop:true,
 		spaceBetween: 10,
 		navigation: {
 			nextEl: ".home__ourproducts .swiper-button-next",
@@ -383,12 +385,18 @@ const Login = () => {
 		});
 
 		if ($("#login form").valid() === true) {
+			Axios.interceptors.request.use(config => {
+				$(e.target).attr("disabled" , "disabled");
+				return config;
+			})
 			Axios.post(`${url}`, formData).then((res: any) => {
+				console.log(res);
 				if (res.Code == 200) {
 					window.location.reload();
 				}
 				if (res.Code == 400) {
 					alert(`${res.Message}`);
+					$(e.target).removeAttr("disabled");
 				}
 			});
 		}
@@ -924,7 +932,6 @@ const showProcess = () =>{
 	else{
 		$(".process__item-step-3").addClass("active");
 		$(".process").addClass("done-2");
-
 	}}
 
 document.addEventListener("DOMContentLoaded", async () => {

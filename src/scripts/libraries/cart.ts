@@ -63,6 +63,7 @@ export const cartController = () => {
 				// Cart list trên header
 				const headerCartList = $("header .cart-panel .cart-list");
 				// THÔNG TIN CỦA GIỎ HÀNG
+				document.querySelector<HTMLElement>(".cart a").click()
 				$.ajax({
 					url: url,
 					type: 'POST',
@@ -75,15 +76,16 @@ export const cartController = () => {
 					cache: false,
 					success: function(res:any) {
 						if (res.Code == 200) {
-							let item = headerCartList.find(`.cart-item[data-pid='${res.Result.Id}']`);
-							// TRUYỂN KẾT QUẢ VÀO SỐ LƯỢNG GIỎ HÀNG TRÊN THANH MENU
-							headerCartItemCount.text(res.Result.TotalQuantity);
-							if (item.length > 0) {
-								item.find("#header-cart-quantity").text(res.Result.ItemCount)
-							} else {
-								item = CartController.helpers.generateCartItem(res);
-								headerCartList.append(item);
-							}
+							// let item = headerCartList.find(`.cart-item[data-pid='${res.Result.Id}']`);
+							// // TRUYỂN KẾT QUẢ VÀO SỐ LƯỢNG GIỎ HÀNG TRÊN THANH MENU
+							// headerCartItemCount.text(res.Result.TotalQuantity);
+							// if (item.length > 0) {
+							// 	item.find("#header-cart-quantity").text(res.Result.ItemCount)
+							// } else {
+							// 	item = CartController.helpers.generateCartItem(res);
+							// 	headerCartList.append(item);
+							// }
+							document.querySelector<HTMLElement>(".cart a").click();
 						} else
 							alert(res.Message);
 					},
