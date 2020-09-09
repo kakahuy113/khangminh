@@ -27,11 +27,8 @@
 		width: 100%;
 		background: #eaeaea;
 		padding: 0 70px;
-		svg {
+		img {
 			margin-right: 10px;
-			.cls-1 {
-				fill: #a62c32 !important;
-			}
 		}
 	}
 	.card-body {
@@ -103,6 +100,10 @@
 								font-weight: 500;
 								color: #a62c32 !important;
 							}
+						}
+						.remove-wish-list {
+							cursor: pointer;
+							user-select: none;
 						}
 					}
 					.state {
