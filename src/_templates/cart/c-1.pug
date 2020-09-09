@@ -35,9 +35,9 @@ section.cart-page.cart-list-page
 									td(data-title="SỐ LƯỢNG").num
 										.table-content
 											.quantity-input
-												span.minus.downQuantity(data-pid="11223344" data-propertyid="11223344" data-url-update="/cap-nhat-gio-hang") -
-												input.quantity(value="5" readonly)
-												span.plus.upQuantity(data-pid="11223344" data-propertyid="11223344" data-url-update="/cap-nhat-gio-hang") +
+												span.minus.downQuantity(data-pid="11223344" data-propertyid="11223344" data-url-update="/cap-nhat-gio-hang", data-alert="Pai tren 1") -
+												input.quantity-cart(name="quantity" type='number' value='1' data-pid="11223344" data-propertyid="11223344")
+												span.plus.upQuantity(data-pid="11223344" data-propertyid="11223344" data-url-update="/cap-nhat-gio-hang" , data-alert="Gio Hang Khong qua 5") +
 									td(data-title="TỔNG GIÁ").total
 										.table-content
 											p 900.000 VNĐ

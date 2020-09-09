@@ -76,7 +76,7 @@
 			height: 100%;
 			border: 1px dashed #eaeaea;
 			&::-webkit-inner-spin-button {
-				opacity: 0 !important;
+				display: none !important;
 			}
 		}
 		select {

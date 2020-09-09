@@ -318,8 +318,13 @@
 					display: flex;
 					width: 90px;
 					margin: 0 auto;
+					input {
+						&::-webkit-inner-spin-button {
+							display: none !important;
+						}
+					}
 					.minus,
-					.quantity,
+					.quantity-cart,
 					.plus {
 						color: #888888;
 						cursor: pointer;
