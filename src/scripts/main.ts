@@ -490,6 +490,7 @@ const actionLoginPage = () => {
 				type: "inline",
 			});
 		});
+
 	} else {
 		$(".check").on("click", (e: any) => {
 			e.preventDefault();
@@ -499,6 +500,21 @@ const actionLoginPage = () => {
 			});
 		});
 	}
+	$(".payNext").click(function(e:any){
+		e.preventDefault();
+		if(isLogin){
+			const url = $(this).children("a").attr("data-url");
+			console.log(url);
+			
+			window.location.href = url;
+		}else{
+				$.fancybox.open({
+			src: "#login",
+			type: "inline",
+		});
+		}
+	
+	});
 };
 
 const viewImagesDetail = () => {
@@ -782,7 +798,7 @@ const nextStepOnPay = () =>{
 				const value = $(this).val();
 				formData.append(name, value);
 			});
-			if ($(".pay__location form").valid() === true) {
+			// if ($(".pay__location form").valid() === true) {
 				$.ajax({
 					url: url,
 					type: "post",
@@ -801,7 +817,7 @@ const nextStepOnPay = () =>{
 						}
 					},
 				});
-			}
+			// }
 		});
 	}
 	if(btnStep2){
@@ -815,7 +831,7 @@ const nextStepOnPay = () =>{
 				const value = $(this).val();
 				formData.append(name, value);
 			});
-			if ($(".pay__method form").valid() === true) {
+			// if ($(".pay__method form").valid() === true) {
 				$.ajax({
 					url: url,
 					type: "post",
@@ -834,7 +850,7 @@ const nextStepOnPay = () =>{
 						}
 					},
 				});
-			}
+			// }
 		});
 	}
 }
