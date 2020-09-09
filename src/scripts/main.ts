@@ -391,11 +391,11 @@ const Login = () => {
 			})
 			Axios.post(`${url}`, formData).then((res: any) => {
 				console.log(res);
-				if (res.Code == 200) {
+				if (res.data.Code == 200) {
 					window.location.reload();
 				}
-				if (res.Code == 400) {
-					alert(`${res.Message}`);
+				if (res.data.Code == 400) {
+					alert(`${res.data.Message}`);
 					$(e.target).removeAttr("disabled");
 				}
 			});
@@ -415,14 +415,14 @@ const Register = () => {
 		});
 		if ($("#register form").valid() === true) {
 			Axios.post(`${url}`, formData).then((res: any) => {
-				if (res.Code == 200) {
-					$("#login input[type=text]").val(`${res.username}`);
-					$("#login input[type=password]").val(`${res.password}`);
+				if (res.data.Code == 200) {
+					$("#login input[type=text]").val(`${res.data.username}`);
+					$("#login input[type=password]").val(`${res.data.password}`);
 					$("#login form .form-button button").trigger("click");
 					window.location.reload();
 				}
-				if (res.Code == 400) {
-					alert(`${res.Message}`);
+				if (res.data.Code == 400) {
+					alert(`${res.data.Message}`);
 				}
 			});
 		}
@@ -885,10 +885,10 @@ const updateAccount = () => {
 					return config;
 				})
 				Axios.post(`${url}` , formAccount,{headers: {'Content-Type': 'application/json'}}).then((res:any) => {
-					if(res.Code == 200) {
+					if(res.data.Code == 200) {
 						window.location.reload();
 					} else {
-						console.log(res.Message);
+						console.log(res.data.Message);
 						$(e.target).removeAttr("disabled");
 					}
 				}).catch((err: any) => {
@@ -917,17 +917,16 @@ document.querySelector(".footer__subscribe form button")
 				return config;
 			})
 			Axios.post(url, formdata, {headers : {'Content-Type': 'application/json'}}).then((res:any) => {
-				if(res.Code==200) {
-					alert(res.Message)
+				if(res.data.Code==200) {
+					alert(res.data.Message)
 					$(e.target).removeAttr("disabled");
 					window.location.reload();
 				}
-				if(res.Code == 400) {
-					console.log(res.Message);
+				if(res.data.Code == 400) {
+					console.log(res.data.Message);
 					$(e.target).removeAttr("disabled");
 				}
 			}).then(res => {
-				console.log(res);
 				$(e.target).removeAttr("disabled");
 			}).catch(err => {
 				console.log(err);
