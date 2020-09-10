@@ -76,6 +76,7 @@
 				.img {
 					img {
 						transition: 1s all ease-in-out;
+						display: block;
 					}
 					&::after {
 						content: "";
@@ -90,6 +91,7 @@
 					}
 				}
 				.desc {
+					pointer-events: none;
 					position: absolute;
 					top: 50%;
 					left: 50%;

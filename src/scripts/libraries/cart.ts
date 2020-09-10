@@ -23,6 +23,8 @@ export const cartController = () => {
 			const quantityInput = $(".quantity-input");
 			// NÚT XÓA 1 SẢN PHẢM KHỎI GIỎ HÀNG
 			const removeItemCart = $('.remove-cart');
+			//REMOVE ALL CART PRODUCT 
+			const removeAllItemCart = $(".remove-all-cart")
 
 			// THÊM VÀO GIỎ HÀNG
 			addCart.off('click').on('click', CartController.events.addToCart);
@@ -39,7 +41,7 @@ export const cartController = () => {
 			removeItemCart.on('click', CartController.events.removeFromCart);
 			// ĐẾN TRANG THANH TOÁN (TÙY DỰ ÁN)
 			goToPayment.off('click').on('click', CartController.events.goToPayment);
-
+			removeAllItemCart.on("click" , CartController.events.removeAllFromCart)
 
 			// PHẦN THANH TOÁN (CHƯA LÀM ĐẾN)
 			$(".add-new-address").click(CartController.events.getCity);
@@ -63,6 +65,7 @@ export const cartController = () => {
 				// Cart list trên header
 				const headerCartList = $("header .cart-panel .cart-list");
 				// THÔNG TIN CỦA GIỎ HÀNG
+				document.querySelector<HTMLElement>(".cart a").click()
 				$.ajax({
 					url: url,
 					type: 'POST',
@@ -75,15 +78,16 @@ export const cartController = () => {
 					cache: false,
 					success: function(res:any) {
 						if (res.Code == 200) {
-							let item = headerCartList.find(`.cart-item[data-pid='${res.Result.Id}']`);
-							// TRUYỂN KẾT QUẢ VÀO SỐ LƯỢNG GIỎ HÀNG TRÊN THANH MENU
-							headerCartItemCount.text(res.Result.TotalQuantity);
-							if (item.length > 0) {
-								item.find("#header-cart-quantity").text(res.Result.ItemCount)
-							} else {
-								item = CartController.helpers.generateCartItem(res);
-								headerCartList.append(item);
-							}
+							// let item = headerCartList.find(`.cart-item[data-pid='${res.Result.Id}']`);
+							// // TRUYỂN KẾT QUẢ VÀO SỐ LƯỢNG GIỎ HÀNG TRÊN THANH MENU
+							// headerCartItemCount.text(res.Result.TotalQuantity);
+							// if (item.length > 0) {
+							// 	item.find("#header-cart-quantity").text(res.Result.ItemCount)
+							// } else {
+							// 	item = CartController.helpers.generateCartItem(res);
+							// 	headerCartList.append(item);
+							// }
+							document.querySelector<HTMLElement>(".cart a").click();
 						} else
 							alert(res.Message);
 					},
@@ -281,6 +285,13 @@ export const cartController = () => {
 					console.log('Không thể xóa');
 				}
 				return false;
+			},
+			removeAllFromCart: function(e:any) {
+				if(document.querySelector(".remove-cart")) {
+					document.querySelectorAll<HTMLElement>('.remove-cart').forEach(item => {
+						item.click();
+					})
+				}
 			},
 			// ĐẾN TRANG THANH TOÁN
 			goToPayment: function(e:any) {

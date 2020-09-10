@@ -88,6 +88,7 @@ const swiperProductHome = () => {
 	const swiper = new Swiper(".product__wrapper .swiper-container", {
 		slidesPerView: 3,
 		slidesPerGroup: 1,
+		loop:true,
 		navigation: {
 			nextEl: ".product__wrapper .swiper-button-next",
 			prevEl: ".product__wrapper .swiper-button-prev",
@@ -118,6 +119,7 @@ const swiperourproduct = () => {
 	const swiper = new Swiper(".home__ourproducts .swiper-container", {
 		slidesPerView: 3,
 		slidesPerColumn: 2,
+		loop:true,
 		spaceBetween: 10,
 		navigation: {
 			nextEl: ".home__ourproducts .swiper-button-next",
@@ -383,12 +385,18 @@ const Login = () => {
 		});
 
 		if ($("#login form").valid() === true) {
+			Axios.interceptors.request.use(config => {
+				$(e.target).attr("disabled" , "disabled");
+				return config;
+			})
 			Axios.post(`${url}`, formData).then((res: any) => {
-				if (res.Code == 200) {
+				console.log(res);
+				if (res.data.Code == 200) {
 					window.location.reload();
 				}
-				if (res.Code == 400) {
-					alert(`${res.Message}`);
+				if (res.data.Code == 400) {
+					alert(`${res.data.Message}`);
+					$(e.target).removeAttr("disabled");
 				}
 			});
 		}
@@ -407,14 +415,14 @@ const Register = () => {
 		});
 		if ($("#register form").valid() === true) {
 			Axios.post(`${url}`, formData).then((res: any) => {
-				if (res.Code == 200) {
-					$("#login input[type=text]").val(`${res.username}`);
-					$("#login input[type=password]").val(`${res.password}`);
+				if (res.data.Code == 200) {
+					$("#login input[type=text]").val(`${res.data.username}`);
+					$("#login input[type=password]").val(`${res.data.password}`);
 					$("#login form .form-button button").trigger("click");
 					window.location.reload();
 				}
-				if (res.Code == 400) {
-					alert(`${res.Message}`);
+				if (res.data.Code == 400) {
+					alert(`${res.data.Message}`);
 				}
 			});
 		}
@@ -877,10 +885,10 @@ const updateAccount = () => {
 					return config;
 				})
 				Axios.post(`${url}` , formAccount,{headers: {'Content-Type': 'application/json'}}).then((res:any) => {
-					if(res.Code == 200) {
+					if(res.data.Code == 200) {
 						window.location.reload();
 					} else {
-						console.log(res.Message);
+						console.log(res.data.Message);
 						$(e.target).removeAttr("disabled");
 					}
 				}).catch((err: any) => {
@@ -909,17 +917,16 @@ document.querySelector(".footer__subscribe form button")
 				return config;
 			})
 			Axios.post(url, formdata, {headers : {'Content-Type': 'application/json'}}).then((res:any) => {
-				if(res.Code==200) {
-					alert(res.Message)
+				if(res.data.Code==200) {
+					alert(res.data.Message)
 					$(e.target).removeAttr("disabled");
 					window.location.reload();
 				}
-				if(res.Code == 400) {
-					console.log(res.Message);
+				if(res.data.Code == 400) {
+					console.log(res.data.Message);
 					$(e.target).removeAttr("disabled");
 				}
 			}).then(res => {
-				console.log(res);
 				$(e.target).removeAttr("disabled");
 			}).catch(err => {
 				console.log(err);
@@ -940,9 +947,79 @@ const showProcess = () =>{
 	else{
 		$(".process__item-step-3").addClass("active");
 		$(".process").addClass("done-2");
-
 	}}
 
+const addWishList = () => {
+	if(document.querySelector(".wish-list")) {
+		document.querySelectorAll<HTMLElement>(".wish-list").forEach((item:any) => {
+			let productId = item.getAttribute("data-pid")
+			let propertyId = item.getAttribute("data-propertyid");
+			let url = item.getAttribute("data-url");
+			let isLike  = item.getAttribute("islike");
+			let titleLike = item.getAttribute("data-title-like");
+			let titleUnLike = item.getAttribute("data-title-unlike");
+			const data = {
+				productId: productId,
+				propertyId: propertyId,
+				islike: isLike
+			}
+			item.addEventListener("click", (e:any) => {
+				Axios.interceptors.request.use(config => {
+					item.style.pointerEvents = "none"
+					return config;
+				})
+				Axios.post(url,data,{headers : {'Content-Type': 'application/json'}})
+					.then((res:any) => {
+						if(res.data.Code == 200) {
+							if(res.data.islike == true) {
+								item.querySelector(".txt h4").innerText = titleUnLike
+							}
+							if(res.data.islike == false) {
+								item.querySelector(".txt h4").innerText = titleLike
+							}
+							alert(res.data.Message);
+							item.style.pointerEvents = "all"
+						} else {
+							alert(res.data.Message)
+							item.style.pointerEvents = "all"
+						}
+					}).catch((err) => {
+						console.log(err);
+						item.style.pointerEvents = "all"
+					})
+			})
+		})
+	}
+}
+const removeWishList = () => {
+	if(document.querySelector(".remove-wish-list")) {
+		document.querySelectorAll<HTMLElement>(".remove-wish-list").forEach(item => {
+			let productId = item.getAttribute("data-pid")
+			let propertyId = item.getAttribute("data-propertyid");
+			let url = item.getAttribute("data-url");
+			const data = {
+				productId: productId,
+				propertyId: propertyId
+			}
+			item.addEventListener("click" ,(e:any) => {
+				Axios.interceptors.request.use(config => {
+					item.style.pointerEvents = "none"
+					return config;
+				})
+				Axios.post(url, data,{headers : {'Content-Type': 'application/json'}})
+					.then((res:any) => {
+						if(res.data.Code ==200) {
+							alert(res.data.Message);
+						} else {
+							alert(res.data.Message);
+						}
+					}).catch(err => {
+						console.log(err);
+					})
+			})
+		})
+	}
+}
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
@@ -1008,6 +1085,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 	// getMapApi();
 	// GoogleMapController();
 	showProcess();
+	// ADD WISH LIST
+	addWishList();
+	// REMOVE WISH LIST
+	removeWishList();
 });
 
 const fetchData = () => {
