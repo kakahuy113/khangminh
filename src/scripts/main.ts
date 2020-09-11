@@ -1020,6 +1020,22 @@ const removeWishList = () => {
 		})
 	}
 }
+//share post facebook
+const sharePostFaceBook = () => {
+	if(document.querySelector(".shareface")) {
+		var url = window.location.href;
+		const endcodeurl = encodeURI(url);
+		$(".shareface").attr("href" , 
+		`javascript:window.open('https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=${endcodeurl}&display=popup&ref=plugin&src=share_button','popup','width=600,height=300')`)
+	}
+}
+const shareTweet = () => {
+	if(document.querySelector(".sharetweet")) {
+		var url = window.location.href
+		const endcodeurl = encodeURI(url);
+		$(".sharetweet").attr("href" , `https://twitter.com/intent/tweet?url=${endcodeurl}`)
+	}
+}
 document.addEventListener("DOMContentLoaded", async () => {
 	getSVGs(".svg");
 	Loading();
@@ -1089,6 +1105,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 	addWishList();
 	// REMOVE WISH LIST
 	removeWishList();
+	//share post to face
+	sharePostFaceBook();
+	//share tweet
+	shareTweet();
 });
 
 const fetchData = () => {
