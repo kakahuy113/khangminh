@@ -130,9 +130,10 @@ const showSale = () => {
     listPrice.forEach(element => {
         const price = Number($(element).children("h4").eq(1).text());
         const sale = Number($(element).children("h4").eq(1).attr("data-sale"));
-        const current = $(element).children("h4").eq(1).attr("data-txt");
-        const nicePrice = formatMoney(price);
-        const salePrice = formatMoney(sale);
+        console.log(price , sale , $(element).children("h4").eq(1));
+        // const current = $(element).children("h4").eq(1).attr("data-txt");
+        // const nicePrice = formatMoney(price);
+        // const salePrice = formatMoney(sale);
         if (sale > 0) {
             $(element).children("h4").eq(1).text(salePrice + " " + current);
             $(element).children("h4").eq(0).text(nicePrice + " " + current);
@@ -145,31 +146,31 @@ const showSale = () => {
     });
 }
 
-const showSaleDetail = () => {
+// const showSaleDetail = () => {
 
-    const oldPrice = $("h3.new span").text();
-    const newPrice = $("h3.new").attr("data-sale");
-    const current = $("h3.new").attr("data-txt");
-    const deleteCurrent = oldPrice.replace(" " + current, "");
-    const price = Number(deleteCurrent.replace(".", ""));
-    const fmPrice = formatMoney(price);
-    const fmSale = formatMoney(newPrice);
-    $("h3.new span").text(fmPrice + " " + current);
-    if (newPrice !== "") {
-        $("h3.old").removeClass("d-n");
-        $("h3.new").addClass("d-n");
-        $("h3.new").removeClass("no-sale");
-        $("h3.new-x span").text(fmSale + " " + current);
-        $("h3.old span").text(fmPrice + " " + current);
-    } else {
-        $("h3.old").addClass("d-n");
-        $("h3.new").addClass("no-sale");
-        $("h3.new-x").addClass("d-n");
-    }
-}
+//     const oldPrice = $("h3.new span").text();
+//     const newPrice = $("h3.new").attr("data-sale");
+//     const current = $("h3.new").attr("data-txt");
+//     const deleteCurrent = oldPrice.replace(" " + current, "");
+//     const price = Number(deleteCurrent.replace(".", ""));
+//     const fmPrice = formatMoney(price);
+//     const fmSale = formatMoney(newPrice);
+//     $("h3.new span").text(fmPrice + " " + current);
+//     if (newPrice !== "") {
+//         $("h3.old").removeClass("d-n");
+//         $("h3.new").addClass("d-n");
+//         $("h3.new").removeClass("no-sale");
+//         $("h3.new-x span").text(fmSale + " " + current);
+//         $("h3.old span").text(fmPrice + " " + current);
+//     } else {
+//         $("h3.old").addClass("d-n");
+//         $("h3.new").addClass("no-sale");
+//         $("h3.new-x").addClass("d-n");
+//     }
+// }
 
 const ajaxGetMoreProduct = () => {
-    const btn = document.querySelector(".productGetAll");
+    const btn = document.querySelector(".productGetAll .get");
     if (btn) {
         $(document).on("click", ".productGetAll" ,function(e) {
             e.preventDefault();
@@ -178,8 +179,8 @@ const ajaxGetMoreProduct = () => {
                 type: "get",
                 url: url,
                 success: (res) => {
-                    btn.remove();
-                    $(btn.parentElement()).append(res);
+                    btn.parentElement.remove();
+                    $(btn.parentElement.parentElement).append(res);
                 },
                 error: (res) => {
                     console.log(res);
@@ -191,8 +192,8 @@ const ajaxGetMoreProduct = () => {
 
 document.addEventListener("DOMContentLoaded", () => {
     rangeProduct();
-    orderPrice();
+    // orderPrice();
     showSale();
-    showSaleDetail();
+    // showSaleDetail();
     ajaxGetMoreProduct();
 });
