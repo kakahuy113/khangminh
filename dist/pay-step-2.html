@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<div id="fb-root"></div>
-		<header>
+		<header loading>
 			<div class="header__nav--top">
 				<div class="container">
 					<div class="container-1190px">
@@ -45,7 +45,7 @@
 							</div>
 							<div class="right">
 								<div class="right__wrapper">
-									<div class="account-item" data-login="false" id="">
+									<div class="account-item" data-login="true" id="">
 										<div><img class="lazyload blur-up svg" src="./assets/images/header/SVG/register.svg" alt="login"><span class="custom-display">TÀI KHOẢN</span></div>
 										<div class="account-box"><a class="btn btn-main" href="javascript:;" data-fancybox data-src="#login">Đăng nhập </a><a class="btn btn-register" href="javascript:;" data-fancybox data-src="#register">Đăng ký </a></div>
 									</div>
@@ -219,15 +219,13 @@
 													<p>Để thực hiện việc thanh toán, bắt buộc thẻ ATM của bạn đã có đăng ký sử dụng dịch vụ Internet Banking.</p>
 													<p>123Pay hiện đã hỗ trợ thanh toán qua 25 ngân hàng tại Việt Nam.</p>
 													<p class="style">Chọn ngân hàng của bạn</p>
-													<form action="">
-														<div class="location__item">
-															<div class="location__input select w-100">
-																<select name="wards">
-																	<option value="1">Vui lòng chọn ngân hàng</option>
-																</select>
-															</div>
+													<div class="location__item">
+														<div class="location__input select w-100">
+															<select name="wards">
+																<option value="1">Vui lòng chọn ngân hàng</option>
+															</select>
 														</div>
-													</form>
+													</div>
 												</div>
 											</div>
 											<div class="method__item">
@@ -248,9 +246,9 @@
 													</ul>
 												</div>
 											</div>
-											<div class="btn__next-pay step-2" data-next="pay-step-3.html" data-url="/pay">
+											<button class="btn btn__next-pay step-2" data-next="pay-step-3.html" data-url="/pay">
 												<div class="img"><img class="svg" src="./assets/images/product/cart.svg" alt=""></div><span>ĐẶT HÀNG</span>
-											</div>
+											</button>
 										</form>
 									</div>
 								</div>
@@ -396,6 +394,5 @@
 		<script type="text/javascript" src="./js/AccountController.min.js"></script>
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
-		<script type="text/javascript" src="./js/cart.min.js"></script>
 	</body>
 </html>

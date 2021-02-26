@@ -1,7 +1,7 @@
 import { getSVGs, Loading } from "./utilities/util";
 // import { Fullpage, FullpageOptions } from "./libraries/Fullpage";
 import Axios from "axios";
-import { cartController } from "./libraries/cart"
+import { cartController } from "./libraries/cart";
 import { commonController } from "./libraries/CommonController";
 declare var Swiper: any;
 declare var $: any;
@@ -250,9 +250,8 @@ const initClassSubMenu = () => {
 		".header__nav--bottom ul li",
 	);
 	// ADD LOADING HEADER
-	header.setAttribute("loading", "");
 	const init = () => {
-		return new Promise((resolve, reject) => {
+		return new Promise<void>((resolve, reject) => {
 			items__MainMenu.forEach((item) => {
 				const isHaveSub = item.querySelectorAll("ul");
 				// CHECK MAIN MENU IS HAVE SUB ???
@@ -643,59 +642,59 @@ const ajaxQuestion = () => {
 	});
 };
 
-const payContinue = () => {
-	// $(".pay__method").addClass("d-n");
-	// $(".pay__ship").addClass("d-n");
-	$(".mtItem__radio").click(function () {
-		$(".method__item").removeClass("active");
-		$(this).parent().addClass("active");
-	});
-	$(".check__true").click(function () {
-		$(this).children(".img").toggleClass("v-h");
-	});
-	$(".location__item.checkbox").click(function () {
-		$(".location__2").slideToggle("slow");
-	});
-	$(".btn__next-pay.step-1").click(function (e: any) {
-		e.preventDefault();
-		const _thisBtn = $(this);
-		const url = _thisBtn.attr("data-url");
-		const formData = new FormData();
-		$(".location__input input").each(function () {
-			const name = $(this).attr("name");
-			const value = $(this).val();
-			formData.append(name, value);
-		});
-		if ($(".pay__location form").valid() === true) {
-			$.ajax({
-				url: url,
-				type: "post",
-				data: formData,
-				processData: false,
-				contentType: false,
-				beforeSend: function () {
-					_thisBtn.attr("disabled", "disabled");
-				},
-				success: function (res: any) {
-					alert(`${res.Message}`);
-					window.location.reload();
-					_thisBtn.removeAttr("disabled");
-				},
-			});
-			$(".pay__location").slideUp("slow");
-			$(".pay__method").slideDown("slow");
-			$(".pay__title b").removeClass("d-n");
-			$(".pay__title.location span").addClass("d-n");
-			$(".pay__title.location .checked").removeClass("v-h");
-		}
-	});
-	$(".btn__next-pay.step-2").click(function () {
-		$(".pay__ship").slideDown("slow");
-	});
-	$(".pay__title.location").click(function () {
-		$(".pay__location").slideDown("slow");
-	});
-};
+// const payContinue = () => {
+// 	// $(".pay__method").addClass("d-n");
+// 	// $(".pay__ship").addClass("d-n");
+// 	$(".mtItem__radio").click(function () {
+// 		$(".method__item").removeClass("active");
+// 		$(this).parent().addClass("active");
+// 	});
+// 	$(".check__true").click(function () {
+// 		$(this).children(".img").toggleClass("v-h");
+// 	});
+// 	$(".location__item.checkbox").click(function () {
+// 		$(".location__2").slideToggle("slow");
+// 	});
+// 	$(".btn__next-pay.step-1").click(function (e: any) {
+// 		e.preventDefault();
+// 		const _thisBtn = $(this);
+// 		const url = _thisBtn.attr("data-url");
+// 		const formData = new FormData();
+// 		$(".location__input input").each(function () {
+// 			const name = $(this).attr("name");
+// 			const value = $(this).val();
+// 			formData.append(name, value);
+// 		});
+// 		if ($(".pay__location form").valid() === true) {
+// 			$.ajax({
+// 				url: url,
+// 				type: "post",
+// 				data: formData,
+// 				processData: false,
+// 				contentType: false,
+// 				beforeSend: function () {
+// 					_thisBtn.attr("disabled", "disabled");
+// 				},
+// 				success: function (res: any) {
+// 					alert(`${res.Message}`);
+// 					window.location.reload();
+// 					_thisBtn.removeAttr("disabled");
+// 				},
+// 			});
+// 			$(".pay__location").slideUp("slow");
+// 			$(".pay__method").slideDown("slow");
+// 			$(".pay__title b").removeClass("d-n");
+// 			$(".pay__title.location span").addClass("d-n");
+// 			$(".pay__title.location .checked").removeClass("v-h");
+// 		}
+// 	});
+// 	$(".btn__next-pay.step-2").click(function () {
+// 		$(".pay__ship").slideDown("slow");
+// 	});
+// 	$(".pay__title.location").click(function () {
+// 		$(".pay__location").slideDown("slow");
+// 	});
+// };
 
 // INIT BUTTON BACK
 const initElementButtonBackSubMenu = () => {
@@ -854,6 +853,7 @@ const nextStepOnPay = () =>{
 		});
 	}
 }
+
 const updateAccount = () => {
 	if(document.querySelector(".account-manage")) {
 		document.querySelector(".btn-cancle").addEventListener("click", (e:any) => {
@@ -899,6 +899,7 @@ const updateAccount = () => {
 		})
 	}
 }
+
 const subscribeFooter = () => {
 document.querySelector(".footer__subscribe form button")
 	.addEventListener("click" , (e:any) => {
@@ -991,6 +992,7 @@ const addWishList = () => {
 		})
 	}
 }
+
 const removeWishList = () => {
 	if(document.querySelector(".remove-wish-list")) {
 		document.querySelectorAll<HTMLElement>(".remove-wish-list").forEach(item => {
@@ -1020,6 +1022,7 @@ const removeWishList = () => {
 		})
 	}
 }
+
 //share post facebook
 const sharePostFaceBook = () => {
 	if(document.querySelector(".shareface")) {
@@ -1029,6 +1032,7 @@ const sharePostFaceBook = () => {
 		`javascript:window.open('https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&sdk=joey&u=${endcodeurl}&display=popup&ref=plugin&src=share_button','popup','width=600,height=300')`)
 	}
 }
+
 const shareTweet = () => {
 	if(document.querySelector(".sharetweet")) {
 		var url = window.location.href
@@ -1043,6 +1047,8 @@ document.addEventListener("DOMContentLoaded", async () => {
 	cartController();
 	//commonController
 	commonController();
+	//sub class menu
+	initClassSubMenu();
 	//init main banner
 	mainBanner();
 	//init partner swiper above footer
@@ -1057,8 +1063,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 	swiperourproduct();
 	//swiper relate news
 	swiperRelateNews();
-	//sub class menu
-	initClassSubMenu();
 	//active menu
 	activeMenu();
 	//switch language

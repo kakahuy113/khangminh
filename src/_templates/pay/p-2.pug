@@ -27,11 +27,10 @@ section.Pay
 										p Để thực hiện việc thanh toán, bắt buộc thẻ ATM của bạn đã có đăng ký sử dụng dịch vụ Internet Banking.
 										p 123Pay hiện đã hỗ trợ thanh toán qua 25 ngân hàng tại Việt Nam.
 										p.style Chọn ngân hàng của bạn
-										form(action="")
-											.location__item
-												.location__input.select.w-100
-													select(name="wards")
-														option(value="1") Vui lòng chọn ngân hàng
+										.location__item
+											.location__input.select.w-100
+												select(name="wards")
+													option(value="1") Vui lòng chọn ngân hàng
 								.method__item
 									.mtItem__radio
 										input#4(type="radio", name="method")
@@ -44,7 +43,7 @@ section.Pay
 											li
 												p Chi Nhánh: Bình Tây, Thành phố Hồ Chí Minh
 												p Ngân hàng Vietcombank, TK: Lê Thị Hằng. Stk: 0251002216474
-								.btn__next-pay.step-2(data-next="pay-step-3.html",data-url="/pay")
+								button.btn.btn__next-pay.step-2(data-next="pay-step-3.html",data-url="/pay")
 									.img
 										img.svg(src="./assets/images/product/cart.svg", alt="")
 									span ĐẶT HÀNG

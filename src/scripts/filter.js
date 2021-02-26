@@ -41,6 +41,7 @@ function formatMoney(n, c, d, t) {
 
     return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
 };
+
 const orderPrice = () => {
     const listPrice = document.querySelectorAll(".proItem__price");
     const btn = document.querySelector("#filter");
@@ -170,16 +171,15 @@ const showSaleDetail = () => {
 const ajaxGetMoreProduct = () => {
     const btn = document.querySelector(".productGetAll");
     if (btn) {
-        $(btn).click(function(e) {
+        $(document).on("click", ".productGetAll" ,function(e) {
             e.preventDefault();
             const url = $(this).attr("data-url");
             $.ajax({
                 type: "get",
                 url: url,
                 success: (res) => {
-                    const item = res;
-                    const currentItem = $(".product__list");
-                    currentItem.html(item);
+                    btn.remove();
+                    $(btn.parentElement()).append(res);
                 },
                 error: (res) => {
                     console.log(res);

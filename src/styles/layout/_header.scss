@@ -9,6 +9,10 @@ header {
 		.nav__wrapper li {
 			display: none;
 		}
+		.wrapper__utilities {
+			opacity: 0;
+			display: none;
+		}
 		// .right__wrapper {
 		// 	svg {
 		// 		display: noen;
@@ -17,6 +21,9 @@ header {
 	}
 
 	&[loaded] {
+		.wrapper__utilities {
+			opacity: 1;
+		}
 		@media (min-width: 1025px) {
 			.nav__wrapper {
 				opacity: 1;

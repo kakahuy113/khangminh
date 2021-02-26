@@ -11,7 +11,7 @@
 	</head>
 	<body>
 		<div id="fb-root"></div>
-		<header>
+		<header loading>
 			<div class="header__nav--top">
 				<div class="container">
 					<div class="container-1190px">
@@ -45,7 +45,7 @@
 							</div>
 							<div class="right">
 								<div class="right__wrapper">
-									<div class="account-item" data-login="false" id="">
+									<div class="account-item" data-login="true" id="">
 										<div><img class="lazyload blur-up svg" src="./assets/images/header/SVG/register.svg" alt="login"><span class="custom-display">TÀI KHOẢN</span></div>
 										<div class="account-box"><a class="btn btn-main" href="javascript:;" data-fancybox data-src="#login">Đăng nhập </a><a class="btn btn-register" href="javascript:;" data-fancybox data-src="#register">Đăng ký </a></div>
 									</div>
@@ -243,56 +243,6 @@
 													<input type="text" name="phone">
 												</div>
 											</div>
-											<div class="location__item checkbox">
-												<input type="checkbox" name="location2" id="location2" value="1">
-												<label for="location2">Địa chỉ thanh toán khác</label>
-											</div>
-											<div class="location__2 d-n">
-												<div class="location__item">
-													<div class="location__txt">
-														<h3>Họ và Tên</h3>
-													</div>
-													<div class="location__input">
-														<input type="text" name="name">
-													</div>
-												</div>
-												<div class="location__item">
-													<div class="location__txt">
-														<h3>Tỉnh/thành phố</h3>
-													</div>
-													<div class="location__input select">
-														<select name="city">
-															<option value="1">Tp. Hồ Chí Minh</option>
-														</select>
-													</div>
-												</div>
-												<div class="location__item">
-													<div class="location__txt">
-														<h3>Quận/huyện</h3>
-													</div>
-													<div class="location__input select">
-														<select name="district">
-															<option value="1">Gò Vấp</option>
-														</select>
-													</div>
-												</div>
-												<div class="location__item">
-													<div class="location__txt">
-														<h3>Tầng, số nhà, đường</h3>
-													</div>
-													<div class="location__input">
-														<input type="text" name="way">
-													</div>
-												</div>
-												<div class="location__item">
-													<div class="location__txt">
-														<h3>Số điện thoại</h3>
-													</div>
-													<div class="location__input">
-														<input type="text" name="phone">
-													</div>
-												</div>
-											</div>
 											<div class="btn__next-pay step-1" data-url="/location" data-next="pay-step-2.html"><span>Tiếp tục</span>
 												<div class="img"><img class="svg" src="./assets/images/product/ar-r.svg" alt=""></div>
 											</div>
@@ -441,6 +391,5 @@
 		<script type="text/javascript" src="./js/AccountController.min.js"></script>
 		<script type="text/javascript" src="./js/core.min.js"></script>
 		<script type="text/javascript" src="./js/main.min.js"></script>
-		<script type="text/javascript" src="./js/cart.min.js"></script>
 	</body>
 </html>
